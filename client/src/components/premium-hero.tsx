@@ -1,6 +1,6 @@
 import { ArrowRight, Play, CheckCircle, Users, Award, TrendingUp } from "lucide-react";
 import { useState } from "react";
-import heroImage from "@assets/u1461628488_A_confident_Indian_teenager_and_a_young_working_p_fc0605c0-993f-461b-9d1f-6e3cd4f8277a_3_1754292533173.png";
+import heroImage from "@assets/u1461628488_A_confident_mid-career_Indian_professional_male_o_5df951ce-73bd-414a-b228-c9ccf52f9fa6_2_1754302685222.png";
 import BookCallModal from "./book-call-modal";
 
 export default function PremiumHero() {
@@ -53,7 +53,7 @@ export default function PremiumHero() {
             {/* Inspiring Badge */}
             <div className="inline-flex items-center px-6 py-3 rounded-full border-2 text-sm font-semibold mb-8 bg-white/80 backdrop-blur-sm shadow-lg" style={{borderColor: 'hsl(45, 93%, 60%)', color: 'hsl(220, 91%, 25%)'}}>
               <div className="w-2 h-2 rounded-full mr-3 animate-pulse" style={{backgroundColor: 'hsl(45, 93%, 60%)'}}></div>
-              Transforming Careers Since 2001
+              Helping you navigate career paths in an AI world
             </div>
 
             {/* Main Headline - More dynamic */}
@@ -133,7 +133,7 @@ export default function PremiumHero() {
               <div className="relative p-6 bg-white/60 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/50">
                 <img 
                   src={heroImage}
-                  alt="Confident students with AI technology background - Future-ready careers" 
+                  alt="Confident mid-career professional on transformative career pathway with futuristic technology" 
                   className="w-full h-auto rounded-2xl object-cover"
                 />
                 
