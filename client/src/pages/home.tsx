@@ -3,7 +3,7 @@ import PremiumHero from "@/components/premium-hero";
 import AIFutureSection from "@/components/ai-future-section";
 import RoadmapSection from "@/components/roadmap-section";
 import PremiumAbout from "@/components/premium-about";
-import PremiumServices from "@/components/premium-services";
+
 import PremiumPackages from "@/components/premium-packages";
 import PremiumTestimonials from "@/components/premium-testimonials";
 import PremiumContact from "@/components/premium-contact";
@@ -17,7 +17,6 @@ export default function Home() {
       <AIFutureSection />
       <RoadmapSection />
       <PremiumAbout />
-      <PremiumServices />
       <PremiumPackages />
       <PremiumTestimonials />
       <PremiumContact />
