@@ -11,12 +11,10 @@ import { Mail, Phone, MapPin, Clock, Send, CheckCircle } from "lucide-react";
 import manpreetImage from "@assets/Image_MANPREET KAUR_Counselors_1754240707994.jpeg";
 
 interface ContactFormData {
-  firstName: string;
-  lastName: string;
+  name: string;
   email: string;
   phone: string;
-  serviceInterest: string;
-  message: string;
+  whoIsThisFor: string;
 }
 
 export default function PremiumContact() {
@@ -24,12 +22,10 @@ export default function PremiumContact() {
   const queryClient = useQueryClient();
   
   const [formData, setFormData] = useState<ContactFormData>({
-    firstName: "",
-    lastName: "",
+    name: "",
     email: "",
     phone: "",
-    serviceInterest: "",
-    message: ""
+    whoIsThisFor: ""
   });
 
   const contactMutation = useMutation({
@@ -41,12 +37,10 @@ export default function PremiumContact() {
         description: "We'll get back to you within 24 hours.",
       });
       setFormData({
-        firstName: "",
-        lastName: "",
+        name: "",
         email: "",
         phone: "",
-        serviceInterest: "",
-        message: ""
+        whoIsThisFor: ""
       });
       queryClient.invalidateQueries({ queryKey: ['/api/contact'] });
     },
@@ -103,92 +97,59 @@ export default function PremiumContact() {
           </div>
           
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            Ready to Transform
-            <span className="text-gradient-blue block">Your Career?</span>
+            Worried about your career
+            <span className="text-gradient-blue block">being replaced by AI?</span>
           </h2>
           
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Take the first step towards your dream career. Book a free consultation with our expert career counsellor.
+            Or unsure what your child should pursue?
+          </p>
+          
+          <p className="text-2xl font-semibold text-gray-900 mt-6">
+            Book a free 15-minute call with CCC Edu's expert team.
           </p>
         </div>
 
         <div className="grid lg:grid-cols-5 gap-16 items-start">
-          {/* Contact Info & Expert Card */}
-          <div className="lg:col-span-2 space-y-8">
-            {/* Expert Card */}
-            <div className="premium-card p-8 text-center">
-              <div className="w-32 h-32 mx-auto mb-6 relative">
-                <img 
-                  src={manpreetImage}
-                  alt="Manpreet Kaur" 
-                  className="w-full h-full rounded-full object-cover border-4 border-white shadow-lg"
-                />
-                <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-green-500 rounded-full border-4 border-white flex items-center justify-center">
-                  <CheckCircle className="w-4 h-4 text-white" />
+          {/* Contact Methods */}
+          <div className="lg:col-span-2 space-y-4">
+            {contactInfo.map((info, index) => (
+              <div key={index} className="premium-card p-6 hover:shadow-xl transition-all duration-300 group" data-testid={`contact-info-${info.title.toLowerCase().replace(' ', '-')}`}>
+                <div className="flex items-center">
+                  <div className={`w-14 h-14 bg-gradient-to-r ${info.color} rounded-2xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform`}>
+                    <info.icon className="text-white h-6 w-6" />
+                  </div>
+                  <div>
+                    <div className="font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
+                      {info.title}
+                    </div>
+                    <div className="text-gray-700 font-medium">{info.details}</div>
+                    <div className="text-sm text-gray-500">{info.subtext}</div>
+                  </div>
                 </div>
               </div>
-              
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">Manpreet Kaur</h3>
-              <p className="text-blue-600 font-semibold mb-4">Founder & Career Expert</p>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                With 23+ years of experience, I personally review every consultation request to ensure you get the best guidance for your career journey.
-              </p>
-            </div>
-
-            {/* Contact Methods */}
-            <div className="space-y-4">
-              {contactInfo.map((info, index) => (
-                <div key={index} className="premium-card p-6 hover:shadow-xl transition-all duration-300 group">
-                  <div className="flex items-center">
-                    <div className={`w-14 h-14 bg-gradient-to-r ${info.color} rounded-2xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform`}>
-                      <info.icon className="text-white h-6 w-6" />
-                    </div>
-                    <div>
-                      <div className="font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
-                        {info.title}
-                      </div>
-                      <div className="text-gray-700 font-medium">{info.details}</div>
-                      <div className="text-sm text-gray-500">{info.subtext}</div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
+            ))}
           </div>
 
-          {/* Contact Form */}
+          {/* Free Call Form */}
           <div className="lg:col-span-3">
             <div className="premium-card p-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-8">Book Your Free Consultation</h3>
-              
               <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <Label htmlFor="firstName" className="text-gray-700 font-medium">First Name *</Label>
-                    <Input
-                      id="firstName"
-                      value={formData.firstName}
-                      onChange={(e) => handleChange('firstName', e.target.value)}
-                      className="mt-2 h-12 border-gray-300 focus:border-blue-500 focus:ring-blue-200 rounded-xl"
-                      placeholder="Enter your first name"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <Label htmlFor="lastName" className="text-gray-700 font-medium">Last Name *</Label>
-                    <Input
-                      id="lastName"
-                      value={formData.lastName}
-                      onChange={(e) => handleChange('lastName', e.target.value)}
-                      className="mt-2 h-12 border-gray-300 focus:border-blue-500 focus:ring-blue-200 rounded-xl"
-                      placeholder="Enter your last name"
-                      required
-                    />
-                  </div>
+                <div>
+                  <Label htmlFor="name" className="text-gray-700 font-medium">Name *</Label>
+                  <Input
+                    id="name"
+                    value={formData.name}
+                    onChange={(e) => handleChange('name', e.target.value)}
+                    className="mt-2 h-12 border-gray-300 focus:border-blue-500 focus:ring-blue-200 rounded-xl"
+                    placeholder="Enter your full name"
+                    required
+                    data-testid="input-name"
+                  />
                 </div>
 
                 <div>
-                  <Label htmlFor="email" className="text-gray-700 font-medium">Email Address *</Label>
+                  <Label htmlFor="email" className="text-gray-700 font-medium">Email *</Label>
                   <Input
                     id="email"
                     type="email"
@@ -197,11 +158,12 @@ export default function PremiumContact() {
                     className="mt-2 h-12 border-gray-300 focus:border-blue-500 focus:ring-blue-200 rounded-xl"
                     placeholder="your.email@example.com"
                     required
+                    data-testid="input-email"
                   />
                 </div>
 
                 <div>
-                  <Label htmlFor="phone" className="text-gray-700 font-medium">Phone Number *</Label>
+                  <Label htmlFor="phone" className="text-gray-700 font-medium">Phone *</Label>
                   <Input
                     id="phone"
                     type="tel"
@@ -210,66 +172,44 @@ export default function PremiumContact() {
                     className="mt-2 h-12 border-gray-300 focus:border-blue-500 focus:ring-blue-200 rounded-xl"
                     placeholder="+91 98765 43210"
                     required
+                    data-testid="input-phone"
                   />
                 </div>
 
                 <div>
-                  <Label htmlFor="serviceInterest" className="text-gray-700 font-medium">Service Interest *</Label>
-                  <Select onValueChange={(value) => handleChange('serviceInterest', value)}>
-                    <SelectTrigger className="mt-2 h-12 border-gray-300 focus:border-blue-500 focus:ring-blue-200 rounded-xl">
-                      <SelectValue placeholder="Select the service you're interested in" />
+                  <Label htmlFor="whoIsThisFor" className="text-gray-700 font-medium">Who is this for? *</Label>
+                  <Select onValueChange={(value) => handleChange('whoIsThisFor', value)}>
+                    <SelectTrigger className="mt-2 h-12 border-gray-300 focus:border-blue-500 focus:ring-blue-200 rounded-xl" data-testid="select-who-is-this-for">
+                      <SelectValue placeholder="Select category" />
                     </SelectTrigger>
                     <SelectContent className="rounded-xl">
-                      <SelectItem value="career-counselling">Career Counselling</SelectItem>
-                      <SelectItem value="psychometric-assessment">Psychometric Assessment</SelectItem>
-                      <SelectItem value="foreign-admissions">Foreign Admissions</SelectItem>
-                      <SelectItem value="cv-building">CV Building</SelectItem>
-                      <SelectItem value="mentorship">Mentorship Program</SelectItem>
-                      <SelectItem value="webinars">Career Webinars</SelectItem>
-                      <SelectItem value="complete-package">Complete Package</SelectItem>
+                      <SelectItem value="class-8-9">Class 8–9</SelectItem>
+                      <SelectItem value="class-10-12">Class 10–12</SelectItem>
+                      <SelectItem value="college">College</SelectItem>
+                      <SelectItem value="working-professional">Working Professional</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
 
-                <div>
-                  <Label htmlFor="message" className="text-gray-700 font-medium">Message *</Label>
-                  <Textarea
-                    id="message"
-                    value={formData.message}
-                    onChange={(e) => handleChange('message', e.target.value)}
-                    rows={4}
-                    className="mt-2 border-gray-300 focus:border-blue-500 focus:ring-blue-200 rounded-xl resize-none"
-                    placeholder="Tell us about your career goals, current situation, and how we can help you achieve success..."
-                    required
-                  />
-                </div>
-
                 <Button 
                   type="submit" 
-                  className="w-full h-14 text-lg font-semibold bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 text-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105"
+                  className="w-full h-14 text-lg font-semibold bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 text-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105 sticky bottom-4 lg:static"
                   disabled={contactMutation.isPending}
+                  data-testid="button-book-free-call"
                 >
                   {contactMutation.isPending ? (
                     <div className="flex items-center gap-3">
                       <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                      Sending Message...
+                      Booking Your Call...
                     </div>
                   ) : (
                     <div className="flex items-center gap-3">
                       <Send className="w-5 h-5" />
-                      Send Message & Book Consultation
+                      Book My Free Call →
                     </div>
                   )}
                 </Button>
               </form>
-
-              <div className="mt-6 p-4 bg-blue-50 rounded-xl border border-blue-200">
-                <div className="flex items-center text-blue-700 text-sm">
-                  <Clock className="w-4 h-4 mr-2" />
-                  <span className="font-medium">Response Time:</span>
-                  <span className="ml-1">We typically respond within 2-4 hours during business hours.</span>
-                </div>
-              </div>
             </div>
           </div>
         </div>
