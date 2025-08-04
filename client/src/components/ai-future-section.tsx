@@ -114,10 +114,10 @@ export default function AIFutureSection() {
                 </div>
                 <div>
                   <h3 className="text-2xl font-medium text-gray-900 mb-3 leading-relaxed">
-                    85% of careers that will exist in 2030 haven't even been invented yet.
+                    The job market is evolving exponentially.
                   </h3>
                   <p className="text-lg text-gray-600 leading-relaxed">
-                    The job market is evolving exponentially. New roles emerge while traditional ones vanish overnight.
+                    New roles emerge while traditional ones vanish overnight. The pace of change is unprecedented.
                   </p>
                 </div>
               </div>
@@ -130,10 +130,10 @@ export default function AIFutureSection() {
                 </div>
                 <div>
                   <h3 className="text-2xl font-medium text-gray-900 mb-3 leading-relaxed">
-                    AI is automating everything from accounting to design to healthcare.
+                    No industry is immune to automation.
                   </h3>
                   <p className="text-lg text-gray-600 leading-relaxed">
-                    No industry is immune. Traditional career paths are being disrupted faster than ever.
+                    From accounting to creative fields, AI is transforming how work gets done across all sectors.
                   </p>
                 </div>
               </div>
@@ -146,10 +146,10 @@ export default function AIFutureSection() {
                 </div>
                 <div>
                   <h3 className="text-2xl font-medium text-gray-900 mb-3 leading-relaxed">
-                    Career choices that felt "safe" a decade ago may no longer exist.
+                    Job security now demands strategic planning.
                   </h3>
                   <p className="text-lg text-gray-600 leading-relaxed">
-                    Job security now demands adaptability, continuous learning, and strategic career planning.
+                    Adaptability and continuous learning are essential for long-term career sustainability.
                   </p>
                 </div>
               </div>
