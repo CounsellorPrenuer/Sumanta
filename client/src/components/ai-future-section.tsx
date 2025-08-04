@@ -66,142 +66,65 @@ export default function AIFutureSection() {
       </div>
 
       <div className="container-custom relative z-10">
-        {/* Sophisticated Headline */}
-        <div className="text-center max-w-5xl mx-auto mb-20">
-          <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 text-slate-700 text-sm font-medium mb-8">
-            <AlertTriangle className="w-4 h-4 mr-2 text-blue-600" />
-            Career Future Insights
+        {/* Premium Headline */}
+        <div className="text-center max-w-6xl mx-auto mb-24">
+          <div className="inline-flex items-center px-8 py-4 rounded-full bg-gradient-to-r from-slate-50 to-blue-50 border border-slate-200 text-slate-600 text-sm font-medium mb-12 shadow-sm">
+            <div className="w-2 h-2 bg-blue-500 rounded-full mr-3 animate-pulse"></div>
+            The Future of Work
           </div>
 
-          <h2 className="text-4xl lg:text-6xl font-light text-gray-900 mb-8 leading-tight">
-            Over <span className="relative font-semibold text-slate-800">
+          <h2 className="text-5xl lg:text-7xl font-extralight text-gray-900 mb-16 leading-[1.1] tracking-tight">
+            Over <span className="relative font-medium text-slate-800">
               40% of jobs
-              <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full"></div>
-            </span> will be replaced or transformed by AI.
-            <span className="block mt-4 text-2xl lg:text-3xl text-gray-600 font-light">
+              <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-500 rounded-full opacity-30"></div>
+            </span> will be transformed by AI.
+            <span className="block mt-8 text-3xl lg:text-4xl text-gray-500 font-light">
               Is your career ready?
             </span>
           </h2>
-
-          {/* Beautiful Stats Cards */}
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16">
-            {dangerStats.map((item, index) => (
-              <div 
-                key={index} 
-                className="premium-card bg-white/80 backdrop-blur-sm border border-slate-200 p-8 rounded-3xl stagger-fade-up floating-card"
-                style={{animationDelay: `${index * 0.2}s`}}
-              >
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                    <item.icon className="w-8 h-8 text-white" />
-                  </div>
-                  <div className="text-5xl lg:text-6xl font-light text-gray-800 mb-4">{item.stat}</div>
-                  <div className="text-lg text-gray-600 leading-relaxed">{item.description}</div>
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
 
-        {/* Sophisticated Content Grid */}
-        <div className="grid lg:grid-cols-2 gap-20 items-start">
-          {/* Left: Elegant Key Insights */}
-          <div className="space-y-8">
-            <div className="premium-card bg-white/60 backdrop-blur-sm border border-slate-200 rounded-3xl p-8 stagger-fade-up stagger-1 floating-card">
-              <div className="flex items-start space-x-6">
-                <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center flex-shrink-0">
-                  <TrendingUp className="w-6 h-6 text-white" />
-                </div>
-                <div>
-                  <h3 className="text-2xl font-medium text-gray-900 mb-3 leading-relaxed">
-                    The job market is evolving exponentially.
-                  </h3>
-                  <p className="text-lg text-gray-600 leading-relaxed">
-                    New roles emerge while traditional ones vanish overnight. The pace of change is unprecedented.
-                  </p>
-                </div>
+        {/* Revolutionary Three-Column Layout */}
+        <div className="grid lg:grid-cols-3 gap-16 items-start">
+          {/* Column 1: Key Statistics */}
+          <div className="space-y-12">
+            <div className="text-center">
+              <div className="text-7xl lg:text-8xl font-extralight text-gray-800 mb-4 tracking-tighter">85%</div>
+              <div className="text-xl text-gray-600 leading-relaxed font-light">
+                of careers that will exist in 2030 haven't been invented yet
               </div>
             </div>
-
-            <div className="premium-card bg-white/60 backdrop-blur-sm border border-slate-200 rounded-3xl p-8 stagger-fade-up stagger-2 floating-card">
-              <div className="flex items-start space-x-6">
-                <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-2xl flex items-center justify-center flex-shrink-0">
-                  <Brain className="w-6 h-6 text-white" />
+            
+            <div className="h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
+            
+            <div className="premium-card bg-gradient-to-br from-slate-50 to-blue-50 border border-slate-200 rounded-3xl p-8 stagger-fade-up floating-card">
+              <div className="text-center">
+                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <TrendingUp className="w-8 h-8 text-white" />
                 </div>
-                <div>
-                  <h3 className="text-2xl font-medium text-gray-900 mb-3 leading-relaxed">
-                    No industry is immune to automation.
-                  </h3>
-                  <p className="text-lg text-gray-600 leading-relaxed">
-                    From accounting to creative fields, AI is transforming how work gets done across all sectors.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="premium-card bg-white/60 backdrop-blur-sm border border-slate-200 rounded-3xl p-8 stagger-fade-up stagger-3 floating-card">
-              <div className="flex items-start space-x-6">
-                <div className="w-12 h-12 bg-gradient-to-br from-red-500 to-pink-500 rounded-2xl flex items-center justify-center flex-shrink-0">
-                  <AlertTriangle className="w-6 h-6 text-white" />
-                </div>
-                <div>
-                  <h3 className="text-2xl font-medium text-gray-900 mb-3 leading-relaxed">
-                    Job security now demands strategic planning.
-                  </h3>
-                  <p className="text-lg text-gray-600 leading-relaxed">
-                    Adaptability and continuous learning are essential for long-term career sustainability.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="premium-card bg-gradient-to-br from-emerald-50 to-blue-50 border border-emerald-200 rounded-3xl p-8 stagger-fade-up stagger-4 floating-card">
-              <div className="flex items-start space-x-6">
-                <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-green-600 rounded-2xl flex items-center justify-center flex-shrink-0">
-                  <Shield className="w-6 h-6 text-white" />
-                </div>
-                <div>
-                  <h3 className="text-2xl font-medium text-gray-900 mb-3">
-                    That's why career guidance can't be random.
-                  </h3>
-                  <p className="text-lg text-emerald-700 font-medium leading-relaxed">
-                    It must be future-ready, AI-aware, and tailored specifically to you.
-                  </p>
-                </div>
+                <h3 className="text-2xl font-medium text-gray-900 mb-4">Market Evolution</h3>
+                <p className="text-lg text-gray-600 leading-relaxed">
+                  The pace of career transformation is accelerating beyond historical precedent.
+                </p>
               </div>
             </div>
           </div>
 
-          {/* Right: Beautiful Data Visualization */}
+          {/* Column 2: Industry Impact */}
           <div className="space-y-8">
-            {/* Sophisticated Automation Dashboard */}
-            <div className="premium-card bg-white/80 backdrop-blur-sm border border-slate-200 rounded-3xl p-8 stagger-fade-up stagger-2 floating-card">
-              <div className="flex items-center justify-between mb-8">
-                <h3 className="text-2xl font-medium text-gray-900">Automation Impact</h3>
-                <div className="px-4 py-2 bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 text-blue-700 rounded-full text-sm font-medium">
-                  Live Analysis
-                </div>
-              </div>
+            <div className="premium-card bg-white/90 backdrop-blur-sm border border-slate-200 rounded-3xl p-8 stagger-fade-up stagger-2 floating-card">
+              <h3 className="text-2xl font-medium text-gray-900 mb-8 text-center">Automation Risk by Industry</h3>
               
               <div className="space-y-6">
-                {automationProgress.map((item, index) => (
+                {automationProgress.slice(0, 4).map((item, index) => (
                   <div key={index} className="stagger-fade-up" style={{animationDelay: `${index * 0.1 + 0.5}s`}}>
                     <div className="flex items-center justify-between mb-3">
                       <div className="font-medium text-gray-900">{item.field}</div>
-                      <div className={`px-3 py-1 rounded-full text-xs font-medium ${
-                        item.risk === 'Critical' ? 'bg-red-100 text-red-700' : 
-                        item.risk === 'High' ? 'bg-orange-100 text-orange-700' : 'bg-yellow-100 text-yellow-700'
-                      }`}>
-                        {item.progress}% Risk
-                      </div>
+                      <div className="text-sm font-medium text-gray-500">{item.progress}%</div>
                     </div>
-                    <div className="w-full bg-slate-100 rounded-full h-3">
+                    <div className="w-full bg-slate-100 rounded-full h-2">
                       <div 
-                        className={`h-3 rounded-full transition-all duration-1000 ease-out ${
-                          item.risk === 'Critical' ? 'bg-gradient-to-r from-red-400 to-red-600' : 
-                          item.risk === 'High' ? 'bg-gradient-to-r from-orange-400 to-orange-600' : 
-                          'bg-gradient-to-r from-yellow-400 to-yellow-600'
-                        }`}
+                        className="h-2 rounded-full bg-gradient-to-r from-gray-400 to-slate-600 transition-all duration-1000 ease-out"
                         style={{
                           width: `${item.progress}%`,
                           transitionDelay: `${index * 0.1 + 0.5}s`
@@ -213,30 +136,58 @@ export default function AIFutureSection() {
               </div>
             </div>
 
-            {/* Elegant Future Skills */}
-            <div className="premium-card bg-gradient-to-br from-green-50 to-emerald-50 border border-green-200 rounded-3xl p-8 stagger-fade-up stagger-3 floating-card">
-              <h3 className="text-2xl font-medium text-gray-900 mb-8 text-center">
-                Future-Proof Career Skills
-              </h3>
-              
-              <div className="grid grid-cols-1 gap-4">
-                {aiResistantCareers.map((skill, index) => (
+            <div className="premium-card bg-gradient-to-br from-orange-50 to-red-50 border border-orange-200 rounded-3xl p-8 stagger-fade-up stagger-3 floating-card">
+              <div className="flex items-center space-x-4 mb-6">
+                <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-2xl flex items-center justify-center">
+                  <Brain className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-2xl font-medium text-gray-900">AI Disruption</h3>
+              </div>
+              <p className="text-lg text-gray-700 leading-relaxed">
+                Traditional career paths across industries are being fundamentally restructured by artificial intelligence.
+              </p>
+            </div>
+          </div>
+
+          {/* Column 3: The Solution */}
+          <div className="space-y-8">
+            <div className="premium-card bg-gradient-to-br from-emerald-50 to-green-50 border border-emerald-200 rounded-3xl p-8 stagger-fade-up stagger-4 floating-card">
+              <div className="text-center mb-8">
+                <div className="w-16 h-16 bg-gradient-to-br from-emerald-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Shield className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-2xl font-medium text-gray-900 mb-4">Future-Proof Strategy</h3>
+                <p className="text-lg text-emerald-700 font-medium leading-relaxed">
+                  Strategic, AI-aware career guidance tailored to your unique profile and goals.
+                </p>
+              </div>
+
+              <div className="space-y-4">
+                {aiResistantCareers.slice(0, 4).map((skill, index) => (
                   <div 
                     key={index}
-                    className="bg-white/80 border border-green-200 rounded-xl p-4 stagger-fade-up floating-card"
+                    className="bg-white/80 border border-emerald-200 rounded-xl p-4 stagger-fade-up"
                     style={{animationDelay: `${index * 0.1 + 1}s`}}
                   >
                     <div className="flex items-center space-x-3">
-                      <CheckCircle className="w-5 h-5 text-green-600" />
-                      <span className="text-lg font-medium text-gray-800">{skill}</span>
+                      <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
+                      <span className="text-base font-medium text-gray-800">{skill}</span>
                     </div>
                   </div>
                 ))}
               </div>
+            </div>
 
-              <div className="mt-8 p-6 bg-gradient-to-r from-green-600 to-emerald-600 rounded-2xl text-white text-center">
-                <div className="text-xl font-semibold mb-2">Ready to Future-Proof Your Career?</div>
-                <div className="text-green-100">Get AI-aware guidance tailored specifically to you</div>
+            <div className="premium-card bg-gradient-to-br from-blue-600 to-indigo-700 rounded-3xl p-8 text-white stagger-fade-up stagger-5 floating-card">
+              <div className="text-center">
+                <h3 className="text-2xl font-semibold mb-4">Ready to Transform Your Career?</h3>
+                <p className="text-blue-100 mb-6 leading-relaxed">
+                  Get personalized guidance that's designed for the AI-driven future of work.
+                </p>
+                <div className="inline-flex items-center px-6 py-3 bg-white/20 rounded-full text-sm font-medium">
+                  <Target className="w-4 h-4 mr-2" />
+                  Strategic Career Planning
+                </div>
               </div>
             </div>
           </div>
