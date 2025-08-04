@@ -1,5 +1,6 @@
 import PremiumNavigation from "@/components/premium-navigation";
 import PremiumHero from "@/components/premium-hero";
+import AIFutureSection from "@/components/ai-future-section";
 import PremiumAbout from "@/components/premium-about";
 import PremiumServices from "@/components/premium-services";
 import PremiumPackages from "@/components/premium-packages";
@@ -12,6 +13,7 @@ export default function Home() {
     <div className="min-h-screen">
       <PremiumNavigation />
       <PremiumHero />
+      <AIFutureSection />
       <PremiumAbout />
       <PremiumServices />
       <PremiumPackages />
