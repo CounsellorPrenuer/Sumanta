@@ -78,6 +78,37 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Book call route
+  app.post("/api/book-call", async (req, res) => {
+    try {
+      const { name, phone, background } = req.body;
+      
+      if (!name || !phone || !background) {
+        return res.status(400).json({ error: "All fields are required" });
+      }
+
+      // Store the call booking data
+      const callBooking = {
+        id: Date.now().toString(),
+        name,
+        phone,
+        background,
+        createdAt: new Date(),
+        status: 'pending'
+      };
+
+      // In a real app, you'd save this to your database
+      // For now, we'll just return success
+      res.json({ 
+        success: true, 
+        message: "Call booked successfully",
+        booking: callBooking 
+      });
+    } catch (error: any) {
+      res.status(500).json({ error: error.message });
+    }
+  });
+
   // Razorpay order creation route
   app.post("/api/create-razorpay-order", async (req, res) => {
     try {
