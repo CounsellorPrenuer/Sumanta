@@ -1,14 +1,82 @@
 import { useQuery } from "@tanstack/react-query";
-import { Check, Star, Crown, Zap, Target } from "lucide-react";
+import { Check, Star, Crown, Zap, Target, GraduationCap, BookOpen, Briefcase, TrendingUp } from "lucide-react";
 import { useLocation } from "wouter";
+import { useState } from "react";
 import type { Package } from "@shared/schema";
+
+type AgeGroup = 'class8-9' | 'class10-12' | 'graduates' | 'professionals';
+
+interface AgeGroupCategory {
+  id: AgeGroup;
+  name: string;
+  description: string;
+  icon: any;
+  gradient: string;
+}
 
 export default function PremiumPackages() {
   const [, navigate] = useLocation();
+  const [selectedAgeGroup, setSelectedAgeGroup] = useState<AgeGroup>('class10-12');
   
   const { data: packages, isLoading } = useQuery<Package[]>({
     queryKey: ["/api/packages"],
   });
+
+  const ageGroups: AgeGroupCategory[] = [
+    {
+      id: 'class8-9',
+      name: 'Class 8-9',
+      description: 'Stream & subject selection guidance',
+      icon: BookOpen,
+      gradient: 'from-emerald-500 to-teal-500'
+    },
+    {
+      id: 'class10-12',
+      name: 'Class 10-12',
+      description: 'Career exploration & entrance prep',
+      icon: GraduationCap,
+      gradient: 'from-blue-500 to-indigo-500'
+    },
+    {
+      id: 'graduates',
+      name: 'College Graduates',
+      description: 'Job readiness & skill development',
+      icon: Target,
+      gradient: 'from-purple-500 to-pink-500'
+    },
+    {
+      id: 'professionals',
+      name: 'Working Professionals',
+      description: 'Career pivots & upskilling',
+      icon: Briefcase,
+      gradient: 'from-orange-500 to-red-500'
+    }
+  ];
+
+  // Filter packages based on selected age group
+  const getFilteredPackages = () => {
+    if (!packages) return [];
+    
+    // Map package names to age groups based on typical naming patterns
+    return packages.filter(pkg => {
+      const name = pkg.name.toLowerCase();
+      
+      switch (selectedAgeGroup) {
+        case 'class8-9':
+          return name.includes('stream') || name.includes('foundation') || name.includes('early');
+        case 'class10-12':
+          return name.includes('discover') || name.includes('explore') || name.includes('entrance') || name.includes('school');
+        case 'graduates':
+          return name.includes('advance') || name.includes('graduate') || name.includes('placement') || name.includes('job');
+        case 'professionals':
+          return name.includes('complete') || name.includes('professional') || name.includes('career change') || name.includes('executive');
+        default:
+          return true;
+      }
+    });
+  };
+
+  const filteredPackages = getFilteredPackages();
 
   const handlePackageSelect = (packageId: string) => {
     navigate(`/checkout/${packageId}`);
@@ -48,7 +116,7 @@ export default function PremiumPackages() {
     <section id="packages" className="section-spacing">
       <div className="container-custom">
         {/* Header */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-16">
           <div className="inline-flex items-center px-4 py-2 rounded-full bg-purple-50 border border-purple-200 text-purple-700 text-sm font-medium mb-6">
             <Crown className="w-4 h-4 mr-2" />
             Choose Your Success Path
@@ -59,14 +127,73 @@ export default function PremiumPackages() {
             <span className="text-gradient-blue block">Clarity Journey</span>
           </h2>
           
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-12">
             From stream selection to global admissions to professional pivots, we've built a future-ready package for every stage.
+          </p>
+        </div>
+
+        {/* Age Group Selector */}
+        <div className="mb-16">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
+            {ageGroups.map((group) => {
+              const IconComponent = group.icon;
+              const isSelected = selectedAgeGroup === group.id;
+              
+              return (
+                <button
+                  key={group.id}
+                  onClick={() => setSelectedAgeGroup(group.id)}
+                  className={`relative p-6 rounded-2xl border-2 transition-all duration-300 group hover:scale-105 ${
+                    isSelected
+                      ? 'border-blue-500 bg-gradient-to-br from-blue-50 to-indigo-50 shadow-lg'
+                      : 'border-gray-200 bg-white hover:border-gray-300 hover:shadow-md'
+                  }`}
+                >
+                  {/* Selection indicator */}
+                  {isSelected && (
+                    <div className="absolute -top-2 -right-2 w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center">
+                      <Check className="w-4 h-4 text-white" />
+                    </div>
+                  )}
+                  
+                  <div className="text-center">
+                    <div className={`w-16 h-16 bg-gradient-to-r ${group.gradient} rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform ${
+                      isSelected ? 'shadow-lg' : ''
+                    }`}>
+                      <IconComponent className="w-8 h-8 text-white" />
+                    </div>
+                    
+                    <div className={`font-semibold mb-2 ${
+                      isSelected ? 'text-blue-700' : 'text-gray-900'
+                    }`}>
+                      {group.name}
+                    </div>
+                    
+                    <div className={`text-sm ${
+                      isSelected ? 'text-blue-600' : 'text-gray-600'
+                    }`}>
+                      {group.description}
+                    </div>
+                  </div>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Filtered Packages */}
+        <div className="text-center mb-8">
+          <h3 className="text-2xl font-bold text-gray-900 mb-2">
+            Packages for {ageGroups.find(g => g.id === selectedAgeGroup)?.name}
+          </h3>
+          <p className="text-gray-600">
+            {ageGroups.find(g => g.id === selectedAgeGroup)?.description}
           </p>
         </div>
 
         {/* Packages Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {packages?.map((pkg, index) => {
+          {filteredPackages.length > 0 ? filteredPackages.map((pkg, index) => {
             const IconComponent = getPackageIcon(pkg.name);
             const gradient = getPackageGradient(index);
             
@@ -132,7 +259,25 @@ export default function PremiumPackages() {
                 </div>
               </div>
             );
-          })}
+          }) : (
+            <div className="col-span-full text-center py-16">
+              <div className="w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Target className="w-12 h-12 text-gray-400" />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                Packages Coming Soon
+              </h3>
+              <p className="text-gray-600 mb-6">
+                We're preparing specialized packages for {ageGroups.find(g => g.id === selectedAgeGroup)?.name.toLowerCase()}. 
+              </p>
+              <button 
+                onClick={() => navigate('/contact')}
+                className="btn-primary"
+              >
+                Get Notified When Available
+              </button>
+            </div>
+          )}
         </div>
 
         {/* Trust Indicators */}
