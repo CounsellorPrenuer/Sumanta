@@ -167,8 +167,8 @@ export default function RoadmapSection() {
                 ))}
               </div>
               <div className="text-left">
-                <div className="text-lg font-semibold text-gray-900">Trusted by 5,000+ students</div>
-                <div className="text-sm text-gray-600">Across 15+ countries</div>
+                <div className="text-lg font-semibold text-gray-900">Trusted by 5,000+ professionals</div>
+                <div className="text-sm text-gray-600">Students & working professionals across 15+ countries</div>
               </div>
             </div>
           </div>
