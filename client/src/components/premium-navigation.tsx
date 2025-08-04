@@ -42,7 +42,7 @@ export default function PremiumNavigation() {
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled ? 'nav-blur shadow-lg' : 'bg-transparent'
       }`}>
-        <div className="container-custom">
+        <div className="container-custom relative">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <button 
@@ -95,13 +95,13 @@ export default function PremiumNavigation() {
 
           {/* Mobile Menu */}
           {isMobileMenuOpen && (
-            <div className="lg:hidden py-4 border-t border-gray-200">
-              <div className="space-y-4">
+            <div className="lg:hidden absolute top-full left-0 right-0 bg-white/95 backdrop-blur-lg shadow-xl border-t border-gray-200 rounded-b-2xl">
+              <div className="py-6 px-6 space-y-4">
                 {navItems.map((item) => (
                   <button
                     key={item.name}
                     onClick={() => handleNavigation(item.href)}
-                    className="block w-full text-left text-gray-700 hover:text-blue-600 font-medium py-2"
+                    className="block w-full text-left text-gray-800 hover:text-blue-600 font-medium py-3 px-4 rounded-xl hover:bg-blue-50 transition-colors"
                   >
                     {item.name}
                   </button>
@@ -111,7 +111,7 @@ export default function PremiumNavigation() {
                     setIsMobileMenuOpen(false);
                     setIsCallModalOpen(true);
                   }}
-                  className="btn-primary w-full text-sm mt-4 inline-flex items-center justify-center"
+                  className="btn-primary w-full text-sm mt-4 inline-flex items-center justify-center h-12"
                 >
                   <Phone className="w-4 h-4 mr-2" />
                   Book A Free Call
