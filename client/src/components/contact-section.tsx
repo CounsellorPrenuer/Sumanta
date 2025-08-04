@@ -112,7 +112,7 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <div className="font-semibold text-white group-hover:text-primary transition-colors">Office</div>
-                    <div className="text-gray-300">Delhi, India</div>
+                    <div className="text-gray-300">Kolkata, India</div>
                   </div>
                 </div>
               </div>

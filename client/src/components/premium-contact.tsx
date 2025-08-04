@@ -80,7 +80,7 @@ export default function PremiumContact() {
     {
       icon: MapPin,
       title: "Visit Us",
-      details: "Delhi, India",
+      details: "Kolkata, India",
       subtext: "By appointment only",
       color: "from-purple-500 to-indigo-600"
     }
@@ -101,12 +101,10 @@ export default function PremiumContact() {
             <span className="text-gradient-blue block">being replaced by AI?</span>
           </h2>
           
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Or unsure what your child should pursue?
-          </p>
+
           
           <p className="text-2xl font-semibold text-gray-900 mt-6">
-            Book a free 15-minute call with Leadcrest Consulting's expert team.
+            Book a free 10-minute call with Leadcrest Consulting's expert team.
           </p>
         </div>
 
@@ -183,10 +181,8 @@ export default function PremiumContact() {
                       <SelectValue placeholder="Select category" />
                     </SelectTrigger>
                     <SelectContent className="rounded-xl bg-white border border-gray-200 shadow-lg z-50">
-                      <SelectItem value="class-8-9" className="hover:bg-gray-100 focus:bg-gray-100">Class 8–9</SelectItem>
-                      <SelectItem value="class-10-12" className="hover:bg-gray-100 focus:bg-gray-100">Class 10–12</SelectItem>
-                      <SelectItem value="college" className="hover:bg-gray-100 focus:bg-gray-100">College</SelectItem>
-                      <SelectItem value="working-professional" className="hover:bg-gray-100 focus:bg-gray-100">Working Professional</SelectItem>
+                      <SelectItem value="college" className="hover:bg-gray-100 focus:bg-gray-100">College Graduates</SelectItem>
+                      <SelectItem value="working-professional" className="hover:bg-gray-100 focus:bg-gray-100">Working Professionals</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
