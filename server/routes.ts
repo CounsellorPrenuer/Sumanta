@@ -7,6 +7,14 @@ import {
   insertPaymentSchema 
 } from "@shared/schema";
 import { z } from "zod";
+import Razorpay from "razorpay";
+import crypto from "crypto";
+
+// Initialize Razorpay with your live API keys
+const razorpay = new Razorpay({
+  key_id: process.env.RAZORPAY_KEY_ID!,
+  key_secret: process.env.RAZORPAY_KEY_SECRET!,
+});
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Get all packages
@@ -115,25 +123,52 @@ export async function registerRoutes(app: Express): Promise<Server> {
     try {
       const { amount, packageId, customerName, customerEmail, packageName } = req.body;
       
-      // For now, simulate order creation since Razorpay keys aren't configured
-      const simulatedOrder = {
-        id: `order_${Date.now()}`,
-        amount: amount * 100, // Convert to paise (Razorpay format)
+      if (!amount || !packageId || !customerName || !customerEmail) {
+        return res.status(400).json({ message: "Missing required payment data" });
+      }
+
+      // Create real Razorpay order
+      const razorpayOrder = await razorpay.orders.create({
+        amount: Math.round(amount * 100), // Convert to paise
         currency: "INR",
-        status: "created",
+        receipt: `receipt_${packageId}_${Date.now()}`,
+        notes: {
+          packageId,
+          customerName,
+          customerEmail,
+          packageName
+        }
+      });
+
+      // Store payment record in database
+      const paymentData = {
         packageId,
-        customerName,
         customerEmail,
-        packageName
+        customerName, 
+        amount,
+        stripePaymentIntentId: razorpayOrder.id, // Store Razorpay order ID
+        status: 'pending'
       };
+
+      await storage.createPayment(paymentData);
       
       res.json({ 
-        orderId: simulatedOrder.id,
-        amount: simulatedOrder.amount,
-        currency: simulatedOrder.currency,
-        status: simulatedOrder.status
+        orderId: razorpayOrder.id,
+        amount: razorpayOrder.amount,
+        currency: razorpayOrder.currency,
+        key: process.env.RAZORPAY_KEY_ID!, // Send the key to frontend
+        name: "CCC Education Foundation",
+        description: `Payment for ${packageName}`,
+        prefill: {
+          name: customerName,
+          email: customerEmail
+        },
+        theme: {
+          color: "#D4AF37"
+        }
       });
     } catch (error: any) {
+      console.error("Razorpay order creation error:", error);
       res
         .status(500)
         .json({ message: "Error creating Razorpay order: " + error.message });
@@ -178,17 +213,40 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  // Payment verification endpoint
+  // Payment verification endpoint - Real Razorpay webhook verification
   app.post("/api/verify-payment", async (req, res) => {
     try {
-      const { orderId, paymentId, signature } = req.body;
+      const { razorpay_order_id, razorpay_payment_id, razorpay_signature } = req.body;
       
-      // For now, mark as completed - proper verification will be added with Razorpay keys
-      await storage.updatePaymentStatus(orderId, 'completed');
-      
-      res.json({ success: true, message: "Payment verified successfully" });
+      if (!razorpay_order_id || !razorpay_payment_id || !razorpay_signature) {
+        return res.status(400).json({ success: false, message: "Missing payment verification data" });
+      }
+
+      // Verify signature using Razorpay's method
+      const body = razorpay_order_id + "|" + razorpay_payment_id;
+      const expectedSignature = crypto
+        .createHmac("sha256", process.env.RAZORPAY_KEY_SECRET!)
+        .update(body.toString())
+        .digest("hex");
+
+      if (expectedSignature === razorpay_signature) {
+        // Payment is verified - update status in database
+        await storage.updatePaymentStatus(razorpay_order_id, 'completed');
+        
+        // Also update any related booking to completed
+        const bookings = await storage.getAllBookings();
+        const relatedBooking = bookings.find(b => b.razorpayOrderId === razorpay_order_id);
+        if (relatedBooking) {
+          await storage.updateBookingStatus(relatedBooking.id, 'completed');
+        }
+        
+        res.json({ success: true, message: "Payment verified and processed successfully" });
+      } else {
+        res.status(400).json({ success: false, message: "Payment verification failed" });
+      }
     } catch (error: any) {
-      res.status(500).json({ message: "Error verifying payment: " + error.message });
+      console.error("Payment verification error:", error);
+      res.status(500).json({ success: false, message: "Error verifying payment: " + error.message });
     }
   });
 

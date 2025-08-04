@@ -1,21 +1,33 @@
-import { CheckCircle, Phone, Clock, ArrowLeft } from 'lucide-react';
+import { CheckCircle, Phone, Clock, ArrowLeft, CreditCard } from 'lucide-react';
 import { Link } from 'wouter';
 
 export default function ThankYou() {
+  const searchParams = new URLSearchParams(window.location.search);
+  const type = searchParams.get('type');
+  const amount = searchParams.get('amount');
+  
+  const isInvestment = type === 'investment';
   return (
     <div className="min-h-screen bg-gradient-to-br from-amber-50 via-white to-orange-50">
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-2xl mx-auto text-center">
           {/* Success Icon */}
           <div className="mb-8">
-            <div className="inline-flex items-center justify-center w-20 h-20 bg-green-100 rounded-full mb-4">
-              <CheckCircle className="w-10 h-10 text-green-600" />
+            <div className={`inline-flex items-center justify-center w-20 h-20 ${isInvestment ? 'bg-amber-100' : 'bg-green-100'} rounded-full mb-4`}>
+              {isInvestment ? (
+                <CreditCard className="w-10 h-10 text-amber-600" />
+              ) : (
+                <CheckCircle className="w-10 h-10 text-green-600" />
+              )}
             </div>
             <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Thank You for Your Interest!
+              {isInvestment ? 'Payment Successful!' : 'Thank You for Your Interest!'}
             </h1>
             <p className="text-lg text-gray-600">
-              Your discovery call request has been successfully submitted.
+              {isInvestment 
+                ? `Your investment of ₹${amount ? parseInt(amount).toLocaleString() : 'XX,XXX'} has been processed successfully. Welcome to your career transformation journey!`
+                : 'Your discovery call request has been successfully submitted.'
+              }
             </p>
           </div>
 

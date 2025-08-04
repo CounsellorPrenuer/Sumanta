@@ -56,39 +56,107 @@ export function BookingPopup({ isOpen, onClose, package: pkg, selectedStage }: B
     }
   });
 
-  const initiatePayment = (booking: any) => {
-    // Mock Razorpay integration - in real implementation, you'd integrate with Razorpay
-    const options = {
-      key: 'rzp_test_your_key_here', // Replace with your Razorpay key
-      amount: pkg.price * 100, // Amount in paise
-      currency: 'INR',
-      name: 'CCC Education Foundation',
-      description: `Payment for ${pkg.name} package`,
-      order_id: booking.razorpayOrderId,
-      handler: function (response: any) {
-        // Payment success callback
-        toast({
-          title: "Payment Successful!",
-          description: "Your booking has been confirmed. We'll contact you soon.",
-        });
-        onClose();
-      },
-      prefill: {
-        name: fullName,
-        contact: mobile,
-      },
-      theme: {
-        color: '#D4AF37'
-      }
-    };
+  const initiatePayment = async (booking: any) => {
+    try {
+      // Create Razorpay order with real API
+      const orderResponse = await apiRequest('POST', '/api/create-razorpay-order', {
+        amount: pkg.price,
+        packageId: pkg.id,
+        customerName: fullName,
+        customerEmail: `${mobile}@ccc-booking.com`,
+        packageName: pkg.name
+      });
+      
+      const orderData = await orderResponse.json();
+      
+      // Real Razorpay integration with live keys from server response
+      const options = {
+        key: orderData.key || 'rzp_test_your_key_here',
+        amount: orderData.amount,
+        currency: orderData.currency,
+        name: orderData.name,
+        description: orderData.description,
+        order_id: orderData.orderId,
+        handler: async function (response: any) {
+          // Payment successful - verify on backend
+          try {
+            const verifyResponse = await apiRequest('POST', '/api/verify-payment', {
+              razorpay_order_id: response.razorpay_order_id,
+              razorpay_payment_id: response.razorpay_payment_id,
+              razorpay_signature: response.razorpay_signature
+            });
+            
+            const verifyResult = await verifyResponse.json();
+            
+            if (verifyResult.success) {
+              toast({
+                title: "Payment Successful! 🎉",
+                description: "Thank you for your investment. You'll receive program details shortly.",
+              });
+              onClose();
+              
+              // Redirect to success page
+              setTimeout(() => {
+                window.location.href = '/thank-you?type=investment&amount=' + pkg.price;
+              }, 2000);
+            } else {
+              throw new Error('Payment verification failed');
+            }
+          } catch (error) {
+            console.error('Payment verification error:', error);
+            toast({
+              title: "Payment Verification Failed",
+              description: "Please contact support with your payment details.",
+              variant: "destructive",
+            });
+          }
+        },
+        prefill: {
+          name: orderData.prefill.name,
+          email: orderData.prefill.email,
+          contact: mobile,
+        },
+        theme: orderData.theme,
+        modal: {
+          ondismiss: function() {
+            toast({
+              title: "Payment Cancelled",
+              description: "You can try again anytime.",
+              variant: "destructive",
+            });
+            setIsSubmitting(false);
+          }
+        }
+      };
 
-    // In real implementation, load Razorpay and open checkout
-    console.log('Razorpay options:', options);
-    toast({
-      title: "Payment Integration",
-      description: "Razorpay integration would be initialized here.",
-    });
-    onClose();
+      // Load Razorpay script dynamically and open payment
+      if (typeof window !== 'undefined') {
+        const script = document.createElement('script');
+        script.src = 'https://checkout.razorpay.com/v1/checkout.js';
+        script.onload = () => {
+          const rzp = new (window as any).Razorpay(options);
+          rzp.open();
+        };
+        script.onerror = () => {
+          toast({
+            title: "Payment Gateway Error",
+            description: "Failed to load payment gateway. Please try again.",
+            variant: "destructive",
+          });
+          setIsSubmitting(false);
+        };
+        document.body.appendChild(script);
+      }
+      
+    } catch (error) {
+      console.error('Payment setup error:', error);
+      toast({
+        title: "Payment Setup Failed",
+        description: "Unable to initialize payment. Please try again.",
+        variant: "destructive",
+      });
+      setIsSubmitting(false);
+    }
   };
 
   const handleBookingSubmit = (bookingType: 'discovery_call' | 'investment') => {
