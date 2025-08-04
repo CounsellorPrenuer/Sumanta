@@ -157,7 +157,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         amount: razorpayOrder.amount,
         currency: razorpayOrder.currency,
         key: process.env.RAZORPAY_KEY_ID!, // Send the key to frontend
-        name: "CCC Education Foundation",
+        name: "Leadcrest Consulting",
         description: `Payment for ${packageName}`,
         prefill: {
           name: customerName,
