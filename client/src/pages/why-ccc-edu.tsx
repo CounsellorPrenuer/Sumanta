@@ -2,7 +2,7 @@ import PremiumNavigation from "@/components/premium-navigation";
 import Footer from "@/components/footer";
 import WhatsAppFloat from "@/components/whatsapp-float";
 import { Award, Users, Globe, BookOpen, CheckCircle, Star, TrendingUp, Brain, Heart, Target, Zap, Shield, Rocket, ArrowRight, Play, Quote, Trophy, Lightbulb, Clock, MessageSquare } from "lucide-react";
-import manpreetImage from "@assets/Image_MANPREET KAUR_Counselors_1754240707994.jpeg";
+import sumantaImage from "@assets/Image_MANPREET KAUR_Counselors_1754240707994.jpeg";
 import { useState, useEffect } from "react";
 
 export default function WhyCCCEdu() {
@@ -80,7 +80,7 @@ export default function WhyCCCEdu() {
     {
       icon: Heart,
       title: "Personalized 1:1 Mentorship",
-      description: "Unlike generic online courses, get personal attention from Manpreet Kaur herself - not junior counselors or chatbots.",
+      description: "Unlike generic online courses, get personal attention from Sumanta Chaudhuri himself - not junior counselors or chatbots.",
       features: ["Direct founder access", "Personalized action plans", "Unlimited follow-ups"],
       gradient: "from-red-500 to-rose-600",
       delay: "200ms"
@@ -167,7 +167,7 @@ export default function WhyCCCEdu() {
     {
       step: "03",
       title: "Expert Guidance",
-      description: "1:1 sessions with Manpreet Kaur to refine your path and overcome specific challenges.",
+      description: "1:1 sessions with Sumanta Chaudhuri to refine your path and overcome specific challenges.",
       icon: Lightbulb,
       color: "from-green-500 to-emerald-600"
     },
@@ -421,19 +421,19 @@ export default function WhyCCCEdu() {
               </div>
               
               <h2 className="text-5xl font-bold text-gray-900 mb-8">
-                Why Manpreet Kaur
+                Why Sumanta Chaudhuri
                 <span className="text-gradient-blue block">Personally Guides You</span>
               </h2>
               
               <div className="space-y-6 text-lg text-gray-600 leading-relaxed mb-8">
                 <p>
-                  <strong>Unlike other platforms that assign you to junior counselors</strong>, Manpreet Kaur - with 23+ years of experience - personally reviews every case and provides direct guidance.
+                  <strong>Unlike other platforms that assign you to junior counselors</strong>, Sumanta Chaudhuri - with 23+ years of experience - personally reviews every case and provides direct guidance.
                 </p>
                 <p>
-                  She has helped over <strong>5,000 students and professionals</strong> navigate career transitions, from confused teenagers to working professionals seeking career pivots.
+                  He has helped over <strong>5,000 students and professionals</strong> navigate career transitions, from confused teenagers to working professionals seeking career pivots.
                 </p>
                 <p>
-                  <strong>Her unique approach?</strong> She doesn't just give you a career list - she helps you build AI-resistant skills and identifies opportunities that will thrive in the future job market.
+                  <strong>His unique approach?</strong> He doesn't just give you a career list - he helps you build AI-resistant skills and identifies opportunities that will thrive in the future job market.
                 </p>
               </div>
 
@@ -454,8 +454,8 @@ export default function WhyCCCEdu() {
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-600 rounded-3xl transform rotate-6"></div>
                 <div className="relative bg-white p-2 rounded-3xl shadow-2xl">
                   <img 
-                    src={manpreetImage}
-                    alt="Manpreet Kaur"
+                    src={sumantaImage}
+                    alt="Sumanta Chaudhuri"
                     className="w-full h-96 object-cover rounded-2xl"
                   />
                 </div>

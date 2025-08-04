@@ -55,7 +55,7 @@ export default function ThankYou() {
                 <div>
                   <h3 className="font-semibold text-gray-900">We'll Call You</h3>
                   <p className="text-gray-600 text-sm mt-1">
-                    Manpreet or one of our expert counselors will call you within 24 hours.
+                    Sumanta or one of our expert counselors will call you within 24 hours.
                   </p>
                 </div>
               </div>

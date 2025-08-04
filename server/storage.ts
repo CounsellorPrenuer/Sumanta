@@ -94,7 +94,7 @@ export class MemStorage implements IStorage {
         description: "Comprehensive guidance with ongoing support",
         features: [
           "2 Psychometric assessments to measure your interests, personality and abilities",
-          "8 career counselling sessions (1 every year) with Manpreet until graduation",
+          "8 career counselling sessions (1 every year) with Sumanta until graduation",
           "Lifetime access to Knowledge Gateway",
           "Attend live webinars by industry experts",
           "Customised reports after each session with education pathways",

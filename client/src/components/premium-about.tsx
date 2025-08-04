@@ -1,5 +1,5 @@
 import { Award, Users, Globe, BookOpen, ArrowRight, Play, GraduationCap, Brain, HandHeart, Lightbulb } from "lucide-react";
-import manpreetImage from "@assets/Image_MANPREET KAUR_Counselors_1754240707994.jpeg";
+import sumantaImage from "@assets/Image_MANPREET KAUR_Counselors_1754240707994.jpeg";
 
 export default function PremiumAbout() {
   const scrollToSection = (sectionId: string) => {
@@ -61,7 +61,7 @@ export default function PremiumAbout() {
 
               <h2 className="text-4xl lg:text-6xl font-light text-gray-900 mb-8 leading-tight luxury-text relative">
                 <span className="bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-600 bg-clip-text text-transparent font-medium animate-gradient-x hover:scale-105 transition-transform duration-500 inline-block">
-                  Manpreet Kaur
+                  Sumanta Chaudhuri
                 </span>
                 {/* Subtle glow effect */}
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-600/5 via-blue-600/5 to-indigo-600/5 blur-xl -z-10 animate-pulse"></div>
@@ -69,7 +69,7 @@ export default function PremiumAbout() {
             </div>
 
             <p className="text-xl text-gray-700 mb-8 leading-relaxed">
-              With over <strong>23 years of experience</strong>, Manpreet Kaur has guided <strong>5,000+ students and professionals</strong> across India and abroad. She's a certified career counsellor (IAAP, APCDA, GCDA), founder of Leadcrest Consulting (NGO), and a Mentoria-certified partner.
+              With over <strong>23 years of experience</strong>, Sumanta Chaudhuri has guided <strong>5,000+ students and professionals</strong> across India and abroad. He's a certified career counsellor (IAAP, APCDA, GCDA), founder of Leadcrest Consulting (NGO), and a Mentoria-certified partner.
             </p>
 
             <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-2xl p-6 mb-8 shadow-lg hover:shadow-xl transition-all duration-300 magnetic-card relative overflow-hidden">
@@ -157,8 +157,8 @@ export default function PremiumAbout() {
               <div className="relative premium-card overflow-hidden rounded-3xl p-8 bg-gradient-to-br from-white via-blue-50/50 to-purple-50/30 border-2 border-blue-100 floating-card magnetic-card subtle-glow hover:border-purple-200 transition-colors duration-500 group">
                 <div className="w-full aspect-[4/5] bg-gray-100 rounded-2xl shadow-xl overflow-hidden">
                   <img 
-                    src={manpreetImage} 
-                    alt="Manpreet Kaur - Career Counselor and Founder"
+                    src={sumantaImage} 
+                    alt="Sumanta Chaudhuri - Career Counselor and Founder"
                     className="w-full h-full object-cover rounded-2xl"
                     style={{ objectPosition: 'center 30%' }}
                   />

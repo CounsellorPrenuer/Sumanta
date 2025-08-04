@@ -1,6 +1,6 @@
 # Overview
 
-This is a career counseling and education guidance website for Leadcrest Consulting, founded by Manpreet Kaur. The application serves as a professional platform offering comprehensive career services including psychometric assessments, counseling sessions, foreign admissions assistance, and mentorship programs. Built as a full-stack web application, it features a modern React frontend with a clean, professional design and an Express.js backend with PostgreSQL database integration.
+This is a career counseling and education guidance website for Leadcrest Consulting, founded by Sumanta Chaudhuri. The application serves as a professional platform offering comprehensive career services including psychometric assessments, counseling sessions, foreign admissions assistance, and mentorship programs. Built as a full-stack web application, it features a modern React frontend with a clean, professional design and an Express.js backend with PostgreSQL database integration.
 
 ## Recent Updates (January 2025)
 - **Comprehensive Booking System**: Implemented popup-based booking forms with database storage for both discovery calls and direct program investments

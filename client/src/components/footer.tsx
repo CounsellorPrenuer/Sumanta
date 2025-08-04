@@ -32,7 +32,7 @@ export default function Footer() {
             </div>
             
             <p className="text-gray-300 mb-8 leading-relaxed max-w-md">
-              Founded by Manpreet Kaur, Leadcrest Consulting is dedicated to providing comprehensive career guidance and educational support to students and professionals worldwide.
+              Founded by Sumanta Chaudhuri, Leadcrest Consulting is dedicated to providing comprehensive career guidance and educational support to students and professionals worldwide.
             </p>
             
             <div className="space-y-4">
@@ -40,13 +40,13 @@ export default function Footer() {
                 <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{backgroundColor: 'hsl(var(--cobalt))'}}>
                   <Phone className="h-4 w-4 text-white" />
                 </div>
-                <span>+91 9815299446</span>
+                <span>+91 9828096408</span>
               </div>
               <div className="flex items-center gap-3 text-gray-300 hover:text-yellow-400 transition-colors cursor-pointer">
                 <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{backgroundColor: 'hsl(var(--violet))'}}>
                   <Mail className="h-4 w-4 text-white" />
                 </div>
-                <span>manpreet@leadcrestconsulting.org</span>
+                <span>sumantaunstoppable@gmail.com</span>
               </div>
               <div className="flex items-center gap-3 text-gray-300 hover:text-yellow-400 transition-colors cursor-pointer">
                 <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{backgroundColor: 'hsl(var(--gold))'}}>

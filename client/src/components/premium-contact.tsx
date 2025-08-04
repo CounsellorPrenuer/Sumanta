@@ -8,7 +8,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Mail, Phone, MapPin, Clock, Send, CheckCircle } from "lucide-react";
-import manpreetImage from "@assets/Image_MANPREET KAUR_Counselors_1754240707994.jpeg";
+import sumantaImage from "@assets/Image_MANPREET KAUR_Counselors_1754240707994.jpeg";
 
 interface ContactFormData {
   name: string;
@@ -66,14 +66,14 @@ export default function PremiumContact() {
     {
       icon: Phone,
       title: "Call Us",
-      details: "+91 9815299446",
+      details: "+91 9828096408",
       subtext: "Mon-Fri: 9:00 AM - 6:00 PM",
       color: "from-green-500 to-emerald-600"
     },
     {
       icon: Mail,
       title: "Email Us",
-      details: "manpreet@leadcrestconsulting.org",
+      details: "sumantaunstoppable@gmail.com",
       subtext: "We reply within 24 hours",
       color: "from-blue-500 to-cyan-600"
     },
