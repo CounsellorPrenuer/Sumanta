@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { X, Download, FileText, User, Phone, Mail, GraduationCap } from 'lucide-react';
+import { X, Download, FileText, User, Phone, Mail, GraduationCap, TrendingUp, Award } from 'lucide-react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
@@ -29,10 +29,10 @@ interface ResourceDownloadModalProps {
 }
 
 const stageOptions = [
-  { value: 'class8-9', label: 'Class 8-9', icon: GraduationCap },
-  { value: 'class10-12', label: 'Class 10-12', icon: GraduationCap },
-  { value: 'graduates', label: 'College Graduate', icon: GraduationCap },
-  { value: 'professionals', label: 'Working Professional', icon: User },
+  { value: 'graduates', label: 'College Graduate / Fresh Graduate', icon: GraduationCap },
+  { value: 'earlycareer', label: 'Early Career Professional (0-5 years)', icon: User },
+  { value: 'midcareer', label: 'Mid-Career Professional (5-15 years)', icon: TrendingUp },
+  { value: 'senior', label: 'Senior Professional (15+ years)', icon: Award },
 ];
 
 export default function ResourceDownloadModal({ isOpen, onClose, resource }: ResourceDownloadModalProps) {

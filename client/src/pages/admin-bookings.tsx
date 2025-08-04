@@ -19,10 +19,14 @@ const statusIcons = {
 };
 
 const stageLabels = {
-  'class8-9': 'Class 8-9',
-  'class10-12': 'Class 10-12',
-  'graduates': 'College Graduate',
-  'professionals': 'Working Professional'
+  'graduates': 'College Graduate / Fresh Graduate',
+  'earlycareer': 'Early Career Professional (0-5 years)',
+  'midcareer': 'Mid-Career Professional (5-15 years)',
+  'senior': 'Senior Professional (15+ years)',
+  'professionals': 'Working Professional',
+  // Legacy mappings for backward compatibility
+  'class8-9': 'Class 8-9 (Legacy)',
+  'class10-12': 'Class 10-12 (Legacy)',
 };
 
 export default function AdminBookings() {
