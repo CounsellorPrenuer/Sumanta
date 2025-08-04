@@ -3,6 +3,7 @@ import { Check, Star, Crown, Zap, Target, GraduationCap, BookOpen, Briefcase, Tr
 import { useLocation } from "wouter";
 import { useState } from "react";
 import type { Package } from "@shared/schema";
+import { BookingPopup } from "./booking-popup";
 
 type AgeGroup = 'class8-9' | 'class10-12' | 'graduates' | 'professionals';
 
@@ -17,6 +18,8 @@ interface AgeGroupCategory {
 export default function PremiumPackages() {
   const [, navigate] = useLocation();
   const [selectedAgeGroup, setSelectedAgeGroup] = useState<AgeGroup>('class10-12');
+  const [selectedPackage, setSelectedPackage] = useState<Package | null>(null);
+  const [isBookingPopupOpen, setIsBookingPopupOpen] = useState(false);
   
   const { data: packages, isLoading } = useQuery<Package[]>({
     queryKey: ["/api/packages"],
@@ -247,12 +250,16 @@ export default function PremiumPackages() {
                   
                   {/* CTA Button */}
                   <button 
-                    onClick={() => handlePackageSelect(pkg.id)}
+                    onClick={() => {
+                      setSelectedPackage(pkg);
+                      setIsBookingPopupOpen(true);
+                    }}
                     className={`w-full font-semibold py-4 px-6 rounded-2xl transition-all duration-200 ${
                       pkg.isPopular 
                         ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:shadow-xl hover:scale-105' 
                         : 'bg-gray-900 hover:bg-gray-800 text-white hover:shadow-xl hover:scale-105'
                     }`}
+                    data-testid={`button-select-package-${pkg.id}`}
                   >
                     Choose {pkg.name}
                   </button>
@@ -300,6 +307,19 @@ export default function PremiumPackages() {
           </div>
         </div>
       </div>
+
+      {/* Booking Popup */}
+      {selectedPackage && (
+        <BookingPopup
+          isOpen={isBookingPopupOpen}
+          onClose={() => {
+            setIsBookingPopupOpen(false);
+            setSelectedPackage(null);
+          }}
+          package={selectedPackage}
+          selectedStage={selectedAgeGroup}
+        />
+      )}
     </section>
   );
 }

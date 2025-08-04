@@ -61,6 +61,24 @@ export const payments = pgTable("payments", {
   createdAt: timestamp("created_at").defaultNow(),
 });
 
+export const bookings = pgTable("bookings", {
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  fullName: text("full_name").notNull(),
+  mobile: text("mobile").notNull(),
+  currentStage: text("current_stage").notNull(), // 'class8-9', 'class10-12', 'graduates', 'professionals'
+  packageId: varchar("package_id").notNull(),
+  packageName: text("package_name").notNull(),
+  bookingType: text("booking_type").notNull(), // 'discovery_call' or 'investment'
+  status: text("status").default("pending"), // pending, contacted, completed, cancelled
+  amount: integer("amount"),
+  paymentStatus: text("payment_status"), // pending, completed, failed
+  razorpayOrderId: text("razorpay_order_id"),
+  razorpayPaymentId: text("razorpay_payment_id"),
+  notes: text("notes"),
+  createdAt: timestamp("created_at").defaultNow(),
+  updatedAt: timestamp("updated_at").defaultNow(),
+});
+
 // Insert schemas
 export const insertUserSchema = createInsertSchema(users).pick({
   username: true,
@@ -91,6 +109,12 @@ export const insertPaymentSchema = createInsertSchema(payments).omit({
   createdAt: true,
 });
 
+export const insertBookingSchema = createInsertSchema(bookings).omit({
+  id: true,
+  createdAt: true,
+  updatedAt: true,
+});
+
 // Types
 export type User = typeof users.$inferSelect;
 export type Package = typeof packages.$inferSelect;
@@ -98,6 +122,7 @@ export type BlogPost = typeof blogPosts.$inferSelect;
 export type Resource = typeof resources.$inferSelect;
 export type ContactSubmission = typeof contactSubmissions.$inferSelect;
 export type Payment = typeof payments.$inferSelect;
+export type Booking = typeof bookings.$inferSelect;
 
 export type InsertUser = z.infer<typeof insertUserSchema>;
 export type InsertPackage = z.infer<typeof insertPackageSchema>;
@@ -105,3 +130,4 @@ export type InsertBlogPost = z.infer<typeof insertBlogPostSchema>;
 export type InsertResource = z.infer<typeof insertResourceSchema>;
 export type InsertContactSubmission = z.infer<typeof insertContactSubmissionSchema>;
 export type InsertPayment = z.infer<typeof insertPaymentSchema>;
+export type InsertBooking = z.infer<typeof insertBookingSchema>;

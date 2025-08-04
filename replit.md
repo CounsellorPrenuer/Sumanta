@@ -2,6 +2,13 @@
 
 This is a career counseling and education guidance website for CCC Education Foundation, founded by Manpreet Kaur. The application serves as a professional platform offering comprehensive career services including psychometric assessments, counseling sessions, foreign admissions assistance, and mentorship programs. Built as a full-stack web application, it features a modern React frontend with a clean, professional design and an Express.js backend with PostgreSQL database integration.
 
+## Recent Updates (January 2025)
+- **Comprehensive Booking System**: Implemented popup-based booking forms with database storage for both discovery calls and direct program investments
+- **Age-Group Segmented Packages**: Created targeted package filtering (Class 8-9, 10-12, College Graduates, Working Professionals) with specific content for each demographic
+- **Admin Panel**: Built complete booking management dashboard at `/admin/bookings` for tracking customer inquiries and payments
+- **Payment Integration Ready**: Razorpay integration framework established for one-click program purchases
+- **Thank You Page**: Professional confirmation page for discovery call bookings with clear next steps
+
 # User Preferences
 
 Preferred communication style: Simple, everyday language.
@@ -28,7 +35,8 @@ Preferred communication style: Simple, everyday language.
 - **ORM**: Drizzle ORM with type-safe schema definitions
 - **Schema**: Centralized schema definitions in `/shared/schema.ts` for type consistency across frontend and backend
 - **Migrations**: Database migrations managed through Drizzle Kit
-- **Models**: Users, packages, blog posts, resources, contact submissions, and payments
+- **Models**: Users, packages, blog posts, resources, contact submissions, payments, and bookings
+- **Booking System**: Complete customer booking tracking with status management (pending, contacted, completed, cancelled)
 
 ## Authentication & Security
 - **Session-based Authentication**: Express sessions with PostgreSQL storage
@@ -37,10 +45,11 @@ Preferred communication style: Simple, everyday language.
 - **Input Validation**: Zod schemas for runtime type checking and validation
 
 ## Payment Integration
-- **Payment Processor**: Stripe integration for secure payment processing
-- **Frontend**: Stripe React components for payment forms and checkout flow
-- **Backend**: Stripe server-side API for payment intent creation and webhook handling
+- **Payment Processor**: Razorpay integration framework for secure payment processing (ready for API keys)
+- **Frontend**: Booking popup system with dual CTA options (Discovery Call vs Investment)
+- **Backend**: Razorpay order creation and payment verification endpoints
 - **Security**: Environment-based API key management for different environments
+- **Booking Flow**: Seamless popup-to-payment or popup-to-thank-you user journeys
 
 ## Development & Deployment
 - **Build System**: Vite for fast development and optimized production builds

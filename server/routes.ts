@@ -1,6 +1,7 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
+import { insertBookingSchema } from "@shared/schema";
 import { 
   insertContactSubmissionSchema, 
   insertPaymentSchema 
@@ -188,6 +189,57 @@ export async function registerRoutes(app: Express): Promise<Server> {
       res.json({ success: true, message: "Payment verified successfully" });
     } catch (error: any) {
       res.status(500).json({ message: "Error verifying payment: " + error.message });
+    }
+  });
+
+  // Booking routes
+  app.post('/api/bookings', async (req, res) => {
+    try {
+      const bookingData = insertBookingSchema.parse(req.body);
+      
+      // Create booking record
+      const booking = await storage.createBooking(bookingData);
+      
+      // For investment bookings, simulate Razorpay order creation
+      if (bookingData.bookingType === 'investment') {
+        // In real implementation, create Razorpay order here
+        const mockRazorpayOrderId = `order_${Date.now()}`;
+        
+        // Update booking with Razorpay order ID (in real app, update the booking)
+        booking.razorpayOrderId = mockRazorpayOrderId;
+      }
+      
+      res.json({ booking, bookingType: bookingData.bookingType });
+    } catch (error: any) {
+      console.error('Error creating booking:', error);
+      res.status(500).json({ error: 'Failed to create booking' });
+    }
+  });
+
+  app.get('/api/bookings', async (req, res) => {
+    try {
+      const bookings = await storage.getAllBookings();
+      res.json(bookings);
+    } catch (error: any) {
+      console.error('Error fetching bookings:', error);
+      res.status(500).json({ error: 'Failed to fetch bookings' });
+    }
+  });
+
+  app.patch('/api/bookings/:id/status', async (req, res) => {
+    try {
+      const { id } = req.params;
+      const { status } = req.body;
+      const booking = await storage.updateBookingStatus(id, status);
+      
+      if (!booking) {
+        return res.status(404).json({ error: 'Booking not found' });
+      }
+      
+      res.json(booking);
+    } catch (error: any) {
+      console.error('Error updating booking status:', error);
+      res.status(500).json({ error: 'Failed to update booking status' });
     }
   });
 

@@ -11,6 +11,8 @@ import WhyCCCEdu from "@/pages/why-ccc-edu";
 import BlogsResources from "@/pages/blogs-resources";
 import HowItWorks from "@/pages/how-it-works";
 import Contact from "@/pages/contact";
+import ThankYou from "@/pages/thank-you";
+import AdminBookings from "@/pages/admin-bookings";
 
 function Router() {
   return (
@@ -20,6 +22,8 @@ function Router() {
       <Route path="/blogs-resources" component={BlogsResources} />
       <Route path="/how-it-works" component={HowItWorks} />
       <Route path="/contact" component={Contact} />
+      <Route path="/thank-you" component={ThankYou} />
+      <Route path="/admin/bookings" component={AdminBookings} />
       <Route path="/checkout/:packageId" component={Checkout} />
       <Route component={NotFound} />
     </Switch>

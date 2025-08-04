@@ -10,7 +10,9 @@ import {
   type ContactSubmission,
   type InsertContactSubmission,
   type Payment,
-  type InsertPayment
+  type InsertPayment,
+  type Booking,
+  type InsertBooking
 } from "@shared/schema";
 import { randomUUID } from "crypto";
 
@@ -37,6 +39,12 @@ export interface IStorage {
   // Payments
   createPayment(payment: InsertPayment): Promise<Payment>;
   updatePaymentStatus(id: string, status: string): Promise<Payment | undefined>;
+  
+  // Bookings
+  createBooking(booking: InsertBooking): Promise<Booking>;
+  getAllBookings(): Promise<Booking[]>;
+  getBooking(id: string): Promise<Booking | undefined>;
+  updateBookingStatus(id: string, status: string): Promise<Booking | undefined>;
 }
 
 export class MemStorage implements IStorage {
@@ -46,6 +54,7 @@ export class MemStorage implements IStorage {
   private resources: Map<string, Resource>;
   private contactSubmissions: Map<string, ContactSubmission>;
   private payments: Map<string, Payment>;
+  private bookings: Map<string, Booking>;
 
   constructor() {
     this.users = new Map();
@@ -54,6 +63,7 @@ export class MemStorage implements IStorage {
     this.resources = new Map();
     this.contactSubmissions = new Map();
     this.payments = new Map();
+    this.bookings = new Map();
     
     this.initializeData();
   }
@@ -355,6 +365,38 @@ export class MemStorage implements IStorage {
       this.payments.set(id, payment);
     }
     return payment;
+  }
+
+  // Booking methods
+  async createBooking(booking: InsertBooking): Promise<Booking> {
+    const id = randomUUID();
+    const newBooking: Booking = {
+      ...booking,
+      id,
+      status: booking.status || "pending",
+      createdAt: new Date(),
+      updatedAt: new Date()
+    };
+    this.bookings.set(id, newBooking);
+    return newBooking;
+  }
+
+  async getAllBookings(): Promise<Booking[]> {
+    return Array.from(this.bookings.values());
+  }
+
+  async getBooking(id: string): Promise<Booking | undefined> {
+    return this.bookings.get(id);
+  }
+
+  async updateBookingStatus(id: string, status: string): Promise<Booking | undefined> {
+    const booking = this.bookings.get(id);
+    if (booking) {
+      const updatedBooking = { ...booking, status, updatedAt: new Date() };
+      this.bookings.set(id, updatedBooking);
+      return updatedBooking;
+    }
+    return undefined;
   }
 }
 
