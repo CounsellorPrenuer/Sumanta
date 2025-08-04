@@ -433,6 +433,11 @@ export class MemStorage implements IStorage {
       ...booking,
       id,
       status: booking.status || "pending",
+      amount: booking.amount || null,
+      paymentStatus: booking.paymentStatus || null,
+      razorpayOrderId: booking.razorpayOrderId || null,
+      razorpayPaymentId: booking.razorpayPaymentId || null,
+      notes: booking.notes || null,
       createdAt: new Date(),
       updatedAt: new Date()
     };
@@ -456,6 +461,22 @@ export class MemStorage implements IStorage {
       return updatedBooking;
     }
     return undefined;
+  }
+
+  // Get all contact submissions
+  async getAllContactSubmissions(): Promise<ContactSubmission[]> {
+    return Array.from(this.contactSubmissions.values());
+  }
+
+  // Get all payments
+  async getAllPayments(): Promise<Payment[]> {
+    return Array.from(this.payments.values());
+  }
+
+  // Get all resource downloads
+  async getAllResourceDownloads(): Promise<any[]> {
+    // For now return empty array, but this would connect to resource_downloads table
+    return [];
   }
 }
 

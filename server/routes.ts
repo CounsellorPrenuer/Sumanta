@@ -301,6 +301,39 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Contact submissions route
+  app.get('/api/contact', async (req, res) => {
+    try {
+      const contacts = await storage.getAllContactSubmissions();
+      res.json(contacts);
+    } catch (error: any) {
+      console.error('Error fetching contact submissions:', error);
+      res.status(500).json({ error: 'Failed to fetch contact submissions' });
+    }
+  });
+
+  // Payments route
+  app.get('/api/payments', async (req, res) => {
+    try {
+      const payments = await storage.getAllPayments();
+      res.json(payments);
+    } catch (error: any) {
+      console.error('Error fetching payments:', error);
+      res.status(500).json({ error: 'Failed to fetch payments' });
+    }
+  });
+
+  // Resource downloads route
+  app.get('/api/resource-downloads', async (req, res) => {
+    try {
+      const downloads = await storage.getAllResourceDownloads();
+      res.json(downloads);
+    } catch (error: any) {
+      console.error('Error fetching resource downloads:', error);
+      res.status(500).json({ error: 'Failed to fetch resource downloads' });
+    }
+  });
+
   const httpServer = createServer(app);
 
   return httpServer;
