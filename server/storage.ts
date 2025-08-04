@@ -68,10 +68,11 @@ export class MemStorage implements IStorage {
         targetAudience: "For Class 8-9 Students",
         description: "Perfect foundation for early career planning",
         features: [
-          "Psychometric Assessment",
-          "Career Exploration Session", 
-          "Stream Selection Guidance",
-          "Parent Counseling Session"
+          "Psychometric assessment to measure your interests",
+          "1 career counselling session with Mentoria's expert career coaches",
+          "Lifetime access to Knowledge Gateway",
+          "Pre-recorded webinars by industry experts",
+          "Focused on stream and subject selection"
         ],
         isPopular: false
       },
@@ -82,10 +83,15 @@ export class MemStorage implements IStorage {
         targetAudience: "For Class 8-9 Students",
         description: "Comprehensive guidance with ongoing support",
         features: [
-          "Everything in Discover",
-          "3 Follow-up Sessions",
-          "Study Skills Training",
-          "Mentorship Platform Access"
+          "2 Psychometric assessments to measure your interests, personality and abilities",
+          "8 career counselling sessions (1 every year) with Manpreet until graduation",
+          "Lifetime access to Knowledge Gateway",
+          "Attend live webinars by industry experts",
+          "Customised reports after each session with education pathways",
+          "Guidance on college admissions in India and abroad",
+          "CV reviews during internships/graduation",
+          "Guidance until you get into the job you love",
+          "Career helpline access"
         ],
         isPopular: true
       },
@@ -96,10 +102,10 @@ export class MemStorage implements IStorage {
         targetAudience: "For Class 10-12 Students",
         description: "Strategic planning for higher education",
         features: [
-          "Comprehensive Assessment",
-          "College Selection Guidance",
-          "Entrance Exam Strategy",
-          "Career Planning Session"
+          "Psychometric assessment to measure your interests, personality and abilities",
+          "1 career counselling session",
+          "Lifetime access to Knowledge Gateway",
+          "Pre-recorded webinars by industry experts"
         ],
         isPopular: false
       },
@@ -110,10 +116,15 @@ export class MemStorage implements IStorage {
         targetAudience: "For Class 10-12 Students", 
         description: "Complete support for academic success",
         features: [
-          "Everything in Achieve",
-          "Scholarship Guidance",
-          "Application Support",
-          "6-Month Support"
+          "Psychometric assessment to measure your interests, personality and abilities",
+          "4 career counselling sessions",
+          "Lifetime access to Knowledge Gateway",
+          "Attend live webinars by industry experts",
+          "Customised reports after each session with education pathways",
+          "Guidance on college admissions in India and abroad",
+          "CV reviews during internships/graduation",
+          "Guidance until you get into the job you love",
+          "Career helpline access"
         ],
         isPopular: false
       },
@@ -124,10 +135,10 @@ export class MemStorage implements IStorage {
         targetAudience: "For Graduates & Professionals",
         description: "Career transformation for professionals",
         features: [
-          "Professional Assessment",
-          "CV Building Workshop",
-          "Interview Preparation",
-          "Career Transition Guidance"
+          "Psychometric assessment to measure your interests, personality and abilities",
+          "1 career coaching session for specialisation/job selection",
+          "Lifetime access to Knowledge Gateway",
+          "Pre-recorded webinars by industry experts"
         ],
         isPopular: false
       },
@@ -138,10 +149,15 @@ export class MemStorage implements IStorage {
         targetAudience: "For Graduates & Professionals",
         description: "Premium career development program",
         features: [
-          "Everything in Ascend",
-          "Personal Branding Strategy",
-          "Network Building Guide",
-          "1-Year Mentorship"
+          "Psychometric assessment to measure your interests, personality and abilities",
+          "3 career coaching sessions",
+          "Lifetime access to Knowledge Gateway",
+          "Attend live webinars by industry experts",
+          "Customised reports after each session with education pathways",
+          "Guidance on Masters' admissions in India and abroad",
+          "CV reviews during internships/graduation",
+          "Guidance until you get into the job you love",
+          "Career helpline access"
         ],
         isPopular: false
       }
