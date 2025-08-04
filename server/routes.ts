@@ -334,6 +334,28 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Create resource download
+  app.post('/api/resource-downloads', async (req, res) => {
+    try {
+      const download = await storage.createResourceDownload(req.body);
+      res.status(201).json(download);
+    } catch (error) {
+      console.error('Error creating resource download:', error);
+      res.status(500).json({ error: 'Internal server error' });
+    }
+  });
+
+  // Get all resource downloads
+  app.get('/api/resource-downloads', async (req, res) => {
+    try {
+      const downloads = await storage.getAllResourceDownloads();
+      res.json(downloads);
+    } catch (error) {
+      console.error('Error fetching resource downloads:', error);
+      res.status(500).json({ error: 'Internal server error' });
+    }
+  });
+
   const httpServer = createServer(app);
 
   return httpServer;

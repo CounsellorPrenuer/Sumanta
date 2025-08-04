@@ -4,11 +4,14 @@ import PremiumNavigation from "@/components/premium-navigation";
 import Footer from "@/components/footer";
 import WhatsAppFloat from "@/components/whatsapp-float";
 import { BookingPopup } from "@/components/booking-popup";
+import ResourceDownloadModal from "@/components/resource-download-modal";
 import { Calendar, User, ArrowRight, BookOpen, FileText, Video, Download } from "lucide-react";
 import type { BlogPost, Resource } from "@shared/schema";
 
 export default function BlogsResources() {
   const [isCallModalOpen, setIsCallModalOpen] = useState(false);
+  const [isDownloadModalOpen, setIsDownloadModalOpen] = useState(false);
+  const [selectedResource, setSelectedResource] = useState<Resource | null>(null);
   const { data: blogPosts, isLoading: blogLoading } = useQuery<BlogPost[]>({
     queryKey: ["/api/blog-posts"],
   });
@@ -172,8 +175,8 @@ export default function BlogsResources() {
                   
                   <button 
                     onClick={() => {
-                      // Professional demo - shows coming soon message for actual implementation
-                      alert(`${resource.title} will be available for download soon. We're finalizing this comprehensive resource to ensure it meets Fortune 500 standards. You'll be notified when it's ready.`);
+                      setSelectedResource(resource);
+                      setIsDownloadModalOpen(true);
                     }}
                     className="w-full btn-primary group-hover:scale-105 transition-transform"
                     data-testid={`button-download-${resource.id}`}
@@ -252,6 +255,16 @@ export default function BlogsResources() {
           isPopular: false
         }}
         selectedStage="professionals"
+      />
+
+      {/* Resource Download Modal */}
+      <ResourceDownloadModal
+        isOpen={isDownloadModalOpen}
+        onClose={() => {
+          setIsDownloadModalOpen(false);
+          setSelectedResource(null);
+        }}
+        resource={selectedResource}
       />
     </div>
   );

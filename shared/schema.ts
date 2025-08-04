@@ -61,6 +61,18 @@ export const payments = pgTable("payments", {
   createdAt: timestamp("created_at").defaultNow(),
 });
 
+export const resourceDownloads = pgTable("resource_downloads", {
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  fullName: text("full_name").notNull(),
+  email: text("email").notNull(),
+  mobile: text("mobile").notNull(),
+  currentStage: text("current_stage").notNull(),
+  resourceId: varchar("resource_id").references(() => resources.id).notNull(),
+  resourceTitle: text("resource_title").notNull(),
+  downloadedAt: timestamp("downloaded_at").defaultNow(),
+  createdAt: timestamp("created_at").defaultNow(),
+});
+
 export const bookings = pgTable("bookings", {
   id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
   fullName: text("full_name").notNull(),
@@ -109,6 +121,12 @@ export const insertPaymentSchema = createInsertSchema(payments).omit({
   createdAt: true,
 });
 
+export const insertResourceDownloadSchema = createInsertSchema(resourceDownloads).omit({
+  id: true,
+  downloadedAt: true,
+  createdAt: true,
+});
+
 export const insertBookingSchema = createInsertSchema(bookings).omit({
   id: true,
   createdAt: true,
@@ -130,4 +148,6 @@ export type InsertBlogPost = z.infer<typeof insertBlogPostSchema>;
 export type InsertResource = z.infer<typeof insertResourceSchema>;
 export type InsertContactSubmission = z.infer<typeof insertContactSubmissionSchema>;
 export type InsertPayment = z.infer<typeof insertPaymentSchema>;
+export type ResourceDownload = typeof resourceDownloads.$inferSelect;
+export type InsertResourceDownload = z.infer<typeof insertResourceDownloadSchema>;
 export type InsertBooking = z.infer<typeof insertBookingSchema>;
