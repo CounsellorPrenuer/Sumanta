@@ -129,11 +129,14 @@ export default function PremiumAbout() {
               
               {/* Main image container */}
               <div className="relative premium-card overflow-hidden rounded-3xl p-8 bg-gradient-to-br from-white to-blue-50 border-2 border-blue-100 floating-card magnetic-card subtle-glow">
-                <img 
-                  src={manpreetImage} 
-                  alt="Manpreet Kaur - Career Counselor and Founder"
-                  className="w-full h-96 object-cover object-center rounded-2xl shadow-xl"
-                />
+                <div className="w-full h-[28rem] bg-gray-100 rounded-2xl shadow-xl overflow-hidden">
+                  <img 
+                    src={manpreetImage} 
+                    alt="Manpreet Kaur - Career Counselor and Founder"
+                    className="w-full h-full object-cover rounded-2xl"
+                    style={{ objectPosition: 'center 15%' }}
+                  />
+                </div>
                 
                 {/* Overlay badge */}
                 <div className="absolute top-12 right-12 bg-gradient-to-r from-purple-600 to-blue-600 text-white px-4 py-2 rounded-full text-sm font-medium shadow-lg breath-animation">
