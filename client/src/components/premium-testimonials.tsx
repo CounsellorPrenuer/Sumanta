@@ -3,52 +3,52 @@ import { Star, Quote, ArrowRight } from "lucide-react";
 export default function PremiumTestimonials() {
   const testimonials = [
     {
-      name: "Arjun Sharma",
-      role: "Software Engineer at Google",
+      name: "Rajesh Mehta",
+      role: "AI Product Manager at TCS | 85% Salary Increase",
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
-      content: "The psychometric assessment completely changed my perspective. I discovered my true passion for technology and landed my dream job at Google. Manpreet ma'am's guidance was invaluable.",
+      content: "After 8 years in traditional IT, Sumanta helped me transition to AI Product Management. I went from ₹12 LPA to ₹22 LPA in just 6 months. The AI readiness coaching was game-changing.",
       rating: 5,
-      package: "Ascend Plus"
+      package: "Career Pivot Pro"
     },
     {
-      name: "Priya Patel",
-      role: "Medical Student, AIIMS",
+      name: "Priya Desai",
+      role: "Data Scientist at Flipkart | Career Switcher",
       image: "https://images.unsplash.com/photo-1494790108755-2616b612b2b5?w=400&h=400&fit=crop&crop=face",
-      content: "From confusion to clarity - that's my journey with Leadcrest Consulting. The personalized counseling sessions helped me choose medicine over engineering, and I couldn't be happier.",
+      content: "From HR operations to Data Science - a complete 180° career change at age 32. Sumanta's structured approach helped me land my dream role with 70% salary hike. Best investment ever!",
       rating: 5,
-      package: "Achieve"
+      package: "Tech Transition"
     },
     {
-      name: "Rahul Kumar",
-      role: "MBA at Wharton",
+      name: "Amit Kumar",
+      role: "Senior Cloud Architect at Infosys | ₹35 LPA",
       image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face", 
-      content: "The foreign admissions support was exceptional. From university selection to visa guidance, every step was handled professionally. Now studying at my dream business school!",
+      content: "Stuck at ₹18 LPA for 3 years, I was losing hope. Sumanta's AI + Cloud upskilling roadmap transformed everything. Now earning ₹35 LPA and loving what I do every day.",
       rating: 5,
-      package: "Ascend Plus"
+      package: "Executive Growth"
     },
     {
-      name: "Sneha Agarwal",
-      role: "Marketing Manager at Unilever",
+      name: "Sneha Kapoor",
+      role: "Digital Marketing Head at Zomato | Remote Leader",
       image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face",
-      content: "The CV building service was a game-changer. My new resume got me interviews at top companies. The professional guidance transformed my career trajectory completely.",
+      content: "Transitioned from offline marketing to leading digital teams remotely. 2x salary jump from ₹8 LPA to ₹16 LPA. Sumanta's guidance on AI tools made me indispensable.",
       rating: 5,
-      package: "Ascend"
+      package: "Digital Leader"
     },
     {
-      name: "Vikash Singh",
-      role: "Data Scientist at Microsoft",
+      name: "Vikash Sharma",
+      role: "AI Solutions Consultant | Independent | ₹45 LPA",
       image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop&crop=face",
-      content: "The mentorship platform connected me with industry experts who guided me through my transition from mechanical engineering to data science. Truly life-changing experience.",
+      content: "From corporate burnout to AI consulting freedom. Went from ₹15 LPA employee to ₹45 LPA consultant in 8 months. Sumanta showed me how to monetize AI expertise.",
       rating: 5,
-      package: "Discover"
+      package: "Entrepreneurial Leap"
     },
     {
-      name: "Ananya Gupta",
-      role: "Chartered Accountant",
+      name: "Ananya Joshi",
+      role: "Chief People Officer at Razorpay | Leadership Role",
       image: "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=400&h=400&fit=crop&crop=face",
-      content: "The career webinars provided insights into industry trends that helped me make informed decisions. The expert guidance gave me confidence in my chosen path.",
+      content: "Promoted from HR Manager to CPO within 18 months. Sumanta's leadership coaching and AI-driven people analytics training made all the difference. Dream role achieved!",
       rating: 5,
-      package: "Achieve"
+      package: "Leadership Excellence"
     }
   ];
 
@@ -63,12 +63,12 @@ export default function PremiumTestimonials() {
           </div>
           
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            Transforming Lives,
-            <span className="text-gradient-blue block">Creating Success</span>
+            Professional Transformations,
+            <span className="text-gradient-blue block">Real Salary Growth</span>
           </h2>
           
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Hear from our successful students and professionals who achieved their career dreams with our guidance.
+            Working professionals who pivoted careers, became AI-ready, and significantly increased their earnings with expert guidance.
           </p>
         </div>
 
@@ -123,7 +123,7 @@ export default function PremiumTestimonials() {
           <div className="premium-card p-8 bg-gradient-to-r from-indigo-600 to-purple-700 text-white">
             <h3 className="text-2xl font-bold mb-4">Join Our Success Community</h3>
             <p className="text-indigo-100 mb-6 max-w-2xl mx-auto">
-              Be part of our growing community of successful professionals who transformed their careers with expert guidance.
+              Join 3,725+ working professionals who achieved career breakthroughs, AI readiness, and substantial salary increases.
             </p>
             <button className="bg-white text-indigo-600 font-semibold px-8 py-4 rounded-2xl hover:bg-gray-50 transition-colors inline-flex items-center">
               Start Your Success Story
