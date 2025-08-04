@@ -39,12 +39,24 @@ export default function AIFutureSection() {
   ];
 
   const automationProgress = [
-    { field: "Accounting", progress: 85, risk: "High", color: "bg-red-500" },
-    { field: "Data Entry", progress: 95, risk: "Critical", color: "bg-red-600" },
-    { field: "Customer Service", progress: 70, risk: "High", color: "bg-orange-500" },
-    { field: "Design", progress: 60, risk: "Medium", color: "bg-yellow-500" },
-    { field: "Healthcare", progress: 45, risk: "Medium", color: "bg-yellow-400" },
-    { field: "Marketing", progress: 55, risk: "Medium", color: "bg-orange-400" },
+    { field: "Data Entry", progress: 95, risk: "Critical" },
+    { field: "Translation", progress: 90, risk: "Critical" },
+    { field: "Bookkeeping", progress: 92, risk: "Critical" },
+    { field: "Tax Preparation", progress: 88, risk: "Critical" },
+    { field: "Basic Accounting", progress: 85, risk: "Critical" },
+    { field: "Customer Service", progress: 80, risk: "Critical" },
+    { field: "Content Writing", progress: 75, risk: "High" },
+    { field: "Legal Research", progress: 75, risk: "High" },
+    { field: "Data Analysis", progress: 72, risk: "High" },
+    { field: "Software Engineering", progress: 70, risk: "High" },
+    { field: "Market Research", progress: 70, risk: "High" },
+    { field: "Social Media Management", progress: 68, risk: "High" },
+    { field: "Financial Analysis", progress: 65, risk: "High" },
+    { field: "Recruitment", progress: 65, risk: "High" },
+    { field: "Graphic Design", progress: 60, risk: "High" },
+    { field: "Quality Assurance", progress: 58, risk: "Medium" },
+    { field: "Video Editing", progress: 55, risk: "Medium" },
+    { field: "Medical Diagnosis", progress: 55, risk: "Medium" }
   ];
 
   const aiResistantCareers = [
@@ -84,74 +96,29 @@ export default function AIFutureSection() {
           </h2>
         </div>
 
-        {/* Revolutionary Three-Column Layout */}
-        <div className="grid lg:grid-cols-3 gap-16 items-start">
-          {/* Column 1: Key Statistics */}
-          <div className="space-y-12">
-            <div className="text-center breath-animation">
-              <div className="text-7xl lg:text-8xl font-extralight text-gray-800 mb-4 tracking-tighter animate-number luxury-text">85%</div>
-              <div className="text-xl text-gray-600 leading-relaxed font-light">
-                of careers that will exist in 2030 haven't been invented yet
-              </div>
-            </div>
-            
-            <div className="h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
-            
-            <div className="premium-card bg-gradient-to-br from-slate-50 to-blue-50 border border-slate-200 rounded-3xl p-8 stagger-fade-up floating-card magnetic-card subtle-glow">
-              <div className="text-center">
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center mx-auto mb-6 breath-animation">
-                  <TrendingUp className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-2xl font-medium text-gray-900 mb-4">Market Evolution</h3>
-                <p className="text-lg text-gray-600 leading-relaxed">
-                  The pace of career transformation is accelerating beyond historical precedent.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* Column 2: Industry Impact */}
+        {/* Sophisticated Two-Column Layout */}
+        <div className="grid lg:grid-cols-2 gap-20 items-start">
+          {/* Column 1: Future Career Insights */}
           <div className="space-y-8">
-            <div className="premium-card bg-white/90 backdrop-blur-sm border border-slate-200 rounded-3xl p-8 stagger-fade-up stagger-2 floating-card magnetic-card subtle-glow">
-              <h3 className="text-2xl font-medium text-gray-900 mb-8 text-center luxury-text">Automation Risk by Industry</h3>
-              
-              <div className="space-y-6">
-                {automationProgress.slice(0, 4).map((item, index) => (
-                  <div key={index} className="stagger-fade-up" style={{animationDelay: `${index * 0.1 + 0.5}s`}}>
-                    <div className="flex items-center justify-between mb-3">
-                      <div className="font-medium text-gray-900">{item.field}</div>
-                      <div className="text-sm font-medium text-gray-500 animate-number">{item.progress}%</div>
-                    </div>
-                    <div className="w-full bg-slate-100 rounded-full h-2 premium-progress">
-                      <div 
-                        className="h-2 rounded-full bg-gradient-to-r from-gray-400 to-slate-600 transition-all duration-1000 ease-out"
-                        style={{
-                          width: `${item.progress}%`,
-                          transitionDelay: `${index * 0.1 + 0.5}s`
-                        }}
-                      ></div>
-                    </div>
+            <div className="premium-card bg-gradient-to-br from-indigo-50 via-blue-50 to-slate-50 border border-blue-200 rounded-3xl p-10 stagger-fade-up floating-card magnetic-card subtle-glow">
+              <div className="flex items-start space-x-6">
+                <div className="w-20 h-20 bg-gradient-to-br from-indigo-500 to-blue-600 rounded-3xl flex items-center justify-center flex-shrink-0 breath-animation">
+                  <TrendingUp className="w-10 h-10 text-white" />
+                </div>
+                <div className="flex-1">
+                  <div className="flex items-baseline space-x-4 mb-4">
+                    <div className="text-6xl lg:text-7xl font-extralight text-gray-800 tracking-tighter animate-number luxury-text">85%</div>
+                    <div className="text-sm text-blue-600 font-medium px-3 py-1 bg-blue-100 rounded-full">2030 Prediction</div>
                   </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="premium-card bg-gradient-to-br from-orange-50 to-red-50 border border-orange-200 rounded-3xl p-8 stagger-fade-up stagger-3 floating-card magnetic-card">
-              <div className="flex items-center space-x-4 mb-6">
-                <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-2xl flex items-center justify-center breath-animation">
-                  <Brain className="w-6 h-6 text-white" />
+                  <h3 className="text-2xl font-medium text-gray-900 mb-3 luxury-text">Future Career Revolution</h3>
+                  <p className="text-lg text-gray-700 leading-relaxed">
+                    of careers that will exist in 2030 haven't been invented yet. The job market is evolving exponentially faster than any historical precedent.
+                  </p>
                 </div>
-                <h3 className="text-2xl font-medium text-gray-900 luxury-text">AI Disruption</h3>
               </div>
-              <p className="text-lg text-gray-700 leading-relaxed">
-                Traditional career paths across industries are being fundamentally restructured by artificial intelligence.
-              </p>
             </div>
-          </div>
 
-          {/* Column 3: The Solution */}
-          <div className="space-y-8">
-            <div className="premium-card bg-gradient-to-br from-emerald-50 to-green-50 border border-emerald-200 rounded-3xl p-8 stagger-fade-up stagger-4 floating-card magnetic-card subtle-glow">
+            <div className="premium-card bg-gradient-to-br from-emerald-50 to-green-50 border border-emerald-200 rounded-3xl p-8 stagger-fade-up stagger-2 floating-card magnetic-card subtle-glow">
               <div className="text-center mb-8">
                 <div className="w-16 h-16 bg-gradient-to-br from-emerald-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-6 breath-animation">
                   <Shield className="w-8 h-8 text-white" />
@@ -167,7 +134,7 @@ export default function AIFutureSection() {
                   <div 
                     key={index}
                     className="bg-white/80 border border-emerald-200 rounded-xl p-4 stagger-fade-up floating-card magnetic-card"
-                    style={{animationDelay: `${index * 0.1 + 1}s`}}
+                    style={{animationDelay: `${index * 0.1 + 0.6}s`}}
                   >
                     <div className="flex items-center space-x-3">
                       <div className="w-2 h-2 bg-emerald-500 rounded-full breath-animation"></div>
@@ -177,9 +144,61 @@ export default function AIFutureSection() {
                 ))}
               </div>
             </div>
+          </div>
 
-            <div className="premium-card bg-gradient-to-br from-blue-600 to-indigo-700 rounded-3xl p-8 text-white stagger-fade-up stagger-5 floating-card magnetic-card subtle-glow">
+          {/* Column 2: Dynamic Industry Disruption */}
+          <div className="space-y-8">
+            <div className="premium-card bg-white/90 backdrop-blur-sm border border-slate-200 rounded-3xl p-8 stagger-fade-up stagger-3 floating-card magnetic-card subtle-glow">
+              <div className="flex items-center justify-between mb-8">
+                <h3 className="text-2xl font-medium text-gray-900 luxury-text">AI Automation Risk</h3>
+                <div className="px-4 py-2 bg-gradient-to-r from-red-50 to-orange-50 border border-red-200 text-red-700 rounded-full text-sm font-medium">
+                  Live Analysis
+                </div>
+              </div>
+              
+              {/* Scrolling Industries List */}
+              <div className="relative h-96 overflow-hidden">
+                <div className="absolute inset-0 space-y-4 animate-scroll">
+                  {[...automationProgress, ...automationProgress].map((item, index) => (
+                    <div 
+                      key={index} 
+                      className="flex items-center justify-between p-4 bg-gradient-to-r from-slate-50 to-white rounded-xl border border-slate-200 stagger-fade-up floating-card"
+                      style={{animationDelay: `${(index % automationProgress.length) * 0.05}s`}}
+                    >
+                      <div className="flex items-center space-x-4">
+                        <div className={`w-3 h-3 rounded-full ${
+                          item.risk === 'Critical' ? 'bg-red-500' : 
+                          item.risk === 'High' ? 'bg-orange-500' : 'bg-yellow-500'
+                        } breath-animation`}></div>
+                        <span className="font-medium text-gray-900">{item.field}</span>
+                      </div>
+                      <div className="flex items-center space-x-3">
+                        <div className="text-sm font-bold text-gray-700 animate-number">{item.progress}%</div>
+                        <div className="w-16 bg-slate-200 rounded-full h-2 premium-progress">
+                          <div 
+                            className={`h-2 rounded-full transition-all duration-1000 ease-out ${
+                              item.risk === 'Critical' ? 'bg-gradient-to-r from-red-400 to-red-600' : 
+                              item.risk === 'High' ? 'bg-gradient-to-r from-orange-400 to-orange-600' : 
+                              'bg-gradient-to-r from-yellow-400 to-yellow-600'
+                            }`}
+                            style={{width: `${item.progress}%`}}
+                          ></div>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                {/* Gradient fade at top and bottom */}
+                <div className="absolute top-0 left-0 right-0 h-8 bg-gradient-to-b from-white to-transparent pointer-events-none"></div>
+                <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-white to-transparent pointer-events-none"></div>
+              </div>
+            </div>
+
+            <div className="premium-card bg-gradient-to-br from-blue-600 to-indigo-700 rounded-3xl p-8 text-white stagger-fade-up stagger-4 floating-card magnetic-card subtle-glow">
               <div className="text-center">
+                <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6 breath-animation">
+                  <Brain className="w-8 h-8 text-white" />
+                </div>
                 <h3 className="text-2xl font-semibold mb-4">Ready to Transform Your Career?</h3>
                 <p className="text-blue-100 mb-6 leading-relaxed">
                   Get personalized guidance that's designed for the AI-driven future of work.

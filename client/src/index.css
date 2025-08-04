@@ -390,6 +390,16 @@
   50% { transform: scale(1.02); }
 }
 
+/* Scrolling animation for industries list */
+.animate-scroll {
+  animation: smoothScroll 20s linear infinite;
+}
+
+@keyframes smoothScroll {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+}
+
 @keyframes gradientShift {
   0%, 100% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
