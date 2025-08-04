@@ -1,7 +1,23 @@
 import { AlertTriangle, TrendingUp, Brain, Shield, Zap, Target, Clock, CheckCircle, Cpu, Users, Briefcase, BookOpen } from "lucide-react";
 import { useState, useEffect } from "react";
+import { AICareerAssessment, AssessmentResults } from './ai-career-assessment';
 
 export default function AIFutureSection() {
+  const [showAssessment, setShowAssessment] = useState(false);
+  const [showResults, setShowResults] = useState(false);
+  const [assessmentScore, setAssessmentScore] = useState(0);
+
+  const handleAssessmentComplete = (score: number) => {
+    setAssessmentScore(score);
+    setShowAssessment(false);
+    setShowResults(true);
+  };
+
+  const handleBookCall = () => {
+    setShowResults(false);
+    // This would open a booking modal or redirect to booking page
+    console.log('Booking call with score:', assessmentScore);
+  };
   const automationAreas = [
     "HR",
     "Finance", 
@@ -293,16 +309,18 @@ export default function AIFutureSection() {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <button className="px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 hover:scale-105 shadow-xl"
-                        style={{
-                          background: 'linear-gradient(135deg, hsl(220, 91%, 50%), hsl(267, 47%, 50%))',
-                          color: 'white'
-                        }}>
-                  Get Your Career Audit
+                <button 
+                  onClick={() => setShowAssessment(true)}
+                  className="px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 hover:scale-105 shadow-xl"
+                  style={{
+                    background: 'linear-gradient(135deg, hsl(220, 91%, 50%), hsl(267, 47%, 50%))',
+                    color: 'white'
+                  }}>
+                  Take AI Career Assessment
                 </button>
                 <div className="text-center sm:text-left">
-                  <div className="text-white font-semibold">Free 30-min Discovery Call</div>
-                  <div className="text-gray-400 text-sm">No commitment. Just clarity.</div>
+                  <div className="text-white font-semibold">Free 10-min Discovery Call</div>
+                  <div className="text-gray-400 text-sm">Get your AI-readiness score first</div>
                 </div>
               </div>
               
@@ -320,6 +338,21 @@ export default function AIFutureSection() {
           </div>
         </div>
       </div>
+
+      {/* Assessment Modal */}
+      <AICareerAssessment 
+        isOpen={showAssessment}
+        onClose={() => setShowAssessment(false)}
+        onComplete={handleAssessmentComplete}
+      />
+
+      {/* Results Modal */}
+      <AssessmentResults
+        isOpen={showResults}
+        onClose={() => setShowResults(false)}
+        score={assessmentScore}
+        onBookCall={handleBookCall}
+      />
     </section>
   );
 }
