@@ -259,6 +259,70 @@
   .bg-gold-gradient {
     background: linear-gradient(135deg, hsl(var(--gold)), hsl(45, 93%, 68%));
   }
+  
+  /* Premium Hero Animations */
+  @keyframes float-gentle {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    33% { transform: translateY(-10px) rotate(1deg); }
+    66% { transform: translateY(-5px) rotate(-1deg); }
+  }
+  
+  @keyframes pulse-soft {
+    0%, 100% { opacity: 0.6; transform: scale(1); }
+    50% { opacity: 0.8; transform: scale(1.05); }
+  }
+  
+  @keyframes slide-in-up {
+    0% { transform: translateY(60px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+  }
+  
+  @keyframes text-shimmer {
+    0% { background-position: -200% center; }
+    100% { background-position: 200% center; }
+  }
+  
+  @keyframes card-hover-glow {
+    0% { box-shadow: 0 10px 40px -10px rgba(0,0,0,0.1); }
+    100% { box-shadow: 0 20px 60px -10px rgba(0,0,0,0.2); }
+  }
+  
+  .float-gentle { animation: float-gentle 6s ease-in-out infinite; }
+  .pulse-soft { animation: pulse-soft 3s ease-in-out infinite; }
+  .slide-in-up { animation: slide-in-up 0.8s ease-out forwards; }
+  
+  .text-shimmer {
+    background: linear-gradient(90deg, 
+      hsl(var(--cobalt)) 0%, 
+      hsl(var(--violet)) 25%, 
+      hsl(var(--gold)) 50%, 
+      hsl(var(--violet)) 75%, 
+      hsl(var(--cobalt)) 100%);
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: text-shimmer 3s linear infinite;
+  }
+  
+  .card-hover-glow:hover {
+    animation: card-hover-glow 0.3s ease-out forwards;
+  }
+  
+  .glass-premium {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  
+  .button-magnetic {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .button-magnetic:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  }
 }
 
 @keyframes fadeInUp {

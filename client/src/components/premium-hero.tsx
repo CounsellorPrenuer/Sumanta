@@ -31,15 +31,19 @@ export default function PremiumHero() {
       {/* Modern Light Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-r from-blue-50/20 via-transparent to-yellow-50/20"></div>
       
-      {/* Soft floating orbs */}
-      <div className="absolute top-20 left-10 w-96 h-96 rounded-full opacity-10 animate-pulse" style={{background: 'linear-gradient(135deg, hsl(220, 91%, 85%), hsl(220, 91%, 90%))'}}></div>
-      <div className="absolute top-32 right-16 w-80 h-80 rounded-full opacity-8 animate-pulse" style={{background: 'linear-gradient(135deg, hsl(267, 47%, 85%), hsl(267, 47%, 90%))', animationDelay: '1s'}}></div>
-      <div className="absolute bottom-20 left-1/3 w-64 h-64 rounded-full opacity-12 animate-pulse" style={{background: 'linear-gradient(135deg, hsl(45, 93%, 85%), hsl(45, 93%, 90%))', animationDelay: '2s'}}></div>
+      {/* Enhanced floating orbs with sophisticated animations */}
+      <div className="absolute top-20 left-10 w-96 h-96 rounded-full opacity-10 float-gentle" style={{background: 'linear-gradient(135deg, hsl(220, 91%, 85%), hsl(220, 91%, 90%))', animationDelay: '0s'}}></div>
+      <div className="absolute top-32 right-16 w-80 h-80 rounded-full opacity-8 float-gentle" style={{background: 'linear-gradient(135deg, hsl(267, 47%, 85%), hsl(267, 47%, 90%))', animationDelay: '2s'}}></div>
+      <div className="absolute bottom-20 left-1/3 w-64 h-64 rounded-full opacity-12 float-gentle" style={{background: 'linear-gradient(135deg, hsl(45, 93%, 85%), hsl(45, 93%, 90%))', animationDelay: '4s'}}></div>
       
-      {/* Geometric accent elements */}
-      <div className="absolute top-40 left-1/4 w-8 h-8 rotate-45 opacity-20" style={{background: 'hsl(220, 91%, 70%)'}}></div>
-      <div className="absolute top-1/2 right-1/4 w-6 h-6 rounded-full opacity-25" style={{background: 'hsl(267, 47%, 70%)'}}></div>
-      <div className="absolute bottom-1/3 left-1/2 w-4 h-4 rotate-12 opacity-30" style={{background: 'hsl(45, 93%, 65%)'}}></div>
+      {/* Premium geometric accent elements */}
+      <div className="absolute top-40 left-1/4 w-8 h-8 rotate-45 opacity-20 pulse-soft" style={{background: 'hsl(220, 91%, 70%)', animationDelay: '1s'}}></div>
+      <div className="absolute top-1/2 right-1/4 w-6 h-6 rounded-full opacity-25 pulse-soft" style={{background: 'hsl(267, 47%, 70%)', animationDelay: '2s'}}></div>
+      <div className="absolute bottom-1/3 left-1/2 w-4 h-4 rotate-12 opacity-30 pulse-soft" style={{background: 'hsl(45, 93%, 65%)', animationDelay: '3s'}}></div>
+      
+      {/* Additional premium accents */}
+      <div className="absolute top-1/3 left-1/6 w-12 h-1 opacity-15 float-gentle" style={{background: 'linear-gradient(90deg, hsl(220, 91%, 70%), transparent)', animationDelay: '1.5s'}}></div>
+      <div className="absolute bottom-1/4 right-1/6 w-16 h-1 opacity-20 float-gentle" style={{background: 'linear-gradient(90deg, transparent, hsl(267, 47%, 70%))', animationDelay: '2.5s'}}></div>
       
       {/* Subtle grid pattern */}
       <div className="absolute inset-0 opacity-5" style={{backgroundImage: 'radial-gradient(circle at 1px 1px, hsl(220, 91%, 50%) 1px, transparent 0)', backgroundSize: '40px 40px'}}></div>
@@ -50,23 +54,22 @@ export default function PremiumHero() {
           <div className="fade-in-up">
             
 
-            {/* Inspiring Badge */}
-            <div className="inline-flex items-center px-6 py-3 rounded-full border-2 text-sm font-semibold mb-8 bg-white/80 backdrop-blur-sm shadow-lg" style={{borderColor: 'hsl(45, 93%, 60%)', color: 'hsl(220, 91%, 25%)'}}>
-              <div className="w-2 h-2 rounded-full mr-3 animate-pulse" style={{backgroundColor: 'hsl(45, 93%, 60%)'}}></div>
+            {/* Premium Inspiring Badge */}
+            <div className="inline-flex items-center px-6 py-3 rounded-full border-2 text-sm font-semibold mb-8 glass-premium shadow-xl hover:shadow-2xl transition-all duration-500 cursor-default slide-in-up" 
+                 style={{borderColor: 'hsl(45, 93%, 60%)', color: 'hsl(220, 91%, 25%)', animationDelay: '0.2s'}}>
+              <div className="w-2 h-2 rounded-full mr-3 pulse-soft" style={{backgroundColor: 'hsl(45, 93%, 60%)'}}></div>
               Helping you navigate career paths in an AI world
             </div>
 
-            {/* Main Headline - More dynamic */}
+            {/* Premium Animated Headline */}
             <h1 className="text-5xl lg:text-7xl font-bold leading-tight mb-8">
-              <span style={{color: 'hsl(220, 91%, 20%)'}}>Redefining</span>
-              <br />
-              <span className="text-gradient-brand">Career Trajectory</span>
-              <br />
-              <span style={{color: 'hsl(267, 47%, 25%)'}}>with Clarity</span>
+              <span className="slide-in-up block" style={{color: 'hsl(220, 91%, 20%)', animationDelay: '0.4s'}}>Redefining</span>
+              <span className="text-shimmer block" style={{animationDelay: '0.6s'}}>Career Trajectory</span>
+              <span className="slide-in-up block" style={{color: 'hsl(267, 47%, 25%)', animationDelay: '0.8s'}}>with Clarity</span>
             </h1>
 
-            {/* Subheadline - More inspiring */}
-            <p className="text-xl text-gray-700 mb-10 max-w-2xl leading-relaxed font-medium">
+            {/* Premium Subheadline */}
+            <p className="text-xl text-gray-700 mb-10 max-w-2xl leading-relaxed font-medium slide-in-up" style={{animationDelay: '1s'}}>
               For professionals at a crossroads, in role, identity, or purpose.
               <br />
               <span className="text-gradient-blue font-semibold">Leadcrest helps you realign your career to who you are and where the world is going.</span>
@@ -74,78 +77,83 @@ export default function PremiumHero() {
 
 
 
-            {/* Enhanced CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-6 mb-16">
+            {/* Premium Magnetic CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-6 mb-16 slide-in-up" style={{animationDelay: '1.2s'}}>
               <button 
                 onClick={() => scrollToSection('packages')}
-                className="group relative px-8 py-4 rounded-2xl font-semibold text-white overflow-hidden transform hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl"
-                style={{background: 'linear-gradient(135deg, hsl(220, 91%, 50%), hsl(267, 47%, 50%))'}}
+                className="group relative px-10 py-5 rounded-2xl font-semibold text-white overflow-hidden button-magnetic"
+                style={{background: 'linear-gradient(135deg, hsl(220, 91%, 50%), hsl(267, 47%, 50%)), linear-gradient(135deg, hsl(220, 91%, 45%), hsl(267, 47%, 45%))'}}
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-white/30 via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 transform -skew-x-12 group-hover:translate-x-full"></div>
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="relative flex items-center justify-center">
-                  <span>Discover Your Path</span>
-                  <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  <span className="tracking-wide">Discover Your Path</span>
+                  <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-2 group-hover:scale-110 transition-all duration-300" />
                 </div>
               </button>
               
               <button 
                 onClick={() => setIsCallModalOpen(true)}
-                className="group px-8 py-4 rounded-2xl font-semibold bg-white border-2 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+                className="group px-10 py-5 rounded-2xl font-semibold glass-premium border-2 button-magnetic card-hover-glow"
                 style={{borderColor: 'hsl(45, 93%, 60%)', color: 'hsl(220, 91%, 25%)'}}
               >
                 <div className="flex items-center justify-center">
-                  <div className="w-8 h-8 rounded-full mr-3 flex items-center justify-center group-hover:scale-110 transition-transform" style={{backgroundColor: 'hsl(45, 93%, 90%)'}}>
-                    <Play className="w-4 h-4" style={{color: 'hsl(45, 93%, 50%)'}} />
+                  <div className="w-10 h-10 rounded-full mr-4 flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-all duration-300 shadow-lg" 
+                       style={{background: 'linear-gradient(135deg, hsl(45, 93%, 85%), hsl(45, 93%, 90%))'}}>
+                    <Play className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" style={{color: 'hsl(45, 93%, 50%)'}} />
                   </div>
-                  <span>Free Career Clarity Call</span>
+                  <span className="tracking-wide">Free Career Clarity Call</span>
                 </div>
               </button>
             </div>
 
-            {/* Modern Stats */}
-            <div className="grid grid-cols-3 gap-6">
+            {/* Premium Animated Stats */}
+            <div className="grid grid-cols-3 gap-6 slide-in-up" style={{animationDelay: '1.4s'}}>
               {stats.map((stat, index) => (
-                <div key={index} className="text-center group">
-                  <div className="w-16 h-16 rounded-3xl flex items-center justify-center mx-auto mb-4 transform group-hover:scale-110 transition-all duration-300 shadow-lg"
+                <div key={index} className="text-center group cursor-default">
+                  <div className="w-16 h-16 rounded-3xl flex items-center justify-center mx-auto mb-4 transform group-hover:scale-125 group-hover:rotate-6 transition-all duration-500 shadow-lg hover:shadow-2xl float-gentle"
                        style={{
                          background: index === 0 ? 'linear-gradient(135deg, hsl(220, 91%, 85%), hsl(220, 91%, 90%))' :
                                      index === 1 ? 'linear-gradient(135deg, hsl(267, 47%, 85%), hsl(267, 47%, 90%))' :
-                                     'linear-gradient(135deg, hsl(45, 93%, 85%), hsl(45, 93%, 90%))'
+                                     'linear-gradient(135deg, hsl(45, 93%, 85%), hsl(45, 93%, 90%))',
+                         animationDelay: `${2 + index * 0.3}s`
                        }}>
-                    <stat.icon className="w-7 h-7" 
+                    <stat.icon className="w-7 h-7 group-hover:scale-110 transition-transform duration-300" 
                                style={{
                                  color: index === 0 ? 'hsl(220, 91%, 50%)' :
                                         index === 1 ? 'hsl(267, 47%, 50%)' :
                                         'hsl(45, 93%, 50%)'
                                }} />
                   </div>
-                  <div className="text-3xl font-bold mb-1" style={{color: 'hsl(220, 91%, 25%)'}}>{stat.value}</div>
-                  <div className="text-sm font-medium text-gray-600">{stat.label}</div>
+                  <div className="text-3xl font-bold mb-1 group-hover:scale-105 transition-transform duration-300" 
+                       style={{color: 'hsl(220, 91%, 25%)'}}>{stat.value}</div>
+                  <div className="text-sm font-medium text-gray-600 group-hover:text-gray-800 transition-colors duration-300">{stat.label}</div>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Right Content - Enhanced Modern Image */}
-          <div className="fade-in-up stagger-2 relative">
+          {/* Right Content - Premium Animated Image */}
+          <div className="fade-in-up stagger-2 relative slide-in-up" style={{animationDelay: '1.6s'}}>
             <div className="relative max-w-lg mx-auto">
-              {/* Modern Image Container */}
-              <div className="relative p-6 bg-white/60 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/50">
+              {/* Premium Glass Image Container */}
+              <div className="relative p-6 glass-premium rounded-3xl shadow-2xl border border-white/50 hover:shadow-3xl transition-all duration-500 float-gentle" style={{animationDelay: '3s'}}>
                 <img 
                   src={heroImage}
                   alt="Confident mid-career professional on transformative career pathway with futuristic technology" 
-                  className="w-full h-auto rounded-2xl object-cover"
+                  className="w-full h-auto rounded-2xl object-cover hover:scale-105 transition-transform duration-500"
                 />
                 
-                {/* Modern Floating Success Card */}
-                <div className="absolute -bottom-4 -left-4 bg-white/95 backdrop-blur-xl p-5 rounded-2xl shadow-xl border border-white/50 transform hover:scale-105 transition-all duration-300">
+                {/* Premium Floating Success Card */}
+                <div className="absolute -bottom-4 -left-4 glass-premium p-5 rounded-2xl shadow-xl border border-white/50 transform hover:scale-110 hover:rotate-2 transition-all duration-500 cursor-default card-hover-glow float-gentle" style={{animationDelay: '4s'}}>
                   <div className="flex items-center space-x-4">
-                    <div className="w-14 h-14 rounded-2xl flex items-center justify-center shadow-lg" style={{background: 'linear-gradient(135deg, hsl(267, 47%, 85%), hsl(267, 47%, 75%))'}}>
-                      <Award className="w-7 h-7" style={{color: 'hsl(267, 47%, 50%)'}} />
+                    <div className="w-14 h-14 rounded-2xl flex items-center justify-center shadow-lg hover:scale-110 hover:rotate-12 transition-all duration-300" 
+                         style={{background: 'linear-gradient(135deg, hsl(267, 47%, 85%), hsl(267, 47%, 75%))'}}>
+                      <Award className="w-7 h-7 hover:scale-110 transition-transform duration-300" style={{color: 'hsl(267, 47%, 50%)'}} />
                     </div>
                     <div>
-                      <div className="font-bold text-gray-900 text-lg">AI-Proof</div>
-                      <div className="text-sm font-medium" style={{color: 'hsl(267, 47%, 60%)'}}>Career Paths</div>
+                      <div className="font-bold text-gray-900 text-lg hover:text-gray-700 transition-colors duration-300">AI-Proof</div>
+                      <div className="text-sm font-medium hover:text-gray-600 transition-colors duration-300" style={{color: 'hsl(267, 47%, 60%)'}}>Career Paths</div>
                     </div>
                   </div>
                 </div>
