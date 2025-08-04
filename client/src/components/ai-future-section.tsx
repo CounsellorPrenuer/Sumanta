@@ -40,11 +40,13 @@ export default function AIFutureSection() {
 
   const automationProgress = [
     { field: "Data Entry", progress: 95, risk: "Critical" },
-    { field: "Translation", progress: 90, risk: "Critical" },
     { field: "Bookkeeping", progress: 92, risk: "Critical" },
+    { field: "Translation", progress: 90, risk: "Critical" },
     { field: "Tax Preparation", progress: 88, risk: "Critical" },
     { field: "Basic Accounting", progress: 85, risk: "Critical" },
+    { field: "Telemarketing", progress: 82, risk: "Critical" },
     { field: "Customer Service", progress: 80, risk: "Critical" },
+    { field: "Proofreading", progress: 78, risk: "High" },
     { field: "Content Writing", progress: 75, risk: "High" },
     { field: "Legal Research", progress: 75, risk: "High" },
     { field: "Data Analysis", progress: 72, risk: "High" },
@@ -53,10 +55,20 @@ export default function AIFutureSection() {
     { field: "Social Media Management", progress: 68, risk: "High" },
     { field: "Financial Analysis", progress: 65, risk: "High" },
     { field: "Recruitment", progress: 65, risk: "High" },
-    { field: "Graphic Design", progress: 60, risk: "High" },
+    { field: "Graphic Design", progress: 63, risk: "High" },
+    { field: "Video Production", progress: 60, risk: "High" },
     { field: "Quality Assurance", progress: 58, risk: "Medium" },
-    { field: "Video Editing", progress: 55, risk: "Medium" },
-    { field: "Medical Diagnosis", progress: 55, risk: "Medium" }
+    { field: "Video Editing", progress: 57, risk: "Medium" },
+    { field: "Web Design", progress: 55, risk: "Medium" },
+    { field: "Medical Diagnosis", progress: 55, risk: "Medium" },
+    { field: "Inventory Management", progress: 53, risk: "Medium" },
+    { field: "Email Marketing", progress: 52, risk: "Medium" },
+    { field: "Photo Editing", progress: 50, risk: "Medium" },
+    { field: "Administrative Support", progress: 48, risk: "Medium" },
+    { field: "Interior Design", progress: 45, risk: "Medium" },
+    { field: "Technical Writing", progress: 42, risk: "Low" },
+    { field: "Project Management", progress: 40, risk: "Low" },
+    { field: "Sales Consulting", progress: 38, risk: "Low" }
   ];
 
   const aiResistantCareers = [
