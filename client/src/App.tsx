@@ -8,6 +8,7 @@ import Checkout from "@/pages/checkout";
 import NotFound from "@/pages/not-found";
 
 import WhyCCCEdu from "@/pages/why-ccc-edu";
+import CorporateParentingWellbeing from "@/pages/corporate-parenting-wellbeing";
 import BlogsResources from "@/pages/blogs-resources";
 import HowItWorks from "@/pages/how-it-works";
 import Contact from "@/pages/contact";
@@ -19,6 +20,7 @@ function Router() {
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/why-ccc-edu" component={WhyCCCEdu} />
+      <Route path="/corporate-parenting-wellbeing" component={CorporateParentingWellbeing} />
       <Route path="/blogs-resources" component={BlogsResources} />
       <Route path="/how-it-works" component={HowItWorks} />
       <Route path="/contact" component={Contact} />

@@ -20,6 +20,7 @@ export default function PremiumNavigation() {
 
   const navItems = [
     { name: "Why Leadcrest", href: "/why-ccc-edu" },
+    { name: "Corporate Parenting Wellbeing", href: "/corporate-parenting-wellbeing" },
     { name: "Blogs/Resources", href: "/blogs-resources" },
     { name: "How it Works", href: "/how-it-works" },
     { name: "Contact Us", href: "/contact" },
