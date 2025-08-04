@@ -57,19 +57,19 @@ export default function PremiumPackages() {
   const getFilteredPackages = () => {
     if (!packages) return [];
     
-    // Map package names to age groups based on typical naming patterns
+    // Map packages to age groups based on their targetAudience field
     return packages.filter(pkg => {
-      const name = pkg.name.toLowerCase();
+      const audience = pkg.targetAudience.toLowerCase();
       
       switch (selectedAgeGroup) {
         case 'class8-9':
-          return name.includes('stream') || name.includes('foundation') || name.includes('early');
+          return audience.includes('class 8-9') || audience.includes('8-9');
         case 'class10-12':
-          return name.includes('discover') || name.includes('explore') || name.includes('entrance') || name.includes('school');
+          return audience.includes('class 10-12') || audience.includes('10-12');
         case 'graduates':
-          return name.includes('advance') || name.includes('graduate') || name.includes('placement') || name.includes('job');
+          return audience.includes('graduate') && !audience.includes('professional');
         case 'professionals':
-          return name.includes('complete') || name.includes('professional') || name.includes('career change') || name.includes('executive');
+          return audience.includes('professional') || audience.includes('graduates & professionals');
         default:
           return true;
       }
