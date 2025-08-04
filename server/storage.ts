@@ -129,11 +129,11 @@ export class MemStorage implements IStorage {
         isPopular: false
       },
       {
-        id: "ascend",
+        id: "ascend-graduate",
         name: "Ascend",
         price: 6499,
-        targetAudience: "For Graduates & Professionals",
-        description: "Career transformation for professionals",
+        targetAudience: "For College Graduates",
+        description: "Career transformation for graduates",
         features: [
           "Psychometric assessment to measure your interests, personality and abilities",
           "1 career coaching session for specialisation/job selection",
@@ -143,10 +143,10 @@ export class MemStorage implements IStorage {
         isPopular: false
       },
       {
-        id: "ascend-plus",
+        id: "ascend-plus-graduate",
         name: "Ascend Plus",
         price: 10599,
-        targetAudience: "For Graduates & Professionals",
+        targetAudience: "For College Graduates",
         description: "Premium career development program",
         features: [
           "Psychometric assessment to measure your interests, personality and abilities",
@@ -156,6 +156,38 @@ export class MemStorage implements IStorage {
           "Customised reports after each session with education pathways",
           "Guidance on Masters' admissions in India and abroad",
           "CV reviews during internships/graduation",
+          "Guidance until you get into the job you love",
+          "Career helpline access"
+        ],
+        isPopular: false
+      },
+      {
+        id: "ascend-professional",
+        name: "Ascend",
+        price: 6499,
+        targetAudience: "For Working Professionals",
+        description: "Career transformation for professionals",
+        features: [
+          "Psychometric assessment to measure your interests, personality and abilities",
+          "1 career coaching session focused on career transition, growth and upskilling",
+          "Lifetime access to Knowledge Gateway",
+          "Pre-recorded webinars by industry experts"
+        ],
+        isPopular: false
+      },
+      {
+        id: "ascend-plus-professional",
+        name: "Ascend Plus",
+        price: 10599,
+        targetAudience: "For Working Professionals",
+        description: "Premium career development program",
+        features: [
+          "Psychometric assessment to measure your interests, personality and abilities",
+          "3 career coaching sessions",
+          "Lifetime access to Knowledge Gateway",
+          "Attend live webinars by industry experts",
+          "Customised reports after each session with upskilling pathways",
+          "CV reviews and Interview Prep",
           "Guidance until you get into the job you love",
           "Career helpline access"
         ],
