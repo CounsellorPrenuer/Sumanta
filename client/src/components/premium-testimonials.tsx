@@ -8,7 +8,7 @@ export default function PremiumTestimonials() {
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
       content: "The psychometric assessment completely changed my perspective. I discovered my true passion for technology and landed my dream job at Google. Manpreet ma'am's guidance was invaluable.",
       rating: 5,
-      package: "Complete Package"
+      package: "Ascend Plus"
     },
     {
       name: "Priya Patel",
@@ -16,7 +16,7 @@ export default function PremiumTestimonials() {
       image: "https://images.unsplash.com/photo-1494790108755-2616b612b2b5?w=400&h=400&fit=crop&crop=face",
       content: "From confusion to clarity - that's my journey with CCC Education. The personalized counseling sessions helped me choose medicine over engineering, and I couldn't be happier.",
       rating: 5,
-      package: "Explore Package"
+      package: "Achieve"
     },
     {
       name: "Rahul Kumar",
@@ -24,7 +24,7 @@ export default function PremiumTestimonials() {
       image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face", 
       content: "The foreign admissions support was exceptional. From university selection to visa guidance, every step was handled professionally. Now studying at my dream business school!",
       rating: 5,
-      package: "Advance Package"
+      package: "Ascend Plus"
     },
     {
       name: "Sneha Agarwal",
@@ -32,7 +32,7 @@ export default function PremiumTestimonials() {
       image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face",
       content: "The CV building service was a game-changer. My new resume got me interviews at top companies. The professional guidance transformed my career trajectory completely.",
       rating: 5,
-      package: "Professional Package"
+      package: "Ascend"
     },
     {
       name: "Vikash Singh",
@@ -40,7 +40,7 @@ export default function PremiumTestimonials() {
       image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop&crop=face",
       content: "The mentorship platform connected me with industry experts who guided me through my transition from mechanical engineering to data science. Truly life-changing experience.",
       rating: 5,
-      package: "Discover Package"
+      package: "Discover"
     },
     {
       name: "Ananya Gupta",
@@ -48,7 +48,7 @@ export default function PremiumTestimonials() {
       image: "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=400&h=400&fit=crop&crop=face",
       content: "The career webinars provided insights into industry trends that helped me make informed decisions. The expert guidance gave me confidence in my chosen path.",
       rating: 5,
-      package: "Elite Package"
+      package: "Achieve"
     }
   ];
 
