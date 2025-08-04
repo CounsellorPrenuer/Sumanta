@@ -40,7 +40,7 @@ export default function Footer() {
                 <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
                   <Phone className="h-4 w-4 text-white" />
                 </div>
-                <span>+91 98765 43210</span>
+                <span>+91 9815299446</span>
               </div>
               <div className="flex items-center gap-3 text-gray-300 hover:text-blue-400 transition-colors cursor-pointer">
                 <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">

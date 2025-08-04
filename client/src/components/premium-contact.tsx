@@ -66,7 +66,7 @@ export default function PremiumContact() {
     {
       icon: Phone,
       title: "Call Us",
-      details: "+91 98765 43210",
+      details: "+91 9815299446",
       subtext: "Mon-Fri: 9:00 AM - 6:00 PM",
       color: "from-green-500 to-emerald-600"
     },
@@ -170,7 +170,7 @@ export default function PremiumContact() {
                     value={formData.phone}
                     onChange={(e) => handleChange('phone', e.target.value)}
                     className="mt-2 h-12 border-gray-300 focus:border-blue-500 focus:ring-blue-200 rounded-xl"
-                    placeholder="+91 98765 43210"
+                    placeholder="+91 9815299446"
                     required
                     data-testid="input-phone"
                   />
