@@ -31,19 +31,15 @@ export default function PremiumHero() {
       {/* Modern Light Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-r from-blue-50/20 via-transparent to-yellow-50/20"></div>
       
-      {/* Enhanced floating orbs with sophisticated animations */}
-      <div className="absolute top-20 left-10 w-96 h-96 rounded-full opacity-10 float-gentle" style={{background: 'linear-gradient(135deg, hsl(220, 91%, 85%), hsl(220, 91%, 90%))', animationDelay: '0s'}}></div>
-      <div className="absolute top-32 right-16 w-80 h-80 rounded-full opacity-8 float-gentle" style={{background: 'linear-gradient(135deg, hsl(267, 47%, 85%), hsl(267, 47%, 90%))', animationDelay: '2s'}}></div>
-      <div className="absolute bottom-20 left-1/3 w-64 h-64 rounded-full opacity-12 float-gentle" style={{background: 'linear-gradient(135deg, hsl(45, 93%, 85%), hsl(45, 93%, 90%))', animationDelay: '4s'}}></div>
+      {/* Subtle static background orbs */}
+      <div className="absolute top-20 left-10 w-96 h-96 rounded-full opacity-10" style={{background: 'linear-gradient(135deg, hsl(220, 91%, 85%), hsl(220, 91%, 90%))'}}></div>
+      <div className="absolute top-32 right-16 w-80 h-80 rounded-full opacity-8" style={{background: 'linear-gradient(135deg, hsl(267, 47%, 85%), hsl(267, 47%, 90%))'}}></div>
+      <div className="absolute bottom-20 left-1/3 w-64 h-64 rounded-full opacity-12" style={{background: 'linear-gradient(135deg, hsl(45, 93%, 85%), hsl(45, 93%, 90%))'}}></div>
       
-      {/* Premium geometric accent elements */}
-      <div className="absolute top-40 left-1/4 w-8 h-8 rotate-45 opacity-20 pulse-soft" style={{background: 'hsl(220, 91%, 70%)', animationDelay: '1s'}}></div>
-      <div className="absolute top-1/2 right-1/4 w-6 h-6 rounded-full opacity-25 pulse-soft" style={{background: 'hsl(267, 47%, 70%)', animationDelay: '2s'}}></div>
-      <div className="absolute bottom-1/3 left-1/2 w-4 h-4 rotate-12 opacity-30 pulse-soft" style={{background: 'hsl(45, 93%, 65%)', animationDelay: '3s'}}></div>
-      
-      {/* Additional premium accents */}
-      <div className="absolute top-1/3 left-1/6 w-12 h-1 opacity-15 float-gentle" style={{background: 'linear-gradient(90deg, hsl(220, 91%, 70%), transparent)', animationDelay: '1.5s'}}></div>
-      <div className="absolute bottom-1/4 right-1/6 w-16 h-1 opacity-20 float-gentle" style={{background: 'linear-gradient(90deg, transparent, hsl(267, 47%, 70%))', animationDelay: '2.5s'}}></div>
+      {/* Subtle geometric accent elements */}
+      <div className="absolute top-40 left-1/4 w-8 h-8 rotate-45 opacity-20" style={{background: 'hsl(220, 91%, 70%)'}}></div>
+      <div className="absolute top-1/2 right-1/4 w-6 h-6 rounded-full opacity-25" style={{background: 'hsl(267, 47%, 70%)'}}></div>
+      <div className="absolute bottom-1/3 left-1/2 w-4 h-4 rotate-12 opacity-30" style={{background: 'hsl(45, 93%, 65%)'}}></div>
       
       {/* Subtle grid pattern */}
       <div className="absolute inset-0 opacity-5" style={{backgroundImage: 'radial-gradient(circle at 1px 1px, hsl(220, 91%, 50%) 1px, transparent 0)', backgroundSize: '40px 40px'}}></div>
@@ -107,53 +103,51 @@ export default function PremiumHero() {
               </button>
             </div>
 
-            {/* Premium Animated Stats */}
+            {/* Elegant Stats */}
             <div className="grid grid-cols-3 gap-6 slide-in-up" style={{animationDelay: '1.4s'}}>
               {stats.map((stat, index) => (
                 <div key={index} className="text-center group cursor-default">
-                  <div className="w-16 h-16 rounded-3xl flex items-center justify-center mx-auto mb-4 transform group-hover:scale-125 group-hover:rotate-6 transition-all duration-500 shadow-lg hover:shadow-2xl float-gentle"
+                  <div className="w-16 h-16 rounded-3xl flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:shadow-xl transition-shadow duration-300"
                        style={{
                          background: index === 0 ? 'linear-gradient(135deg, hsl(220, 91%, 85%), hsl(220, 91%, 90%))' :
                                      index === 1 ? 'linear-gradient(135deg, hsl(267, 47%, 85%), hsl(267, 47%, 90%))' :
-                                     'linear-gradient(135deg, hsl(45, 93%, 85%), hsl(45, 93%, 90%))',
-                         animationDelay: `${2 + index * 0.3}s`
+                                     'linear-gradient(135deg, hsl(45, 93%, 85%), hsl(45, 93%, 90%))'
                        }}>
-                    <stat.icon className="w-7 h-7 group-hover:scale-110 transition-transform duration-300" 
+                    <stat.icon className="w-7 h-7" 
                                style={{
                                  color: index === 0 ? 'hsl(220, 91%, 50%)' :
                                         index === 1 ? 'hsl(267, 47%, 50%)' :
                                         'hsl(45, 93%, 50%)'
                                }} />
                   </div>
-                  <div className="text-3xl font-bold mb-1 group-hover:scale-105 transition-transform duration-300" 
-                       style={{color: 'hsl(220, 91%, 25%)'}}>{stat.value}</div>
-                  <div className="text-sm font-medium text-gray-600 group-hover:text-gray-800 transition-colors duration-300">{stat.label}</div>
+                  <div className="text-3xl font-bold mb-1" style={{color: 'hsl(220, 91%, 25%)'}}>{stat.value}</div>
+                  <div className="text-sm font-medium text-gray-600">{stat.label}</div>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Right Content - Premium Animated Image */}
+          {/* Right Content - Elegant Static Image */}
           <div className="fade-in-up stagger-2 relative slide-in-up" style={{animationDelay: '1.6s'}}>
             <div className="relative max-w-lg mx-auto">
-              {/* Premium Glass Image Container */}
-              <div className="relative p-6 glass-premium rounded-3xl shadow-2xl border border-white/50 hover:shadow-3xl transition-all duration-500 float-gentle" style={{animationDelay: '3s'}}>
+              {/* Elegant Glass Image Container */}
+              <div className="relative p-6 glass-premium rounded-3xl shadow-2xl border border-white/50">
                 <img 
                   src={heroImage}
                   alt="Confident mid-career professional on transformative career pathway with futuristic technology" 
-                  className="w-full h-auto rounded-2xl object-cover hover:scale-105 transition-transform duration-500"
+                  className="w-full h-auto rounded-2xl object-cover"
                 />
                 
-                {/* Premium Floating Success Card */}
-                <div className="absolute -bottom-4 -left-4 glass-premium p-5 rounded-2xl shadow-xl border border-white/50 transform hover:scale-110 hover:rotate-2 transition-all duration-500 cursor-default card-hover-glow float-gentle" style={{animationDelay: '4s'}}>
+                {/* Elegant Success Card */}
+                <div className="absolute -bottom-4 -left-4 glass-premium p-5 rounded-2xl shadow-xl border border-white/50 cursor-default">
                   <div className="flex items-center space-x-4">
-                    <div className="w-14 h-14 rounded-2xl flex items-center justify-center shadow-lg hover:scale-110 hover:rotate-12 transition-all duration-300" 
+                    <div className="w-14 h-14 rounded-2xl flex items-center justify-center shadow-lg" 
                          style={{background: 'linear-gradient(135deg, hsl(267, 47%, 85%), hsl(267, 47%, 75%))'}}>
-                      <Award className="w-7 h-7 hover:scale-110 transition-transform duration-300" style={{color: 'hsl(267, 47%, 50%)'}} />
+                      <Award className="w-7 h-7" style={{color: 'hsl(267, 47%, 50%)'}} />
                     </div>
                     <div>
-                      <div className="font-bold text-gray-900 text-lg hover:text-gray-700 transition-colors duration-300">AI-Proof</div>
-                      <div className="text-sm font-medium hover:text-gray-600 transition-colors duration-300" style={{color: 'hsl(267, 47%, 60%)'}}>Career Paths</div>
+                      <div className="font-bold text-gray-900 text-lg">AI-Proof</div>
+                      <div className="text-sm font-medium" style={{color: 'hsl(267, 47%, 60%)'}}>Career Paths</div>
                     </div>
                   </div>
                 </div>
