@@ -61,7 +61,7 @@ export default function PremiumAbout() {
             </h2>
 
             <p className="text-xl text-gray-700 mb-8 leading-relaxed">
-              With over <strong>23 years of experience</strong>, Manpreet Kaur has guided <strong>10,000+ students and professionals</strong> across India and abroad. She's a certified career counsellor (IAAP, APCDA, GCDA), founder of CCC Education Foundation (NGO), and a Mentoria-certified partner.
+              With over <strong>23 years of experience</strong>, Manpreet Kaur has guided <strong>5,000+ students and professionals</strong> across India and abroad. She's a certified career counsellor (IAAP, APCDA, GCDA), founder of CCC Education Foundation (NGO), and a Mentoria-certified partner.
             </p>
 
             <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-2xl p-6 mb-8">
@@ -82,7 +82,7 @@ export default function PremiumAbout() {
               <div className="flex items-center space-x-3 p-4 bg-white border border-gray-200 rounded-xl">
                 <Brain className="w-6 h-6 text-blue-600" />
                 <div>
-                  <div className="text-sm font-medium text-gray-900">10,000+ Lives</div>
+                  <div className="text-sm font-medium text-gray-900">5,000+ Lives</div>
                   <div className="text-xs text-gray-600">Transformed</div>
                 </div>
               </div>
@@ -104,18 +104,18 @@ export default function PremiumAbout() {
 
             <div className="flex flex-col sm:flex-row gap-4">
               <button 
-                onClick={() => scrollToSection('contact')}
+                onClick={() => scrollToSection('packages')}
                 className="btn-primary group inline-flex items-center justify-center"
               >
-                Book Consultation
+                Find My Career Path
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
               <button 
-                onClick={() => scrollToSection('packages')}
+                onClick={() => scrollToSection('contact')}
                 className="btn-secondary group inline-flex items-center justify-center"
               >
                 <Play className="mr-2 w-5 h-5" />
-                View Success Stories
+                Book a Free Career Clarity Call
               </button>
             </div>
           </div>
@@ -132,7 +132,7 @@ export default function PremiumAbout() {
                 <img 
                   src={manpreetImage} 
                   alt="Manpreet Kaur - Career Counselor and Founder"
-                  className="w-full h-96 object-cover rounded-2xl shadow-xl"
+                  className="w-full h-96 object-cover object-center rounded-2xl shadow-xl"
                 />
                 
                 {/* Overlay badge */}
@@ -143,7 +143,7 @@ export default function PremiumAbout() {
                 {/* Bottom credentials */}
                 <div className="absolute bottom-12 left-12 right-12 bg-white/95 backdrop-blur-sm border border-gray-200 rounded-2xl p-4">
                   <div className="text-center">
-                    <div className="text-lg font-bold text-gray-900">10,000+</div>
+                    <div className="text-lg font-bold text-gray-900">5,000+</div>
                     <div className="text-sm text-gray-600">Professionals Guided</div>
                   </div>
                 </div>
