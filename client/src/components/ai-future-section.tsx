@@ -88,8 +88,8 @@ export default function AIFutureSection() {
         <div className="grid lg:grid-cols-3 gap-16 items-start">
           {/* Column 1: Key Statistics */}
           <div className="space-y-12">
-            <div className="text-center">
-              <div className="text-7xl lg:text-8xl font-extralight text-gray-800 mb-4 tracking-tighter">85%</div>
+            <div className="text-center breath-animation">
+              <div className="text-7xl lg:text-8xl font-extralight text-gray-800 mb-4 tracking-tighter animate-number luxury-text">85%</div>
               <div className="text-xl text-gray-600 leading-relaxed font-light">
                 of careers that will exist in 2030 haven't been invented yet
               </div>
@@ -97,9 +97,9 @@ export default function AIFutureSection() {
             
             <div className="h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
             
-            <div className="premium-card bg-gradient-to-br from-slate-50 to-blue-50 border border-slate-200 rounded-3xl p-8 stagger-fade-up floating-card">
+            <div className="premium-card bg-gradient-to-br from-slate-50 to-blue-50 border border-slate-200 rounded-3xl p-8 stagger-fade-up floating-card magnetic-card subtle-glow">
               <div className="text-center">
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center mx-auto mb-6 breath-animation">
                   <TrendingUp className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-2xl font-medium text-gray-900 mb-4">Market Evolution</h3>
@@ -112,17 +112,17 @@ export default function AIFutureSection() {
 
           {/* Column 2: Industry Impact */}
           <div className="space-y-8">
-            <div className="premium-card bg-white/90 backdrop-blur-sm border border-slate-200 rounded-3xl p-8 stagger-fade-up stagger-2 floating-card">
-              <h3 className="text-2xl font-medium text-gray-900 mb-8 text-center">Automation Risk by Industry</h3>
+            <div className="premium-card bg-white/90 backdrop-blur-sm border border-slate-200 rounded-3xl p-8 stagger-fade-up stagger-2 floating-card magnetic-card subtle-glow">
+              <h3 className="text-2xl font-medium text-gray-900 mb-8 text-center luxury-text">Automation Risk by Industry</h3>
               
               <div className="space-y-6">
                 {automationProgress.slice(0, 4).map((item, index) => (
                   <div key={index} className="stagger-fade-up" style={{animationDelay: `${index * 0.1 + 0.5}s`}}>
                     <div className="flex items-center justify-between mb-3">
                       <div className="font-medium text-gray-900">{item.field}</div>
-                      <div className="text-sm font-medium text-gray-500">{item.progress}%</div>
+                      <div className="text-sm font-medium text-gray-500 animate-number">{item.progress}%</div>
                     </div>
-                    <div className="w-full bg-slate-100 rounded-full h-2">
+                    <div className="w-full bg-slate-100 rounded-full h-2 premium-progress">
                       <div 
                         className="h-2 rounded-full bg-gradient-to-r from-gray-400 to-slate-600 transition-all duration-1000 ease-out"
                         style={{
@@ -136,12 +136,12 @@ export default function AIFutureSection() {
               </div>
             </div>
 
-            <div className="premium-card bg-gradient-to-br from-orange-50 to-red-50 border border-orange-200 rounded-3xl p-8 stagger-fade-up stagger-3 floating-card">
+            <div className="premium-card bg-gradient-to-br from-orange-50 to-red-50 border border-orange-200 rounded-3xl p-8 stagger-fade-up stagger-3 floating-card magnetic-card">
               <div className="flex items-center space-x-4 mb-6">
-                <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-2xl flex items-center justify-center">
+                <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-2xl flex items-center justify-center breath-animation">
                   <Brain className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-2xl font-medium text-gray-900">AI Disruption</h3>
+                <h3 className="text-2xl font-medium text-gray-900 luxury-text">AI Disruption</h3>
               </div>
               <p className="text-lg text-gray-700 leading-relaxed">
                 Traditional career paths across industries are being fundamentally restructured by artificial intelligence.
@@ -151,12 +151,12 @@ export default function AIFutureSection() {
 
           {/* Column 3: The Solution */}
           <div className="space-y-8">
-            <div className="premium-card bg-gradient-to-br from-emerald-50 to-green-50 border border-emerald-200 rounded-3xl p-8 stagger-fade-up stagger-4 floating-card">
+            <div className="premium-card bg-gradient-to-br from-emerald-50 to-green-50 border border-emerald-200 rounded-3xl p-8 stagger-fade-up stagger-4 floating-card magnetic-card subtle-glow">
               <div className="text-center mb-8">
-                <div className="w-16 h-16 bg-gradient-to-br from-emerald-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                <div className="w-16 h-16 bg-gradient-to-br from-emerald-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-6 breath-animation">
                   <Shield className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-2xl font-medium text-gray-900 mb-4">Future-Proof Strategy</h3>
+                <h3 className="text-2xl font-medium text-gray-900 mb-4 luxury-text">Future-Proof Strategy</h3>
                 <p className="text-lg text-emerald-700 font-medium leading-relaxed">
                   Strategic, AI-aware career guidance tailored to your unique profile and goals.
                 </p>
@@ -166,11 +166,11 @@ export default function AIFutureSection() {
                 {aiResistantCareers.slice(0, 4).map((skill, index) => (
                   <div 
                     key={index}
-                    className="bg-white/80 border border-emerald-200 rounded-xl p-4 stagger-fade-up"
+                    className="bg-white/80 border border-emerald-200 rounded-xl p-4 stagger-fade-up floating-card magnetic-card"
                     style={{animationDelay: `${index * 0.1 + 1}s`}}
                   >
                     <div className="flex items-center space-x-3">
-                      <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
+                      <div className="w-2 h-2 bg-emerald-500 rounded-full breath-animation"></div>
                       <span className="text-base font-medium text-gray-800">{skill}</span>
                     </div>
                   </div>
@@ -178,13 +178,13 @@ export default function AIFutureSection() {
               </div>
             </div>
 
-            <div className="premium-card bg-gradient-to-br from-blue-600 to-indigo-700 rounded-3xl p-8 text-white stagger-fade-up stagger-5 floating-card">
+            <div className="premium-card bg-gradient-to-br from-blue-600 to-indigo-700 rounded-3xl p-8 text-white stagger-fade-up stagger-5 floating-card magnetic-card subtle-glow">
               <div className="text-center">
                 <h3 className="text-2xl font-semibold mb-4">Ready to Transform Your Career?</h3>
                 <p className="text-blue-100 mb-6 leading-relaxed">
                   Get personalized guidance that's designed for the AI-driven future of work.
                 </p>
-                <div className="inline-flex items-center px-6 py-3 bg-white/20 rounded-full text-sm font-medium">
+                <div className="inline-flex items-center px-6 py-3 bg-white/20 rounded-full text-sm font-medium breath-animation">
                   <Target className="w-4 h-4 mr-2" />
                   Strategic Career Planning
                 </div>

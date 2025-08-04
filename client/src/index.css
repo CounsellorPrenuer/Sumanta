@@ -243,6 +243,153 @@
   animation: gradientShift 3s ease-in-out infinite;
 }
 
+/* 10X Sophisticated Animations */
+.stagger-fade-up {
+  opacity: 0;
+  transform: translateY(40px) scale(0.98);
+  animation: fadeUpStagger 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes fadeUpStagger {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Enhanced floating cards with shimmer effect */
+.floating-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  transition: left 0.8s ease;
+  z-index: 10;
+}
+
+.floating-card:hover::before {
+  left: 100%;
+}
+
+.floating-card:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 32px 64px -12px rgba(0, 0, 0, 0.18), 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+/* Sophisticated number animations */
+.animate-number {
+  background: linear-gradient(135deg, #1e293b, #475569, #64748b);
+  background-size: 200% 200%;
+  animation: shimmer 3s ease-in-out infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@keyframes shimmer {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Elegant progress bars with shine */
+.premium-progress {
+  position: relative;
+  overflow: hidden;
+}
+
+.premium-progress::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);
+  animation: progressShine 2s ease-in-out infinite;
+}
+
+@keyframes progressShine {
+  0% { left: -100%; }
+  50% { left: 100%; }
+  100% { left: -100%; }
+}
+
+/* Enhanced premium cards with radial glow */
+.premium-card::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.premium-card:hover::after {
+  opacity: 1;
+}
+
+.premium-card:hover {
+  box-shadow: 
+    0 20px 60px rgba(31, 38, 135, 0.15),
+    0 8px 24px rgba(31, 38, 135, 0.1),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
+  transform: translateY(-8px) scale(1.01);
+}
+
+/* Magnetic hover effects */
+.magnetic-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.magnetic-card:hover {
+  transform: translateZ(0) scale(1.05);
+  filter: brightness(1.05);
+}
+
+/* Luxury text effects */
+.luxury-text {
+  background: linear-gradient(135deg, #1e293b 0%, #334155 50%, #475569 100%);
+  background-size: 200% 200%;
+  animation: luxuryShimmer 4s ease-in-out infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@keyframes luxuryShimmer {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Subtle glow effects */
+.subtle-glow {
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.1), 0 0 40px rgba(59, 130, 246, 0.05);
+  transition: box-shadow 0.6s ease;
+}
+
+.subtle-glow:hover {
+  box-shadow: 0 0 30px rgba(59, 130, 246, 0.15), 0 0 60px rgba(59, 130, 246, 0.1);
+}
+
+/* Breath animation for special elements */
+.breath-animation {
+  animation: breathe 4s ease-in-out infinite;
+}
+
+@keyframes breathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+}
+
 @keyframes gradientShift {
   0%, 100% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
