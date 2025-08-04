@@ -94,7 +94,7 @@ export default function BookCallModal({ isOpen, onClose }: BookCallModalProps) {
                     </DialogTitle>
                     <div className="flex items-center gap-2 text-gray-600">
                       <Star className="w-4 h-4 text-yellow-500 fill-current" />
-                      <span className="text-sm font-medium">Trusted by 5,000+ students</span>
+                      <span className="text-sm font-medium">Trusted by 3,725+ professionals</span>
                     </div>
                   </div>
                 </div>

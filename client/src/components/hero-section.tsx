@@ -11,8 +11,8 @@ export default function HeroSection() {
   };
 
   const stats = [
-    { icon: Users, value: "5000+", label: "Students Guided" },
-    { icon: Award, value: "23+", label: "Years Experience" },
+    { icon: Users, value: "3725+", label: "Professionals Guided" },
+    { icon: Award, value: "20+", label: "Years Experience" },
     { icon: TrendingUp, value: "98%", label: "Success Rate" },
     { icon: Star, value: "15+", label: "Certifications" }
   ];

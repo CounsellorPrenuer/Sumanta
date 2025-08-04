@@ -13,7 +13,7 @@ export default function AboutSection() {
   const achievements = [
     { icon: Award, title: "Founder & Director", subtitle: "Leadcrest Consulting (NGO)" },
     { icon: CheckCircle, title: "Certified Career Counsellor", subtitle: "IAAP, APCDA, GCDA" },
-    { icon: Users, title: "Education & Career Coach", subtitle: "23+ Years Experience" },
+    { icon: Users, title: "Education & Career Coach", subtitle: "20+ Years Experience" },
     { icon: Globe, title: "Mentoria Certified", subtitle: "Counsellor & Partner" },
   ];
 
@@ -31,7 +31,7 @@ export default function AboutSection() {
               <div className="mt-6 text-center">
                 <div className="inline-flex items-center gap-2 glass-primary px-4 py-2 rounded-full text-sm font-medium text-primary">
                   <BookOpen className="h-4 w-4" />
-                  Since 2001 • 5000+ Students Guided
+                  Since 2001 • 3725+ Professionals Guided
                 </div>
               </div>
             </div>

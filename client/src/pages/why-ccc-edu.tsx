@@ -30,9 +30,9 @@ export default function WhyCCCEdu() {
     };
 
     setTimeout(() => {
-      animateCounter(5000, 'students');
+      animateCounter(3725, 'students');
       animateCounter(15, 'countries');
-      animateCounter(23, 'years');
+      animateCounter(20, 'years');
       animateCounter(95, 'success');
     }, 1000);
   }, []);
@@ -466,7 +466,7 @@ export default function WhyCCCEdu() {
                         <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
                       ))}
                     </div>
-                    <span className="text-sm font-semibold text-gray-700">5,000+ Reviews</span>
+                    <span className="text-sm font-semibold text-gray-700">3,725+ Professional Reviews</span>
                   </div>
                 </div>
               </div>
@@ -484,7 +484,7 @@ export default function WhyCCCEdu() {
           </h2>
           
           <p className="text-xl opacity-90 max-w-3xl mx-auto mb-12 leading-relaxed">
-            Join 5,000+ successful students and professionals who chose Leadcrest Consulting for their career transformation. 
+            Join 3,725+ successful professionals who chose Leadcrest Consulting for their career transformation. 
             <strong> Don't wait - your dream career starts today.</strong>
           </p>
 
@@ -498,7 +498,7 @@ export default function WhyCCCEdu() {
           </div>
 
           <p className="text-sm opacity-75 mt-8">
-            ⏰ Limited slots available - 23 years of expertise waiting for you
+            ⏰ Limited slots available - 20 years of expertise waiting for you
           </p>
         </div>
       </section>

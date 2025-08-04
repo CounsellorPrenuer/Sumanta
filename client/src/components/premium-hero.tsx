@@ -15,7 +15,7 @@ export default function PremiumHero() {
 
   const stats = [
     { icon: Users, value: "3725+", label: "Professionals Guided" },
-    { icon: Award, value: "24+", label: "Years of HR Leadership Experience" },
+    { icon: Award, value: "20+", label: "Years of HR Leadership Experience" },
     { icon: TrendingUp, value: "94%", label: "Success Rate" },
   ];
 

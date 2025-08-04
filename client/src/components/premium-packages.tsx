@@ -282,8 +282,8 @@ export default function PremiumPackages() {
                 <div className="text-gray-600">Support Available</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-gray-900 mb-2">5000+</div>
-                <div className="text-gray-600">Success Stories</div>
+                <div className="text-3xl font-bold text-gray-900 mb-2">3725+</div>
+                <div className="text-gray-600">Professional Success Stories</div>
               </div>
             </div>
           </div>
