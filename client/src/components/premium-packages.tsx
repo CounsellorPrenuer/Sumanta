@@ -55,12 +55,12 @@ export default function PremiumPackages() {
           </div>
           
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            Tailored Packages for
-            <span className="text-gradient-blue block">Every Career Stage</span>
+            Choose Your Career
+            <span className="text-gradient-blue block">Clarity Journey</span>
           </h2>
           
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            From career discovery to professional advancement, our scientifically designed packages cater to students and working professionals at every stage.
+            From stream selection to global admissions to professional pivots, we've built a future-ready package for every stage.
           </p>
         </div>
 
