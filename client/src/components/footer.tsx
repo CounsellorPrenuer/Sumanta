@@ -32,7 +32,7 @@ export default function Footer() {
             </div>
             
             <p className="text-gray-300 mb-8 leading-relaxed max-w-md">
-              Founded by Sumanta Chaudhuri, Leadcrest Consulting is dedicated to providing comprehensive career guidance and educational support to students and professionals worldwide.
+              Founded by Sumanta Chaudhuri, Leadcrest Consulting is dedicated to providing comprehensive career guidance and educational support to professionals worldwide, including corporate wellbeing solutions.
             </p>
             
             <div className="space-y-4">
@@ -52,7 +52,7 @@ export default function Footer() {
                 <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{backgroundColor: 'hsl(var(--gold))'}}>
                   <MapPin className="h-4 w-4 text-gray-900" />
                 </div>
-                <span>Delhi, India</span>
+                <span>Kolkata, India</span>
               </div>
             </div>
           </div>
@@ -76,14 +76,7 @@ export default function Footer() {
                   Psychometric Assessment
                 </button>
               </li>
-              <li>
-                <button 
-                  onClick={() => scrollToSection('#services')} 
-                  className="text-gray-300 hover:text-blue-400 transition-colors text-left"
-                >
-                  Foreign Admissions
-                </button>
-              </li>
+
               <li>
                 <button 
                   onClick={() => scrollToSection('#services')} 
@@ -99,6 +92,14 @@ export default function Footer() {
                 >
                   Mentorship Platform
                 </button>
+              </li>
+              <li>
+                <a 
+                  href="/corporate-parenting-wellbeing"
+                  className="text-gray-300 hover:text-blue-400 transition-colors text-left"
+                >
+                  Corporate Parenting Wellbeing
+                </a>
               </li>
             </ul>
           </div>
@@ -131,9 +132,20 @@ export default function Footer() {
                 </button>
               </li>
               <li>
-                <button className="text-gray-300 hover:text-blue-400 transition-colors text-left">
+                <button 
+                  onClick={() => scrollToSection('#testimonials')} 
+                  className="text-gray-300 hover:text-blue-400 transition-colors text-left"
+                >
                   Success Stories
                 </button>
+              </li>
+              <li>
+                <a 
+                  href="/corporate-parenting-wellbeing"
+                  className="text-gray-300 hover:text-blue-400 transition-colors text-left"
+                >
+                  Corporate Services
+                </a>
               </li>
             </ul>
           </div>
