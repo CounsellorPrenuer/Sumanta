@@ -179,14 +179,14 @@ export default function PremiumContact() {
                 <div>
                   <Label htmlFor="whoIsThisFor" className="text-gray-700 font-medium">Who is this for? *</Label>
                   <Select onValueChange={(value) => handleChange('whoIsThisFor', value)}>
-                    <SelectTrigger className="mt-2 h-12 border-gray-300 focus:border-blue-500 focus:ring-blue-200 rounded-xl" data-testid="select-who-is-this-for">
+                    <SelectTrigger className="mt-2 h-12 border-gray-300 focus:border-blue-500 focus:ring-blue-200 rounded-xl bg-white" data-testid="select-who-is-this-for">
                       <SelectValue placeholder="Select category" />
                     </SelectTrigger>
-                    <SelectContent className="rounded-xl">
-                      <SelectItem value="class-8-9">Class 8–9</SelectItem>
-                      <SelectItem value="class-10-12">Class 10–12</SelectItem>
-                      <SelectItem value="college">College</SelectItem>
-                      <SelectItem value="working-professional">Working Professional</SelectItem>
+                    <SelectContent className="rounded-xl bg-white border border-gray-200 shadow-lg z-50">
+                      <SelectItem value="class-8-9" className="hover:bg-gray-100 focus:bg-gray-100">Class 8–9</SelectItem>
+                      <SelectItem value="class-10-12" className="hover:bg-gray-100 focus:bg-gray-100">Class 10–12</SelectItem>
+                      <SelectItem value="college" className="hover:bg-gray-100 focus:bg-gray-100">College</SelectItem>
+                      <SelectItem value="working-professional" className="hover:bg-gray-100 focus:bg-gray-100">Working Professional</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
