@@ -1,175 +1,143 @@
-import { CheckCircle, Brain, Users, Map, Shield, Briefcase, ArrowDown, Sparkles } from "lucide-react";
+import { CheckCircle, Brain, Users, Map, Shield, Briefcase, ArrowDown, Sparkles, Target, User, FileText, Heart, TrendingUp, Globe } from "lucide-react";
 
 export default function RoadmapSection() {
-  const roadmapSteps = [
+  const serviceItems = [
     {
-      step: "1",
-      title: "Take India's Most Reliable Psychometric Assessment",
-      description: "that measures your core interests, personality traits and abilities",
       icon: Brain,
+      title: "Psychometric Assessment + Career Mapping",
       color: "from-purple-500 to-indigo-600"
     },
     {
-      step: "2",
-      title: "1:1 Counselling with a globally certified expert",
-      description: "to build your AI-Proof Career Action Plan",
-      icon: Users,
+      icon: Target,
+      title: "Career Pivot Strategy + AI Skill Alignment",
       color: "from-blue-500 to-cyan-600"
     },
     {
-      step: "3",
-      title: "Receive Your Career Roadmap",
-      description: "aligned with your interests, strengths, and the future of work",
-      icon: Map,
+      icon: FileText,
+      title: "Resume + LinkedIn Optimization",
       color: "from-emerald-500 to-green-600"
     },
     {
-      step: "4",
-      title: "Get Lifetime Access to Mentoria's AI-proof Career Platform",
-      description: "with ongoing support and career evolution tools",
-      icon: Shield,
+      icon: Heart,
+      title: "Life Coaching for Energy & Focus",
       color: "from-orange-500 to-red-600"
     },
     {
-      step: "5",
-      title: "Get support in College Admission Planning",
-      description: "Internship and Job Applications, CV Building and more",
-      icon: Briefcase,
+      icon: TrendingUp,
+      title: "Senior Transition Coaching",
       color: "from-teal-500 to-blue-600"
+    },
+    {
+      icon: Globe,
+      title: "Mentoria Platform Access (Lifetime)",
+      color: "from-violet-500 to-purple-600"
     }
   ];
 
   return (
-    <section className="py-16 lg:py-20 bg-gradient-to-br from-white via-slate-50 to-blue-50 relative overflow-hidden">
-      {/* Elegant Background Elements */}
+    <section className="py-20 lg:py-32 bg-gradient-to-br from-white via-slate-50/50 to-purple-50/30 relative overflow-hidden">
+      {/* Enhanced Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-32 left-10 w-80 h-80 bg-gradient-to-br from-purple-100 to-indigo-100 rounded-full filter blur-3xl opacity-30"></div>
-        <div className="absolute bottom-32 right-10 w-96 h-96 bg-gradient-to-br from-blue-100 to-cyan-100 rounded-full filter blur-3xl opacity-40"></div>
+        <div className="absolute top-20 left-10 w-96 h-96 bg-gradient-to-br from-purple-100/40 to-blue-100/30 rounded-full filter blur-3xl opacity-60 animate-pulse"></div>
+        <div className="absolute bottom-20 right-10 w-80 h-80 bg-gradient-to-br from-indigo-100/50 to-cyan-100/40 rounded-full filter blur-3xl opacity-50 animate-pulse" style={{animationDelay: '2s'}}></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-br from-violet-100/30 to-pink-100/20 rounded-full filter blur-3xl opacity-40 animate-pulse" style={{animationDelay: '4s'}}></div>
+        
+        {/* Elegant Floating Elements */}
+        <div className="absolute top-40 right-1/4 w-4 h-4 bg-gradient-to-r from-purple-400 to-blue-500 rounded-full opacity-20 animate-bounce" style={{animationDelay: '1s'}}></div>
+        <div className="absolute bottom-40 left-1/4 w-3 h-3 bg-gradient-to-r from-emerald-400 to-cyan-500 rounded-full opacity-30 animate-bounce" style={{animationDelay: '3s'}}></div>
       </div>
 
       <div className="container-custom relative z-10">
-        {/* Premium Headline */}
-        <div className="text-center max-w-4xl mx-auto mb-20">
-          <div className="inline-flex items-center px-8 py-4 rounded-full bg-gradient-to-r from-purple-50 to-blue-50 border border-purple-200 text-purple-600 text-sm font-medium mb-12 shadow-sm breath-animation">
-            <Sparkles className="w-4 h-4 mr-3" />
-            Our Proven Process
+        {/* Sophisticated Headline */}
+        <div className="text-center max-w-5xl mx-auto mb-24">
+          {/* Elegant Badge */}
+          <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-purple-50/80 to-blue-50/80 
+                         backdrop-blur-sm border border-purple-200/50 text-purple-700 text-sm font-medium mb-12 
+                         shadow-sm hover:shadow-md transition-all duration-300 breath-animation">
+            <div className="w-2 h-2 bg-gradient-to-r from-purple-500 to-blue-600 rounded-full mr-3 animate-pulse"></div>
+            Premium Career Transformation
           </div>
           
-          <h2 className="text-4xl lg:text-6xl font-light text-gray-900 mb-8 leading-tight luxury-text">
-            We don't give advice.
+          <h2 className="text-5xl lg:text-7xl font-light text-gray-900 mb-10 leading-tight luxury-text stagger-fade-up">
+            <span className="bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-600 bg-clip-text text-transparent font-medium 
+                           hover:from-purple-700 hover:via-blue-700 hover:to-indigo-700 transition-all duration-500">
+              Career Guidance
+            </span>
             <br />
-            <span className="bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-600 bg-clip-text text-transparent font-medium">
-              We build your roadmap.
+            <span className="text-gray-700 font-light">for the</span>
+            <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent font-medium ml-3">
+              Modern Professional
             </span>
           </h2>
+          
+          <p className="text-xl lg:text-2xl text-gray-600 leading-relaxed max-w-4xl mx-auto font-light stagger-fade-up" 
+             style={{animationDelay: '0.2s'}}>
+            Designed for <span className="font-medium text-gray-800">mid-career professionals</span>, 
+            <span className="font-medium text-gray-800"> functional leaders</span>, and 
+            <span className="font-medium text-gray-800"> C-suite talent</span> seeking clarity, confidence, 
+            and direction in the age of transition.
+          </p>
         </div>
 
-        {/* Clean Interconnected Roadmap */}
-        <div className="max-w-4xl mx-auto">
-          <div className="relative">
-            {/* Connecting Line */}
-            <div className="absolute left-8 top-8 bottom-8 w-0.5 bg-gradient-to-b from-purple-200 via-blue-200 via-emerald-200 via-orange-200 to-teal-200 opacity-60"></div>
-            
-            {roadmapSteps.map((step, index) => (
+        {/* Elegant Services Display */}
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {serviceItems.map((service, index) => (
               <div
                 key={index}
-                className="relative flex items-start space-x-8 pb-16 last:pb-0 stagger-fade-up"
+                className="group relative premium-card bg-white/90 backdrop-blur-sm border border-slate-200/60 rounded-3xl p-10 
+                          hover:shadow-2xl hover:shadow-purple-100/50 hover:-translate-y-2 hover:border-purple-200/80
+                          transition-all duration-500 ease-out floating-card magnetic-card stagger-fade-up overflow-hidden"
                 style={{animationDelay: `${index * 0.15}s`}}
               >
-                {/* Step Number Circle */}
-                <div className={`relative z-10 w-16 h-16 bg-gradient-to-br ${step.color} rounded-2xl flex items-center justify-center text-white font-bold text-xl flex-shrink-0 breath-animation shadow-lg`}>
-                  {step.step}
-                </div>
-
-                {/* Step Content */}
-                <div className="flex-1 pt-2">
-                  <div className="premium-card bg-white/80 backdrop-blur-sm border border-slate-200 rounded-2xl p-8 floating-card magnetic-card subtle-glow">
-                    <div className="flex items-start space-x-6">
-                      <div className={`w-14 h-14 bg-gradient-to-br ${step.color} rounded-xl flex items-center justify-center flex-shrink-0 breath-animation`}>
-                        <step.icon className="w-7 h-7 text-white" />
-                      </div>
-                      
-                      <div className="flex-1">
-                        <h3 className="text-xl lg:text-2xl font-medium text-gray-900 mb-3 leading-tight luxury-text">
-                          {step.title}
-                        </h3>
-                        <p className="text-lg text-gray-600 leading-relaxed">
-                          {step.description}
-                        </p>
-                      </div>
+                {/* Subtle Background Gradient */}
+                <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-slate-50/30 opacity-0 
+                               group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"></div>
+                
+                {/* Service Content */}
+                <div className="relative z-10 flex items-start space-x-6">
+                  {/* Icon Container with Enhanced Animation */}
+                  <div className={`relative w-16 h-16 bg-gradient-to-br ${service.color} rounded-2xl flex items-center justify-center 
+                                 flex-shrink-0 shadow-lg group-hover:scale-110 group-hover:rotate-3 
+                                 transition-all duration-500 ease-out breath-animation`}>
+                    <service.icon className="w-8 h-8 text-white transition-transform duration-300 group-hover:scale-110" />
+                    
+                    {/* Subtle Glow Effect */}
+                    <div className={`absolute inset-0 bg-gradient-to-br ${service.color} rounded-2xl blur-md opacity-0 
+                                   group-hover:opacity-30 transition-opacity duration-500 scale-110`}></div>
+                  </div>
+                  
+                  {/* Service Title */}
+                  <div className="flex-1 pt-2">
+                    <div className="flex items-start space-x-3">
+                      <div className="w-2 h-2 rounded-full bg-gradient-to-r from-purple-400 to-blue-500 mt-3 flex-shrink-0 
+                                     group-hover:scale-150 transition-transform duration-300"></div>
+                      <h3 className="text-xl font-semibold text-gray-900 leading-relaxed luxury-text
+                                   group-hover:text-purple-700 transition-colors duration-300">
+                        {service.title}
+                      </h3>
                     </div>
                   </div>
                 </div>
-
-                {/* Connecting Arrow (except for last step) */}
-                {index < roadmapSteps.length - 1 && (
-                  <div className="absolute left-8 top-20 transform -translate-x-1/2 z-20">
-                    <div className="w-6 h-6 bg-white border-2 border-gray-300 rounded-full flex items-center justify-center breath-animation">
-                      <ArrowDown className="w-3 h-3 text-gray-500" />
-                    </div>
-                  </div>
-                )}
+                
+                {/* Elegant Bottom Border Animation */}
+                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-purple-400/20 to-transparent 
+                               scale-x-0 group-hover:scale-x-100 transition-transform duration-700 ease-out origin-center"></div>
               </div>
             ))}
           </div>
-        </div>
-
-        {/* Call to Action Footer */}
-        <div className="text-center mt-16">
-          <div className="max-w-2xl mx-auto">
-            <div className="text-center mb-12">
-              <h3 className="text-4xl lg:text-5xl font-light text-gray-900 mb-6 luxury-text">
-                <span className="bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-600 bg-clip-text text-transparent font-medium">Apply.</span>
-                <span className="mx-3 text-gray-700">Plan.</span>
-                <span className="bg-gradient-to-r from-emerald-600 to-green-600 bg-clip-text text-transparent font-medium">Evolve.</span>
-              </h3>
-              <p className="text-xl text-gray-600 leading-relaxed">
-                Whether you're 14 or 44.
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-3 gap-8 mb-12">
-              <div className="text-center group">
-                <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-3xl flex items-center justify-center mx-auto mb-4 breath-animation group-hover:scale-110 transition-transform duration-300">
-                  <span className="text-2xl font-bold text-white">A</span>
-                </div>
-                <h4 className="text-lg font-medium text-gray-900 mb-2">Apply</h4>
-                <p className="text-sm text-gray-600">Take action on your career goals</p>
-              </div>
-              
-              <div className="text-center group">
-                <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-3xl flex items-center justify-center mx-auto mb-4 breath-animation group-hover:scale-110 transition-transform duration-300" style={{animationDelay: '0.1s'}}>
-                  <span className="text-2xl font-bold text-white">P</span>
-                </div>
-                <h4 className="text-lg font-medium text-gray-900 mb-2">Plan</h4>
-                <p className="text-sm text-gray-600">Build your strategic roadmap</p>
-              </div>
-              
-              <div className="text-center group">
-                <div className="w-20 h-20 bg-gradient-to-br from-emerald-500 to-green-600 rounded-3xl flex items-center justify-center mx-auto mb-4 breath-animation group-hover:scale-110 transition-transform duration-300" style={{animationDelay: '0.2s'}}>
-                  <span className="text-2xl font-bold text-white">E</span>
-                </div>
-                <h4 className="text-lg font-medium text-gray-900 mb-2">Evolve</h4>
-                <p className="text-sm text-gray-600">Adapt and grow continuously</p>
-              </div>
-            </div>
-            
-            <div className="bg-gradient-to-r from-gray-50 to-blue-50 border border-gray-200 rounded-2xl p-8 flex items-center justify-center space-x-6">
-              <div className="flex -space-x-3">
-                {[1, 2, 3, 4].map((i) => (
-                  <div
-                    key={i}
-                    className="w-12 h-12 bg-gradient-to-br from-purple-500 to-blue-600 rounded-full border-3 border-white flex items-center justify-center breath-animation shadow-md"
-                    style={{animationDelay: `${i * 0.1}s`}}
-                  >
-                    <CheckCircle className="w-6 h-6 text-white" />
-                  </div>
-                ))}
-              </div>
-              <div className="text-left">
-                <div className="text-lg font-semibold text-gray-900">Trusted by 5,000+ professionals</div>
-                <div className="text-sm text-gray-600">Students & working professionals across 15+ countries</div>
-              </div>
+          
+          {/* Premium Call-to-Action */}
+          <div className="text-center mt-20">
+            <div className="inline-flex items-center space-x-4 px-8 py-4 bg-gradient-to-r from-white/90 to-slate-50/90 
+                           backdrop-blur-sm border border-slate-200/60 rounded-2xl shadow-lg hover:shadow-xl 
+                           transition-all duration-300 breath-animation">
+              <div className="w-3 h-3 bg-gradient-to-r from-emerald-400 to-blue-500 rounded-full animate-pulse"></div>
+              <span className="text-sm font-medium text-gray-700">
+                Comprehensive career transformation designed for senior professionals
+              </span>
+              <div className="w-3 h-3 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full animate-pulse" 
+                   style={{animationDelay: '0.5s'}}></div>
             </div>
           </div>
         </div>
