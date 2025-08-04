@@ -2,7 +2,7 @@ import PremiumNavigation from "@/components/premium-navigation";
 import Footer from "@/components/footer";
 import WhatsAppFloat from "@/components/whatsapp-float";
 import { Award, Users, Globe, BookOpen, CheckCircle, Star, TrendingUp, Brain, Heart, Target, Zap, Shield, Rocket, ArrowRight, Play, Quote, Trophy, Lightbulb, Clock, MessageSquare } from "lucide-react";
-import sumantaImage from "@assets/Image_MANPREET KAUR_Counselors_1754240707994.jpeg";
+import sumantaImage from "@assets/Image_Sumanta Chaudhuri_LCC_1754306082124.jpeg";
 import { useState, useEffect } from "react";
 
 export default function WhyCCCEdu() {

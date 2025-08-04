@@ -8,7 +8,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Mail, Phone, MapPin, Clock, Send, CheckCircle } from "lucide-react";
-import sumantaImage from "@assets/Image_MANPREET KAUR_Counselors_1754240707994.jpeg";
+import sumantaImage from "@assets/Image_Sumanta Chaudhuri_LCC_1754306082124.jpeg";
 
 interface ContactFormData {
   name: string;

@@ -1,5 +1,5 @@
 import { Award, Users, Globe, BookOpen, ArrowRight, Play, GraduationCap, Brain, HandHeart, Lightbulb } from "lucide-react";
-import sumantaImage from "@assets/Image_MANPREET KAUR_Counselors_1754240707994.jpeg";
+import sumantaImage from "@assets/Image_Sumanta Chaudhuri_LCC_1754306082124.jpeg";
 
 export default function PremiumAbout() {
   const scrollToSection = (sectionId: string) => {
