@@ -129,12 +129,12 @@ export default function PremiumAbout() {
               
               {/* Main image container */}
               <div className="relative premium-card overflow-hidden rounded-3xl p-8 bg-gradient-to-br from-white to-blue-50 border-2 border-blue-100 floating-card magnetic-card subtle-glow">
-                <div className="w-full h-[28rem] bg-gray-100 rounded-2xl shadow-xl overflow-hidden">
+                <div className="w-full aspect-[4/5] bg-gray-100 rounded-2xl shadow-xl overflow-hidden">
                   <img 
                     src={manpreetImage} 
                     alt="Manpreet Kaur - Career Counselor and Founder"
                     className="w-full h-full object-cover rounded-2xl"
-                    style={{ objectPosition: 'center 15%' }}
+                    style={{ objectPosition: 'center 30%' }}
                   />
                 </div>
                 
