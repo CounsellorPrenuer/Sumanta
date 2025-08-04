@@ -35,7 +35,7 @@ export default function MentoriaSection() {
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
             Powered by Mentoria's
-            <span className="text-gradient-blue block">Career Science Platform</span>
+            <span className="text-gradient-blue block">Career Discovery Platform</span>
           </h2>
           
           <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
@@ -84,7 +84,7 @@ export default function MentoriaSection() {
                 Mentoria
               </div>
               <div className="text-gray-600 text-sm">
-                Career Science Platform
+                Career Discovery Platform
               </div>
             </div>
             
