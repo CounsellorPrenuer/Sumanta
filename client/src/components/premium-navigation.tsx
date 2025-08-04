@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Phone } from "lucide-react";
 import { useLocation } from "wouter";
-import logoImage from "@assets/logo (6)_1754240707993.png";
+import logoImage from "@assets/Logo_Sumanta Chaudhuri_LCC_1754301451067.png";
 import BookCallModal from "./book-call-modal";
 
 export default function PremiumNavigation() {
@@ -19,7 +19,7 @@ export default function PremiumNavigation() {
   }, []);
 
   const navItems = [
-    { name: "Why CCC Edu", href: "/why-ccc-edu" },
+    { name: "Why Leadcrest", href: "/why-ccc-edu" },
     { name: "Blogs/Resources", href: "/blogs-resources" },
     { name: "How it Works", href: "/how-it-works" },
     { name: "Contact Us", href: "/contact" },
@@ -51,12 +51,12 @@ export default function PremiumNavigation() {
             >
               <img 
                 src={logoImage} 
-                alt="CCC Education" 
+                alt="Leadcrest Consulting" 
                 className="h-10 w-auto"
               />
               <div>
-                <div className="font-bold text-lg text-gray-900">CCC Education</div>
-                <div className="text-xs text-gray-500 -mt-1">Career Excellence</div>
+                <div className="font-bold text-lg text-gray-900">Leadcrest Consulting</div>
+                <div className="text-xs text-gray-500 -mt-1">Redefining Career Trajectory with Clarity</div>
               </div>
             </button>
 

@@ -69,7 +69,7 @@ export default function PremiumAbout() {
             </div>
 
             <p className="text-xl text-gray-700 mb-8 leading-relaxed">
-              With over <strong>23 years of experience</strong>, Manpreet Kaur has guided <strong>5,000+ students and professionals</strong> across India and abroad. She's a certified career counsellor (IAAP, APCDA, GCDA), founder of CCC Education Foundation (NGO), and a Mentoria-certified partner.
+              With over <strong>23 years of experience</strong>, Manpreet Kaur has guided <strong>5,000+ students and professionals</strong> across India and abroad. She's a certified career counsellor (IAAP, APCDA, GCDA), founder of Leadcrest Consulting (NGO), and a Mentoria-certified partner.
             </p>
 
             <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-2xl p-6 mb-8 shadow-lg hover:shadow-xl transition-all duration-300 magnetic-card relative overflow-hidden">

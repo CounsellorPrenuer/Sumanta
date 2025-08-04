@@ -73,7 +73,7 @@ export default function PremiumContact() {
     {
       icon: Mail,
       title: "Email Us",
-      details: "manpreet@ccceducation.org",
+      details: "manpreet@leadcrestconsulting.org",
       subtext: "We reply within 24 hours",
       color: "from-blue-500 to-cyan-600"
     },
@@ -106,7 +106,7 @@ export default function PremiumContact() {
           </p>
           
           <p className="text-2xl font-semibold text-gray-900 mt-6">
-            Book a free 15-minute call with CCC Edu's expert team.
+            Book a free 15-minute call with Leadcrest Consulting's expert team.
           </p>
         </div>
 

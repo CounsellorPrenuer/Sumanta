@@ -1,5 +1,5 @@
 import { Mail, Phone, MapPin, Heart } from "lucide-react";
-import logoImage from "@assets/logo (6)_1754240707993.png";
+import logoImage from "@assets/Logo_Sumanta Chaudhuri_LCC_1754301451067.png";
 
 export default function Footer() {
   const scrollToSection = (sectionId: string) => {
@@ -22,17 +22,17 @@ export default function Footer() {
             <div className="flex items-center gap-4 mb-6">
               <img 
                 src={logoImage} 
-                alt="CCC Education Foundation" 
+                alt="Leadcrest Consulting" 
                 className="h-12 w-auto"
               />
               <div>
-                <h3 className="text-xl font-bold text-white">CCC Education Foundation</h3>
-                <p className="text-gray-400 text-sm">Empowering Futures Through Education</p>
+                <h3 className="text-xl font-bold text-white">Leadcrest Consulting</h3>
+                <p className="text-gray-400 text-sm">Redefining Career Trajectory with Clarity</p>
               </div>
             </div>
             
             <p className="text-gray-300 mb-8 leading-relaxed max-w-md">
-              Founded by Manpreet Kaur, CCC Education Foundation is dedicated to providing comprehensive career guidance and educational support to students and professionals worldwide.
+              Founded by Manpreet Kaur, Leadcrest Consulting is dedicated to providing comprehensive career guidance and educational support to students and professionals worldwide.
             </p>
             
             <div className="space-y-4">
@@ -46,7 +46,7 @@ export default function Footer() {
                 <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
                   <Mail className="h-4 w-4 text-white" />
                 </div>
-                <span>manpreet@ccceducation.org</span>
+                <span>manpreet@leadcrestconsulting.org</span>
               </div>
               <div className="flex items-center gap-3 text-gray-300 hover:text-blue-400 transition-colors cursor-pointer">
                 <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
@@ -148,7 +148,7 @@ export default function Footer() {
             </div>
             
             <div className="text-gray-400 text-sm">
-              © 2025 CCC Education Foundation. All rights reserved.
+              © 2025 Leadcrest Consulting. All rights reserved.
             </div>
           </div>
           

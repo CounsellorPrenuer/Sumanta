@@ -40,7 +40,7 @@ export default function MentoriaSection() {
           </h2>
           
           <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Every CCC Edu plan includes lifetime access to Mentoria: India's most trusted platform for career discovery, mentorship, and lifelong upskilling.
+            Every Leadcrest Consulting plan includes lifetime access to Mentoria: India's most trusted platform for career discovery, mentorship, and lifelong upskilling.
           </p>
         </div>
 

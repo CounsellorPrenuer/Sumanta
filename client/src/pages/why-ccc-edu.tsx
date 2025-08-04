@@ -206,7 +206,7 @@ export default function WhyCCCEdu() {
             
             <h1 className="text-6xl lg:text-7xl font-bold text-gray-900 mb-8 animate-fade-in-up animation-delay-200">
               Why 5,000+ Students
-              <span className="text-gradient-blue block">Choose CCC Education?</span>
+              <span className="text-gradient-blue block">Choose Leadcrest Consulting?</span>
             </h1>
             
             <p className="text-2xl text-gray-600 leading-relaxed mb-12 animate-fade-in-up animation-delay-400">
@@ -291,7 +291,7 @@ export default function WhyCCCEdu() {
               <span className="text-red-600 block">Anyone Else?</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Here's what you get with others vs. what you get with CCC Education
+              Here's what you get with others vs. what you get with Leadcrest Consulting
             </p>
           </div>
 
@@ -484,7 +484,7 @@ export default function WhyCCCEdu() {
           </h2>
           
           <p className="text-xl opacity-90 max-w-3xl mx-auto mb-12 leading-relaxed">
-            Join 5,000+ successful students and professionals who chose CCC Education for their career transformation. 
+            Join 5,000+ successful students and professionals who chose Leadcrest Consulting for their career transformation. 
             <strong> Don't wait - your dream career starts today.</strong>
           </p>
 

@@ -21,7 +21,7 @@ export default function PremiumHero() {
 
   const highlights = [
     "Certified Career Counsellor (IAAP, APCDA, GCDA)",
-    "Founder - CCC Education Foundation",
+    "Founder - Leadcrest Consulting",
     "Mentoria Certified Partner",
   ];
 
@@ -57,7 +57,7 @@ export default function PremiumHero() {
 
             {/* Subheadline */}
             <p className="text-xl text-gray-600 mb-8 max-w-xl leading-relaxed">
-              Discover your best-fit career path, one that AI won't replace. With expert-led counselling, assessments, and lifelong mentorship from CCC Edu.
+              Discover your best-fit career path, one that AI won't replace. With expert-led counselling, assessments, and lifelong mentorship from Leadcrest Consulting.
             </p>
 
             {/* Highlights */}

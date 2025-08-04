@@ -14,7 +14,7 @@ export default function PremiumTestimonials() {
       name: "Priya Patel",
       role: "Medical Student, AIIMS",
       image: "https://images.unsplash.com/photo-1494790108755-2616b612b2b5?w=400&h=400&fit=crop&crop=face",
-      content: "From confusion to clarity - that's my journey with CCC Education. The personalized counseling sessions helped me choose medicine over engineering, and I couldn't be happier.",
+      content: "From confusion to clarity - that's my journey with Leadcrest Consulting. The personalized counseling sessions helped me choose medicine over engineering, and I couldn't be happier.",
       rating: 5,
       package: "Achieve"
     },

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
-import logoImage from "@assets/logo (6)_1754240707993.png";
+import logoImage from "@assets/Logo_Sumanta Chaudhuri_LCC_1754301451067.png";
 
 export default function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -21,12 +21,12 @@ export default function Navigation() {
           <div className="flex items-center gap-4">
             <img 
               src={logoImage} 
-              alt="CCC Education Foundation Logo" 
+              alt="Leadcrest Consulting Logo" 
               className="h-12 w-12 object-contain"
             />
             <div>
-              <span className="text-xl font-bold text-white">CCC Education Foundation</span>
-              <p className="text-xs text-gray-300 hidden sm:block">Empowering Careers Since 2001</p>
+              <span className="text-xl font-bold text-white">Leadcrest Consulting</span>
+              <p className="text-xs text-gray-300 hidden sm:block">Redefining Career Trajectory with Clarity</p>
             </div>
           </div>
           

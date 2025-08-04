@@ -98,7 +98,7 @@ export default function BlogsResources() {
                   <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
                     <div className="flex items-center">
                       <User className="w-4 h-4 mr-2" />
-                      CCC Education Team
+                      Leadcrest Consulting Team
                     </div>
                     <div className="flex items-center">
                       <Calendar className="w-4 h-4 mr-2" />

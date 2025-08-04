@@ -11,7 +11,7 @@ export default function AboutSection() {
   };
 
   const achievements = [
-    { icon: Award, title: "Founder & Director", subtitle: "CCC Education Foundation (NGO)" },
+    { icon: Award, title: "Founder & Director", subtitle: "Leadcrest Consulting (NGO)" },
     { icon: CheckCircle, title: "Certified Career Counsellor", subtitle: "IAAP, APCDA, GCDA" },
     { icon: Users, title: "Education & Career Coach", subtitle: "23+ Years Experience" },
     { icon: Globe, title: "Mentoria Certified", subtitle: "Counsellor & Partner" },
