@@ -323,6 +323,75 @@
     transform: translateY(-3px) scale(1.02);
     box-shadow: 0 20px 40px rgba(0,0,0,0.15);
   }
+  
+  /* Premium AI Section Animations */
+  @keyframes fade-in-up-elegant {
+    0% { transform: translateY(40px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+  }
+  
+  @keyframes card-lift {
+    0% { transform: translateY(0) scale(1); }
+    100% { transform: translateY(-8px) scale(1.02); }
+  }
+  
+  @keyframes icon-glow {
+    0%, 100% { box-shadow: 0 8px 32px rgba(0,0,0,0.1); }
+    50% { box-shadow: 0 12px 40px rgba(0,0,0,0.15); }
+  }
+  
+  @keyframes gradient-shift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  .fade-in-up-elegant {
+    animation: fade-in-up-elegant 0.8s ease-out forwards;
+    opacity: 0;
+  }
+  
+  .stagger-delay-1 { animation-delay: 0.1s; }
+  .stagger-delay-2 { animation-delay: 0.2s; }
+  .stagger-delay-3 { animation-delay: 0.3s; }
+  .stagger-delay-4 { animation-delay: 0.4s; }
+  .stagger-delay-5 { animation-delay: 0.5s; }
+  .stagger-delay-6 { animation-delay: 0.6s; }
+  
+  .card-lift-hover:hover {
+    animation: card-lift 0.3s ease-out forwards;
+  }
+  
+  .icon-glow-hover:hover {
+    animation: icon-glow 2s ease-in-out infinite;
+  }
+  
+  .gradient-accent {
+    background: linear-gradient(-45deg, hsl(220, 91%, 50%), hsl(267, 47%, 50%), hsl(45, 93%, 50%), hsl(220, 91%, 50%));
+    background-size: 400% 400%;
+    animation: gradient-shift 4s ease infinite;
+  }
+  
+  .elegant-underline {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .elegant-underline::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, hsl(220, 91%, 50%), hsl(267, 47%, 50%));
+    transition: all 0.5s ease;
+    transform: translateX(-50%);
+  }
+  
+  .elegant-underline:hover::after {
+    width: 100%;
+  }
 }
 
 @keyframes fadeInUp {
