@@ -7,6 +7,7 @@ import PremiumAbout from "@/components/premium-about";
 import PremiumPackages from "@/components/premium-packages";
 import PremiumTestimonials from "@/components/premium-testimonials";
 import PremiumContact from "@/components/premium-contact";
+import MentoriaSection from "@/components/mentoria-section";
 import Footer from "@/components/footer";
 import WhatsAppFloat from "@/components/whatsapp-float";
 
@@ -21,6 +22,7 @@ export default function Home() {
       <PremiumPackages />
       <PremiumTestimonials />
       <PremiumContact />
+      <MentoriaSection />
       <Footer />
       <WhatsAppFloat />
     </div>
