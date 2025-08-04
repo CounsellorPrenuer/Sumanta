@@ -67,9 +67,9 @@ export default function PremiumPackages() {
         case 'class10-12':
           return audience.includes('class 10-12') || audience.includes('10-12');
         case 'graduates':
-          return audience.includes('graduate') && !audience.includes('professional');
+          return audience.includes('graduates & professionals') || (audience.includes('graduate') && !audience.includes('working'));
         case 'professionals':
-          return audience.includes('professional') || audience.includes('graduates & professionals');
+          return audience.includes('graduates & professionals') || audience.includes('working professional');
         default:
           return true;
       }
