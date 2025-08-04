@@ -30,29 +30,25 @@ export default function PremiumHero() {
     <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 gradient-mesh opacity-30"></div>
-      <div className="absolute top-20 left-10 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 parallax-slow"></div>
-      <div className="absolute top-40 right-10 w-72 h-72 bg-purple-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 parallax-medium"></div>
-      <div className="absolute bottom-20 left-20 w-72 h-72 bg-yellow-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 parallax-fast"></div>
+      <div className="absolute top-20 left-10 w-72 h-72 rounded-full mix-blend-multiply filter blur-xl opacity-20 parallax-slow" style={{backgroundColor: 'hsl(220, 91%, 75%)'}}></div>
+      <div className="absolute top-40 right-10 w-72 h-72 rounded-full mix-blend-multiply filter blur-xl opacity-20 parallax-medium" style={{backgroundColor: 'hsl(267, 47%, 75%)'}}></div>
+      <div className="absolute bottom-20 left-20 w-72 h-72 rounded-full mix-blend-multiply filter blur-xl opacity-15 parallax-fast" style={{backgroundColor: 'hsl(45, 93%, 75%)'}}></div>
       
       {/* Additional floating elements for depth */}
-      <div className="absolute top-1/3 left-1/4 w-4 h-4 bg-blue-400 rounded-full opacity-60 parallax-fast"></div>
-      <div className="absolute top-1/2 right-1/3 w-6 h-6 bg-purple-400 rounded-full opacity-40 parallax-medium"></div>
-      <div className="absolute bottom-1/3 left-1/2 w-3 h-3 bg-yellow-400 rounded-full opacity-50 parallax-slow"></div>
+      <div className="absolute top-1/3 left-1/4 w-4 h-4 rounded-full opacity-40 parallax-fast" style={{backgroundColor: 'hsl(220, 91%, 55%)'}}></div>
+      <div className="absolute top-1/2 right-1/3 w-6 h-6 rounded-full opacity-30 parallax-medium" style={{backgroundColor: 'hsl(267, 47%, 55%)'}}></div>
+      <div className="absolute bottom-1/3 left-1/2 w-3 h-3 rounded-full opacity-35 parallax-slow" style={{backgroundColor: 'hsl(45, 93%, 65%)'}}></div>
 
       <div className="container-custom relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Content */}
           <div className="fade-in-up">
-            {/* Badge */}
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-amber-50 border border-amber-200 text-amber-700 text-sm font-medium mb-8">
-              <Award className="w-4 h-4 mr-2" />
-              India's Leading Career Coach Since 2001
-            </div>
+            
 
             {/* Main Headline */}
             <h1 className="text-5xl lg:text-7xl font-bold leading-tight mb-6">
               Don't Let AI
-              <span className="block gradient-text-animate">Decide Your Career.</span>
+              <span className="block text-gradient-brand">Decide Your Career.</span>
             </h1>
 
             {/* Subheadline */}
@@ -64,7 +60,7 @@ export default function PremiumHero() {
             <div className="space-y-3 mb-10">
               {highlights.map((highlight, index) => (
                 <div key={index} className="flex items-center">
-                  <CheckCircle className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
+                  <CheckCircle className="w-5 h-5 mr-3 flex-shrink-0" style={{color: 'hsl(var(--gold))'}} />
                   <span className="text-gray-700">{highlight}</span>
                 </div>
               ))}
@@ -92,8 +88,8 @@ export default function PremiumHero() {
             <div className="grid grid-cols-3 gap-8">
               {stats.map((stat, index) => (
                 <div key={index} className="text-center">
-                  <div className="w-12 h-12 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-3">
-                    <stat.icon className="w-6 h-6 text-blue-600" />
+                  <div className="w-12 h-12 rounded-2xl flex items-center justify-center mx-auto mb-3" style={{backgroundColor: 'hsl(var(--cobalt-light))'}}>
+                    <stat.icon className="w-6 h-6" style={{color: 'hsl(var(--cobalt))'}} />
                   </div>
                   <div className="text-2xl font-bold text-gray-900">{stat.value}</div>
                   <div className="text-sm text-gray-600">{stat.label}</div>
@@ -116,8 +112,8 @@ export default function PremiumHero() {
                 {/* Floating AI-Proof Card */}
                 <div className="absolute -bottom-6 -left-6 premium-card p-4 bg-white floating-card">
                   <div className="flex items-center space-x-3">
-                    <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
-                      <Award className="w-6 h-6 text-blue-600" />
+                    <div className="w-12 h-12 rounded-xl flex items-center justify-center" style={{backgroundColor: 'hsl(var(--violet-light))'}}>
+                      <Award className="w-6 h-6" style={{color: 'hsl(var(--violet))'}} />
                     </div>
                     <div>
                       <div className="font-semibold text-gray-900">AI-Proof</div>
@@ -129,8 +125,8 @@ export default function PremiumHero() {
                 {/* Floating Future-Ready Card */}
                 <div className="absolute -top-6 -right-6 premium-card p-4 bg-white floating-card" style={{animationDelay: '1s'}}>
                   <div className="flex items-center space-x-3">
-                    <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">
-                      <TrendingUp className="w-6 h-6 text-green-600" />
+                    <div className="w-12 h-12 rounded-xl flex items-center justify-center" style={{backgroundColor: 'hsl(var(--gold-light))'}}>
+                      <TrendingUp className="w-6 h-6" style={{color: 'hsl(var(--gold))'}} />
                     </div>
                     <div>
                       <div className="font-semibold text-gray-900">Future</div>
@@ -141,12 +137,12 @@ export default function PremiumHero() {
               </div>
 
               {/* Enhanced Background Decorations */}
-              <div className="absolute -top-4 -left-4 w-72 h-72 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full opacity-10 -z-10 parallax-medium"></div>
-              <div className="absolute -bottom-4 -right-4 w-96 h-96 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full opacity-5 -z-20 parallax-slow"></div>
+              <div className="absolute -top-4 -left-4 w-72 h-72 rounded-full opacity-8 -z-10 parallax-medium bg-cobalt-gradient"></div>
+              <div className="absolute -bottom-4 -right-4 w-96 h-96 rounded-full opacity-5 -z-20 parallax-slow bg-gold-gradient"></div>
               
               {/* Additional decorative elements */}
-              <div className="absolute top-1/4 -left-8 w-16 h-16 bg-gradient-to-r from-pink-400 to-red-400 rounded-full opacity-20 parallax-fast"></div>
-              <div className="absolute bottom-1/4 -right-8 w-20 h-20 bg-gradient-to-r from-indigo-400 to-cyan-400 rounded-full opacity-15 parallax-medium"></div>
+              <div className="absolute top-1/4 -left-8 w-16 h-16 rounded-full opacity-15 parallax-fast bg-violet-gradient"></div>
+              <div className="absolute bottom-1/4 -right-8 w-20 h-20 rounded-full opacity-12 parallax-medium bg-brand-gradient"></div>
             </div>
           </div>
         </div>

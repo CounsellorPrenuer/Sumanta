@@ -100,17 +100,26 @@
 }
 
 :root {
-  --primary: 212 100% 50%;
-  --secondary: 267 84% 81%;
-  --accent: 38 92% 50%;
+  /* Leadcrest Brand Colors */
+  --primary: 220 91% 25%;        /* Dark Cobalt Blue */
+  --secondary: 267 47% 32%;      /* Deep Violet */
+  --accent: 45 93% 58%;          /* Golden Yellow */
   --background: 0 0% 100%;
-  --foreground: 222 47% 11%;
-  --muted: 210 40% 98%;
-  --muted-foreground: 215 16% 47%;
-  --border: 214 32% 91%;
-  --input: 214 32% 91%;
-  --ring: 212 100% 50%;
+  --foreground: 220 91% 15%;     /* Darker version of primary for text */
+  --muted: 220 20% 97%;          /* Very light blue-tinted background */
+  --muted-foreground: 220 15% 45%;
+  --border: 220 20% 88%;         /* Light blue-tinted border */
+  --input: 220 20% 92%;
+  --ring: 220 91% 25%;           /* Primary blue for focus rings */
   --radius: 0.75rem;
+  
+  /* Additional brand color variables */
+  --cobalt: 220 91% 25%;         /* Dark cobalt blue */
+  --violet: 267 47% 32%;         /* Deep violet */  
+  --gold: 45 93% 58%;            /* Golden yellow */
+  --cobalt-light: 220 91% 85%;   /* Light cobalt for backgrounds */
+  --violet-light: 267 47% 85%;   /* Light violet for backgrounds */
+  --gold-light: 45 93% 90%;      /* Light gold for backgrounds */
 }
 
 @layer base {
@@ -157,19 +166,44 @@
   }
   
   .text-gradient-blue {
-    @apply bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-800 bg-clip-text text-transparent;
+    background: linear-gradient(135deg, hsl(var(--cobalt)), hsl(var(--violet)));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
   
   .text-gradient-gold {
-    @apply bg-gradient-to-r from-amber-500 via-yellow-500 to-orange-500 bg-clip-text text-transparent;
+    background: linear-gradient(135deg, hsl(var(--gold)), hsl(45, 93%, 65%));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .text-gradient-brand {
+    background: linear-gradient(135deg, hsl(var(--cobalt)), hsl(var(--violet)), hsl(var(--gold)));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
   
   .btn-primary {
-    @apply bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded-2xl transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105;
+    background: linear-gradient(135deg, hsl(var(--cobalt)), hsl(var(--violet)));
+    @apply text-white font-semibold px-8 py-4 rounded-2xl transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105;
+  }
+  
+  .btn-primary:hover {
+    background: linear-gradient(135deg, hsl(220, 91%, 22%), hsl(267, 47%, 28%));
   }
   
   .btn-secondary {
-    @apply bg-white hover:bg-gray-50 text-gray-900 font-semibold px-8 py-4 rounded-2xl border border-gray-200 transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105;
+    @apply bg-white hover:bg-gray-50 font-semibold px-8 py-4 rounded-2xl border transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105;
+    color: hsl(var(--cobalt));
+    border-color: hsl(var(--cobalt-light));
+  }
+  
+  .btn-accent {
+    background: linear-gradient(135deg, hsl(var(--gold)), hsl(45, 93%, 65%));
+    @apply text-gray-900 font-semibold px-8 py-4 rounded-2xl transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105;
   }
   
   .section-spacing {
@@ -199,13 +233,31 @@
 
   .gradient-mesh {
     background: 
-      radial-gradient(at 40% 20%, rgb(59, 130, 246, 0.3) 0px, transparent 50%),
-      radial-gradient(at 80% 0%, rgb(147, 51, 234, 0.2) 0px, transparent 50%),
-      radial-gradient(at 0% 50%, rgb(14, 165, 233, 0.2) 0px, transparent 50%),
-      radial-gradient(at 80% 50%, rgb(251, 146, 60, 0.2) 0px, transparent 50%),
-      radial-gradient(at 0% 100%, rgb(236, 72, 153, 0.2) 0px, transparent 50%),
-      radial-gradient(at 80% 100%, rgb(34, 197, 94, 0.2) 0px, transparent 50%),
-      radial-gradient(at 0% 0%, rgb(124, 58, 237, 0.2) 0px, transparent 50%);
+      radial-gradient(at 40% 20%, hsla(var(--cobalt), 0.15) 0px, transparent 50%),
+      radial-gradient(at 80% 0%, hsla(var(--violet), 0.12) 0px, transparent 50%),
+      radial-gradient(at 0% 50%, hsla(var(--cobalt), 0.1) 0px, transparent 50%),
+      radial-gradient(at 80% 50%, hsla(var(--gold), 0.08) 0px, transparent 50%),
+      radial-gradient(at 0% 100%, hsla(var(--violet), 0.1) 0px, transparent 50%),
+      radial-gradient(at 80% 100%, hsla(var(--cobalt), 0.08) 0px, transparent 50%);
+  }
+  
+  .bg-brand-gradient {
+    background: linear-gradient(135deg, 
+      hsl(var(--cobalt-light)) 0%, 
+      hsl(var(--violet-light)) 50%, 
+      hsl(var(--gold-light)) 100%);
+  }
+  
+  .bg-cobalt-gradient {
+    background: linear-gradient(135deg, hsl(var(--cobalt)), hsl(220, 91%, 35%));
+  }
+  
+  .bg-violet-gradient {
+    background: linear-gradient(135deg, hsl(var(--violet)), hsl(267, 47%, 42%));
+  }
+  
+  .bg-gold-gradient {
+    background: linear-gradient(135deg, hsl(var(--gold)), hsl(45, 93%, 68%));
   }
 }
 
