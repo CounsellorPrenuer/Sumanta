@@ -1,10 +1,14 @@
+import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import PremiumNavigation from "@/components/premium-navigation";
 import Footer from "@/components/footer";
+import WhatsAppFloat from "@/components/whatsapp-float";
+import { BookingPopup } from "@/components/booking-popup";
 import { Calendar, User, ArrowRight, BookOpen, FileText, Video, Download } from "lucide-react";
 import type { BlogPost, Resource } from "@shared/schema";
 
 export default function BlogsResources() {
+  const [isCallModalOpen, setIsCallModalOpen] = useState(false);
   const { data: blogPosts, isLoading: blogLoading } = useQuery<BlogPost[]>({
     queryKey: ["/api/blog-posts"],
   });
@@ -216,15 +220,7 @@ export default function BlogsResources() {
                 data-testid="input-newsletter-email"
               />
               <button 
-                onClick={() => {
-                  const emailInput = document.querySelector('[data-testid="input-newsletter-email"]') as HTMLInputElement;
-                  if (emailInput && emailInput.value) {
-                    alert(`Thank you for subscribing! Welcome to the executive community, ${emailInput.value}. You'll receive our first leadership insight within 24 hours.`);
-                    emailInput.value = '';
-                  } else {
-                    alert('Please enter your professional email address to join our executive community.');
-                  }
-                }}
+                onClick={() => setIsCallModalOpen(true)}
                 className="bg-white text-blue-600 font-semibold px-8 py-3 rounded-xl hover:bg-gray-50 transition-colors"
                 data-testid="button-newsletter-subscribe"
               >
@@ -240,6 +236,23 @@ export default function BlogsResources() {
       </section>
 
       <Footer />
+      <WhatsAppFloat />
+      
+      {/* Booking Modal */}
+      <BookingPopup 
+        isOpen={isCallModalOpen}
+        onClose={() => setIsCallModalOpen(false)}
+        package={{
+          id: "discover",
+          name: "Discover",
+          price: 550,
+          description: "Free consultation to understand your needs",
+          features: ["Free consultation", "Career assessment"],
+          targetAudience: "All professionals",
+          isPopular: false
+        }}
+        selectedStage="professionals"
+      />
     </div>
   );
 }

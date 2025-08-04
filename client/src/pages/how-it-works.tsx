@@ -1,9 +1,13 @@
+import { useState } from "react";
 import PremiumNavigation from "@/components/premium-navigation";
 import Footer from "@/components/footer";
 import WhatsAppFloat from "@/components/whatsapp-float";
+import { BookingPopup } from "@/components/booking-popup";
 import { MessageCircle, Target, TrendingUp, Users, CheckCircle, ArrowRight, Clock, Star, Award, Briefcase } from "lucide-react";
 
 export default function HowItWorks() {
+  const [isCallModalOpen, setIsCallModalOpen] = useState(false);
+
   const steps = [
     {
       number: "01",
@@ -238,7 +242,11 @@ export default function HowItWorks() {
                   ))}
                 </ul>
                 
-                <button className={`w-full font-semibold py-4 px-6 rounded-2xl transition-all duration-200 ${pkg.popular ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:shadow-xl hover:scale-105' : 'bg-gray-900 hover:bg-gray-800 text-white hover:shadow-xl hover:scale-105'}`}>
+                <button 
+                  onClick={() => setIsCallModalOpen(true)}
+                  className={`w-full font-semibold py-4 px-6 rounded-2xl transition-all duration-200 ${pkg.popular ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:shadow-xl hover:scale-105' : 'bg-gray-900 hover:bg-gray-800 text-white hover:shadow-xl hover:scale-105'}`}
+                  data-testid={`button-get-started-${pkg.name.toLowerCase()}`}
+                >
                   Get Started
                 </button>
               </div>
@@ -254,7 +262,11 @@ export default function HowItWorks() {
           <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
             Take the first step towards discovering your ideal career path. Book your free consultation today.
           </p>
-          <button className="bg-white text-blue-600 font-semibold px-8 py-4 rounded-2xl hover:bg-gray-50 transition-colors text-lg">
+          <button 
+            onClick={() => setIsCallModalOpen(true)}
+            className="bg-white text-blue-600 font-semibold px-8 py-4 rounded-2xl hover:bg-gray-50 transition-colors text-lg"
+            data-testid="button-book-consultation-cta"
+          >
             Book Free Consultation
           </button>
         </div>
@@ -326,6 +338,22 @@ export default function HowItWorks() {
 
       <Footer />
       <WhatsAppFloat />
+      
+      {/* Booking Modal */}
+      <BookingPopup 
+        isOpen={isCallModalOpen}
+        onClose={() => setIsCallModalOpen(false)}
+        package={{
+          id: "discover",
+          name: "Discover",
+          price: 550,
+          description: "Free consultation to understand your needs",
+          features: ["Free consultation", "Career assessment"],
+          targetAudience: "All professionals",
+          isPopular: false
+        }}
+        selectedStage="professionals"
+      />
     </div>
   );
 }
