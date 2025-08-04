@@ -105,7 +105,7 @@ export default function PremiumPackages() {
 
   if (isLoading) {
     return (
-      <section id="packages" className="section-spacing">
+      <section id="packages" className="pt-12 lg:pt-16 pb-24 lg:pb-32">
         <div className="container-custom">
           <div className="text-center">
             <div className="animate-spin w-8 h-8 border-4 border-blue-500 border-t-transparent rounded-full mx-auto"></div>
@@ -116,7 +116,7 @@ export default function PremiumPackages() {
   }
 
   return (
-    <section id="packages" className="section-spacing">
+    <section id="packages" className="pt-12 lg:pt-16 pb-24 lg:pb-32">
       <div className="container-custom">
         {/* Header */}
         <div className="text-center mb-16">

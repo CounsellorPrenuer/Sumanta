@@ -53,7 +53,7 @@ export default function PremiumTestimonials() {
   ];
 
   return (
-    <section className="section-spacing bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
+    <section className="pt-24 lg:pt-32 pb-12 lg:pb-16 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
       <div className="container-custom">
         {/* Header */}
         <div className="text-center mb-20">
