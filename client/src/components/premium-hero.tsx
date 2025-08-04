@@ -139,7 +139,7 @@ export default function PremiumHero() {
                 />
                 
                 {/* Elegant Success Card */}
-                <div className="absolute -bottom-4 -left-4 glass-premium p-5 rounded-2xl shadow-xl border border-white/50 cursor-default">
+                <div className="absolute -bottom-4 -left-4 bg-white/95 backdrop-blur-xl p-5 rounded-2xl shadow-xl border border-white/70 cursor-default">
                   <div className="flex items-center space-x-4">
                     <div className="w-14 h-14 rounded-2xl flex items-center justify-center shadow-lg" 
                          style={{background: 'linear-gradient(135deg, hsl(267, 47%, 85%), hsl(267, 47%, 75%))'}}>
