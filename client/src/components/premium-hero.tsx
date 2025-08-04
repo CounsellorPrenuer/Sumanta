@@ -47,24 +47,17 @@ export default function PremiumHero() {
 
             {/* Main Headline */}
             <h1 className="text-5xl lg:text-7xl font-bold leading-tight mb-6">
-              Don't Let AI
-              <span className="block text-gradient-brand">Decide Your Career.</span>
+              <span className="text-gradient-brand">Redefining Career Trajectory with Clarity</span>
             </h1>
 
             {/* Subheadline */}
             <p className="text-xl text-gray-600 mb-8 max-w-xl leading-relaxed">
-              Discover your best-fit career path, one that AI won't replace. With expert-led counselling, assessments, and lifelong mentorship from Leadcrest Consulting.
+              For professionals at a crossroads, in role, identity, or purpose.
+              <br />
+              Leadcrest helps you realign your career to who you are and where the world is going.
             </p>
 
-            {/* Highlights */}
-            <div className="space-y-3 mb-10">
-              {highlights.map((highlight, index) => (
-                <div key={index} className="flex items-center">
-                  <CheckCircle className="w-5 h-5 mr-3 flex-shrink-0" style={{color: 'hsl(var(--gold))'}} />
-                  <span className="text-gray-700">{highlight}</span>
-                </div>
-              ))}
-            </div>
+
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 mb-12">

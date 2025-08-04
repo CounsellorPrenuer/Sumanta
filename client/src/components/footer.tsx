@@ -13,7 +13,7 @@ export default function Footer() {
     <footer className="py-20 bg-gray-900 text-white relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-800"></div>
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br" style={{background: 'linear-gradient(135deg, hsl(var(--cobalt)), hsl(var(--violet)), hsl(var(--gold)))'}}></div>
       </div>
       
       <div className="container-custom relative z-10">
@@ -36,21 +36,21 @@ export default function Footer() {
             </p>
             
             <div className="space-y-4">
-              <div className="flex items-center gap-3 text-gray-300 hover:text-blue-400 transition-colors cursor-pointer">
-                <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+              <div className="flex items-center gap-3 text-gray-300 hover:text-yellow-400 transition-colors cursor-pointer">
+                <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{backgroundColor: 'hsl(var(--cobalt))'}}>
                   <Phone className="h-4 w-4 text-white" />
                 </div>
                 <span>+91 9815299446</span>
               </div>
-              <div className="flex items-center gap-3 text-gray-300 hover:text-blue-400 transition-colors cursor-pointer">
-                <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+              <div className="flex items-center gap-3 text-gray-300 hover:text-yellow-400 transition-colors cursor-pointer">
+                <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{backgroundColor: 'hsl(var(--violet))'}}>
                   <Mail className="h-4 w-4 text-white" />
                 </div>
                 <span>manpreet@leadcrestconsulting.org</span>
               </div>
-              <div className="flex items-center gap-3 text-gray-300 hover:text-blue-400 transition-colors cursor-pointer">
-                <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
-                  <MapPin className="h-4 w-4 text-white" />
+              <div className="flex items-center gap-3 text-gray-300 hover:text-yellow-400 transition-colors cursor-pointer">
+                <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{backgroundColor: 'hsl(var(--gold))'}}>
+                  <MapPin className="h-4 w-4 text-gray-900" />
                 </div>
                 <span>Delhi, India</span>
               </div>

@@ -7,42 +7,42 @@ export default function PremiumServices() {
       title: "Psychometric Assessment",
       description: "Scientific personality and aptitude analysis for informed career decisions.",
       features: ["DMIT Analysis", "Interest Profiling", "Skill Assessment"],
-      color: "from-purple-500 to-indigo-600"
+      color: "bg-violet-gradient"
     },
     {
       icon: MessageCircle,
       title: "1-on-1 Career Counselling",
       description: "Personalized guidance sessions with expert career strategists.",
       features: ["Goal Setting", "Career Roadmap", "Industry Insights"],
-      color: "from-blue-500 to-cyan-600"
+      color: "bg-cobalt-gradient"
     },
     {
       icon: Globe,
       title: "Foreign Admissions",
       description: "Complete support for international university applications.",
       features: ["University Selection", "Application Prep", "Visa Guidance"],
-      color: "from-emerald-500 to-teal-600"
+      color: "bg-brand-gradient"
     },
     {
       icon: FileText,
       title: "Professional CV Building",
       description: "ATS-optimized resumes that get you noticed by recruiters.",
       features: ["ATS Optimization", "Industry Templates", "LinkedIn Profile"],
-      color: "from-orange-500 to-red-600"
+      color: "bg-gold-gradient"
     },
     {
       icon: Users,
       title: "Mentorship Platform",
       description: "Connect with industry experts for ongoing career guidance.",
       features: ["Expert Network", "Monthly Sessions", "Progress Tracking"],
-      color: "from-pink-500 to-rose-600"
+      color: "bg-violet-gradient"
     },
     {
       icon: Video,
       title: "Career Webinars",
       description: "Regular sessions on industry trends and career opportunities.",
       features: ["Live Sessions", "Expert Speakers", "Q&A Sessions"],
-      color: "from-amber-500 to-yellow-600"
+      color: "bg-gold-gradient"
     }
   ];
 
@@ -51,7 +51,7 @@ export default function PremiumServices() {
       <div className="container-custom">
         {/* Header */}
         <div className="text-center mb-20">
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-sm font-medium mb-6">
+          <div className="inline-flex items-center px-4 py-2 rounded-full border text-sm font-medium mb-6" style={{backgroundColor: 'hsl(var(--cobalt-light))', borderColor: 'hsl(var(--cobalt))', color: 'hsl(var(--cobalt))'}}>
             <Brain className="w-4 h-4 mr-2" />
             Comprehensive Career Services
           </div>
@@ -74,7 +74,7 @@ export default function PremiumServices() {
               className="premium-card p-8 hover:shadow-3xl transition-all duration-300 hover:-translate-y-2 group fade-in-up"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className={`w-16 h-16 bg-gradient-to-r ${service.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
+              <div className={`w-16 h-16 ${service.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
                 <service.icon className="w-8 h-8 text-white" />
               </div>
               
