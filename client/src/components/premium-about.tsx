@@ -79,7 +79,7 @@ export default function PremiumAbout() {
               
               <p className="text-lg font-medium text-gray-900 italic relative z-10">
                 <span className="text-2xl text-blue-600 mr-2">"</span>
-                My mission: Make every individual career-ready — not just for today, but for the next decade.
+                After leading teams at Fortune 500 companies, I discovered my true calling: helping professionals unlock their potential and navigate career transitions with confidence and clarity.
                 <span className="text-2xl text-blue-600 ml-2">"</span>
               </p>
             </div>
