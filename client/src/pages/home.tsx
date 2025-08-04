@@ -8,6 +8,7 @@ import PremiumPackages from "@/components/premium-packages";
 import PremiumTestimonials from "@/components/premium-testimonials";
 import PremiumContact from "@/components/premium-contact";
 import Footer from "@/components/footer";
+import WhatsAppFloat from "@/components/whatsapp-float";
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
       <PremiumTestimonials />
       <PremiumContact />
       <Footer />
+      <WhatsAppFloat />
     </div>
   );
 }
