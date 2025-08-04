@@ -16,68 +16,68 @@ interface AssessmentModalProps {
 const assessmentQuestions: AssessmentQuestion[] = [
   {
     id: 1,
-    question: "What percentage of your daily work tasks could be automated by AI if your company invested in the right tools?",
+    question: "How much of your typical workday involves doing the same types of tasks repeatedly?",
     options: [
-      { text: "Less than 20% - My work is highly creative and strategic", score: 4 },
-      { text: "20-40% - Some routine tasks but mostly requires human expertise", score: 3 },
-      { text: "40-60% - Significant portions involve predictable processes", score: 2 },
-      { text: "60-80% - Most of my work follows established patterns and rules", score: 1 },
-      { text: "Over 80% - My role is primarily routine, repetitive, or rule-based", score: 0 }
+      { text: "Almost never - every day brings unique challenges and creative problem-solving", score: 4 },
+      { text: "Occasionally - I have some routine tasks but mostly handle different situations", score: 3 },
+      { text: "About half - I split time between routine work and unique situations", score: 2 },
+      { text: "Most days - I follow similar processes and procedures regularly", score: 1 },
+      { text: "Almost always - my work is very predictable and follows the same patterns", score: 0 }
     ]
   },
   {
     id: 2,
-    question: "If your company had to choose between hiring a new person in your role vs. implementing AI automation, what would likely happen?",
+    question: "If you were sick for a month, how difficult would it be for someone else to temporarily cover your responsibilities?",
     options: [
-      { text: "They'd always hire human - my role requires irreplaceable human skills", score: 4 },
-      { text: "Probably hire human - AI can't replicate my complex decision-making", score: 3 },
-      { text: "Could go either way - depends on budget and AI capabilities", score: 2 },
-      { text: "Likely choose AI - it would be faster and more cost-effective", score: 1 },
-      { text: "Definitely choose AI - my tasks are easily automated", score: 0 }
+      { text: "Nearly impossible - my role requires deep expertise and relationships", score: 4 },
+      { text: "Very difficult - they'd need extensive training and guidance", score: 3 },
+      { text: "Somewhat difficult - they could handle basics but would struggle with complex parts", score: 2 },
+      { text: "Manageable - someone could learn my tasks fairly quickly with some training", score: 1 },
+      { text: "Easy - anyone could step in and do my job with minimal instruction", score: 0 }
     ]
   },
   {
     id: 3,
-    question: "How quickly could someone with basic AI tools potentially replace 50% of your output?",
+    question: "How much of your work involves face-to-face interaction, building relationships, or understanding people's emotions?",
     options: [
-      { text: "Never - my expertise takes years to develop and can't be replicated", score: 4 },
-      { text: "2+ years - they'd need significant training and experience", score: 3 },
-      { text: "6-12 months - with some training they could handle basic parts", score: 2 },
-      { text: "1-3 months - AI could help them match much of my output quickly", score: 1 },
-      { text: "Within weeks - AI tools could immediately handle most of what I do", score: 0 }
+      { text: "It's central to my role - I'm constantly reading people and building relationships", score: 4 },
+      { text: "Very important - I regularly need to understand and connect with others", score: 3 },
+      { text: "Moderately important - some people interaction but not the main focus", score: 2 },
+      { text: "Limited - I interact with people but it's mostly straightforward communication", score: 1 },
+      { text: "Minimal - I mostly work with data, systems, or processes rather than people", score: 0 }
     ]
   },
   {
     id: 4,
-    question: "When you look at job postings in your field today vs. 2 years ago, what do you notice?",
+    question: "When problems come up at work, how often do you need to come up with creative solutions that aren't in any manual or procedure?",
     options: [
-      { text: "Same requirements - my field hasn't changed much", score: 4 },
-      { text: "Some new tech skills mentioned but core role unchanged", score: 3 },
-      { text: "Growing emphasis on 'AI-savvy' and tech integration", score: 2 },
-      { text: "Many postings now require AI/automation experience", score: 1 },
-      { text: "Fewer jobs available - many roles seem to be disappearing", score: 0 }
+      { text: "Constantly - I'm always solving unique problems that require creative thinking", score: 4 },
+      { text: "Frequently - I often need to figure out new approaches to challenges", score: 3 },
+      { text: "Sometimes - I handle both routine issues and occasional unique problems", score: 2 },
+      { text: "Rarely - most problems I face have established solutions or procedures", score: 1 },
+      { text: "Almost never - there are clear steps to follow for almost everything I do", score: 0 }
     ]
   },
   {
     id: 5,
-    question: "If you had to justify why your company should keep your role instead of automating it, what would be your strongest argument?",
+    question: "How often do you find yourself learning completely new skills or adapting to new tools and methods?",
     options: [
-      { text: "I provide strategic vision and creative problem-solving", score: 4 },
-      { text: "I manage relationships and make complex judgment calls", score: 3 },
-      { text: "I handle exceptions and edge cases that AI can't", score: 2 },
-      { text: "I'm cheaper than implementing new technology... for now", score: 1 },
-      { text: "Honestly, I'd struggle to make a compelling case", score: 0 }
+      { text: "Constantly - I'm always learning and adapting to stay current", score: 4 },
+      { text: "Regularly - I make an effort to learn new things several times a year", score: 3 },
+      { text: "Occasionally - I learn new things when required by my job", score: 2 },
+      { text: "Rarely - I mostly stick to what I already know and do well", score: 1 },
+      { text: "Almost never - I prefer to use the same methods and tools I've always used", score: 0 }
     ]
   },
   {
     id: 6,
-    question: "How prepared are you if your role gets disrupted by AI in the next 12-24 months?",
+    question: "If someone asked you to describe your job to a 10-year-old, how would you explain what makes you valuable at work?",
     options: [
-      { text: "Fully prepared - I've been actively building AI-proof skills", score: 4 },
-      { text: "Somewhat prepared - I understand what's needed and have a plan", score: 3 },
-      { text: "Starting to prepare - I know I need to act but haven't started", score: 2 },
-      { text: "Not prepared - I hope it won't affect me but have no backup plan", score: 1 },
-      { text: "Completely unprepared - I haven't even thought about it seriously", score: 0 }
+      { text: "I solve problems no one else can solve and come up with new ideas", score: 4 },
+      { text: "I help people and make important decisions based on experience", score: 3 },
+      { text: "I know how to do specific tasks well and train others", score: 2 },
+      { text: "I follow procedures correctly and get things done efficiently", score: 1 },
+      { text: "I'm not sure how to explain what makes me special at work", score: 0 }
     ]
   }
 ];
@@ -253,17 +253,17 @@ export function AssessmentResults({ isOpen, onClose, score, onBookCall }: Result
   const { level, color, icon: Icon } = getScoreLevel(score);
 
   const getRecommendation = (score: number) => {
-    if (score >= 75) return "You're in a relatively safe position, but even 'safe' roles are evolving rapidly. Stay ahead with strategic positioning.";
-    if (score >= 50) return "Your role has moderate AI replacement risk. Parts of your job are already automatable. Act now before it's too late.";
-    if (score >= 25) return "WARNING: Your career faces significant AI disruption. Large portions of your role can be automated. Immediate action required.";
-    return "CRITICAL: Your job is in immediate danger of AI replacement. Most of your tasks are highly automatable. You need urgent career repositioning.";
+    if (score >= 75) return "Your role has strong human elements, but the job market is changing fast. Smart professionals are getting ahead of the curve now.";
+    if (score >= 50) return "Your job has a mix of human and routine elements. The routine parts are becoming replaceable. It's time to strengthen your unique value.";
+    if (score >= 25) return "WARNING: Much of your work could be done by others or new technology. You need to develop irreplaceable skills before it's too late.";
+    return "CRITICAL: Your role is highly vulnerable to replacement. Most of what you do could be handled by technology or less expensive workers. Urgent action needed.";
   };
 
   const getUrgencyMessage = (score: number) => {
-    if (score >= 75) return "Even 'safe' professionals are getting strategic career coaching";
-    if (score >= 50) return "Don't wait until you're competing with AI for your own job";
-    if (score >= 25) return "Every month you delay is ground lost to AI automation";
-    return "Your career timeline just accelerated - immediate action is critical";
+    if (score >= 75) return "Even secure professionals are future-proofing their careers";
+    if (score >= 50) return "Don't wait until you're competing for fewer available positions";
+    if (score >= 25) return "The window for career repositioning is closing rapidly";
+    return "Your job security is more fragile than you think - act now";
   };
 
   return (
