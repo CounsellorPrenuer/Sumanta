@@ -54,7 +54,7 @@ export default function PremiumNavigation() {
                 alt="Leadcrest Consulting" 
                 className="h-10 w-auto"
               />
-              <div>
+              <div className="text-left">
                 <div className="font-bold text-lg text-gray-900">Leadcrest Consulting</div>
                 <div className="text-xs text-gray-500 -mt-1">Redefining Career Trajectory with Clarity</div>
               </div>

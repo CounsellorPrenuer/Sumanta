@@ -24,8 +24,8 @@ export default function Navigation() {
               alt="Leadcrest Consulting Logo" 
               className="h-12 w-12 object-contain"
             />
-            <div>
-              <span className="text-xl font-bold text-white">Leadcrest Consulting</span>
+            <div className="text-left">
+              <div className="text-xl font-bold text-white">Leadcrest Consulting</div>
               <p className="text-xs text-gray-300 hidden sm:block">Redefining Career Trajectory with Clarity</p>
             </div>
           </div>
