@@ -51,11 +51,11 @@ export default function BlogsResources() {
         <div className="container-custom">
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-              Insights &
-              <span className="text-gradient-blue block">Resources</span>
+              Executive Insights &
+              <span className="text-gradient-blue block">Professional Resources</span>
             </h1>
             <p className="text-xl text-gray-600 leading-relaxed mb-12">
-              Stay updated with the latest career trends, educational insights, and expert guidance to make informed decisions about your future.
+              Access Fortune 500-proven strategies, leadership insights, and comprehensive resources designed to accelerate your executive career and organizational success.
             </p>
           </div>
         </div>
@@ -65,9 +65,9 @@ export default function BlogsResources() {
       <section className="section-spacing">
         <div className="container-custom">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Latest Blog Posts</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">Latest Executive Insights</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Expert insights, career tips, and educational guidance from our team of certified counselors.
+              Strategic leadership insights, career advancement strategies, and corporate transformation guidance from 20+ years of Fortune 500 experience.
             </p>
           </div>
 
@@ -98,7 +98,7 @@ export default function BlogsResources() {
                   <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
                     <div className="flex items-center">
                       <User className="w-4 h-4 mr-2" />
-                      Leadcrest Consulting Team
+                      Sumanta Chaudhuri
                     </div>
                     <div className="flex items-center">
                       <Calendar className="w-4 h-4 mr-2" />
@@ -121,9 +121,9 @@ export default function BlogsResources() {
       <section className="section-spacing bg-gray-50">
         <div className="container-custom">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Free Resources</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">Professional Development Resources</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Download our comprehensive guides, templates, and tools to kickstart your career journey.
+              Comprehensive tools, assessments, and frameworks designed to accelerate your leadership journey and organizational transformation.
             </p>
           </div>
 
@@ -164,25 +164,44 @@ export default function BlogsResources() {
         </div>
       </section>
 
-      {/* Newsletter Section */}
+      {/* Executive Newsletter Section */}
       <section className="section-spacing">
         <div className="container-custom">
           <div className="premium-card p-12 bg-gradient-to-r from-blue-600 to-indigo-700 text-white text-center">
-            <h2 className="text-3xl font-bold mb-4">Stay Updated</h2>
+            <h2 className="text-3xl font-bold mb-4">Executive Leadership Insights</h2>
             <p className="text-blue-100 mb-8 max-w-2xl mx-auto text-lg">
-              Subscribe to our newsletter and get the latest career insights, educational updates, and exclusive resources delivered to your inbox.
+              Join 3,725+ professionals receiving exclusive leadership strategies, Fortune 500 insights, and career advancement resources from Sumanta Chaudhuri.
             </p>
+            
+            <div className="grid md:grid-cols-3 gap-6 mb-8 max-w-4xl mx-auto">
+              <div className="text-center">
+                <div className="text-2xl font-bold text-yellow-300 mb-2">Weekly</div>
+                <div className="text-blue-100 text-sm">Leadership Insights</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl font-bold text-yellow-300 mb-2">Monthly</div>
+                <div className="text-blue-100 text-sm">Career Strategy Reports</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl font-bold text-yellow-300 mb-2">Exclusive</div>
+                <div className="text-blue-100 text-sm">Executive Resources</div>
+              </div>
+            </div>
             
             <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
               <input
                 type="email"
-                placeholder="Enter your email address"
+                placeholder="Enter your professional email"
                 className="flex-1 px-6 py-3 rounded-xl text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white/20"
               />
               <button className="bg-white text-blue-600 font-semibold px-8 py-3 rounded-xl hover:bg-gray-50 transition-colors">
-                Subscribe
+                Join Leaders
               </button>
             </div>
+            
+            <p className="text-blue-200 text-sm mt-4">
+              Used by executives at Fortune 500 companies • Unsubscribe anytime
+            </p>
           </div>
         </div>
       </section>

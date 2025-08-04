@@ -215,31 +215,58 @@ export class MemStorage implements IStorage {
     // Initialize blog posts
     const blogPostsData: (InsertBlogPost & { id: string, publishedAt: Date })[] = [
       {
-        id: "stream-selection-guide",
-        title: "How to Choose the Right Stream After Class 10",
-        excerpt: "A comprehensive guide to help students make informed decisions about their academic future...",
-        content: "Choosing the right stream after Class 10 is one of the most crucial decisions in a student's life...",
-        category: "EDUCATION PLANNING",
-        imageUrl: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300",
+        id: "ai-proof-leadership-skills",
+        title: "Building AI-Proof Leadership Skills for the Future Workforce",
+        excerpt: "Discover the uniquely human leadership capabilities that will remain irreplaceable as AI transforms the workplace. Learn how Fortune 500 leaders are adapting their skillsets.",
+        content: "As artificial intelligence continues to reshape industries, the question isn't whether AI will impact your career—it's how you can develop skills that remain uniquely human and irreplaceable. After 20+ years in Fortune 500 HR leadership, I've observed that successful executives focus on capabilities that machines cannot replicate: emotional intelligence, strategic thinking, and authentic relationship building. This comprehensive guide explores the leadership competencies that will define career success in an AI-driven economy, including practical frameworks for developing executive presence, managing change, and inspiring teams through uncertainty.",
+        category: "LEADERSHIP DEVELOPMENT",
+        imageUrl: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300",
         publishedAt: new Date("2025-01-15")
       },
       {
-        id: "emerging-careers-2025",
-        title: "Top 10 Emerging Careers in 2025",
-        excerpt: "Explore the most promising career opportunities that are shaping the future job market...",
-        content: "The job market is evolving rapidly, and new career opportunities are emerging across various sectors...",
-        category: "CAREER GUIDANCE",
-        imageUrl: "https://images.unsplash.com/photo-1553028826-f4804a6dba3b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300",
+        id: "mid-career-transition-strategy",
+        title: "The Executive's Guide to Strategic Mid-Career Transitions",
+        excerpt: "Navigate career pivots with confidence using Fortune 500-proven strategies. From identifying opportunities to negotiating executive packages, master the art of strategic career advancement.",
+        content: "Mid-career transitions represent some of the most significant opportunities for professional growth and financial advancement. Drawing from my experience guiding 3,725+ professionals and my tenure in senior HR roles at Reliance and Vodafone, this guide reveals the systematic approach successful executives use to identify, pursue, and secure leadership positions. Whether you're targeting a C-suite role, transitioning industries, or launching your own venture, learn the strategic frameworks that have enabled our clients to achieve 70-85% salary increases. This comprehensive resource covers executive positioning, network leverage, negotiation tactics, and the mindset shifts required for senior leadership success.",
+        category: "CAREER ADVANCEMENT",
+        imageUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300",
+        publishedAt: new Date("2025-01-12")
+      },
+      {
+        id: "corporate-parenting-wellbeing",
+        title: "The Hidden Cost of Parenting Stress in Corporate India",
+        excerpt: "How organizations can support working parents through comprehensive wellbeing programs. Explore the business case for parenting support and its impact on retention and productivity.",
+        content: "Corporate India is experiencing a silent crisis: 1 in 2 working parents report chronic stress, with parenting pressure being the leading cause of mid-career female attrition. As organizations invest heavily in DEI initiatives, they often overlook one of the most significant barriers to professional advancement—the challenges of balancing career ambitions with parenting responsibilities. This in-depth analysis explores how forward-thinking companies are implementing comprehensive parenting wellbeing programs, including career mentorship for employees' children, stress management workshops, and diagnostic surveys. Learn how supporting employees as parents directly translates to improved retention, higher engagement, and stronger organizational performance.",
+        category: "CORPORATE WELLNESS",
+        imageUrl: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300",
         publishedAt: new Date("2025-01-10")
       },
       {
-        id: "study-abroad-guide",
-        title: "Study Abroad: A Complete Guide for Indian Students",
-        excerpt: "Everything you need to know about pursuing higher education abroad, from applications to scholarships...",
-        content: "Studying abroad can be a life-changing experience that opens doors to global opportunities...",
-        category: "INTERNATIONAL EDUCATION",
-        imageUrl: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300",
+        id: "executive-presence-development",
+        title: "Developing Executive Presence: From Manager to C-Suite Leader",
+        excerpt: "Master the subtle art of executive presence with proven techniques from Fortune 500 boardrooms. Learn how to command respect, influence decisions, and accelerate your leadership trajectory.",
+        content: "Executive presence is the indefinable quality that separates high-performing managers from transformational leaders. It's the reason why some professionals ascend to C-suite roles while equally qualified peers remain in middle management. Through my two decades of Fortune 500 experience and coaching 3,725+ professionals, I've identified the specific behavioral patterns, communication styles, and strategic thinking approaches that define executive presence. This comprehensive guide breaks down the components of authentic leadership influence: commanding rooms without demanding attention, making complex decisions under pressure, and inspiring teams through vision rather than authority. Discover the practical exercises, mindset shifts, and strategic positioning techniques that have enabled our clients to achieve rapid career acceleration and significant salary increases.",
+        category: "EXECUTIVE COACHING",
+        imageUrl: "https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300",
+        publishedAt: new Date("2025-01-08")
+      },
+      {
+        id: "negotiating-executive-compensation",
+        title: "The Art of Executive Compensation Negotiation",
+        excerpt: "Unlock significant salary increases with Fortune 500-proven negotiation strategies. Learn how to position yourself for premium compensation packages and benefits.",
+        content: "The difference between good and great executive compensation often comes down to negotiation skills and strategic positioning. Having reviewed thousands of executive compensation packages during my tenure at Reliance and Vodafone, I've observed the specific strategies that consistently result in substantial salary increases. This detailed guide reveals the systematic approach our clients use to achieve 70-85% salary increases: from market research and competitive positioning to negotiation timing and package structuring. Learn how to leverage your unique value proposition, understand compensation benchmarks, and navigate complex negotiations with confidence. Whether you're seeking a promotion, changing companies, or repositioning within your current organization, master the art of executive-level compensation discussions.",
+        category: "SALARY NEGOTIATION",
+        imageUrl: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300",
         publishedAt: new Date("2025-01-05")
+      },
+      {
+        id: "building-professional-networks",
+        title: "Strategic Networking for Senior Professionals",
+        excerpt: "Build powerful professional networks that accelerate career advancement. Learn relationship-building strategies used by Fortune 500 executives to create opportunities.",
+        content: "Professional networking at the executive level operates differently from junior career relationship building. It requires strategic thinking, authentic value creation, and long-term relationship cultivation. Drawing from my extensive network built through 20+ years in Fortune 500 leadership and my experience guiding senior professionals, this comprehensive guide reveals the systematic approach to building meaningful professional relationships. Learn how to identify key influencers, create mutual value, and leverage relationships for career advancement without appearing transactional. Discover the networking strategies that have helped our clients secure board positions, executive roles, and strategic partnerships. This resource includes practical frameworks for relationship mapping, value proposition development, and authentic engagement techniques.",
+        category: "PROFESSIONAL NETWORKING",
+        imageUrl: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300",
+        publishedAt: new Date("2025-01-03")
       }
     ];
 
@@ -250,36 +277,68 @@ export class MemStorage implements IStorage {
     // Initialize resources
     const resourcesData: (InsertResource & { id: string })[] = [
       {
-        id: "career-assessment-guide",
-        title: "Career Assessment Guide",
-        description: "Self-assessment questionnaire to discover your career interests.",
-        type: "pdf",
+        id: "executive-leadership-assessment",
+        title: "Executive Leadership Assessment",
+        description: "Comprehensive psychometric evaluation for senior professionals to identify leadership strengths and development areas.",
+        type: "guide",
         downloadUrl: "#",
-        iconName: "file-pdf"
+        iconName: "brain"
       },
       {
-        id: "college-comparison-tool",
-        title: "College Comparison Tool",
-        description: "Compare colleges based on courses, fees, and placement records.",
+        id: "salary-negotiation-toolkit",
+        title: "Salary Negotiation Toolkit",
+        description: "Complete framework including market research templates, negotiation scripts, and compensation benchmarking tools.",
+        type: "template",
+        downloadUrl: "#",
+        iconName: "trending-up"
+      },
+      {
+        id: "ai-readiness-career-report",
+        title: "AI-Readiness Career Report",
+        description: "Detailed analysis of AI impact on leadership roles with future-proofing strategies for executive careers.",
+        type: "guide",
+        downloadUrl: "#",
+        iconName: "robot"
+      },
+      {
+        id: "corporate-parenting-diagnostic",
+        title: "Corporate Parenting Wellbeing Diagnostic",
+        description: "Proprietary survey to measure parenting-related stress and work-life conflict for organizational DEI strategies.",
+        type: "template",
+        downloadUrl: "#",
+        iconName: "users"
+      },
+      {
+        id: "executive-presence-playbook",
+        title: "Executive Presence Development Playbook",
+        description: "Step-by-step guide to developing commanding leadership presence with Fortune 500-proven techniques.",
+        type: "guide",
+        downloadUrl: "#",
+        iconName: "award"
+      },
+      {
+        id: "career-transition-roadmap",
+        title: "Strategic Career Transition Roadmap",
+        description: "Complete blueprint for mid-career pivots including opportunity mapping, positioning strategies, and timeline planning.",
+        type: "template",
+        downloadUrl: "#",
+        iconName: "map"
+      },
+      {
+        id: "leadership-network-builder",
+        title: "Professional Network Building Framework",
+        description: "Systematic approach to building strategic professional relationships for career advancement and opportunity creation.",
+        type: "template",
+        downloadUrl: "#",
+        iconName: "network"
+      },
+      {
+        id: "corporate-wellness-roi-calculator",
+        title: "Corporate Wellness ROI Calculator",
+        description: "Calculate the business impact of employee wellbeing programs including parenting support and career development initiatives.",
         type: "tool",
         downloadUrl: "#",
-        iconName: "graduation-cap"
-      },
-      {
-        id: "salary-trends-report",
-        title: "Salary Trends Report",
-        description: "Latest salary trends across different industries and roles.",
-        type: "report",
-        downloadUrl: "#",
-        iconName: "chart-line"
-      },
-      {
-        id: "interview-tips-checklist",
-        title: "Interview Tips Checklist",
-        description: "Essential tips and checklist for job interview success.",
-        type: "checklist",
-        downloadUrl: "#",
-        iconName: "lightbulb"
+        iconName: "calculator"
       }
     ];
 
