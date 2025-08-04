@@ -75,110 +75,125 @@ export default function AIFutureSection() {
           </div>
         </div>
 
-        {/* New Two-Column Layout */}
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
-          {/* Column 1: What's Changing */}
-          <div className="space-y-8">
-            <div className="bg-white/80 backdrop-blur-xl border-2 rounded-3xl p-8 shadow-xl" 
-                 style={{borderColor: 'hsl(220, 91%, 85%)'}}>
-              <h3 className="text-3xl font-bold mb-6" style={{color: 'hsl(220, 91%, 25%)'}}>
-                What's Changing:
+        {/* Sophisticated Single-Column Flow */}
+        <div className="max-w-5xl mx-auto space-y-16">
+          
+          {/* What's Changing - Premium Visual Design */}
+          <div className="relative">
+            <div className="text-center mb-12">
+              <h3 className="text-4xl font-bold mb-4" style={{color: 'hsl(220, 91%, 25%)'}}>
+                What's Changing
               </h3>
-              
-              <div className="space-y-6">
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0" 
-                       style={{background: 'linear-gradient(135deg, hsl(220, 91%, 85%), hsl(220, 91%, 90%))'}}>
-                    <Cpu className="w-6 h-6" style={{color: 'hsl(220, 91%, 50%)'}} />
-                  </div>
-                  <div>
-                    <h4 className="text-xl font-semibold mb-2" style={{color: 'hsl(220, 91%, 20%)'}}>
-                      Automation across HR, Finance, Marketing, Engineering
-                    </h4>
-                    <div className="flex flex-wrap gap-2">
-                      {automationAreas.map((area, index) => (
-                        <span key={index} 
-                              className="px-3 py-1 rounded-full text-sm font-medium border"
-                              style={{
-                                backgroundColor: 'hsl(220, 91%, 95%)',
-                                borderColor: 'hsl(220, 91%, 80%)',
-                                color: 'hsl(220, 91%, 30%)'
-                              }}>
-                          {area}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
+              <div className="w-24 h-1 mx-auto rounded-full" style={{background: 'linear-gradient(90deg, hsl(220, 91%, 50%), hsl(267, 47%, 50%))'}}></div>
+            </div>
 
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0" 
-                       style={{background: 'linear-gradient(135deg, hsl(267, 47%, 85%), hsl(267, 47%, 90%))'}}>
-                    <Brain className="w-6 h-6" style={{color: 'hsl(267, 47%, 50%)'}} />
+            <div className="grid md:grid-cols-3 gap-8">
+              {/* Automation Impact */}
+              <div className="group relative bg-white/90 backdrop-blur-xl border border-white/50 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500">
+                <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" 
+                     style={{background: 'linear-gradient(135deg, hsl(220, 91%, 95%), hsl(220, 91%, 98%))'}}></div>
+                <div className="relative z-10">
+                  <div className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4" 
+                       style={{background: 'linear-gradient(135deg, hsl(220, 91%, 85%), hsl(220, 91%, 90%))', boxShadow: '0 8px 32px rgba(0,0,0,0.1)'}}>
+                    <Cpu className="w-8 h-8" style={{color: 'hsl(220, 91%, 50%)'}} />
                   </div>
-                  <div>
-                    <h4 className="text-xl font-semibold mb-2" style={{color: 'hsl(267, 47%, 25%)'}}>
-                      Demand for AI literacy and reinvention
-                    </h4>
-                    <p className="text-gray-600">
-                      Continuous learning and adaptation becoming core job requirements
-                    </p>
-                  </div>
+                  <h4 className="text-xl font-bold text-center mb-3" style={{color: 'hsl(220, 91%, 20%)'}}>
+                    Widespread Automation
+                  </h4>
+                  <p className="text-gray-600 text-center leading-relaxed">
+                    Every department is being transformed - from HR recruiting to financial analysis, marketing campaigns to engineering tasks.
+                  </p>
                 </div>
+              </div>
 
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0" 
-                       style={{background: 'linear-gradient(135deg, hsl(45, 93%, 85%), hsl(45, 93%, 90%))'}}>
-                    <TrendingUp className="w-6 h-6" style={{color: 'hsl(45, 93%, 50%)'}} />
+              {/* AI Literacy Demand */}
+              <div className="group relative bg-white/90 backdrop-blur-xl border border-white/50 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500">
+                <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" 
+                     style={{background: 'linear-gradient(135deg, hsl(267, 47%, 95%), hsl(267, 47%, 98%))'}}></div>
+                <div className="relative z-10">
+                  <div className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4" 
+                       style={{background: 'linear-gradient(135deg, hsl(267, 47%, 85%), hsl(267, 47%, 90%))', boxShadow: '0 8px 32px rgba(0,0,0,0.1)'}}>
+                    <Brain className="w-8 h-8" style={{color: 'hsl(267, 47%, 50%)'}} />
                   </div>
-                  <div>
-                    <h4 className="text-xl font-semibold mb-2" style={{color: 'hsl(45, 93%, 35%)'}}>
-                      Relevance &gt; Tenure
-                    </h4>
-                    <p className="text-gray-600">
-                      Future value determined by adaptability, not years of experience
-                    </p>
+                  <h4 className="text-xl font-bold text-center mb-3" style={{color: 'hsl(267, 47%, 25%)'}}>
+                    AI Literacy Required
+                  </h4>
+                  <p className="text-gray-600 text-center leading-relaxed">
+                    Understanding and working alongside AI tools isn't optional anymore - it's becoming the baseline expectation.
+                  </p>
+                </div>
+              </div>
+
+              {/* New Success Metrics */}
+              <div className="group relative bg-white/90 backdrop-blur-xl border border-white/50 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500">
+                <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" 
+                     style={{background: 'linear-gradient(135deg, hsl(45, 93%, 95%), hsl(45, 93%, 98%))'}}></div>
+                <div className="relative z-10">
+                  <div className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4" 
+                       style={{background: 'linear-gradient(135deg, hsl(45, 93%, 85%), hsl(45, 93%, 90%))', boxShadow: '0 8px 32px rgba(0,0,0,0.1)'}}>
+                    <TrendingUp className="w-8 h-8" style={{color: 'hsl(45, 93%, 50%)'}} />
                   </div>
+                  <h4 className="text-xl font-bold text-center mb-3" style={{color: 'hsl(45, 93%, 35%)'}}>
+                    Relevance &gt; Tenure
+                  </h4>
+                  <p className="text-gray-600 text-center leading-relaxed">
+                    Years of experience matter less than your ability to adapt, learn, and stay relevant in a rapidly changing landscape.
+                  </p>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Column 2: How Leadcrest Helps */}
-          <div className="space-y-8">
-            <div className="bg-white/80 backdrop-blur-xl border-2 rounded-3xl p-8 shadow-xl" 
-                 style={{borderColor: 'hsl(267, 47%, 85%)'}}>
-              <h3 className="text-3xl font-bold mb-8" style={{color: 'hsl(267, 47%, 25%)'}}>
-                Leadcrest Helps You:
+          {/* Divider */}
+          <div className="flex items-center justify-center">
+            <div className="w-32 h-px" style={{background: 'linear-gradient(90deg, transparent, hsl(220, 91%, 70%), transparent)'}}></div>
+            <div className="mx-4 w-2 h-2 rounded-full" style={{backgroundColor: 'hsl(267, 47%, 60%)'}}></div>
+            <div className="w-32 h-px" style={{background: 'linear-gradient(90deg, transparent, hsl(267, 47%, 70%), transparent)'}}></div>
+          </div>
+
+          {/* How Leadcrest Helps - Premium Card Design */}
+          <div className="relative">
+            <div className="text-center mb-12">
+              <h3 className="text-4xl font-bold mb-4" style={{color: 'hsl(267, 47%, 25%)'}}>
+                How Leadcrest Helps You Navigate This
               </h3>
-              
-              <div className="space-y-6">
-                {leadcrestHelps.map((item, index) => (
-                  <div key={index} className="flex items-start space-x-4 group">
-                    <div className="w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg group-hover:shadow-xl transition-shadow duration-300" 
+              <div className="w-24 h-1 mx-auto rounded-full" style={{background: 'linear-gradient(90deg, hsl(267, 47%, 50%), hsl(45, 93%, 50%))'}}></div>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {leadcrestHelps.map((item, index) => (
+                <div key={index} 
+                     className="group relative bg-white/90 backdrop-blur-xl border border-white/50 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 h-full">
+                  <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" 
+                       style={{
+                         background: index % 3 === 0 ? 'linear-gradient(135deg, hsl(220, 91%, 97%), hsl(220, 91%, 99%))' :
+                                    index % 3 === 1 ? 'linear-gradient(135deg, hsl(267, 47%, 97%), hsl(267, 47%, 99%))' :
+                                    'linear-gradient(135deg, hsl(45, 93%, 97%), hsl(45, 93%, 99%))'
+                       }}></div>
+                  <div className="relative z-10 h-full flex flex-col">
+                    <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-4" 
                          style={{
                            background: index % 3 === 0 ? 'linear-gradient(135deg, hsl(220, 91%, 85%), hsl(220, 91%, 90%))' :
                                       index % 3 === 1 ? 'linear-gradient(135deg, hsl(267, 47%, 85%), hsl(267, 47%, 90%))' :
-                                      'linear-gradient(135deg, hsl(45, 93%, 85%), hsl(45, 93%, 90%))'
+                                      'linear-gradient(135deg, hsl(45, 93%, 85%), hsl(45, 93%, 90%))',
+                           boxShadow: '0 8px 32px rgba(0,0,0,0.1)'
                          }}>
-                      <item.icon className="w-6 h-6" 
+                      <item.icon className="w-7 h-7" 
                                  style={{
                                    color: index % 3 === 0 ? 'hsl(220, 91%, 50%)' :
                                           index % 3 === 1 ? 'hsl(267, 47%, 50%)' :
                                           'hsl(45, 93%, 50%)'
                                  }} />
                     </div>
-                    <div>
-                      <h4 className="text-lg font-semibold mb-2 text-gray-900">
-                        {item.title}
-                      </h4>
-                      <p className="text-gray-600 leading-relaxed">
-                        {item.description}
-                      </p>
-                    </div>
+                    <h4 className="text-lg font-bold mb-3 text-gray-900 group-hover:text-gray-700 transition-colors">
+                      {item.title}
+                    </h4>
+                    <p className="text-gray-600 leading-relaxed flex-grow">
+                      {item.description}
+                    </p>
                   </div>
-                ))}
-              </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
