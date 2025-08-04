@@ -2,40 +2,19 @@ import { AlertTriangle, TrendingUp, Brain, Shield, Zap, Target, Clock, CheckCirc
 import { useState, useEffect } from "react";
 
 export default function AIFutureSection() {
-  const [counters, setCounters] = useState({ jobs: 0, careers: 0 });
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && !isVisible) {
-          setIsVisible(true);
-          // Animate counters
-          setTimeout(() => {
-            setCounters({ jobs: 40, careers: 85 });
-          }, 500);
-        }
-      },
-      { threshold: 0.3 }
-    );
-
-    const element = document.getElementById('ai-impact-section');
-    if (element) observer.observe(element);
-
-    return () => observer.disconnect();
-  }, [isVisible]);
+  const [counters, setCounters] = useState({ jobs: 40, careers: 85 });
 
   const dangerStats = [
     {
       icon: AlertTriangle,
-      stat: `${counters.jobs}%`,
+      stat: "40%",
       description: "of jobs will be replaced or transformed by AI",
       color: "text-red-600 bg-red-50 border-red-200",
       bgGradient: "from-red-50 to-orange-50"
     },
     {
       icon: Clock,
-      stat: `${counters.careers}%`,
+      stat: "85%",
       description: "of careers in 2030 haven't been invented yet",
       color: "text-orange-600 bg-orange-50 border-orange-200",
       bgGradient: "from-orange-50 to-yellow-50"
@@ -89,7 +68,7 @@ export default function AIFutureSection() {
         {/* Elegant Headline */}
         <div className="text-center max-w-4xl mx-auto mb-20">
           <h2 className="text-4xl lg:text-6xl font-light text-gray-900 mb-8 leading-tight">
-            Over <span className="font-semibold text-slate-800">{counters.jobs}% of jobs</span> will be replaced or transformed by AI.
+            Over <span className="font-semibold text-slate-800">40% of jobs</span> will be replaced or transformed by AI.
             <span className="block mt-4 text-2xl lg:text-3xl text-gray-600 font-light">
               Is your career ready?
             </span>
