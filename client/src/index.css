@@ -68,6 +68,18 @@
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
 }
 
+.shadow-3xl {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.border-3 {
+  border-width: 3px;
+}
+
+.backdrop-blur-xl {
+  backdrop-filter: blur(24px);
+}
+
 :root {
   --primary: 212 100% 50%;
   --secondary: 267 84% 81%;
