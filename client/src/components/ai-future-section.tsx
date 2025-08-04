@@ -97,7 +97,7 @@ export default function AIFutureSection() {
                        style={{background: 'linear-gradient(135deg, hsl(220, 91%, 85%), hsl(220, 91%, 90%))', boxShadow: '0 8px 32px rgba(0,0,0,0.1)'}}>
                     <Cpu className="w-8 h-8 group-hover:scale-110 transition-transform duration-300" style={{color: 'hsl(220, 91%, 50%)'}} />
                   </div>
-                  <h4 className="text-xl font-bold text-center mb-3 group-hover:text-opacity-80 transition-all duration-300" style={{color: 'hsl(220, 91%, 20%)'}}>
+                  <h4 className="text-xl font-bold text-center mb-3 group-hover:opacity-90 transition-all duration-300" style={{color: 'hsl(220, 91%, 20%)'}}>
                     Widespread Automation
                   </h4>
                   <p className="text-gray-600 text-center leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
@@ -115,7 +115,7 @@ export default function AIFutureSection() {
                        style={{background: 'linear-gradient(135deg, hsl(267, 47%, 85%), hsl(267, 47%, 90%))', boxShadow: '0 8px 32px rgba(0,0,0,0.1)'}}>
                     <Brain className="w-8 h-8 group-hover:scale-110 transition-transform duration-300" style={{color: 'hsl(267, 47%, 50%)'}} />
                   </div>
-                  <h4 className="text-xl font-bold text-center mb-3 group-hover:text-opacity-80 transition-all duration-300" style={{color: 'hsl(267, 47%, 25%)'}}>
+                  <h4 className="text-xl font-bold text-center mb-3 group-hover:opacity-90 transition-all duration-300" style={{color: 'hsl(267, 47%, 25%)'}}>
                     AI Literacy Required
                   </h4>
                   <p className="text-gray-600 text-center leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
@@ -133,7 +133,7 @@ export default function AIFutureSection() {
                        style={{background: 'linear-gradient(135deg, hsl(45, 93%, 85%), hsl(45, 93%, 90%))', boxShadow: '0 8px 32px rgba(0,0,0,0.1)'}}>
                     <TrendingUp className="w-8 h-8 group-hover:scale-110 transition-transform duration-300" style={{color: 'hsl(45, 93%, 50%)'}} />
                   </div>
-                  <h4 className="text-xl font-bold text-center mb-3 group-hover:text-opacity-80 transition-all duration-300" style={{color: 'hsl(45, 93%, 35%)'}}>
+                  <h4 className="text-xl font-bold text-center mb-3 group-hover:opacity-90 transition-all duration-300" style={{color: 'hsl(45, 93%, 35%)'}}>
                     Relevance &gt; Tenure
                   </h4>
                   <p className="text-gray-600 text-center leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
