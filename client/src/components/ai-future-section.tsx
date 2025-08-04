@@ -89,57 +89,45 @@ export default function AIFutureSection() {
 
             <div className="grid md:grid-cols-3 gap-8">
               {/* Automation Impact */}
-              <div className="group relative bg-white/90 backdrop-blur-xl border border-white/50 rounded-2xl p-6 shadow-lg card-lift-hover transition-all duration-500 fade-in-up-elegant stagger-delay-1">
-                <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" 
-                     style={{background: 'linear-gradient(135deg, hsl(220, 91%, 95%), hsl(220, 91%, 98%))'}}></div>
-                <div className="relative z-10">
-                  <div className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 icon-glow-hover transition-all duration-300" 
-                       style={{background: 'linear-gradient(135deg, hsl(220, 91%, 85%), hsl(220, 91%, 90%))', boxShadow: '0 8px 32px rgba(0,0,0,0.1)'}}>
-                    <Cpu className="w-8 h-8 group-hover:scale-110 transition-transform duration-300" style={{color: 'hsl(220, 91%, 50%)'}} />
-                  </div>
-                  <h4 className="text-xl font-bold text-center mb-3 group-hover:opacity-90 transition-all duration-300" style={{color: 'hsl(220, 91%, 20%)'}}>
-                    Widespread Automation
-                  </h4>
-                  <p className="text-gray-600 text-center leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
-                    Every department is being transformed - from HR recruiting to financial analysis, marketing campaigns to engineering tasks.
-                  </p>
+              <div className="group relative bg-white/90 border border-white/50 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 fade-in-up-elegant stagger-delay-1">
+                <div className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 transition-all duration-300" 
+                     style={{background: 'linear-gradient(135deg, hsl(220, 91%, 85%), hsl(220, 91%, 90%))', boxShadow: '0 8px 32px rgba(0,0,0,0.1)'}}>
+                  <Cpu className="w-8 h-8 group-hover:scale-105 transition-transform duration-300" style={{color: 'hsl(220, 91%, 50%)'}} />
                 </div>
+                <h4 className="text-xl font-bold text-center mb-3 transition-all duration-300" style={{color: 'hsl(220, 91%, 20%)'}}>
+                  Widespread Automation
+                </h4>
+                <p className="text-gray-600 text-center leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
+                  Every department is being transformed - from HR recruiting to financial analysis, marketing campaigns to engineering tasks.
+                </p>
               </div>
 
               {/* AI Literacy Demand */}
-              <div className="group relative bg-white/90 backdrop-blur-xl border border-white/50 rounded-2xl p-6 shadow-lg card-lift-hover transition-all duration-500 fade-in-up-elegant stagger-delay-2">
-                <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" 
-                     style={{background: 'linear-gradient(135deg, hsl(267, 47%, 95%), hsl(267, 47%, 98%))'}}></div>
-                <div className="relative z-10">
-                  <div className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 icon-glow-hover transition-all duration-300" 
-                       style={{background: 'linear-gradient(135deg, hsl(267, 47%, 85%), hsl(267, 47%, 90%))', boxShadow: '0 8px 32px rgba(0,0,0,0.1)'}}>
-                    <Brain className="w-8 h-8 group-hover:scale-110 transition-transform duration-300" style={{color: 'hsl(267, 47%, 50%)'}} />
-                  </div>
-                  <h4 className="text-xl font-bold text-center mb-3 group-hover:opacity-90 transition-all duration-300" style={{color: 'hsl(267, 47%, 25%)'}}>
-                    AI Literacy Required
-                  </h4>
-                  <p className="text-gray-600 text-center leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
-                    Understanding and working alongside AI tools isn't optional anymore - it's becoming the baseline expectation.
-                  </p>
+              <div className="group relative bg-white/90 border border-white/50 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 fade-in-up-elegant stagger-delay-2">
+                <div className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 transition-all duration-300" 
+                     style={{background: 'linear-gradient(135deg, hsl(267, 47%, 85%), hsl(267, 47%, 90%))', boxShadow: '0 8px 32px rgba(0,0,0,0.1)'}}>
+                  <Brain className="w-8 h-8 group-hover:scale-105 transition-transform duration-300" style={{color: 'hsl(267, 47%, 50%)'}} />
                 </div>
+                <h4 className="text-xl font-bold text-center mb-3 transition-all duration-300" style={{color: 'hsl(267, 47%, 25%)'}}>
+                  AI Literacy Required
+                </h4>
+                <p className="text-gray-600 text-center leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
+                  Understanding and working alongside AI tools isn't optional anymore - it's becoming the baseline expectation.
+                </p>
               </div>
 
               {/* New Success Metrics */}
-              <div className="group relative bg-white/90 backdrop-blur-xl border border-white/50 rounded-2xl p-6 shadow-lg card-lift-hover transition-all duration-500 fade-in-up-elegant stagger-delay-3">
-                <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" 
-                     style={{background: 'linear-gradient(135deg, hsl(45, 93%, 95%), hsl(45, 93%, 98%))'}}></div>
-                <div className="relative z-10">
-                  <div className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 icon-glow-hover transition-all duration-300" 
-                       style={{background: 'linear-gradient(135deg, hsl(45, 93%, 85%), hsl(45, 93%, 90%))', boxShadow: '0 8px 32px rgba(0,0,0,0.1)'}}>
-                    <TrendingUp className="w-8 h-8 group-hover:scale-110 transition-transform duration-300" style={{color: 'hsl(45, 93%, 50%)'}} />
-                  </div>
-                  <h4 className="text-xl font-bold text-center mb-3 group-hover:opacity-90 transition-all duration-300" style={{color: 'hsl(45, 93%, 35%)'}}>
-                    Relevance &gt; Tenure
-                  </h4>
-                  <p className="text-gray-600 text-center leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
-                    Years of experience matter less than your ability to adapt, learn, and stay relevant in a rapidly changing landscape.
-                  </p>
+              <div className="group relative bg-white/90 border border-white/50 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 fade-in-up-elegant stagger-delay-3">
+                <div className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 transition-all duration-300" 
+                     style={{background: 'linear-gradient(135deg, hsl(45, 93%, 85%), hsl(45, 93%, 90%))', boxShadow: '0 8px 32px rgba(0,0,0,0.1)'}}>
+                  <TrendingUp className="w-8 h-8 group-hover:scale-105 transition-transform duration-300" style={{color: 'hsl(45, 93%, 50%)'}} />
                 </div>
+                <h4 className="text-xl font-bold text-center mb-3 transition-all duration-300" style={{color: 'hsl(45, 93%, 35%)'}}>
+                  Relevance &gt; Tenure
+                </h4>
+                <p className="text-gray-600 text-center leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
+                  Years of experience matter less than your ability to adapt, learn, and stay relevant in a rapidly changing landscape.
+                </p>
               </div>
             </div>
           </div>
@@ -163,22 +151,16 @@ export default function AIFutureSection() {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {leadcrestHelps.map((item, index) => (
                 <div key={index} 
-                     className={`group relative bg-white/90 backdrop-blur-xl border border-white/50 rounded-2xl p-6 shadow-lg card-lift-hover transition-all duration-500 h-full fade-in-up-elegant stagger-delay-${index + 1}`}>
-                  <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" 
-                       style={{
-                         background: index % 3 === 0 ? 'linear-gradient(135deg, hsl(220, 91%, 97%), hsl(220, 91%, 99%))' :
-                                    index % 3 === 1 ? 'linear-gradient(135deg, hsl(267, 47%, 97%), hsl(267, 47%, 99%))' :
-                                    'linear-gradient(135deg, hsl(45, 93%, 97%), hsl(45, 93%, 99%))'
-                       }}></div>
-                  <div className="relative z-10 h-full flex flex-col">
-                    <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-4 icon-glow-hover transition-all duration-300" 
+                     className={`group relative bg-white/90 border border-white/50 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 h-full fade-in-up-elegant stagger-delay-${index + 1}`}>
+                  <div className="h-full flex flex-col">
+                    <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-4 transition-all duration-300" 
                          style={{
                            background: index % 3 === 0 ? 'linear-gradient(135deg, hsl(220, 91%, 85%), hsl(220, 91%, 90%))' :
                                       index % 3 === 1 ? 'linear-gradient(135deg, hsl(267, 47%, 85%), hsl(267, 47%, 90%))' :
                                       'linear-gradient(135deg, hsl(45, 93%, 85%), hsl(45, 93%, 90%))',
                            boxShadow: '0 8px 32px rgba(0,0,0,0.1)'
                          }}>
-                      <item.icon className="w-7 h-7 group-hover:scale-110 transition-transform duration-300" 
+                      <item.icon className="w-7 h-7 group-hover:scale-105 transition-transform duration-300" 
                                  style={{
                                    color: index % 3 === 0 ? 'hsl(220, 91%, 50%)' :
                                           index % 3 === 1 ? 'hsl(267, 47%, 50%)' :
