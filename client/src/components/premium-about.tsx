@@ -44,7 +44,7 @@ export default function PremiumAbout() {
   ];
 
   return (
-    <section id="about" className="section-spacing">
+    <section id="about" className="pt-24 lg:pt-32 pb-12 lg:pb-16">
       <div className="container-custom">
         <div className="grid lg:grid-cols-2 gap-20 items-center">
           {/* Left Content */}
