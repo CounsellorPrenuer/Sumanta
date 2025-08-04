@@ -40,7 +40,7 @@ export default function RoadmapSection() {
   ];
 
   return (
-    <section className="section-spacing bg-gradient-to-br from-white via-slate-50 to-blue-50 relative overflow-hidden">
+    <section className="py-16 lg:py-20 bg-gradient-to-br from-white via-slate-50 to-blue-50 relative overflow-hidden">
       {/* Elegant Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-32 left-10 w-80 h-80 bg-gradient-to-br from-purple-100 to-indigo-100 rounded-full filter blur-3xl opacity-30"></div>
@@ -115,12 +115,12 @@ export default function RoadmapSection() {
         </div>
 
         {/* Call to Action Footer */}
-        <div className="text-center mt-20 pt-16 border-t border-gray-200">
-          <div className="premium-card bg-gradient-to-br from-gray-900 to-black rounded-3xl p-12 max-w-4xl mx-auto text-white stagger-fade-up floating-card magnetic-card subtle-glow">
-            <h3 className="text-3xl lg:text-4xl font-medium mb-6 luxury-text">
+        <div className="text-center mt-16 pt-12 border-t border-gray-200">
+          <div className="premium-card bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200 rounded-3xl p-12 max-w-4xl mx-auto stagger-fade-up floating-card magnetic-card subtle-glow">
+            <h3 className="text-3xl lg:text-4xl font-medium mb-6 text-gray-900 luxury-text">
               Apply. Plan. Evolve.
             </h3>
-            <p className="text-xl text-gray-300 mb-8 leading-relaxed">
+            <p className="text-xl text-gray-700 mb-8 leading-relaxed">
               Whether you're 14 or 44.
             </p>
             
@@ -129,7 +129,7 @@ export default function RoadmapSection() {
                 {[1, 2, 3, 4].map((i) => (
                   <div
                     key={i}
-                    className="w-12 h-12 bg-gradient-to-br from-purple-400 to-blue-500 rounded-full border-4 border-white flex items-center justify-center breath-animation"
+                    className="w-12 h-12 bg-gradient-to-br from-purple-500 to-blue-600 rounded-full border-4 border-white flex items-center justify-center breath-animation shadow-lg"
                     style={{animationDelay: `${i * 0.1}s`}}
                   >
                     <CheckCircle className="w-6 h-6 text-white" />
@@ -137,8 +137,8 @@ export default function RoadmapSection() {
                 ))}
               </div>
               <div className="text-left">
-                <div className="text-lg font-medium">Trusted by 50,000+ students</div>
-                <div className="text-sm text-gray-400">Across 15+ countries</div>
+                <div className="text-lg font-medium text-gray-900">Trusted by 5,000+ students</div>
+                <div className="text-sm text-gray-600">Across 15+ countries</div>
               </div>
             </div>
           </div>
