@@ -1,7 +1,11 @@
 import { ArrowRight, Play, CheckCircle, Users, Award, TrendingUp } from "lucide-react";
-import manpreetImage from "@assets/Image_MANPREET KAUR_Counselors_1754240707994.jpeg";
+import { useState } from "react";
+import heroImage from "@assets/u1461628488_A_confident_Indian_teenager_and_a_young_working_p_fc0605c0-993f-461b-9d1f-6e3cd4f8277a_3_1754292533173.png";
+import BookCallModal from "./book-call-modal";
 
 export default function PremiumHero() {
+  const [isCallModalOpen, setIsCallModalOpen] = useState(false);
+  
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -22,6 +26,7 @@ export default function PremiumHero() {
   ];
 
   return (
+    <>
     <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 gradient-mesh opacity-30"></div>
@@ -34,20 +39,20 @@ export default function PremiumHero() {
           {/* Left Content */}
           <div className="fade-in-up">
             {/* Badge */}
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-sm font-medium mb-8">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-amber-50 border border-amber-200 text-amber-700 text-sm font-medium mb-8">
               <Award className="w-4 h-4 mr-2" />
-              India's Leading Career Counsellor
+              AI-Proof Career Guidance Since 2001
             </div>
 
             {/* Main Headline */}
             <h1 className="text-5xl lg:text-7xl font-bold leading-tight mb-6">
-              Transform Your
-              <span className="text-gradient-blue block">Career Journey</span>
+              Don't Let AI
+              <span className="text-gradient-blue block">Decide Your Career.</span>
             </h1>
 
             {/* Subheadline */}
             <p className="text-xl text-gray-600 mb-8 max-w-xl leading-relaxed">
-              Get personalized career guidance from Manpreet Kaur, with 23+ years of experience helping students and professionals achieve their dreams.
+              Discover your best-fit career path, one that AI won't replace. With expert-led counselling, assessments, and lifelong mentorship from CCC Edu.
             </p>
 
             {/* Highlights */}
@@ -66,15 +71,15 @@ export default function PremiumHero() {
                 onClick={() => scrollToSection('packages')}
                 className="btn-primary group inline-flex items-center justify-center"
               >
-                Start Your Journey
+                Find My Career Path
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
               <button 
-                onClick={() => scrollToSection('about')}
+                onClick={() => setIsCallModalOpen(true)}
                 className="btn-secondary group inline-flex items-center justify-center"
               >
                 <Play className="mr-2 w-5 h-5" />
-                Watch Success Stories
+                Book a Free Career Clarity Call
               </button>
             </div>
 
@@ -98,33 +103,33 @@ export default function PremiumHero() {
               {/* Main Image */}
               <div className="premium-card p-8 relative z-10">
                 <img 
-                  src={manpreetImage}
-                  alt="Manpreet Kaur - Career Counsellor" 
+                  src={heroImage}
+                  alt="Confident students with AI technology background - Future-ready careers" 
                   className="w-full h-auto rounded-2xl object-cover"
                 />
                 
-                {/* Floating Achievement Card */}
+                {/* Floating AI-Proof Card */}
                 <div className="absolute -bottom-6 -left-6 premium-card p-4 bg-white">
                   <div className="flex items-center space-x-3">
-                    <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">
-                      <Award className="w-6 h-6 text-green-600" />
+                    <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
+                      <Award className="w-6 h-6 text-blue-600" />
                     </div>
                     <div>
-                      <div className="font-semibold text-gray-900">23+ Years</div>
-                      <div className="text-sm text-gray-600">Excellence</div>
+                      <div className="font-semibold text-gray-900">AI-Proof</div>
+                      <div className="text-sm text-gray-600">Career Paths</div>
                     </div>
                   </div>
                 </div>
 
-                {/* Floating Students Card */}
+                {/* Floating Future-Ready Card */}
                 <div className="absolute -top-6 -right-6 premium-card p-4 bg-white">
                   <div className="flex items-center space-x-3">
-                    <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
-                      <Users className="w-6 h-6 text-blue-600" />
+                    <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">
+                      <TrendingUp className="w-6 h-6 text-green-600" />
                     </div>
                     <div>
-                      <div className="font-semibold text-gray-900">5000+</div>
-                      <div className="text-sm text-gray-600">Students</div>
+                      <div className="font-semibold text-gray-900">Future</div>
+                      <div className="text-sm text-gray-600">Ready Skills</div>
                     </div>
                   </div>
                 </div>
@@ -138,5 +143,11 @@ export default function PremiumHero() {
         </div>
       </div>
     </section>
+    
+    <BookCallModal 
+      isOpen={isCallModalOpen} 
+      onClose={() => setIsCallModalOpen(false)} 
+    />
+    </>
   );
 }
