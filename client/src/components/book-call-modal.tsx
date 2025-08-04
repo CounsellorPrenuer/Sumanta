@@ -68,13 +68,13 @@ export default function BookCallModal({ isOpen, onClose }: BookCallModalProps) {
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-2xl bg-white/95 backdrop-blur-xl border-0 shadow-3xl rounded-3xl overflow-hidden">
+      <DialogContent className="sm:max-w-2xl max-h-[90vh] bg-white/95 backdrop-blur-xl border-0 shadow-3xl rounded-3xl overflow-hidden">
         {/* Premium Background Pattern */}
         <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-purple-50 to-indigo-50 opacity-60"></div>
         <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-blue-200/30 to-purple-200/30 rounded-full blur-3xl"></div>
         <div className="absolute bottom-0 left-0 w-48 h-48 bg-gradient-to-tr from-indigo-200/30 to-pink-200/30 rounded-full blur-3xl"></div>
         
-        <div className="relative z-10">
+        <div className="relative z-10 overflow-y-auto max-h-[85vh] modal-scroll">
           {/* Header Section */}
           <DialogHeader className="p-8 pb-6">
             <div className="flex items-start justify-between">
