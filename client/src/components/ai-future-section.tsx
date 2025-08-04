@@ -78,9 +78,47 @@ export default function AIFutureSection() {
         {/* Sophisticated Single-Column Flow */}
         <div className="max-w-5xl mx-auto space-y-16">
           
+          {/* Impact Statistics - Eye-catching Numbers */}
+          <div className="relative fade-in-up-elegant stagger-delay-6">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+              <div className="text-center">
+                <div className="text-4xl md:text-5xl font-bold mb-2" style={{color: 'hsl(220, 91%, 30%)'}}>
+                  85%
+                </div>
+                <p className="text-sm text-gray-600 font-medium">
+                  Jobs will be transformed by 2030
+                </p>
+              </div>
+              <div className="text-center">
+                <div className="text-4xl md:text-5xl font-bold mb-2" style={{color: 'hsl(267, 47%, 35%)'}}>
+                  2.4x
+                </div>
+                <p className="text-sm text-gray-600 font-medium">
+                  Faster skill obsolescence rate
+                </p>
+              </div>
+              <div className="text-center">
+                <div className="text-4xl md:text-5xl font-bold mb-2" style={{color: 'hsl(45, 93%, 45%)'}}>
+                  18M
+                </div>
+                <p className="text-sm text-gray-600 font-medium">
+                  New AI-related jobs by 2025
+                </p>
+              </div>
+              <div className="text-center">
+                <div className="text-4xl md:text-5xl font-bold mb-2" style={{color: 'hsl(220, 91%, 30%)'}}>
+                  60%
+                </div>
+                <p className="text-sm text-gray-600 font-medium">
+                  Professionals need reskilling
+                </p>
+              </div>
+            </div>
+          </div>
+          
           {/* What's Changing - Enhanced with Animations */}
           <div className="relative">
-            <div className="text-center mb-12 fade-in-up-elegant stagger-delay-6">
+            <div className="text-center mb-12 fade-in-up-elegant stagger-delay-1">
               <h3 className="text-4xl font-bold mb-4 elegant-underline" style={{color: 'hsl(220, 91%, 25%)'}}>
                 What's Changing
               </h3>
@@ -139,13 +177,76 @@ export default function AIFutureSection() {
             <div className="w-32 h-px gradient-accent"></div>
           </div>
 
+          {/* Success Stories Preview */}
+          <div className="relative bg-gradient-to-r from-blue-50 to-purple-50 rounded-3xl p-8 fade-in-up-elegant stagger-delay-5">
+            <div className="text-center mb-8">
+              <h3 className="text-2xl font-bold mb-3" style={{color: 'hsl(267, 47%, 25%)'}}>
+                Real Career Transformations
+              </h3>
+              <p className="text-gray-600">See how professionals pivoted successfully</p>
+            </div>
+            
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="bg-white/80 rounded-xl p-6 border border-white/50">
+                <div className="flex items-center mb-3">
+                  <div className="w-10 h-10 rounded-full flex items-center justify-center mr-3" 
+                       style={{background: 'linear-gradient(135deg, hsl(220, 91%, 85%), hsl(220, 91%, 90%))'}}>
+                    <span className="text-sm font-bold" style={{color: 'hsl(220, 91%, 50%)'}}>SP</span>
+                  </div>
+                  <div>
+                    <div className="font-semibold text-gray-900">Software Engineer</div>
+                    <div className="text-sm text-gray-600">→ AI Product Manager</div>
+                  </div>
+                </div>
+                <p className="text-sm text-gray-600 italic">
+                  "Leadcrest helped me identify transferable skills and position myself for AI leadership roles."
+                </p>
+              </div>
+              
+              <div className="bg-white/80 rounded-xl p-6 border border-white/50">
+                <div className="flex items-center mb-3">
+                  <div className="w-10 h-10 rounded-full flex items-center justify-center mr-3" 
+                       style={{background: 'linear-gradient(135deg, hsl(267, 47%, 85%), hsl(267, 47%, 90%))'}}>
+                    <span className="text-sm font-bold" style={{color: 'hsl(267, 47%, 50%)'}}>RK</span>
+                  </div>
+                  <div>
+                    <div className="font-semibold text-gray-900">Marketing Manager</div>
+                    <div className="text-sm text-gray-600">→ Growth Strategy Lead</div>
+                  </div>
+                </div>
+                <p className="text-sm text-gray-600 italic">
+                  "The career audit revealed opportunities I never considered. Now I'm future-proof."
+                </p>
+              </div>
+              
+              <div className="bg-white/80 rounded-xl p-6 border border-white/50">
+                <div className="flex items-center mb-3">
+                  <div className="w-10 h-10 rounded-full flex items-center justify-center mr-3" 
+                       style={{background: 'linear-gradient(135deg, hsl(45, 93%, 85%), hsl(45, 93%, 90%))'}}>
+                    <span className="text-sm font-bold" style={{color: 'hsl(45, 93%, 50%)'}}>AM</span>
+                  </div>
+                  <div>
+                    <div className="font-semibold text-gray-900">HR Specialist</div>
+                    <div className="text-sm text-gray-600">→ People Analytics Lead</div>
+                  </div>
+                </div>
+                <p className="text-sm text-gray-600 italic">
+                  "Discovered how to leverage my people skills in the data-driven world."
+                </p>
+              </div>
+            </div>
+          </div>
+
           {/* How Leadcrest Helps - Enhanced with Premium Animations */}
           <div className="relative">
-            <div className="text-center mb-12 fade-in-up-elegant stagger-delay-5">
+            <div className="text-center mb-12 fade-in-up-elegant stagger-delay-6">
               <h3 className="text-4xl font-bold mb-4 elegant-underline" style={{color: 'hsl(267, 47%, 25%)'}}>
                 How Leadcrest Helps You Navigate This
               </h3>
               <div className="w-24 h-1 mx-auto rounded-full gradient-accent"></div>
+              <p className="text-lg text-gray-600 mt-4 max-w-2xl mx-auto">
+                Our proven methodology combines 24+ years of HR leadership with AI-age career strategy
+              </p>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -176,6 +277,45 @@ export default function AIFutureSection() {
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+
+          {/* Call-to-Action Section */}
+          <div className="relative bg-gradient-to-br from-gray-900 to-gray-800 rounded-3xl p-8 md:p-12 text-center fade-in-up-elegant stagger-delay-6">
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 to-purple-600/10 rounded-3xl"></div>
+            <div className="relative z-10">
+              <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                Don't Wait for Disruption
+              </h3>
+              <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+                Every month you delay is another month your competition gets ahead. 
+                Start your AI-proof career transformation today.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <button className="px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 hover:scale-105 shadow-xl"
+                        style={{
+                          background: 'linear-gradient(135deg, hsl(220, 91%, 50%), hsl(267, 47%, 50%))',
+                          color: 'white'
+                        }}>
+                  Get Your Career Audit
+                </button>
+                <div className="text-center sm:text-left">
+                  <div className="text-white font-semibold">Free 30-min Discovery Call</div>
+                  <div className="text-gray-400 text-sm">No commitment. Just clarity.</div>
+                </div>
+              </div>
+              
+              <div className="mt-8 flex items-center justify-center space-x-8 text-gray-400 text-sm">
+                <div className="flex items-center">
+                  <div className="w-2 h-2 bg-green-400 rounded-full mr-2"></div>
+                  3725+ Professionals Guided
+                </div>
+                <div className="flex items-center">
+                  <div className="w-2 h-2 bg-green-400 rounded-full mr-2"></div>
+                  94% Success Rate
+                </div>
+              </div>
             </div>
           </div>
         </div>
