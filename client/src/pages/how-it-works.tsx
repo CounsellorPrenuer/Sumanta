@@ -1,107 +1,112 @@
 import PremiumNavigation from "@/components/premium-navigation";
 import Footer from "@/components/footer";
-import { MessageCircle, Brain, FileText, Users, CheckCircle, ArrowRight, Clock, Star } from "lucide-react";
+import WhatsAppFloat from "@/components/whatsapp-float";
+import { MessageCircle, Target, TrendingUp, Users, CheckCircle, ArrowRight, Clock, Star, Award, Briefcase } from "lucide-react";
 
 export default function HowItWorks() {
   const steps = [
     {
       number: "01",
       icon: MessageCircle,
-      title: "Book Free Consultation",
-      description: "Schedule a complimentary 30-minute session to understand your career goals and challenges.",
+      title: "Executive Discovery Call",
+      description: "Confidential 60-minute consultation to assess your leadership journey, career aspirations, and strategic challenges.",
       details: [
-        "Share your current situation and aspirations",
-        "Discuss your educational background",
-        "Identify key career concerns and questions",
-        "Get an overview of our services"
+        "Current role assessment and leadership positioning",
+        "Career trajectory analysis and growth barriers",
+        "Executive presence evaluation and development needs",
+        "Compensation optimization and market positioning",
+        "Strategic goal setting and success metrics definition"
       ],
-      duration: "30 minutes",
+      duration: "60 minutes",
       color: "from-blue-500 to-cyan-600"
     },
     {
       number: "02",
-      icon: Brain,
-      title: "Psychometric Assessment",
-      description: "Complete scientific assessments to understand your personality, interests, and natural aptitudes.",
+      icon: Target,
+      title: "Leadership Assessment & Market Analysis",
+      description: "Comprehensive evaluation of your executive capabilities combined with strategic market intelligence for optimal positioning.",
       details: [
-        "DMIT (Dermatoglyphics Multiple Intelligence Test)",
-        "Personality profiling and behavioral analysis",
-        "Interest and aptitude assessments",
-        "Learning style identification"
+        "360-degree leadership competency assessment",
+        "Executive presence and communication style analysis",
+        "Industry positioning and competitive landscape review",
+        "Compensation benchmarking and market value analysis",
+        "Network strength evaluation and expansion strategy"
       ],
-      duration: "2-3 hours",
+      duration: "5-7 days",
       color: "from-purple-500 to-indigo-600"
     },
     {
       number: "03",
-      icon: FileText,
-      title: "Detailed Analysis",
-      description: "Our experts analyze your assessment results and create a comprehensive career profile.",
+      icon: TrendingUp,
+      title: "Strategic Career Roadmap Development",
+      description: "Creation of a comprehensive executive development plan with specific milestones, timelines, and success metrics.",
       details: [
-        "In-depth analysis of assessment results",
-        "Identification of strengths and growth areas",
-        "Career compatibility analysis",
-        "Personalized recommendations preparation"
+        "Personalized career advancement strategy",
+        "Executive presence development framework",
+        "Networking and relationship building blueprint",
+        "Compensation negotiation strategy and timeline",
+        "Leadership skill enhancement priorities"
       ],
-      duration: "2-3 days",
+      duration: "3-5 days",
       color: "from-emerald-500 to-teal-600"
     },
     {
       number: "04",
       icon: Users,
-      title: "Expert Counseling",
-      description: "Meet with our certified counselors for personalized guidance and career roadmap creation.",
+      title: "Executive Coaching & Implementation",
+      description: "Ongoing strategic coaching with Sumanta Chaudhuri to execute your career advancement plan and achieve measurable results.",
       details: [
-        "One-on-one session with certified counselor",
-        "Detailed explanation of assessment results",
-        "Career options exploration and discussion",
-        "Action plan and next steps guidance"
+        "Monthly 1:1 executive coaching sessions",
+        "Real-time strategic guidance and decision support",
+        "Network introduction facilitation and relationship coaching",
+        "Interview preparation and executive positioning",
+        "Continuous progress tracking and strategy optimization"
       ],
-      duration: "60-90 minutes",
+      duration: "3-12 months",
       color: "from-orange-500 to-red-600"
     }
   ];
 
   const benefits = [
     {
-      icon: CheckCircle,
-      title: "Scientific Approach",
-      description: "Evidence-based assessments and data-driven recommendations for accurate career guidance."
+      icon: Award,
+      title: "Fortune 500 Proven Methods",
+      description: "Strategies developed and tested in senior HR roles at Reliance and Vodafone with measurable results."
     },
     {
-      icon: Star,
-      title: "Personalized Solutions",
-      description: "Tailored advice based on your unique personality, interests, and career aspirations."
+      icon: TrendingUp,
+      title: "Guaranteed ROI Focus",
+      description: "Clients achieve 70-85% salary increases on average with strategic positioning and negotiation expertise."
     },
     {
       icon: Clock,
-      title: "Time-Efficient Process",
-      description: "Streamlined approach that respects your time while providing comprehensive guidance."
+      title: "Executive-Level Efficiency", 
+      description: "Streamlined process designed for busy executives with maximum impact in minimum time investment."
     },
     {
       icon: Users,
-      title: "Expert Support",
-      description: "Guidance from certified professionals with 23+ years of industry experience."
+      title: "Exclusive Access & Network",
+      description: "Direct access to Sumanta's 20+ years of Fortune 500 relationships and industry connections."
     }
   ];
 
   const packages = [
     {
-      name: "Quick Start",
-      price: "₹2,999",
-      features: ["Free consultation", "Basic psychometric test", "Career report", "Email support"],
+      name: "Executive Assessment",
+      price: "₹25,000",
+      features: ["Executive discovery call", "Leadership competency assessment", "Market positioning analysis", "Strategic career roadmap", "2 follow-up sessions"],
       popular: false
     },
     {
-      name: "Complete Guidance",
-      price: "₹9,999",
-      features: ["Everything in Quick Start", "DMIT assessment", "Expert counseling session", "Career roadmap", "3 months support"],
+      name: "Strategic Advancement",
+      price: "₹75,000",
+      features: ["Everything in Executive Assessment", "3-month coaching program", "Network introduction facilitation", "Compensation negotiation support", "Executive presence coaching"],
       popular: true
     },
     {
-      name: "Premium Package",
-      price: "₹19,999",
-      features: ["Everything in Complete", "Foreign admission guidance", "CV building", "Mock interviews", "6 months support"],
+      name: "C-Suite Acceleration",
+      price: "₹1,50,000",
+      features: ["Everything in Strategic Advancement", "6-month intensive coaching", "Board readiness preparation", "Personal brand development", "Ongoing strategic advisory"],
       popular: false
     }
   ];
@@ -115,11 +120,11 @@ export default function HowItWorks() {
         <div className="container-custom">
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-              How Our Process
-              <span className="text-gradient-blue block">Works</span>
+              Executive Coaching
+              <span className="text-gradient-blue block">Methodology</span>
             </h1>
             <p className="text-xl text-gray-600 leading-relaxed mb-12">
-              Our proven 4-step methodology combines scientific assessment with expert guidance to help you discover and achieve your ideal career path.
+              Our proven 4-phase strategic framework combines Fortune 500 insights with personalized coaching to accelerate your executive career and achieve significant compensation increases.
             </p>
           </div>
         </div>
@@ -259,7 +264,72 @@ export default function HowItWorks() {
         </div>
       </section>
 
+      {/* Success Stories Section */}
+      <section className="section-spacing bg-gray-50">
+        <div className="container-custom">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">Executive Success Metrics</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Real results achieved by executives who have worked with Sumanta Chaudhuri
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="text-center">
+              <div className="text-4xl font-bold text-blue-600 mb-2">85%</div>
+              <div className="text-gray-600">Average Salary Increase</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-bold text-blue-600 mb-2">3,725+</div>
+              <div className="text-gray-600">Executives Coached</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-bold text-blue-600 mb-2">90%</div>
+              <div className="text-gray-600">Promotion Success Rate</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-bold text-blue-600 mb-2">6</div>
+              <div className="text-gray-600">Months Average Timeline</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="section-spacing">
+        <div className="container-custom">
+          <div className="premium-card p-12 bg-gradient-to-r from-blue-600 to-indigo-700 text-white text-center">
+            <h2 className="text-3xl font-bold mb-4">Ready to Accelerate Your Executive Career?</h2>
+            <p className="text-blue-100 mb-8 max-w-2xl mx-auto text-lg">
+              Join 3,725+ successful executives who have transformed their careers with Sumanta's proven methodology.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <button 
+                onClick={() => {
+                  window.location.href = 'mailto:sumantaunstoppable@gmail.com?subject=Executive Coaching Discovery Call Request&body=Hello Sumanta,%0D%0A%0D%0AI am interested in scheduling an executive discovery call to discuss my career advancement goals. Please let me know your availability.%0D%0A%0D%0AThank you.';
+                }}
+                className="bg-white text-blue-600 font-semibold px-8 py-3 rounded-xl hover:bg-blue-50 transition-colors"
+                data-testid="button-schedule-discovery-call"
+              >
+                Schedule Discovery Call
+              </button>
+              <button 
+                onClick={() => {
+                  window.open('https://wa.me/919828096408?text=Hello%20Sumanta,%20I%20am%20interested%20in%20your%20executive%20coaching%20services.%20Could%20we%20schedule%20a%20consultation?', '_blank');
+                }}
+                className="border-2 border-white text-white font-semibold px-8 py-3 rounded-xl hover:bg-white hover:text-blue-600 transition-colors"
+                data-testid="button-whatsapp-contact"
+              >
+                WhatsApp: +91 9828096408
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <Footer />
+      <WhatsAppFloat />
     </div>
   );
 }
