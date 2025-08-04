@@ -16,68 +16,68 @@ interface AssessmentModalProps {
 const assessmentQuestions: AssessmentQuestion[] = [
   {
     id: 1,
-    question: "How much of your typical workday involves doing the same types of tasks repeatedly?",
+    question: "How much of your work involves writing emails, reports, summaries, or other documents?",
     options: [
-      { text: "Almost never - every day brings unique challenges and creative problem-solving", score: 4 },
-      { text: "Occasionally - I have some routine tasks but mostly handle different situations", score: 3 },
-      { text: "About half - I split time between routine work and unique situations", score: 2 },
-      { text: "Most days - I follow similar processes and procedures regularly", score: 1 },
-      { text: "Almost always - my work is very predictable and follows the same patterns", score: 0 }
+      { text: "Rarely - I mostly work with people directly or do hands-on tasks", score: 4 },
+      { text: "Sometimes - I write some documents but it's not my main focus", score: 3 },
+      { text: "Regularly - writing and documentation is a significant part of my job", score: 2 },
+      { text: "Daily - I spend considerable time writing emails, reports, or content", score: 1 },
+      { text: "Constantly - most of my day involves creating written content", score: 0 }
     ]
   },
   {
     id: 2,
-    question: "If you were sick for a month, how difficult would it be for someone else to temporarily cover your responsibilities?",
+    question: "How much time do you spend doing calculations, data entry, scheduling, or organizing information?",
     options: [
-      { text: "Nearly impossible - my role requires deep expertise and relationships", score: 4 },
-      { text: "Very difficult - they'd need extensive training and guidance", score: 3 },
-      { text: "Somewhat difficult - they could handle basics but would struggle with complex parts", score: 2 },
-      { text: "Manageable - someone could learn my tasks fairly quickly with some training", score: 1 },
-      { text: "Easy - anyone could step in and do my job with minimal instruction", score: 0 }
+      { text: "Very little - my work doesn't involve much data or calculations", score: 4 },
+      { text: "Some - I handle data occasionally but it's not the main part", score: 3 },
+      { text: "Moderate amount - data work is a regular part of what I do", score: 2 },
+      { text: "Quite a bit - I spend significant time organizing information", score: 1 },
+      { text: "Most of my time - my job is primarily about processing information", score: 0 }
     ]
   },
   {
     id: 3,
-    question: "How much of your work involves face-to-face interaction, building relationships, or understanding people's emotions?",
+    question: "Could someone learn to do the basic parts of your job by watching YouTube videos and practicing for a few weeks?",
     options: [
-      { text: "It's central to my role - I'm constantly reading people and building relationships", score: 4 },
-      { text: "Very important - I regularly need to understand and connect with others", score: 3 },
-      { text: "Moderately important - some people interaction but not the main focus", score: 2 },
-      { text: "Limited - I interact with people but it's mostly straightforward communication", score: 1 },
-      { text: "Minimal - I mostly work with data, systems, or processes rather than people", score: 0 }
+      { text: "Absolutely not - my job requires years of experience and complex judgment", score: 4 },
+      { text: "Very unlikely - they might learn basics but would miss important nuances", score: 3 },
+      { text: "Maybe some parts - they could handle simple tasks but not the complex ones", score: 2 },
+      { text: "Probably yes - much of what I do could be learned fairly quickly", score: 1 },
+      { text: "Definitely yes - my tasks are straightforward and easy to learn", score: 0 }
     ]
   },
   {
     id: 4,
-    question: "When problems come up at work, how often do you need to come up with creative solutions that aren't in any manual or procedure?",
+    question: "How often do you need to read people's emotions, build trust, or handle sensitive personal situations?",
     options: [
-      { text: "Constantly - I'm always solving unique problems that require creative thinking", score: 4 },
-      { text: "Frequently - I often need to figure out new approaches to challenges", score: 3 },
-      { text: "Sometimes - I handle both routine issues and occasional unique problems", score: 2 },
-      { text: "Rarely - most problems I face have established solutions or procedures", score: 1 },
-      { text: "Almost never - there are clear steps to follow for almost everything I do", score: 0 }
+      { text: "All the time - understanding people and emotions is central to my success", score: 4 },
+      { text: "Frequently - people skills are very important in my role", score: 3 },
+      { text: "Sometimes - I deal with people but it's not overly complex", score: 2 },
+      { text: "Rarely - most of my interactions are straightforward and professional", score: 1 },
+      { text: "Almost never - I work mostly with systems, data, or processes", score: 0 }
     ]
   },
   {
     id: 5,
-    question: "How often do you find yourself learning completely new skills or adapting to new tools and methods?",
+    question: "If your company wanted to save money, how easily could they replace you with someone cheaper or a digital tool?",
     options: [
-      { text: "Constantly - I'm always learning and adapting to stay current", score: 4 },
-      { text: "Regularly - I make an effort to learn new things several times a year", score: 3 },
-      { text: "Occasionally - I learn new things when required by my job", score: 2 },
-      { text: "Rarely - I mostly stick to what I already know and do well", score: 1 },
-      { text: "Almost never - I prefer to use the same methods and tools I've always used", score: 0 }
+      { text: "Very difficult - I bring unique expertise that's hard to replace", score: 4 },
+      { text: "Difficult - they'd struggle to find someone with my specific experience", score: 3 },
+      { text: "Possible but risky - they could try but might lose quality or efficiency", score: 2 },
+      { text: "Fairly easy - someone else could probably do my job for less money", score: 1 },
+      { text: "Very easy - there are many people or tools that could replace me", score: 0 }
     ]
   },
   {
     id: 6,
-    question: "If someone asked you to describe your job to a 10-year-old, how would you explain what makes you valuable at work?",
+    question: "How much of your work could be done remotely by someone in another country for much lower pay?",
     options: [
-      { text: "I solve problems no one else can solve and come up with new ideas", score: 4 },
-      { text: "I help people and make important decisions based on experience", score: 3 },
-      { text: "I know how to do specific tasks well and train others", score: 2 },
-      { text: "I follow procedures correctly and get things done efficiently", score: 1 },
-      { text: "I'm not sure how to explain what makes me special at work", score: 0 }
+      { text: "None - my work requires being physically present and local knowledge", score: 4 },
+      { text: "Very little - most of what I do needs to be done locally", score: 3 },
+      { text: "Some parts - certain tasks could be done remotely but not the main work", score: 2 },
+      { text: "Most of it - much of my work could be done from anywhere", score: 1 },
+      { text: "All of it - my entire job could be done remotely by someone elsewhere", score: 0 }
     ]
   }
 ];
@@ -133,7 +133,7 @@ export function AICareerAssessment({ isOpen, onClose, onComplete }: AssessmentMo
               </div>
               <div>
                 <h2 className="text-xl font-bold" style={{color: 'hsl(220, 91%, 25%)'}}>
-                  AI Career Readiness Assessment
+                  Career Vulnerability Assessment
                 </h2>
                 <p className="text-sm text-gray-600">
                   Question {currentQuestion + 1} of {assessmentQuestions.length}
@@ -253,17 +253,17 @@ export function AssessmentResults({ isOpen, onClose, score, onBookCall }: Result
   const { level, color, icon: Icon } = getScoreLevel(score);
 
   const getRecommendation = (score: number) => {
-    if (score >= 75) return "Your role has strong human elements, but the job market is changing fast. Smart professionals are getting ahead of the curve now.";
-    if (score >= 50) return "Your job has a mix of human and routine elements. The routine parts are becoming replaceable. It's time to strengthen your unique value.";
-    if (score >= 25) return "WARNING: Much of your work could be done by others or new technology. You need to develop irreplaceable skills before it's too late.";
-    return "CRITICAL: Your role is highly vulnerable to replacement. Most of what you do could be handled by technology or less expensive workers. Urgent action needed.";
+    if (score >= 75) return "Your role has good protection, but AI tools are advancing rapidly. Companies are already using AI to write emails, create reports, and handle basic tasks that used to require humans.";
+    if (score >= 50) return "Parts of your job are at risk. AI can now write professional emails, analyze data, create presentations, and handle customer service. Companies are starting to use these tools to reduce staff.";
+    if (score >= 25) return "WARNING: AI tools can already do much of what you do. ChatGPT writes reports, AI handles scheduling, virtual assistants manage emails. Your role is becoming increasingly replaceable.";
+    return "CRITICAL: Your job is highly vulnerable. AI agents can now handle writing, data processing, scheduling, basic calculations, and many routine tasks. Companies are actively replacing workers with AI tools.";
   };
 
   const getUrgencyMessage = (score: number) => {
-    if (score >= 75) return "Even secure professionals are future-proofing their careers";
-    if (score >= 50) return "Don't wait until you're competing for fewer available positions";
-    if (score >= 25) return "The window for career repositioning is closing rapidly";
-    return "Your job security is more fragile than you think - act now";
+    if (score >= 75) return "AI tools are already replacing workers in 'safe' roles - stay ahead";
+    if (score >= 50) return "While you take this quiz, companies are implementing AI to reduce headcount";
+    if (score >= 25) return "AI replacement is happening now, not in the future";
+    return "Every day you wait, AI gets better at doing your job";
   };
 
   return (
