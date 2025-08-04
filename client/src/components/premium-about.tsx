@@ -69,7 +69,7 @@ export default function PremiumAbout() {
             </div>
 
             <p className="text-xl text-gray-700 mb-8 leading-relaxed">
-              With over <strong>23 years of experience</strong>, Sumanta Chaudhuri has guided <strong>5,000+ students and professionals</strong> across India and abroad. He's a certified career counsellor (IAAP, APCDA, GCDA), founder of Leadcrest Consulting (NGO), and a Mentoria-certified partner.
+              <strong>From Boardroom to Breakthroughs:</strong> Meet Sumanta Chaudhuri. With <strong>20+ years of HR leadership</strong> at Reliance and Vodafone, Sumanta now coaches professionals and organizations through career clarity, transition, and purpose. He's a <strong>Certified Life Coach, NLP Practitioner, and Health & Wellness Coach</strong>, blending deep corporate insight with empathetic coaching.
             </p>
 
             <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-2xl p-6 mb-8 shadow-lg hover:shadow-xl transition-all duration-300 magnetic-card relative overflow-hidden">
@@ -84,15 +84,15 @@ export default function PremiumAbout() {
               </p>
             </div>
 
-            {/* Mini Credentials Bar - Enhanced */}
+            {/* Professional Badges - Enhanced */}
             <div className="grid grid-cols-2 gap-4 mb-8">
               <div className="group flex items-center space-x-3 p-4 bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 magnetic-card hover:border-purple-300">
                 <div className="w-10 h-10 bg-gradient-to-br from-purple-100 to-purple-200 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <GraduationCap className="w-5 h-5 text-purple-600" />
+                  <Users className="w-5 h-5 text-purple-600" />
                 </div>
                 <div>
-                  <div className="text-sm font-medium text-gray-900 group-hover:text-purple-700 transition-colors">IAAP, APCDA, GCDA</div>
-                  <div className="text-xs text-gray-600">Certified</div>
+                  <div className="text-sm font-medium text-gray-900 group-hover:text-purple-700 transition-colors">🏢 HR Leadership</div>
+                  <div className="text-xs text-gray-600">20+ Years</div>
                 </div>
               </div>
               
@@ -101,8 +101,8 @@ export default function PremiumAbout() {
                   <Brain className="w-5 h-5 text-blue-600" />
                 </div>
                 <div>
-                  <div className="text-sm font-medium text-gray-900 group-hover:text-blue-700 transition-colors">5,000+ Lives</div>
-                  <div className="text-xs text-gray-600">Transformed</div>
+                  <div className="text-sm font-medium text-gray-900 group-hover:text-blue-700 transition-colors">🧘‍♂️ Life & Wellness Coach</div>
+                  <div className="text-xs text-gray-600">Certified</div>
                 </div>
               </div>
               
@@ -111,8 +111,8 @@ export default function PremiumAbout() {
                   <HandHeart className="w-5 h-5 text-emerald-600" />
                 </div>
                 <div>
-                  <div className="text-sm font-medium text-gray-900 group-hover:text-emerald-700 transition-colors">NGO</div>
-                  <div className="text-xs text-gray-600">Founder</div>
+                  <div className="text-sm font-medium text-gray-900 group-hover:text-emerald-700 transition-colors">🔁 Career Transition Mentor</div>
+                  <div className="text-xs text-gray-600">Expert</div>
                 </div>
               </div>
               
@@ -121,8 +121,8 @@ export default function PremiumAbout() {
                   <Lightbulb className="w-5 h-5 text-orange-600" />
                 </div>
                 <div>
-                  <div className="text-sm font-medium text-gray-900 group-hover:text-orange-700 transition-colors">AI-Skilling</div>
-                  <div className="text-xs text-gray-600">Advocate</div>
+                  <div className="text-sm font-medium text-gray-900 group-hover:text-orange-700 transition-colors">💼 DEI + OD Strategist</div>
+                  <div className="text-xs text-gray-600">Specialist</div>
                 </div>
               </div>
             </div>
