@@ -1,4 +1,5 @@
 import { ExternalLink, Users, Building2, GraduationCap, Play } from "lucide-react";
+import mentoriaLogo from "@assets/Mentoria Logo 2024_1754300562202.png";
 
 export default function MentoriaSection() {
   const stats = [
@@ -75,20 +76,19 @@ export default function MentoriaSection() {
             className="inline-flex items-center gap-4 bg-white rounded-2xl px-8 py-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group"
             data-testid="mentoria-link"
           >
-            <div className="w-12 h-12 bg-gradient-to-r from-purple-600 to-indigo-700 rounded-xl flex items-center justify-center">
-              <span className="text-white font-bold text-xl">M</span>
-            </div>
+            <img 
+              src={mentoriaLogo} 
+              alt="Mentoria Logo" 
+              className="h-12 w-auto object-contain"
+            />
             
             <div className="text-left">
-              <div className="text-2xl font-bold text-gray-900 group-hover:text-purple-600 transition-colors">
-                Mentoria
-              </div>
               <div className="text-gray-600 text-sm">
                 Career Discovery Platform
               </div>
             </div>
             
-            <ExternalLink className="w-5 h-5 text-gray-400 group-hover:text-purple-600 transition-colors ml-2" />
+            <ExternalLink className="w-5 h-5 text-gray-400 group-hover:text-blue-600 transition-colors ml-2" />
           </a>
           
           <p className="text-sm text-gray-500 mt-4">
