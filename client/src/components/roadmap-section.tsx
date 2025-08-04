@@ -115,21 +115,51 @@ export default function RoadmapSection() {
         </div>
 
         {/* Call to Action Footer */}
-        <div className="text-center mt-16 pt-12 border-t border-gray-200">
-          <div className="premium-card bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200 rounded-3xl p-12 max-w-4xl mx-auto stagger-fade-up floating-card magnetic-card subtle-glow">
-            <h3 className="text-3xl lg:text-4xl font-medium mb-6 text-gray-900 luxury-text">
-              Apply. Plan. Evolve.
-            </h3>
-            <p className="text-xl text-gray-700 mb-8 leading-relaxed">
-              Whether you're 14 or 44.
-            </p>
+        <div className="text-center mt-16">
+          <div className="max-w-2xl mx-auto">
+            <div className="text-center mb-12">
+              <h3 className="text-4xl lg:text-5xl font-light text-gray-900 mb-6 luxury-text">
+                <span className="bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-600 bg-clip-text text-transparent font-medium">Apply.</span>
+                <span className="mx-3 text-gray-700">Plan.</span>
+                <span className="bg-gradient-to-r from-emerald-600 to-green-600 bg-clip-text text-transparent font-medium">Evolve.</span>
+              </h3>
+              <p className="text-xl text-gray-600 leading-relaxed">
+                Whether you're 14 or 44.
+              </p>
+            </div>
             
-            <div className="flex items-center justify-center space-x-4">
-              <div className="flex -space-x-2">
+            <div className="grid grid-cols-3 gap-8 mb-12">
+              <div className="text-center group">
+                <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-3xl flex items-center justify-center mx-auto mb-4 breath-animation group-hover:scale-110 transition-transform duration-300">
+                  <span className="text-2xl font-bold text-white">A</span>
+                </div>
+                <h4 className="text-lg font-medium text-gray-900 mb-2">Apply</h4>
+                <p className="text-sm text-gray-600">Take action on your career goals</p>
+              </div>
+              
+              <div className="text-center group">
+                <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-3xl flex items-center justify-center mx-auto mb-4 breath-animation group-hover:scale-110 transition-transform duration-300" style={{animationDelay: '0.1s'}}>
+                  <span className="text-2xl font-bold text-white">P</span>
+                </div>
+                <h4 className="text-lg font-medium text-gray-900 mb-2">Plan</h4>
+                <p className="text-sm text-gray-600">Build your strategic roadmap</p>
+              </div>
+              
+              <div className="text-center group">
+                <div className="w-20 h-20 bg-gradient-to-br from-emerald-500 to-green-600 rounded-3xl flex items-center justify-center mx-auto mb-4 breath-animation group-hover:scale-110 transition-transform duration-300" style={{animationDelay: '0.2s'}}>
+                  <span className="text-2xl font-bold text-white">E</span>
+                </div>
+                <h4 className="text-lg font-medium text-gray-900 mb-2">Evolve</h4>
+                <p className="text-sm text-gray-600">Adapt and grow continuously</p>
+              </div>
+            </div>
+            
+            <div className="bg-gradient-to-r from-gray-50 to-blue-50 border border-gray-200 rounded-2xl p-8 flex items-center justify-center space-x-6">
+              <div className="flex -space-x-3">
                 {[1, 2, 3, 4].map((i) => (
                   <div
                     key={i}
-                    className="w-12 h-12 bg-gradient-to-br from-purple-500 to-blue-600 rounded-full border-4 border-white flex items-center justify-center breath-animation shadow-lg"
+                    className="w-12 h-12 bg-gradient-to-br from-purple-500 to-blue-600 rounded-full border-3 border-white flex items-center justify-center breath-animation shadow-md"
                     style={{animationDelay: `${i * 0.1}s`}}
                   >
                     <CheckCircle className="w-6 h-6 text-white" />
@@ -137,7 +167,7 @@ export default function RoadmapSection() {
                 ))}
               </div>
               <div className="text-left">
-                <div className="text-lg font-medium text-gray-900">Trusted by 5,000+ students</div>
+                <div className="text-lg font-semibold text-gray-900">Trusted by 5,000+ students</div>
                 <div className="text-sm text-gray-600">Across 15+ countries</div>
               </div>
             </div>
