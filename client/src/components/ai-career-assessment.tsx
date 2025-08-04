@@ -16,68 +16,68 @@ interface AssessmentModalProps {
 const assessmentQuestions: AssessmentQuestion[] = [
   {
     id: 1,
-    question: "How often do you currently use AI tools in your work?",
+    question: "What percentage of your daily work tasks could be automated by AI if your company invested in the right tools?",
     options: [
-      { text: "Daily - I integrate AI into most of my tasks", score: 4 },
-      { text: "Weekly - I use AI for specific projects", score: 3 },
-      { text: "Monthly - I occasionally experiment with AI", score: 2 },
-      { text: "Rarely - I've tried AI tools once or twice", score: 1 },
-      { text: "Never - I haven't used AI tools at work", score: 0 }
+      { text: "Less than 20% - My work is highly creative and strategic", score: 4 },
+      { text: "20-40% - Some routine tasks but mostly requires human expertise", score: 3 },
+      { text: "40-60% - Significant portions involve predictable processes", score: 2 },
+      { text: "60-80% - Most of my work follows established patterns and rules", score: 1 },
+      { text: "Over 80% - My role is primarily routine, repetitive, or rule-based", score: 0 }
     ]
   },
   {
     id: 2,
-    question: "How would you describe your role's dependency on routine, repetitive tasks?",
+    question: "If your company had to choose between hiring a new person in your role vs. implementing AI automation, what would likely happen?",
     options: [
-      { text: "My work is highly creative and strategic", score: 4 },
-      { text: "Mix of creative and routine work", score: 3 },
-      { text: "Some routine tasks but requires human judgment", score: 2 },
-      { text: "Mostly routine with standard procedures", score: 1 },
-      { text: "Highly repetitive and rule-based tasks", score: 0 }
+      { text: "They'd always hire human - my role requires irreplaceable human skills", score: 4 },
+      { text: "Probably hire human - AI can't replicate my complex decision-making", score: 3 },
+      { text: "Could go either way - depends on budget and AI capabilities", score: 2 },
+      { text: "Likely choose AI - it would be faster and more cost-effective", score: 1 },
+      { text: "Definitely choose AI - my tasks are easily automated", score: 0 }
     ]
   },
   {
     id: 3,
-    question: "How well do you understand the AI trends affecting your industry?",
+    question: "How quickly could someone with basic AI tools potentially replace 50% of your output?",
     options: [
-      { text: "Expert - I track AI developments and their impact", score: 4 },
-      { text: "Good - I stay informed about major AI trends", score: 3 },
-      { text: "Basic - I know AI is important but lack details", score: 2 },
-      { text: "Limited - I hear about AI but don't understand the impact", score: 1 },
-      { text: "Unaware - I don't know how AI affects my field", score: 0 }
+      { text: "Never - my expertise takes years to develop and can't be replicated", score: 4 },
+      { text: "2+ years - they'd need significant training and experience", score: 3 },
+      { text: "6-12 months - with some training they could handle basic parts", score: 2 },
+      { text: "1-3 months - AI could help them match much of my output quickly", score: 1 },
+      { text: "Within weeks - AI tools could immediately handle most of what I do", score: 0 }
     ]
   },
   {
     id: 4,
-    question: "How adaptable are your current skills to new technologies?",
+    question: "When you look at job postings in your field today vs. 2 years ago, what do you notice?",
     options: [
-      { text: "Highly transferable - My skills apply across technologies", score: 4 },
-      { text: "Mostly transferable - I can adapt to new tools quickly", score: 3 },
-      { text: "Somewhat transferable - Need some retraining", score: 2 },
-      { text: "Limited transferability - Skills are very specific", score: 1 },
-      { text: "Not transferable - My skills are highly specialized to current tools", score: 0 }
+      { text: "Same requirements - my field hasn't changed much", score: 4 },
+      { text: "Some new tech skills mentioned but core role unchanged", score: 3 },
+      { text: "Growing emphasis on 'AI-savvy' and tech integration", score: 2 },
+      { text: "Many postings now require AI/automation experience", score: 1 },
+      { text: "Fewer jobs available - many roles seem to be disappearing", score: 0 }
     ]
   },
   {
     id: 5,
-    question: "How much of your work involves human interaction and emotional intelligence?",
+    question: "If you had to justify why your company should keep your role instead of automating it, what would be your strongest argument?",
     options: [
-      { text: "Central - My role requires high emotional intelligence", score: 4 },
-      { text: "Important - Regular human interaction is key", score: 3 },
-      { text: "Moderate - Some human interaction required", score: 2 },
-      { text: "Limited - Minimal human interaction needed", score: 1 },
-      { text: "None - I work mostly with data/systems", score: 0 }
+      { text: "I provide strategic vision and creative problem-solving", score: 4 },
+      { text: "I manage relationships and make complex judgment calls", score: 3 },
+      { text: "I handle exceptions and edge cases that AI can't", score: 2 },
+      { text: "I'm cheaper than implementing new technology... for now", score: 1 },
+      { text: "Honestly, I'd struggle to make a compelling case", score: 0 }
     ]
   },
   {
     id: 6,
-    question: "How proactive are you about learning new skills and technologies?",
+    question: "How prepared are you if your role gets disrupted by AI in the next 12-24 months?",
     options: [
-      { text: "Very proactive - I constantly upskill and learn", score: 4 },
-      { text: "Proactive - I regularly take courses and workshops", score: 3 },
-      { text: "Somewhat proactive - I learn when required", score: 2 },
-      { text: "Reactive - I only learn when forced to", score: 1 },
-      { text: "Not proactive - I stick to what I know", score: 0 }
+      { text: "Fully prepared - I've been actively building AI-proof skills", score: 4 },
+      { text: "Somewhat prepared - I understand what's needed and have a plan", score: 3 },
+      { text: "Starting to prepare - I know I need to act but haven't started", score: 2 },
+      { text: "Not prepared - I hope it won't affect me but have no backup plan", score: 1 },
+      { text: "Completely unprepared - I haven't even thought about it seriously", score: 0 }
     ]
   }
 ];
@@ -244,19 +244,26 @@ export function AssessmentResults({ isOpen, onClose, score, onBookCall }: Result
   if (!isOpen) return null;
 
   const getScoreLevel = (score: number) => {
-    if (score >= 80) return { level: 'AI-Ready Leader', color: 'hsl(142, 71%, 45%)', icon: Shield };
-    if (score >= 60) return { level: 'Adaptation Ready', color: 'hsl(45, 93%, 45%)', icon: TrendingUp };
-    if (score >= 40) return { level: 'Needs Preparation', color: 'hsl(25, 95%, 53%)', icon: Target };
-    return { level: 'High Risk', color: 'hsl(0, 84%, 60%)', icon: Brain };
+    if (score >= 75) return { level: 'Safe for Now', color: 'hsl(142, 71%, 45%)', icon: Shield };
+    if (score >= 50) return { level: 'Moderate Risk', color: 'hsl(45, 93%, 45%)', icon: TrendingUp };
+    if (score >= 25) return { level: 'High Risk', color: 'hsl(25, 95%, 53%)', icon: Target };
+    return { level: 'Immediate Danger', color: 'hsl(0, 84%, 60%)', icon: Brain };
   };
 
   const { level, color, icon: Icon } = getScoreLevel(score);
 
   const getRecommendation = (score: number) => {
-    if (score >= 80) return "You're well-positioned for the AI transition. Let's discuss advanced strategies to maintain your competitive edge.";
-    if (score >= 60) return "You have a solid foundation. A focused upskilling strategy can make you AI-proof.";
-    if (score >= 40) return "There are gaps in your AI readiness. Let's create a personalized transformation plan.";
-    return "Your role faces significant AI disruption risk. Immediate strategic planning is crucial.";
+    if (score >= 75) return "You're in a relatively safe position, but even 'safe' roles are evolving rapidly. Stay ahead with strategic positioning.";
+    if (score >= 50) return "Your role has moderate AI replacement risk. Parts of your job are already automatable. Act now before it's too late.";
+    if (score >= 25) return "WARNING: Your career faces significant AI disruption. Large portions of your role can be automated. Immediate action required.";
+    return "CRITICAL: Your job is in immediate danger of AI replacement. Most of your tasks are highly automatable. You need urgent career repositioning.";
+  };
+
+  const getUrgencyMessage = (score: number) => {
+    if (score >= 75) return "Even 'safe' professionals are getting strategic career coaching";
+    if (score >= 50) return "Don't wait until you're competing with AI for your own job";
+    if (score >= 25) return "Every month you delay is ground lost to AI automation";
+    return "Your career timeline just accelerated - immediate action is critical";
   };
 
   return (
@@ -280,9 +287,15 @@ export function AssessmentResults({ isOpen, onClose, score, onBookCall }: Result
             {level}
           </div>
           
-          <p className="text-gray-600 mb-8 leading-relaxed">
+          <p className="text-gray-600 mb-4 leading-relaxed">
             {getRecommendation(score)}
           </p>
+          
+          <div className="bg-yellow-50 border border-yellow-200 rounded-xl p-4 mb-8">
+            <p className="text-sm font-medium text-yellow-800 text-center">
+              ⚡ {getUrgencyMessage(score)}
+            </p>
+          </div>
           
           <div className="space-y-4">
             <button
@@ -290,8 +303,12 @@ export function AssessmentResults({ isOpen, onClose, score, onBookCall }: Result
               className="w-full px-6 py-4 rounded-2xl font-semibold text-lg text-white transition-all duration-300 hover:scale-105 shadow-lg"
               style={{background: 'linear-gradient(135deg, hsl(220, 91%, 50%), hsl(267, 47%, 50%))'}}
             >
-              Book Free 10-min Discovery Call
+              Get Emergency Career Strategy Call
             </button>
+            
+            <p className="text-xs text-gray-500 text-center mt-2">
+              Free 10-minute strategic consultation • No sales pressure
+            </p>
             
             <button
               onClick={onClose}
