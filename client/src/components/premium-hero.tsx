@@ -14,9 +14,9 @@ export default function PremiumHero() {
   };
 
   const stats = [
-    { icon: Users, value: "5000+", label: "Students Guided" },
-    { icon: Award, value: "23+", label: "Years Experience" },
-    { icon: TrendingUp, value: "95%", label: "Success Rate" },
+    { icon: Users, value: "3725+", label: "Professionals Guided" },
+    { icon: Award, value: "24+", label: "Years of HR Leadership Experience" },
+    { icon: TrendingUp, value: "94%", label: "Success Rate" },
   ];
 
   const highlights = [
