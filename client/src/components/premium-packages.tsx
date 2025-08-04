@@ -5,7 +5,7 @@ import { useState } from "react";
 import type { Package } from "@shared/schema";
 import { BookingPopup } from "./booking-popup";
 
-type AgeGroup = 'class8-9' | 'class10-12' | 'graduates' | 'professionals';
+type AgeGroup = 'graduates' | 'professionals';
 
 interface AgeGroupCategory {
   id: AgeGroup;
@@ -17,7 +17,7 @@ interface AgeGroupCategory {
 
 export default function PremiumPackages() {
   const [, navigate] = useLocation();
-  const [selectedAgeGroup, setSelectedAgeGroup] = useState<AgeGroup>('class10-12');
+  const [selectedAgeGroup, setSelectedAgeGroup] = useState<AgeGroup>('graduates');
   const [selectedPackage, setSelectedPackage] = useState<Package | null>(null);
   const [isBookingPopupOpen, setIsBookingPopupOpen] = useState(false);
   
@@ -26,20 +26,6 @@ export default function PremiumPackages() {
   });
 
   const ageGroups: AgeGroupCategory[] = [
-    {
-      id: 'class8-9',
-      name: 'Class 8-9',
-      description: 'Stream & subject selection guidance',
-      icon: BookOpen,
-      gradient: 'from-emerald-500 to-teal-500'
-    },
-    {
-      id: 'class10-12',
-      name: 'Class 10-12',
-      description: 'Career exploration & entrance prep',
-      icon: GraduationCap,
-      gradient: 'from-blue-500 to-indigo-500'
-    },
     {
       id: 'graduates',
       name: 'College Graduates',
@@ -65,10 +51,6 @@ export default function PremiumPackages() {
       const audience = pkg.targetAudience.toLowerCase();
       
       switch (selectedAgeGroup) {
-        case 'class8-9':
-          return audience.includes('class 8-9') || audience.includes('8-9');
-        case 'class10-12':
-          return audience.includes('class 10-12') || audience.includes('10-12');
         case 'graduates':
           return audience.includes('college graduates');
         case 'professionals':
@@ -131,13 +113,13 @@ export default function PremiumPackages() {
           </h2>
           
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-12">
-            From stream selection to global admissions to professional pivots, we've built a future-ready package for every stage.
+            From college graduation to professional pivots, we've built a future-ready package for every career stage.
           </p>
         </div>
 
         {/* Age Group Selector */}
         <div className="mb-16">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
+          <div className="grid grid-cols-2 gap-4 max-w-3xl mx-auto">
             {ageGroups.map((group) => {
               const IconComponent = group.icon;
               const isSelected = selectedAgeGroup === group.id;

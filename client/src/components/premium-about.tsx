@@ -12,14 +12,14 @@ export default function PremiumAbout() {
   const achievements = [
     {
       icon: Award,
-      title: "23+ Years",
+      title: "20+ Years",
       subtitle: "Professional Experience",
       description: "Over two decades of dedicated service in career counseling and education guidance."
     },
     {
       icon: Users,
-      title: "5000+",
-      subtitle: "Students Guided",
+      title: "3725+",
+      subtitle: "Professionals Guided",
       description: "Successfully mentored thousands of students towards their dream careers."
     },
     {
@@ -168,14 +168,14 @@ export default function PremiumAbout() {
                 <div className="absolute top-12 right-12 bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-600 text-white px-5 py-3 rounded-full text-sm font-medium shadow-xl breath-animation hover:shadow-2xl transition-shadow duration-300 group-hover:scale-105">
                   <div className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
-                    <span>23+ Years Experience</span>
+                    <span>20+ Years Experience</span>
                   </div>
                 </div>
                 
                 {/* Enhanced bottom credentials */}
                 <div className="absolute bottom-12 left-12 right-12 bg-white/95 backdrop-blur-md border border-gray-200 rounded-2xl p-5 shadow-lg hover:shadow-xl transition-all duration-300 magnetic-card">
                   <div className="text-center">
-                    <div className="text-xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">5,000+</div>
+                    <div className="text-xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">3,725+</div>
                     <div className="text-sm text-gray-600 font-medium">Professionals Guided</div>
                     <div className="w-12 h-1 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full mx-auto mt-2 opacity-60"></div>
                   </div>
