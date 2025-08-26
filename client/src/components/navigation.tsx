@@ -32,46 +32,46 @@ export default function Navigation() {
           
           {/* Desktop Navigation */}
           <div className="hidden lg:block">
-            <div className="flex items-center space-x-1">
+            <div className="flex items-center space-x-4">
               <button 
                 onClick={() => scrollToSection('home')} 
-                className="text-white hover:text-primary px-4 py-2 rounded-xl font-medium transition-all hover:bg-white/10"
+                className="text-white hover:text-primary px-3 py-2 rounded-xl font-medium transition-all hover:bg-white/10"
               >
                 Home
               </button>
               <button 
                 onClick={() => scrollToSection('about')} 
-                className="text-gray-300 hover:text-white px-4 py-2 rounded-xl font-medium transition-all hover:bg-white/10"
+                className="text-gray-300 hover:text-white px-3 py-2 rounded-xl font-medium transition-all hover:bg-white/10"
               >
                 About
               </button>
               <button 
                 onClick={() => scrollToSection('services')} 
-                className="text-gray-300 hover:text-white px-4 py-2 rounded-xl font-medium transition-all hover:bg-white/10"
+                className="text-gray-300 hover:text-white px-3 py-2 rounded-xl font-medium transition-all hover:bg-white/10"
               >
                 Services
               </button>
               <button 
                 onClick={() => scrollToSection('packages')} 
-                className="text-gray-300 hover:text-white px-4 py-2 rounded-xl font-medium transition-all hover:bg-white/10"
+                className="text-gray-300 hover:text-white px-3 py-2 rounded-xl font-medium transition-all hover:bg-white/10"
               >
                 Packages
               </button>
               <button 
                 onClick={() => scrollToSection('blog')} 
-                className="text-gray-300 hover:text-white px-4 py-2 rounded-xl font-medium transition-all hover:bg-white/10"
+                className="text-gray-300 hover:text-white px-3 py-2 rounded-xl font-medium transition-all hover:bg-white/10"
               >
                 Blog
               </button>
               <button 
                 onClick={() => scrollToSection('resources')} 
-                className="text-gray-300 hover:text-white px-4 py-2 rounded-xl font-medium transition-all hover:bg-white/10"
+                className="text-gray-300 hover:text-white px-3 py-2 rounded-xl font-medium transition-all hover:bg-white/10"
               >
                 Resources
               </button>
               <Button 
                 onClick={() => scrollToSection('contact')} 
-                className="gradient-primary text-black font-semibold px-6 py-2 rounded-xl hover-glow ml-4 border-0"
+                className="gradient-primary text-black font-semibold px-6 py-2 rounded-xl hover-glow border-0"
               >
                 Get Started
               </Button>

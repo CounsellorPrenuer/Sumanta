@@ -62,7 +62,7 @@ export default function PremiumNavigation() {
             </button>
 
             {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center space-x-8">
+            <div className="hidden lg:flex items-center space-x-4">
               {navItems.map((item) => (
                 <button
                   key={item.name}
