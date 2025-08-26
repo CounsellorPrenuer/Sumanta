@@ -1,4 +1,4 @@
-import { ArrowRight, Play, CheckCircle, Users, Award, TrendingUp } from "lucide-react";
+import { ArrowRight, Play, CheckCircle, Users, Award, TrendingUp, Phone } from "lucide-react";
 import { useState } from "react";
 import heroImage from "@assets/u1461628488_A_confident_mid-career_Indian_professional_male_o_5df951ce-73bd-414a-b228-c9ccf52f9fa6_2_1754302685222.png";
 import BookCallModal from "./book-call-modal";
@@ -90,16 +90,13 @@ export default function PremiumHero() {
               
               <button 
                 onClick={() => setIsCallModalOpen(true)}
-                className="group px-10 py-5 rounded-2xl font-semibold glass-premium border-2 button-magnetic card-hover-glow"
-                style={{borderColor: 'hsl(45, 93%, 60%)', color: 'hsl(220, 91%, 25%)'}}
+                className="relative group inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 text-white font-bold text-lg rounded-full shadow-2xl hover:shadow-3xl transform transition-all duration-300 hover:scale-105 hover:from-blue-700 hover:via-purple-700 hover:to-indigo-700"
               >
-                <div className="flex items-center justify-center">
-                  <div className="w-10 h-10 rounded-full mr-4 flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-all duration-300 shadow-lg" 
-                       style={{background: 'linear-gradient(135deg, hsl(45, 93%, 85%), hsl(45, 93%, 90%))'}}>
-                    <Play className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" style={{color: 'hsl(45, 93%, 50%)'}} />
-                  </div>
-                  <span className="tracking-wide">Free Career Clarity Call</span>
-                </div>
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-400 via-purple-400 to-indigo-400 rounded-full blur-lg opacity-50 group-hover:opacity-70 transition-opacity"></div>
+                <Phone className="relative w-6 h-6 animate-pulse" />
+                <span className="relative tracking-wide">Free Career Clarity Call</span>
+                <div className="absolute -top-2 -right-2 w-4 h-4 bg-green-500 rounded-full animate-ping"></div>
+                <div className="absolute -top-2 -right-2 w-4 h-4 bg-green-500 rounded-full"></div>
               </button>
             </div>
 

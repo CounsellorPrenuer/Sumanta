@@ -81,10 +81,13 @@ export default function PremiumNavigation() {
             <div className="hidden lg:flex items-center space-x-4">
               <button 
                 onClick={() => setIsCallModalOpen(true)}
-                className="btn-primary text-sm inline-flex items-center"
+                className="relative group inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold text-sm rounded-full shadow-lg hover:shadow-xl transform transition-all duration-300 hover:scale-105 hover:from-blue-700 hover:to-purple-700"
               >
-                <Phone className="w-4 h-4 mr-2" />
-                Book A Free Call
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full blur-md opacity-50 group-hover:opacity-70 transition-opacity"></div>
+                <Phone className="relative w-4 h-4 animate-pulse" />
+                <span className="relative">Book A Free Call</span>
+                <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full animate-ping"></div>
+                <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full"></div>
               </button>
             </div>
 
@@ -115,10 +118,12 @@ export default function PremiumNavigation() {
                     setIsMobileMenuOpen(false);
                     setIsCallModalOpen(true);
                   }}
-                  className="btn-primary w-full text-sm mt-4 inline-flex items-center justify-center h-12"
+                  className="relative group w-full mt-4 inline-flex items-center justify-center gap-2 px-6 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold text-sm rounded-full shadow-lg hover:shadow-xl transform transition-all duration-300 hover:from-blue-700 hover:to-purple-700"
                 >
-                  <Phone className="w-4 h-4 mr-2" />
-                  Book A Free Call
+                  <Phone className="w-4 h-4 animate-pulse" />
+                  <span>Book A Free Call</span>
+                  <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full animate-ping"></div>
+                  <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full"></div>
                 </button>
               </div>
             </div>
