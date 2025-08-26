@@ -26,7 +26,7 @@ export default function Navigation() {
             />
             <div className="text-left">
               <div className="text-xl font-bold text-white">Leadcrest Consulting</div>
-              <p className="text-xs text-gray-300 hidden sm:block">Redefining Career Trajectory with Clarity</p>
+              <p className="text-xs text-gray-300 hidden sm:block">From Confusion to Clarity. From Interest to Impact.</p>
             </div>
           </div>
           

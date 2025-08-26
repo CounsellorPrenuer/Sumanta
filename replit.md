@@ -3,6 +3,9 @@
 This is a career counseling and education guidance website for Leadcrest Consulting, founded by Sumanta Chaudhuri. The application serves as a professional platform offering comprehensive career services including psychometric assessments, counseling sessions, foreign admissions assistance, and mentorship programs. Built as a full-stack web application, it features a modern React frontend with a clean, professional design and an Express.js backend with PostgreSQL database integration.
 
 ## Recent Updates (January 2025)
+- **Logo Enhancement**: Increased logo size to h-20 w-20 (main nav) and h-16 w-16 (premium nav) for better brand visibility
+- **Tagline Update**: Changed from "Redefining Career Trajectory with Clarity" to "From Confusion to Clarity. From Interest to Impact."
+## Previous Updates
 - **Complete "How It Works" Page Rebuild**: Transformed into career coaching methodology using actual established packages and process
 - **Authentic Process Design**: Built from Initial Consultation → Psychometric Assessment → Career Coaching Sessions → Ongoing Support using real features
 - **Established Pricing Structure**: Used actual package pricing (Ascend ₹6,499, Ascend Plus ₹10,599) with authentic features and benefits
