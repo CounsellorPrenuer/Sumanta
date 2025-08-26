@@ -17,12 +17,12 @@ export default function Navigation() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl border-b" style={{background: 'linear-gradient(135deg, hsla(var(--cobalt), 0.9), hsla(var(--violet), 0.9))', borderBottomColor: 'hsla(var(--gold), 0.3)'}}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+        <div className="flex justify-between items-center h-24">
           <div className="flex items-center gap-4">
             <img 
               src={logoImage} 
               alt="Leadcrest Consulting Logo" 
-              className="h-12 w-12 object-contain"
+              className="h-20 w-20 object-contain"
             />
             <div className="text-left">
               <div className="text-xl font-bold text-white">Leadcrest Consulting</div>

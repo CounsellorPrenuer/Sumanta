@@ -44,7 +44,7 @@ export default function PremiumNavigation() {
         isScrolled ? 'nav-blur shadow-lg' : 'bg-transparent'
       }`}>
         <div className="container-custom relative">
-          <div className="flex items-center justify-between h-20">
+          <div className="flex items-center justify-between h-24">
             {/* Logo */}
             <button 
               onClick={() => navigate('/')}
@@ -53,7 +53,7 @@ export default function PremiumNavigation() {
               <img 
                 src={logoImage} 
                 alt="Leadcrest Consulting" 
-                className="h-10 w-auto"
+                className="h-16 w-16 object-contain"
               />
               <div className="text-left">
                 <div className="font-bold text-lg text-gray-900">Leadcrest Consulting</div>
