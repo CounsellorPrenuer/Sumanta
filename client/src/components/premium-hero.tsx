@@ -20,9 +20,9 @@ export default function PremiumHero() {
   ];
 
   const highlights = [
-    "Certified Career Counsellor (IAAP, APCDA, GCDA)",
-    "Founder - Leadcrest Consulting",
-    "Mentoria Certified Partner",
+    "20+ Years Leading Teams in Fortune 500 (Telecom & Retail)",
+    "Specialized in Senior Executive Transitions (VP/Director Level)",
+    "Industry Focus: Telecom, Retail, Pharma, FMCG, Technology",
   ];
 
   return (
@@ -66,9 +66,9 @@ export default function PremiumHero() {
 
             {/* Premium Subheadline */}
             <p className="text-xl text-gray-700 mb-10 max-w-2xl leading-relaxed font-medium slide-in-up" style={{animationDelay: '1s'}}>
-              For professionals at a crossroads, in role, identity, or purpose.
+              For VPs, Directors, and Senior Managers in <span className="font-semibold text-gray-900">Telecom, Retail, Pharma, FMCG, FMCD, and Technology</span> sectors.
               <br />
-              <span className="text-gradient-blue font-semibold">Leadcrest helps you realign your career to who you are and where the world is going.</span>
+              <span className="text-gradient-blue font-semibold">Fortune 500 insights and executive-level mentorship to accelerate your leadership journey.</span>
             </p>
 
 
@@ -101,7 +101,7 @@ export default function PremiumHero() {
             </div>
 
             {/* Elegant Stats */}
-            <div className="grid grid-cols-3 gap-6 slide-in-up" style={{animationDelay: '1.4s'}}>
+            <div className="grid grid-cols-3 gap-6 slide-in-up mb-8" style={{animationDelay: '1.4s'}}>
               {stats.map((stat, index) => (
                 <div key={index} className="text-center group cursor-default">
                   <div className="w-16 h-16 rounded-3xl flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:shadow-xl transition-shadow duration-300"
@@ -119,6 +119,16 @@ export default function PremiumHero() {
                   </div>
                   <div className="text-3xl font-bold mb-1" style={{color: 'hsl(220, 91%, 25%)'}}>{stat.value}</div>
                   <div className="text-sm font-medium text-gray-600">{stat.label}</div>
+                </div>
+              ))}
+            </div>
+            
+            {/* Industry Expertise Highlights */}
+            <div className="space-y-3 slide-in-up" style={{animationDelay: '1.5s'}}>
+              {highlights.map((highlight, index) => (
+                <div key={index} className="flex items-center gap-3 text-sm">
+                  <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0" />
+                  <span className="text-gray-700 font-medium">{highlight}</span>
                 </div>
               ))}
             </div>

@@ -239,7 +239,7 @@ export default function WhyCCCEdu() {
             </h1>
             
             <p className="text-2xl text-gray-600 leading-relaxed mb-12 animate-fade-in-up animation-delay-400">
-              While others offer generic advice, we provide <strong>Fortune 500 leadership insights</strong> and <strong>executive-level mentorship</strong> that actually accelerates careers.
+              While others offer generic advice, we provide <strong>Fortune 500 leadership insights</strong> and <strong>executive-level mentorship for VPs, Directors, and GMs in Telecom, Retail, Pharma, FMCG, and Technology</strong> that actually accelerates careers.
             </p>
 
             {/* Animated Hero Stats */}
