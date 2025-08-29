@@ -21,7 +21,7 @@ export default function Navigation() {
           <div className="flex items-center gap-4">
             <img 
               src={logoImage} 
-              alt="Leadcrest Consulting Logo" 
+              alt="Leadcrest Consulting Logo - Executive Career Coaching" 
               className="h-20 w-20 object-contain"
             />
             <div className="text-left">

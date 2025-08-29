@@ -3,6 +3,7 @@ import { useParams } from "wouter";
 import PremiumNavigation from "@/components/premium-navigation";
 import Footer from "@/components/footer";
 import WhatsAppFloat from "@/components/whatsapp-float";
+import SEOMeta from "@/components/seo-meta";
 import { Calendar, User, ArrowLeft, Share2, BookOpen, Clock } from "lucide-react";
 import type { BlogPost } from "@shared/schema";
 import { useLocation } from "wouter";
@@ -49,6 +50,13 @@ export default function BlogPostPage() {
 
   return (
     <div className="min-h-screen">
+      <SEOMeta 
+        title={post.title}
+        description={post.excerpt}
+        keywords={`${post.category}, executive coaching, career development, leadership`}
+        article={true}
+        publishedTime={post.publishedAt || undefined}
+      />
       <PremiumNavigation />
       
       {/* Hero Section */}
@@ -68,7 +76,7 @@ export default function BlogPostPage() {
               {post.category}
             </div>
             
-            <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+            <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight" role="heading" aria-level={1}>
               {post.title}
             </h1>
             

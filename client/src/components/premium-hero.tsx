@@ -150,7 +150,7 @@ export default function PremiumHero() {
                   <div className="flex items-center space-x-4">
                     <div className="w-14 h-14 rounded-2xl flex items-center justify-center shadow-lg" 
                          style={{background: 'linear-gradient(135deg, hsl(267, 47%, 85%), hsl(267, 47%, 75%))'}}>
-                      <Award className="w-7 h-7" style={{color: 'hsl(267, 47%, 50%)'}} />
+                      <Award className="w-7 h-7" style={{color: 'hsl(267, 47%, 50%)'}} aria-label="Award icon" />
                     </div>
                     <div>
                       <div className="font-bold text-gray-900 text-lg">AI-Proof</div>
@@ -163,7 +163,7 @@ export default function PremiumHero() {
                 <div className="absolute -top-4 -right-4 bg-white/95 backdrop-blur-xl p-5 rounded-2xl shadow-xl border border-white/50 transform hover:scale-105 transition-all duration-300" style={{animationDelay: '1s'}}>
                   <div className="flex items-center space-x-4">
                     <div className="w-14 h-14 rounded-2xl flex items-center justify-center shadow-lg" style={{background: 'linear-gradient(135deg, hsl(45, 93%, 85%), hsl(45, 93%, 75%))'}}>
-                      <TrendingUp className="w-7 h-7" style={{color: 'hsl(45, 93%, 50%)'}} />
+                      <TrendingUp className="w-7 h-7" style={{color: 'hsl(45, 93%, 50%)'}} aria-label="Growth trend icon" />
                     </div>
                     <div>
                       <div className="font-bold text-gray-900 text-lg">Future</div>

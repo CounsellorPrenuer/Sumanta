@@ -73,7 +73,7 @@ export default function BlogSection() {
             Career Insights & Tips
           </div>
           
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6" role="heading" aria-level={2}>
             Latest{" "}
             <span className="text-gradient-primary">Insights</span>
           </h2>

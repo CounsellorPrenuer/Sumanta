@@ -59,7 +59,7 @@ export default function PremiumAbout() {
                 Led by India's Most Trusted Career Architect
               </div>
 
-              <h2 className="text-4xl lg:text-6xl font-light text-gray-900 mb-8 leading-tight luxury-text relative">
+              <h2 className="text-4xl lg:text-6xl font-light text-gray-900 mb-8 leading-tight luxury-text relative" role="heading" aria-level={2}>
                 <span className="bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-600 bg-clip-text text-transparent font-medium animate-gradient-x hover:scale-105 transition-transform duration-500 inline-block">
                   Sumanta Chaudhuri
                 </span>
@@ -158,7 +158,7 @@ export default function PremiumAbout() {
                 <div className="w-full aspect-[4/5] bg-gray-100 rounded-2xl shadow-xl overflow-hidden">
                   <img 
                     src={sumantaImage} 
-                    alt="Sumanta Chaudhuri - Career Counselor and Founder"
+                    alt="Sumanta Chaudhuri - Founder & Executive Career Coach at Leadcrest Consulting, 20+ years HR Leadership experience at Reliance and Vodafone"
                     className="w-full h-full object-cover rounded-2xl"
                     style={{ objectPosition: 'center 30%' }}
                   />

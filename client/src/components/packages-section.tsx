@@ -37,7 +37,7 @@ export default function PackagesSection() {
             Choose Your Perfect Package
           </div>
           
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6" role="heading" aria-level={2}>
             Tailored Solutions for{" "}
             <span className="text-gradient-primary">Every Journey</span>
           </h2>

@@ -67,7 +67,7 @@ export default function ContactSection() {
             Get In Touch
           </div>
           
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6" role="heading" aria-level={2}>
             Start Your{" "}
             <span className="text-gradient-primary">Journey Today</span>
           </h2>

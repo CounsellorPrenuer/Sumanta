@@ -164,7 +164,7 @@ export default function CorporateParentingWellbeing() {
               Employee Wellbeing Solution for Fortune 500 Companies
             </div>
             
-            <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-8 leading-tight">
+            <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-8 leading-tight" role="heading" aria-level={1}>
               Turn Working Parent Stress Into
               <span className="text-gradient-blue block">Organizational Strength</span>
             </h1>

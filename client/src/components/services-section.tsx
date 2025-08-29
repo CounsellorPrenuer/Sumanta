@@ -49,7 +49,7 @@ export default function ServicesSection() {
             Comprehensive Career Services
           </div>
           
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6" role="heading" aria-level={2}>
             Everything You Need to{" "}
             <span className="text-gradient-secondary">Succeed</span>
           </h2>
