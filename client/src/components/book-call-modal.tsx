@@ -109,31 +109,71 @@ export default function BookCallModal({ isOpen, onClose }: BookCallModalProps) {
             </div>
           </DialogHeader>
 
-          {/* Value Proposition */}
+          {/* What You'll Get vs What's Not Included */}
           <div className="px-8 pb-6">
-            <div className="bg-gradient-to-r from-blue-600 to-purple-700 rounded-2xl p-6 text-white shadow-2xl">
-              <div className="flex items-center gap-3 mb-4">
+            <div className="grid md:grid-cols-2 gap-4">
+              {/* What You'll Get */}
+              <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl p-5 border-2 border-green-200">
+                <div className="flex items-center gap-2 mb-4">
+                  <CheckCircle2 className="w-5 h-5 text-green-600" />
+                  <h3 className="text-lg font-bold text-gray-900">What You'll Get (Free)</h3>
+                </div>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <span className="text-sm text-gray-700"><strong>10-min focused discussion</strong> about your career situation</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <span className="text-sm text-gray-700"><strong>Actionable roadmap</strong> with 2-3 immediate next steps</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <span className="text-sm text-gray-700"><strong>Expert assessment</strong> of your primary career challenge</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <span className="text-sm text-gray-700"><strong>Personalized guidance</strong> based on your background</span>
+                  </li>
+                </ul>
+              </div>
+
+              {/* What's Not Included */}
+              <div className="bg-gradient-to-r from-gray-50 to-slate-50 rounded-2xl p-5 border-2 border-gray-200">
+                <div className="flex items-center gap-2 mb-4">
+                  <X className="w-5 h-5 text-gray-600" />
+                  <h3 className="text-lg font-bold text-gray-900">Not Included (Paid Only)</h3>
+                </div>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-gray-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <span className="text-sm text-gray-600 line-through">Full psychometric assessment & detailed report</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-gray-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <span className="text-sm text-gray-600 line-through">60-90 minute deep-dive counseling session</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-gray-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <span className="text-sm text-gray-600 line-through">Career compatibility analysis</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-gray-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <span className="text-sm text-gray-600 line-through">Ongoing mentorship support</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Call Summary Box */}
+            <div className="bg-gradient-to-r from-blue-600 to-purple-700 rounded-2xl p-5 text-white shadow-2xl mt-4">
+              <div className="flex items-center gap-3">
                 <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center backdrop-blur-sm">
                   <Clock className="w-6 h-6 text-white" />
                 </div>
-                <div>
-                  <h3 className="text-xl font-bold">10-Minute Discovery Call</h3>
-                  <p className="text-blue-100 text-sm">Understand your top career challenges</p>
-                </div>
-              </div>
-              
-              <div className="grid md:grid-cols-3 gap-4 mt-6">
-                <div className="flex items-center gap-3 bg-white/10 rounded-xl p-3 backdrop-blur-sm">
-                  <Target className="w-5 h-5 text-white" />
-                  <span className="text-sm font-medium">Identify Key Challenges</span>
-                </div>
-                <div className="flex items-center gap-3 bg-white/10 rounded-xl p-3 backdrop-blur-sm">
-                  <User className="w-5 h-5 text-white" />
-                  <span className="text-sm font-medium">Personal Assessment</span>
-                </div>
-                <div className="flex items-center gap-3 bg-white/10 rounded-xl p-3 backdrop-blur-sm">
-                  <ArrowRight className="w-5 h-5 text-white" />
-                  <span className="text-sm font-medium">Next Steps Plan</span>
+                <div className="flex-1">
+                  <h3 className="text-lg font-bold">Quick & Valuable</h3>
+                  <p className="text-blue-100 text-sm">Get clarity in just 10 minutes - no strings attached!</p>
                 </div>
               </div>
             </div>
@@ -216,36 +256,41 @@ export default function BookCallModal({ isOpen, onClose }: BookCallModalProps) {
 
           {/* What Happens Next */}
           <div className="px-8 pb-8">
-            <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl p-6 border-2 border-green-100">
+            <div className="bg-gradient-to-r from-amber-50 to-orange-50 rounded-2xl p-6 border-2 border-amber-200">
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 bg-green-500 rounded-xl flex items-center justify-center">
-                  <CheckCircle2 className="w-5 h-5 text-white" />
+                <div className="w-10 h-10 bg-amber-500 rounded-xl flex items-center justify-center">
+                  <Phone className="w-5 h-5 text-white animate-pulse" />
                 </div>
-                <h4 className="text-lg font-bold text-gray-900">What Happens Next?</h4>
+                <h4 className="text-lg font-bold text-gray-900">Your 10-Minute Call Timeline</h4>
               </div>
               
-              <div className="grid md:grid-cols-2 gap-4">
-                <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                  <span className="text-gray-700 font-medium">We'll call you within 4 hours</span>
+              <div className="space-y-3">
+                <div className="flex items-start gap-3">
+                  <div className="w-8 h-8 bg-amber-100 rounded-lg flex items-center justify-center font-bold text-amber-700">1</div>
+                  <div className="flex-1">
+                    <span className="text-gray-900 font-semibold">Minutes 0-3: Quick Introduction</span>
+                    <p className="text-xs text-gray-600">We'll understand your current situation & immediate concerns</p>
+                  </div>
                 </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                  <span className="text-gray-700 font-medium">10-minute focused discussion</span>
+                <div className="flex items-start gap-3">
+                  <div className="w-8 h-8 bg-amber-100 rounded-lg flex items-center justify-center font-bold text-amber-700">2</div>
+                  <div className="flex-1">
+                    <span className="text-gray-900 font-semibold">Minutes 3-7: Problem Diagnosis</span>
+                    <p className="text-xs text-gray-600">We'll identify your core career challenge & its root causes</p>
+                  </div>
                 </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                  <span className="text-gray-700 font-medium">Identify your top career challenges</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                  <span className="text-gray-700 font-medium">Get clear next steps</span>
+                <div className="flex items-start gap-3">
+                  <div className="w-8 h-8 bg-amber-100 rounded-lg flex items-center justify-center font-bold text-amber-700">3</div>
+                  <div className="flex-1">
+                    <span className="text-gray-900 font-semibold">Minutes 7-10: Action Plan</span>
+                    <p className="text-xs text-gray-600">You'll get 2-3 specific steps to implement immediately</p>
+                  </div>
                 </div>
               </div>
 
-              <div className="mt-4 p-3 bg-white/60 rounded-xl border border-green-200">
-                <p className="text-sm text-gray-600 text-center">
-                  <strong>100% Free • No Sales Pitch • Genuine Help</strong>
+              <div className="mt-4 p-3 bg-white/80 rounded-xl border border-amber-200">
+                <p className="text-sm text-gray-700 text-center">
+                  <strong>⏰ We'll call within 4 hours • 📞 100% Free • 🎯 Results-focused</strong>
                 </p>
               </div>
             </div>
