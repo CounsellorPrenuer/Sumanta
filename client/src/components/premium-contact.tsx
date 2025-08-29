@@ -8,6 +8,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Mail, Phone, MapPin, Clock, Send, CheckCircle } from "lucide-react";
+import CalendlyScheduler from "@/components/calendly-scheduler";
 import sumantaImage from "@assets/Image_Sumanta Chaudhuri_LCC_1754306082124.jpeg";
 
 interface ContactFormData {
@@ -20,6 +21,7 @@ interface ContactFormData {
 export default function PremiumContact() {
   const { toast } = useToast();
   const queryClient = useQueryClient();
+  const [showScheduler, setShowScheduler] = useState(false);
   
   const [formData, setFormData] = useState<ContactFormData>({
     name: "",
@@ -36,12 +38,8 @@ export default function PremiumContact() {
         title: "Message Sent Successfully!",
         description: "We'll get back to you within 24 hours.",
       });
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        whoIsThisFor: ""
-      });
+      // Show scheduler instead of clearing form
+      setShowScheduler(true);
       queryClient.invalidateQueries({ queryKey: ['/api/contact'] });
     },
     onError: () => {
@@ -129,8 +127,15 @@ export default function PremiumContact() {
             ))}
           </div>
 
-          {/* Free Call Form */}
+          {/* Free Call Form or Scheduler */}
           <div className="lg:col-span-3">
+            {showScheduler ? (
+              <CalendlyScheduler 
+                userName={formData.name}
+                userEmail={formData.email}
+                userPhone={formData.phone}
+              />
+            ) : (
             <div className="premium-card p-8">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
@@ -207,6 +212,7 @@ export default function PremiumContact() {
                 </Button>
               </form>
             </div>
+            )}
           </div>
         </div>
       </div>
