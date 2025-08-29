@@ -15,6 +15,9 @@ import HowItWorks from "@/pages/how-it-works";
 import Contact from "@/pages/contact";
 import ThankYou from "@/pages/thank-you";
 import AdminBookings from "@/pages/admin-bookings";
+import PrivacyPolicy from "@/pages/privacy-policy";
+import TermsOfService from "@/pages/terms-of-service";
+import CookieConsent from "@/components/cookie-consent";
 
 function Router() {
   return (
@@ -29,6 +32,8 @@ function Router() {
       <Route path="/thank-you" component={ThankYou} />
       <Route path="/admin/bookings" component={AdminBookings} />
       <Route path="/checkout/:packageId" component={Checkout} />
+      <Route path="/privacy-policy" component={PrivacyPolicy} />
+      <Route path="/terms-of-service" component={TermsOfService} />
       <Route component={NotFound} />
     </Switch>
   );
@@ -40,6 +45,7 @@ function App() {
       <TooltipProvider>
         <Toaster />
         <Router />
+        <CookieConsent />
       </TooltipProvider>
     </QueryClientProvider>
   );

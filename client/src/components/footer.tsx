@@ -124,6 +124,22 @@ export default function Footer() {
                 </button>
               </li>
               <li>
+                <a 
+                  href="/privacy-policy" 
+                  className="text-gray-300 hover:text-blue-400 transition-colors text-left block"
+                >
+                  Privacy Policy
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="/terms-of-service" 
+                  className="text-gray-300 hover:text-blue-400 transition-colors text-left block"
+                >
+                  Terms of Service
+                </a>
+              </li>
+              <li>
                 <button 
                   onClick={() => scrollToSection('#contact')} 
                   className="text-gray-300 hover:text-blue-400 transition-colors text-left"

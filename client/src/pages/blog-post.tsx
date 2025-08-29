@@ -55,7 +55,7 @@ export default function BlogPostPage() {
         description={post.excerpt}
         keywords={`${post.category}, executive coaching, career development, leadership`}
         article={true}
-        publishedTime={post.publishedAt || undefined}
+        publishedTime={post.publishedAt ? post.publishedAt.toString() : undefined}
       />
       <PremiumNavigation />
       
