@@ -1,4 +1,4 @@
-import { Award, Users, Globe, BookOpen, ArrowRight, Play, GraduationCap, Brain, HandHeart, Lightbulb } from "lucide-react";
+import { Award, Users, Globe, BookOpen, ArrowRight, Play, GraduationCap, Brain, HandHeart, Lightbulb, Medal, BrainCircuit } from "lucide-react";
 import sumantaImage from "@assets/Image_Sumanta Chaudhuri_LCC_1754306082124.jpeg";
 
 export default function PremiumAbout() {
@@ -123,6 +123,26 @@ export default function PremiumAbout() {
                 <div>
                   <div className="text-sm font-medium text-gray-900 group-hover:text-orange-700 transition-colors">💼 DEI + OD Strategist</div>
                   <div className="text-xs text-gray-600">Specialist</div>
+                </div>
+              </div>
+              
+              <div className="group flex items-center space-x-3 p-4 bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 magnetic-card hover:border-indigo-300">
+                <div className="w-10 h-10 bg-gradient-to-br from-indigo-100 to-indigo-200 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <Medal className="w-5 h-5 text-indigo-600" />
+                </div>
+                <div>
+                  <div className="text-sm font-medium text-gray-900 group-hover:text-indigo-700 transition-colors">🌍 Global HR Professional</div>
+                  <div className="text-xs text-gray-600">Senior Certified</div>
+                </div>
+              </div>
+              
+              <div className="group flex items-center space-x-3 p-4 bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 magnetic-card hover:border-pink-300">
+                <div className="w-10 h-10 bg-gradient-to-br from-pink-100 to-pink-200 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <BrainCircuit className="w-5 h-5 text-pink-600" />
+                </div>
+                <div>
+                  <div className="text-sm font-medium text-gray-900 group-hover:text-pink-700 transition-colors">🧠 NLP Practitioner</div>
+                  <div className="text-xs text-gray-600">Certified</div>
                 </div>
               </div>
             </div>
