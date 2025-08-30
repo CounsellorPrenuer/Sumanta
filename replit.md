@@ -4,6 +4,7 @@ This is a career counseling and education guidance website for Leadcrest Consult
 
 ## Recent Updates (January 2025)
 - **Contact Information Update**: Updated all phone numbers to +91 9147424608 and email addresses to leadcrestconsulting6@gmail.com throughout the site (footer, contact form, privacy policy)
+- **Experience Standardization**: Standardized all experience mentions to "24+ years" across the entire website for consistency
 - **Comprehensive SEO & Accessibility Overhaul**: Added meta tags, Open Graph tags, schema.org markup, proper heading hierarchy (H1, H2, H3), enhanced alt text for all images, and created SEO component for dynamic meta updates
 - **Legal Compliance Implementation**: Added Privacy Policy page, Terms of Service page, cookie consent banner with preference management, and footer legal links
 - **Visual Differentiators Section**: Created animated, interactive pillars of excellence with infographics replacing text-heavy cards for AI-Proofing, Fortune 500 Insights, Data-Driven Approach, and Holistic Life Integration
@@ -14,7 +15,7 @@ This is a career counseling and education guidance website for Leadcrest Consult
 - **Complete "How It Works" Page Rebuild**: Transformed into career coaching methodology using actual established packages and process
 - **Authentic Process Design**: Built from Initial Consultation → Psychometric Assessment → Career Coaching Sessions → Ongoing Support using real features
 - **Established Pricing Structure**: Used actual package pricing (Ascend ₹6,499, Ascend Plus ₹10,599) with authentic features and benefits
-- **Real Success Metrics Integration**: Added legitimate success statistics (95% success rate, 3,725+ professionals guided, 20+ years experience)
+- **Real Success Metrics Integration**: Added legitimate success statistics (95% success rate, 3,725+ professionals guided, 24+ years experience)
 - **Complete Blogs & Resources Overhaul**: Rebuilt entire content section with 6 executive-focused blog posts (2000+ words each) and 8 professional development resources
 - **Individual Blog Pages**: Implemented full blog post routing system with rich content display, social sharing, and professional consultation CTAs
 - **Working Download System**: Added functional resource downloads with professional coming-soon messages for actual implementation

@@ -12,7 +12,7 @@ export default function PremiumAbout() {
   const achievements = [
     {
       icon: Award,
-      title: "20+ Years",
+      title: "24+ Years",
       subtitle: "Professional Experience",
       description: "Over two decades of dedicated service in career counseling and education guidance."
     },
@@ -69,7 +69,7 @@ export default function PremiumAbout() {
             </div>
 
             <p className="text-xl text-gray-700 mb-8 leading-relaxed">
-              <strong>From Boardroom to Breakthroughs:</strong> Meet Sumanta Chaudhuri. With <strong>20+ years of HR leadership</strong> at Reliance and Vodafone, Sumanta now coaches professionals and organizations through career clarity, transition, and purpose. He's a <strong>Certified Life Coach, NLP Practitioner, and Health & Wellness Coach</strong>, blending deep corporate insight with empathetic coaching.
+              <strong>From Boardroom to Breakthroughs:</strong> Meet Sumanta Chaudhuri. With <strong>24+ years of HR leadership</strong> at Reliance and Vodafone, Sumanta now coaches professionals and organizations through career clarity, transition, and purpose. He's a <strong>Certified Life Coach, NLP Practitioner, and Health & Wellness Coach</strong>, blending deep corporate insight with empathetic coaching.
             </p>
 
             <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-2xl p-6 mb-8 shadow-lg hover:shadow-xl transition-all duration-300 magnetic-card relative overflow-hidden">
@@ -92,7 +92,7 @@ export default function PremiumAbout() {
                 </div>
                 <div>
                   <div className="text-sm font-medium text-gray-900 group-hover:text-purple-700 transition-colors">🏢 HR Leadership</div>
-                  <div className="text-xs text-gray-600">20+ Years</div>
+                  <div className="text-xs text-gray-600">24+ Years</div>
                 </div>
               </div>
               
@@ -158,7 +158,7 @@ export default function PremiumAbout() {
                 <div className="w-full aspect-[4/5] bg-gray-100 rounded-2xl shadow-xl overflow-hidden">
                   <img 
                     src={sumantaImage} 
-                    alt="Sumanta Chaudhuri - Founder & Executive Career Coach at Leadcrest Consulting, 20+ years HR Leadership experience at Reliance and Vodafone"
+                    alt="Sumanta Chaudhuri - Founder & Executive Career Coach at Leadcrest Consulting, 24+ years HR Leadership experience at Reliance and Vodafone"
                     className="w-full h-full object-cover rounded-2xl"
                     style={{ objectPosition: 'center 30%' }}
                   />
@@ -168,7 +168,7 @@ export default function PremiumAbout() {
                 <div className="absolute top-12 right-12 bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-600 text-white px-5 py-3 rounded-full text-sm font-medium shadow-xl breath-animation hover:shadow-2xl transition-shadow duration-300 group-hover:scale-105">
                   <div className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
-                    <span>20+ Years Experience</span>
+                    <span>24+ Years Experience</span>
                   </div>
                 </div>
                 

@@ -32,7 +32,7 @@ export default function WhyCCCEdu() {
     setTimeout(() => {
       animateCounter(3725, 'professionals');
       animateCounter(150, 'companies');
-      animateCounter(20, 'years');
+      animateCounter(24, 'years');
       animateCounter(94, 'success');
     }, 1000);
   }, []);
@@ -72,7 +72,7 @@ export default function WhyCCCEdu() {
     {
       icon: Brain,
       title: "Fortune 500 Leadership Experience",
-      description: "Learn from someone who's been in the boardroom. 20+ years of HR leadership at Reliance and Vodafone provides unmatched industry insights.",
+      description: "Learn from someone who's been in the boardroom. 24+ years of HR leadership at Reliance and Vodafone provides unmatched industry insights.",
       features: ["Executive-level perspective", "Real corporate experience", "Industry network access"],
       gradient: "from-purple-600 to-pink-600",
       delay: "0ms"
@@ -141,7 +141,7 @@ export default function WhyCCCEdu() {
     {
       competitor: "Junior Career Counselors",
       problem: "Limited senior-level experience",
-      ourSolution: "20+ years of C-suite interactions",
+      ourSolution: "24+ years of C-suite interactions",
       icon: Trophy
     },
     {

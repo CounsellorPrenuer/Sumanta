@@ -35,7 +35,7 @@ export default function VisualDifferentiators() {
       description: "Learn from global corporate leaders",
       visual: {
         icon: Globe,
-        stats: ["20+ Years Experience", "500+ C-Suite Connections", "15 Industries"],
+        stats: ["24+ Years Experience", "500+ C-Suite Connections", "15 Industries"],
         features: [
           "Executive mindset coaching",
           "Board-level thinking",

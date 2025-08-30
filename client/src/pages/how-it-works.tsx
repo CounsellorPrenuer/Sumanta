@@ -74,7 +74,7 @@ export default function HowItWorks() {
   const benefits = [
     {
       icon: Award,
-      title: "20+ Years Experience",
+      title: "24+ Years Experience",
       description: "Benefit from Sumanta's extensive experience in HR leadership at Fortune 500 companies like Reliance and Vodafone."
     },
     {

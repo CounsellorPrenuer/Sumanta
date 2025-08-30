@@ -15,12 +15,12 @@ export default function PremiumHero() {
 
   const stats = [
     { icon: Users, value: "3725+", label: "Professionals Guided" },
-    { icon: Award, value: "20+", label: "Years of HR Leadership Experience" },
+    { icon: Award, value: "24+", label: "Years of HR Leadership Experience" },
     { icon: TrendingUp, value: "94%", label: "Success Rate" },
   ];
 
   const highlights = [
-    "20+ Years Leading Teams in Fortune 500 (Telecom & Retail)",
+    "24+ Years Leading Teams in Fortune 500 (Telecom & Retail)",
     "Specialized in Senior Executive Transitions (VP/Director Level)",
     "Industry Focus: Telecom, Retail, Pharma, FMCG, Technology",
   ];

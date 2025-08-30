@@ -76,7 +76,7 @@ export default function BlogsResources() {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">Latest Executive Insights</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Strategic leadership insights, career advancement strategies, and corporate transformation guidance from 20+ years of Fortune 500 experience.
+              Strategic leadership insights, career advancement strategies, and corporate transformation guidance from 24+ years of Fortune 500 experience.
             </p>
           </div>
 
