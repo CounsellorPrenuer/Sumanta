@@ -123,14 +123,22 @@ export default function PremiumHero() {
               ))}
             </div>
             
-            {/* Industry Expertise Highlights */}
-            <div className="space-y-3 slide-in-up" style={{animationDelay: '1.5s'}}>
-              {highlights.map((highlight, index) => (
-                <div key={index} className="flex items-center gap-3 text-sm">
-                  <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0" />
-                  <span className="text-gray-700 font-medium">{highlight}</span>
-                </div>
-              ))}
+            {/* Why 3725+ Professionals Chose LCC */}
+            <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-6 border border-blue-200 slide-in-up" style={{animationDelay: '1.5s'}}>
+              <h3 className="text-lg font-bold text-gray-900 mb-3">
+                Why 3725+ Professionals Chose Leadcrest Consulting
+              </h3>
+              <p className="text-gray-700 mb-4">
+                We provide <span className="font-semibold text-blue-600">executive-level mentorship</span> for professionals at all levels in <span className="font-semibold">Telecom, Retail, Pharma, FMCG, FMCD, Technology</span> and other related sectors.
+              </p>
+              <div className="space-y-2">
+                {highlights.map((highlight, index) => (
+                  <div key={index} className="flex items-center gap-3 text-sm">
+                    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0" />
+                    <span className="text-gray-700 font-medium">{highlight}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 
