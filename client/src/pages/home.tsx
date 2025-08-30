@@ -7,6 +7,7 @@ import PremiumAbout from "@/components/premium-about";
 import VisualDifferentiators from "@/components/visual-differentiators";
 import PremiumPackages from "@/components/premium-packages";
 import PremiumTestimonials from "@/components/premium-testimonials";
+import TrustLegal from "@/components/trust-legal";
 import PremiumContact from "@/components/premium-contact";
 import MentoriaSection from "@/components/mentoria-section";
 import Footer from "@/components/footer";
@@ -24,6 +25,7 @@ export default function Home() {
       <PremiumAbout />
       <PremiumPackages />
       <PremiumTestimonials />
+      <TrustLegal />
       <PremiumContact />
       <MentoriaSection />
       <Footer />

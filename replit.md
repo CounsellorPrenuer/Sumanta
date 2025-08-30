@@ -5,6 +5,9 @@ This is a career counseling and education guidance website for Leadcrest Consult
 ## Recent Updates (January 2025)
 - **Contact Information Update**: Updated all phone numbers to +91 9147424608 and email addresses to leadcrestconsulting6@gmail.com throughout the site (footer, contact form, privacy policy)
 - **Experience Standardization**: Standardized all experience mentions to "24+ years" across the entire website for consistency
+- **Professional Credentials Added**: Added two new certifications - "Globally Certified Senior HR Professional" and "Certified NLP Practitioner" to the About section
+- **Industry Focus Message**: Added prominent "Why 3725+ professionals chose LCC" messaging highlighting executive-level mentorship for Telecom, Retail, Pharma, FMCG, FMCD, and Technology sectors
+- **Trust & Legal Section**: Implemented comprehensive Trust and Legal section with certifications, compliance information, legal documents links, and security badges
 - **Comprehensive SEO & Accessibility Overhaul**: Added meta tags, Open Graph tags, schema.org markup, proper heading hierarchy (H1, H2, H3), enhanced alt text for all images, and created SEO component for dynamic meta updates
 - **Legal Compliance Implementation**: Added Privacy Policy page, Terms of Service page, cookie consent banner with preference management, and footer legal links
 - **Visual Differentiators Section**: Created animated, interactive pillars of excellence with infographics replacing text-heavy cards for AI-Proofing, Fortune 500 Insights, Data-Driven Approach, and Holistic Life Integration
