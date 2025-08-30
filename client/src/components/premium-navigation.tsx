@@ -67,10 +67,8 @@ export default function PremiumNavigation() {
                 <button
                   key={item.name}
                   onClick={() => handleNavigation(item.href)}
-                  className="text-gray-700 font-medium transition-colors duration-200"
+                  className="text-gray-700 font-medium transition-colors duration-200 hover:text-blue-600"
                   style={{color: 'hsl(var(--foreground))'}}
-                  onMouseEnter={(e) => e.target.style.color = 'hsl(var(--cobalt))'}
-                  onMouseLeave={(e) => e.target.style.color = 'hsl(var(--foreground))'}
                 >
                   {item.name}
                 </button>
