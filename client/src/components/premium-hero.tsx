@@ -27,7 +27,7 @@ export default function PremiumHero() {
 
   return (
     <>
-    <section className="relative min-h-screen flex items-center pt-32 overflow-hidden bg-gradient-to-br from-white via-blue-50/30 to-violet-50/40">
+    <section className="relative min-h-screen flex items-center pt-24 overflow-hidden bg-gradient-to-br from-white via-blue-50/30 to-violet-50/40">
       {/* Modern Light Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-r from-blue-50/20 via-transparent to-yellow-50/20"></div>
       
@@ -48,7 +48,7 @@ export default function PremiumHero() {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Content */}
           <div className="fade-in-up">
-            <div className="mt-8"></div>
+            <div className="mt-4"></div>
 
             {/* Premium Inspiring Badge */}
             <div className="inline-flex items-center px-6 py-3 rounded-full border-2 text-sm font-semibold glass-premium shadow-xl hover:shadow-2xl transition-all duration-500 cursor-default slide-in-up" 
