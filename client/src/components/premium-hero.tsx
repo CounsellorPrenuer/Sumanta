@@ -51,14 +51,14 @@ export default function PremiumHero() {
             
 
             {/* Premium Inspiring Badge */}
-            <div className="inline-flex items-center px-6 py-3 rounded-full border-2 text-sm font-semibold mb-12 glass-premium shadow-xl hover:shadow-2xl transition-all duration-500 cursor-default slide-in-up" 
-                 style={{borderColor: 'hsl(45, 93%, 60%)', color: 'hsl(220, 91%, 25%)', animationDelay: '0.2s'}}>
+            <div className="inline-flex items-center px-6 py-3 rounded-full border-2 text-sm font-semibold glass-premium shadow-xl hover:shadow-2xl transition-all duration-500 cursor-default slide-in-up" 
+                 style={{borderColor: 'hsl(45, 93%, 60%)', color: 'hsl(220, 91%, 25%)', animationDelay: '0.2s', marginBottom: '3rem'}}>
               <div className="w-2 h-2 rounded-full mr-3 pulse-soft" style={{backgroundColor: 'hsl(45, 93%, 60%)'}}></div>
               Helping you navigate career paths in an AI world
             </div>
 
             {/* Premium Animated Headline */}
-            <h1 className="text-5xl lg:text-7xl font-bold leading-tight mb-8">
+            <h1 className="text-5xl lg:text-7xl font-bold leading-tight mb-8" style={{marginTop: '2rem'}}>
               <span className="slide-in-up block" style={{color: 'hsl(220, 91%, 20%)', animationDelay: '0.4s'}}>Redefining</span>
               <span className="text-shimmer block" style={{animationDelay: '0.6s'}}>Career Trajectory</span>
               <span className="slide-in-up block" style={{color: 'hsl(267, 47%, 25%)', animationDelay: '0.8s'}}>with Clarity</span>
