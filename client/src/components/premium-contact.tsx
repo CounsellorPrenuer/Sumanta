@@ -64,14 +64,14 @@ export default function PremiumContact() {
     {
       icon: Phone,
       title: "Call Us",
-      details: "+91 9828096408",
+      details: "+91 9147424608",
       subtext: "Mon-Fri: 9:00 AM - 6:00 PM",
       color: "from-green-500 to-emerald-600"
     },
     {
       icon: Mail,
       title: "Email Us",
-      details: "sumantaunstoppable@gmail.com",
+      details: "leadcrestconsulting6@gmail.com",
       subtext: "We reply within 24 hours",
       color: "from-blue-500 to-cyan-600"
     },
@@ -173,7 +173,7 @@ export default function PremiumContact() {
                     value={formData.phone}
                     onChange={(e) => handleChange('phone', e.target.value)}
                     className="mt-2 h-12 border-gray-300 focus:border-blue-500 focus:ring-blue-200 rounded-xl"
-                    placeholder="+91 9815299446"
+                    placeholder="+91 9147424608"
                     required
                     data-testid="input-phone"
                   />
