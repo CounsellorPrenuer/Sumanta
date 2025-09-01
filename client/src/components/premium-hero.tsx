@@ -55,7 +55,7 @@ export default function PremiumHero() {
             <div className="inline-flex items-center px-6 py-3 rounded-full border-2 text-sm font-semibold glass-premium shadow-xl hover:shadow-2xl transition-all duration-500 cursor-default slide-in-up" 
                  style={{borderColor: 'hsl(45, 93%, 60%)', color: 'hsl(220, 91%, 25%)', animationDelay: '0.2s', marginBottom: '3rem'}}>
               <div className="w-2 h-2 rounded-full mr-3 pulse-soft" style={{backgroundColor: 'hsl(45, 93%, 60%)'}}></div>
-              Helping you navigate career paths in an AI world
+              Future-proofing careers in the age of digital transformation
             </div>
 
             {/* Premium Animated Headline */}

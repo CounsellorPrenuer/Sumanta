@@ -1,52 +1,58 @@
 import { Star, Quote, ArrowRight } from "lucide-react";
+import rajeshImage from "@assets/generated_images/Indian_male_executive_headshot_652ba8ab.png";
+import priyaImage from "@assets/generated_images/Indian_female_professional_headshot_3e3ede1d.png";
+import amitImage from "@assets/generated_images/Indian_IT_professional_headshot_5efbf5d0.png";
+import snehaImage from "@assets/generated_images/Indian_female_marketing_professional_635466d7.png";
+import vikashImage from "@assets/generated_images/Indian_male_consultant_headshot_be390604.png";
+import ananyaImage from "@assets/generated_images/Indian_female_HR_executive_82c37ef9.png";
 
 export default function PremiumTestimonials() {
   const testimonials = [
     {
       name: "Rajesh Mehta",
-      role: "AI Product Manager at TCS | 85% Salary Increase",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
-      content: "After 8 years in traditional IT, Sumanta helped me transition to AI Product Management. I went from ₹12 LPA to ₹22 LPA in just 6 months. The AI readiness coaching was game-changing.",
+      role: "Product Manager at TCS | 85% Salary Increase",
+      image: rajeshImage,
+      content: "After 8 years in traditional IT, Sumanta helped me transition to Product Management with a focus on digital transformation. I went from ₹12 LPA to ₹22 LPA in just 6 months. The strategic career coaching was game-changing.",
       rating: 5,
       package: "Career Pivot Pro"
     },
     {
       name: "Priya Desai",
-      role: "Data Scientist at Flipkart | Career Switcher",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b2b5?w=400&h=400&fit=crop&crop=face",
-      content: "From HR operations to Data Science - a complete 180° career change at age 32. Sumanta's structured approach helped me land my dream role with 70% salary hike. Best investment ever!",
+      role: "Data Analyst at Flipkart | Career Switcher",
+      image: priyaImage,
+      content: "From HR operations to Data Analytics - a complete 180° career change at age 32. Sumanta's structured approach helped me land my dream role with 70% salary hike. Best investment ever!",
       rating: 5,
       package: "Tech Transition"
     },
     {
       name: "Amit Kumar",
       role: "Senior Cloud Architect at Infosys | ₹35 LPA",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face", 
-      content: "Stuck at ₹18 LPA for 3 years, I was losing hope. Sumanta's AI + Cloud upskilling roadmap transformed everything. Now earning ₹35 LPA and loving what I do every day.",
+      image: amitImage, 
+      content: "Stuck at ₹18 LPA for 3 years, I was losing hope. Sumanta's cloud technology upskilling roadmap transformed everything. Now earning ₹35 LPA and loving what I do every day.",
       rating: 5,
       package: "Executive Growth"
     },
     {
       name: "Sneha Kapoor",
       role: "Digital Marketing Head at Zomato | Remote Leader",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face",
-      content: "Transitioned from offline marketing to leading digital teams remotely. 2x salary jump from ₹8 LPA to ₹16 LPA. Sumanta's guidance on AI tools made me indispensable.",
+      image: snehaImage,
+      content: "Transitioned from offline marketing to leading digital teams remotely. 2x salary jump from ₹8 LPA to ₹16 LPA. Sumanta's guidance on digital tools and leadership made me indispensable.",
       rating: 5,
       package: "Digital Leader"
     },
     {
       name: "Vikash Sharma",
-      role: "AI Solutions Consultant | Independent | ₹45 LPA",
-      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop&crop=face",
-      content: "From corporate burnout to AI consulting freedom. Went from ₹15 LPA employee to ₹45 LPA consultant in 8 months. Sumanta showed me how to monetize AI expertise.",
+      role: "Business Consultant | Independent | ₹45 LPA",
+      image: vikashImage,
+      content: "From corporate burnout to consulting freedom. Went from ₹15 LPA employee to ₹45 LPA consultant in 8 months. Sumanta showed me how to monetize my domain expertise.",
       rating: 5,
       package: "Entrepreneurial Leap"
     },
     {
       name: "Ananya Joshi",
       role: "Chief People Officer at Razorpay | Leadership Role",
-      image: "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=400&h=400&fit=crop&crop=face",
-      content: "Promoted from HR Manager to CPO within 18 months. Sumanta's leadership coaching and AI-driven people analytics training made all the difference. Dream role achieved!",
+      image: ananyaImage,
+      content: "Promoted from HR Manager to CPO within 18 months. Sumanta's leadership coaching and strategic people management training made all the difference. Dream role achieved!",
       rating: 5,
       package: "Leadership Excellence"
     }
