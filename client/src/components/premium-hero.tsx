@@ -67,9 +67,9 @@ export default function PremiumHero() {
 
             {/* Premium Subheadline */}
             <p className="text-xl text-gray-700 mb-10 max-w-2xl leading-relaxed font-medium slide-in-up" style={{animationDelay: '1s'}}>
-              For VPs, Directors, and Senior Managers in <span className="font-semibold text-gray-900">Telecom, Retail, Pharma, FMCG, FMCD, and Technology</span> sectors.
+              For <span className="font-semibold text-gray-900">Freshers, Middle Management, and Senior Professionals</span> in <span className="font-semibold text-gray-900">Telecom, Retail, Pharma, FMCG, FMCD, and Technology</span> sectors.
               <br />
-              <span className="text-gradient-blue font-semibold">Fortune 500 insights and executive-level mentorship to accelerate your leadership journey.</span>
+              <span className="text-gradient-blue font-semibold">Fortune 500 insights and executive-level mentorship to accelerate your career journey.</span>
             </p>
 
 

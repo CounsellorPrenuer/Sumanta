@@ -10,7 +10,7 @@ export default function PremiumTestimonials() {
   const testimonials = [
     {
       name: "Rajesh Mehta",
-      role: "Product Manager at TCS | 85% Salary Increase",
+      role: "Middle Management Professional | 85% Salary Increase",
       image: rajeshImage,
       content: "After 8 years in traditional IT, Sumanta helped me transition to Product Management with a focus on digital transformation. I went from ₹12 LPA to ₹22 LPA in just 6 months. The strategic career coaching was game-changing.",
       rating: 5,
@@ -18,7 +18,7 @@ export default function PremiumTestimonials() {
     },
     {
       name: "Priya Desai",
-      role: "Data Analyst at Flipkart | Career Switcher",
+      role: "Fresher to Professional | Career Switcher",
       image: priyaImage,
       content: "From HR operations to Data Analytics - a complete 180° career change at age 32. Sumanta's structured approach helped me land my dream role with 70% salary hike. Best investment ever!",
       rating: 5,
@@ -26,7 +26,7 @@ export default function PremiumTestimonials() {
     },
     {
       name: "Amit Kumar",
-      role: "Senior Cloud Architect at Infosys | ₹35 LPA",
+      role: "Senior Professional | ₹35 LPA",
       image: amitImage, 
       content: "Stuck at ₹18 LPA for 3 years, I was losing hope. Sumanta's cloud technology upskilling roadmap transformed everything. Now earning ₹35 LPA and loving what I do every day.",
       rating: 5,
@@ -34,7 +34,7 @@ export default function PremiumTestimonials() {
     },
     {
       name: "Sneha Kapoor",
-      role: "Digital Marketing Head at Zomato | Remote Leader",
+      role: "Middle Management Leader | Remote Teams",
       image: snehaImage,
       content: "Transitioned from offline marketing to leading digital teams remotely. 2x salary jump from ₹8 LPA to ₹16 LPA. Sumanta's guidance on digital tools and leadership made me indispensable.",
       rating: 5,
@@ -42,7 +42,7 @@ export default function PremiumTestimonials() {
     },
     {
       name: "Vikash Sharma",
-      role: "Business Consultant | Independent | ₹45 LPA",
+      role: "Senior Professional | Independent Consultant",
       image: vikashImage,
       content: "From corporate burnout to consulting freedom. Went from ₹15 LPA employee to ₹45 LPA consultant in 8 months. Sumanta showed me how to monetize my domain expertise.",
       rating: 5,
@@ -50,9 +50,9 @@ export default function PremiumTestimonials() {
     },
     {
       name: "Ananya Joshi",
-      role: "Chief People Officer at Razorpay | Leadership Role",
+      role: "Senior Professional | Leadership Transition",
       image: ananyaImage,
-      content: "Promoted from HR Manager to CPO within 18 months. Sumanta's leadership coaching and strategic people management training made all the difference. Dream role achieved!",
+      content: "Promoted from middle management to executive leadership within 18 months. Sumanta's leadership coaching and strategic people management training made all the difference. Dream role achieved!",
       rating: 5,
       package: "Leadership Excellence"
     }

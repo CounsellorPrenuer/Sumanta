@@ -19,8 +19,8 @@ export default function WhyProfessionalsChoose() {
     },
     {
       icon: Users,
-      title: "All Career Levels",
-      description: "From fresh graduates to C-suite executives, tailored for your journey",
+      title: "All Career Stages",
+      description: "From Freshers to Senior Professionals, tailored for your journey",
       color: "from-blue-500 to-cyan-600"
     },
     {
@@ -53,7 +53,7 @@ export default function WhyProfessionalsChoose() {
           </h2>
           
           <p className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
-            We provide <span className="font-bold text-blue-600">executive-level mentorship</span> for professionals at all levels in{" "}
+            We provide <span className="font-bold text-blue-600">executive-level mentorship</span> for <span className="font-bold">Freshers, Middle Management, and Senior Professionals</span> in{" "}
             <span className="font-bold">Telecom, Retail, Pharma, FMCG, FMCD, Technology</span> and other related sectors.
           </p>
         </div>

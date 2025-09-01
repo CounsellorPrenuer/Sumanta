@@ -5,7 +5,7 @@ import { useState } from "react";
 import type { Package } from "@shared/schema";
 import { BookingPopup } from "./booking-popup";
 
-type AgeGroup = 'graduates' | 'professionals';
+type AgeGroup = 'freshers' | 'middle' | 'senior';
 
 interface AgeGroupCategory {
   id: AgeGroup;
@@ -17,7 +17,7 @@ interface AgeGroupCategory {
 
 export default function PremiumPackages() {
   const [, navigate] = useLocation();
-  const [selectedAgeGroup, setSelectedAgeGroup] = useState<AgeGroup>('graduates');
+  const [selectedAgeGroup, setSelectedAgeGroup] = useState<AgeGroup>('freshers');
   const [selectedPackage, setSelectedPackage] = useState<Package | null>(null);
   const [isBookingPopupOpen, setIsBookingPopupOpen] = useState(false);
   
@@ -27,18 +27,25 @@ export default function PremiumPackages() {
 
   const ageGroups: AgeGroupCategory[] = [
     {
-      id: 'graduates',
-      name: 'College Graduates',
-      description: 'Job readiness & skill development',
-      icon: Target,
-      gradient: 'from-purple-500 to-pink-500'
+      id: 'freshers',
+      name: 'Freshers',
+      description: 'Entry-level career guidance & job readiness',
+      icon: GraduationCap,
+      gradient: 'from-green-500 to-emerald-500'
     },
     {
-      id: 'professionals',
-      name: 'Working Professionals',
-      description: 'Career pivots & upskilling',
+      id: 'middle',
+      name: 'Middle Management',
+      description: 'Career advancement & leadership skills',
       icon: Briefcase,
-      gradient: 'from-orange-500 to-red-500'
+      gradient: 'from-blue-500 to-cyan-500'
+    },
+    {
+      id: 'senior',
+      name: 'Senior Professionals',
+      description: 'Executive coaching & strategic pivots',
+      icon: Crown,
+      gradient: 'from-purple-500 to-indigo-500'
     }
   ];
 
@@ -51,10 +58,12 @@ export default function PremiumPackages() {
       const audience = pkg.targetAudience.toLowerCase();
       
       switch (selectedAgeGroup) {
-        case 'graduates':
-          return audience.includes('college graduates');
-        case 'professionals':
-          return audience.includes('working professionals');
+        case 'freshers':
+          return audience.includes('college graduates') || audience.includes('freshers');
+        case 'middle':
+          return audience.includes('working professionals') || audience.includes('middle management');
+        case 'senior':
+          return audience.includes('senior professionals') || audience.includes('executives');
         default:
           return true;
       }
@@ -119,7 +128,7 @@ export default function PremiumPackages() {
 
         {/* Age Group Selector */}
         <div className="mb-16">
-          <div className="grid grid-cols-2 gap-4 max-w-3xl mx-auto">
+          <div className="grid grid-cols-3 gap-4 max-w-4xl mx-auto">
             {ageGroups.map((group) => {
               const IconComponent = group.icon;
               const isSelected = selectedAgeGroup === group.id;
