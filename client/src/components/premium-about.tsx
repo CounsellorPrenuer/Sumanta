@@ -69,7 +69,7 @@ export default function PremiumAbout() {
             </div>
 
             <p className="text-xl text-gray-700 mb-8 leading-relaxed">
-              <strong>From Boardroom to Breakthroughs:</strong> Meet Sumanta Chaudhuri. With <strong>24+ years of HR leadership</strong> at Reliance and Vodafone, Sumanta now coaches professionals and organizations through career clarity, transition, and purpose. He's a <strong>Certified Life Coach, NLP Practitioner, and Health & Wellness Coach</strong>, blending deep corporate insight with empathetic coaching.
+              <strong>From Boardroom to Breakthroughs:</strong> Meet Sumanta Chaudhuri. With <strong>24+ years of leadership experience</strong> in global MNCs including <strong>Reliance Industries Ltd, Vodafone and Aircel</strong>, Sumanta now coaches professionals and organizations through career clarity, transition, and purpose. He's a <strong>Globally Certified Senior HR Professional (SHRM-SCP), Certified Life Coach, NLP Practitioner, and Health & Wellness Coach</strong>, blending deep corporate insight with empathetic coaching.
             </p>
 
             <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-2xl p-6 mb-8 shadow-lg hover:shadow-xl transition-all duration-300 magnetic-card relative overflow-hidden">
@@ -131,8 +131,8 @@ export default function PremiumAbout() {
                   <Medal className="w-5 h-5 text-indigo-600" />
                 </div>
                 <div>
-                  <div className="text-sm font-medium text-gray-900 group-hover:text-indigo-700 transition-colors">🌍 Global HR Professional</div>
-                  <div className="text-xs text-gray-600">Senior Certified</div>
+                  <div className="text-sm font-medium text-gray-900 group-hover:text-indigo-700 transition-colors">🌍 SHRM-SCP Certified</div>
+                  <div className="text-xs text-gray-600">Senior HR Professional</div>
                 </div>
               </div>
               
@@ -197,7 +197,16 @@ export default function PremiumAbout() {
                   <div className="text-center">
                     <div className="text-xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">3,725+</div>
                     <div className="text-sm text-gray-600 font-medium">Professionals Guided</div>
-                    <div className="w-12 h-1 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full mx-auto mt-2 opacity-60"></div>
+                    <div className="mt-3 pt-3 border-t border-gray-200">
+                      <div className="text-xs text-gray-700 font-semibold">Global MNC Experience</div>
+                      <div className="flex justify-center items-center gap-2 mt-1">
+                        <span className="text-xs text-gray-600">Reliance Industries</span>
+                        <span className="text-gray-400">•</span>
+                        <span className="text-xs text-gray-600">Vodafone</span>
+                        <span className="text-gray-400">•</span>
+                        <span className="text-xs text-gray-600">Aircel</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>

@@ -20,7 +20,8 @@ export default function PremiumHero() {
   ];
 
   const highlights = [
-    "24+ Years Leading Teams in Fortune 500 (Telecom & Retail)",
+    "24+ Years at Reliance Industries, Vodafone & Aircel",
+    "SHRM-SCP Globally Certified Senior HR Professional",
     "Specialized in Senior Executive Transitions (VP/Director Level)",
     "Industry Focus: Telecom, Retail, Pharma, FMCG, Technology",
   ];
