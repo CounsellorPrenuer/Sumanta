@@ -9,50 +9,50 @@ import ananyaImage from "@assets/generated_images/Indian_female_HR_executive_82c
 export default function PremiumTestimonials() {
   const testimonials = [
     {
-      name: "Rajesh Mehta",
-      role: "Middle Management Professional | 85% Salary Increase",
+      name: "R. Sharma",
+      role: "Middle Management Professional | IT Sector",
       image: rajeshImage,
-      content: "After 8 years in traditional IT, Sumanta helped me transition to Product Management with a focus on digital transformation. I went from ₹12 LPA to ₹22 LPA in just 6 months. The strategic career coaching was game-changing.",
+      content: "After 8 years in traditional roles, Sumanta helped me transition to a strategic position with focus on digital transformation. Achieved 85% salary increase in just 6 months. The career coaching was transformative.",
       rating: 5,
       package: "Career Pivot Pro"
     },
     {
-      name: "Priya Desai",
-      role: "Fresher to Professional | Career Switcher",
+      name: "P. Singh",
+      role: "Career Switcher | Analytics Professional",
       image: priyaImage,
-      content: "From HR operations to Data Analytics - a complete 180° career change at age 32. Sumanta's structured approach helped me land my dream role with 70% salary hike. Best investment ever!",
+      content: "Complete career change from operations to analytics at age 32. Sumanta's structured approach helped me secure my dream role with 70% salary hike. Best investment in my career!",
       rating: 5,
       package: "Tech Transition"
     },
     {
-      name: "Amit Kumar",
-      role: "Senior Professional | ₹35 LPA",
+      name: "A. Verma",
+      role: "Senior Professional | Technology",
       image: amitImage, 
-      content: "Stuck at ₹18 LPA for 3 years, I was losing hope. Sumanta's cloud technology upskilling roadmap transformed everything. Now earning ₹35 LPA and loving what I do every day.",
+      content: "Was stuck at the same compensation for 3 years. Sumanta's upskilling roadmap helped me double my salary and find renewed passion for my work. Now loving what I do every day.",
       rating: 5,
       package: "Executive Growth"
     },
     {
-      name: "Sneha Kapoor",
-      role: "Middle Management Leader | Remote Teams",
+      name: "S. Patel",
+      role: "Middle Management | Digital Marketing",
       image: snehaImage,
-      content: "Transitioned from offline marketing to leading digital teams remotely. 2x salary jump from ₹8 LPA to ₹16 LPA. Sumanta's guidance on digital tools and leadership made me indispensable.",
+      content: "Successfully transitioned to leading remote teams. Doubled my salary in one year. Sumanta's guidance on digital leadership and team management made me indispensable to my organization.",
       rating: 5,
       package: "Digital Leader"
     },
     {
-      name: "Vikash Sharma",
-      role: "Senior Professional | Independent Consultant",
+      name: "V. Reddy",
+      role: "Independent Consultant | Business Strategy",
       image: vikashImage,
-      content: "From corporate burnout to consulting freedom. Went from ₹15 LPA employee to ₹45 LPA consultant in 8 months. Sumanta showed me how to monetize my domain expertise.",
+      content: "Moved from corporate employment to independent consulting. Tripled my income in 8 months. Sumanta showed me how to package and monetize my years of domain expertise effectively.",
       rating: 5,
       package: "Entrepreneurial Leap"
     },
     {
-      name: "Ananya Joshi",
-      role: "Senior Professional | Leadership Transition",
+      name: "A. Gupta",
+      role: "Senior Professional | HR Leadership",
       image: ananyaImage,
-      content: "Promoted from middle management to executive leadership within 18 months. Sumanta's leadership coaching and strategic people management training made all the difference. Dream role achieved!",
+      content: "Promoted to senior leadership role within 18 months. Sumanta's executive coaching and strategic guidance helped me develop the skills needed for the next level. Career goals achieved!",
       rating: 5,
       package: "Leadership Excellence"
     }
@@ -74,7 +74,7 @@ export default function PremiumTestimonials() {
           </h2>
           
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Working professionals who pivoted careers, became AI-ready, and significantly increased their earnings with expert guidance.
+            Real stories from professionals who transformed their careers and significantly increased their earnings with expert guidance.
           </p>
         </div>
 
