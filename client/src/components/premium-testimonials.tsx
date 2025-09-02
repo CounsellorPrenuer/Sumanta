@@ -44,7 +44,7 @@ export default function PremiumTestimonials() {
       name: "V. Reddy",
       role: "Independent Consultant | Business Strategy",
       image: vikashImage,
-      content: "Moved from corporate employment to independent consulting. Tripled my income in 8 months. Sumanta showed me how to package and monetize my years of domain expertise effectively.",
+      content: "Moved from corporate employment to independent consulting. Tripled my income in 24 months. Sumanta showed me how to package and monetize my years of domain expertise effectively.",
       rating: 5,
       package: "Entrepreneurial Leap"
     },
