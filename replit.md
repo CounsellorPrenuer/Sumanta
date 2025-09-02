@@ -2,7 +2,13 @@
 
 This is a career counseling and education guidance website for Leadcrest Consulting, founded by Sumanta Chaudhuri. The application serves as a professional platform offering comprehensive career services including psychometric assessments, counseling sessions, foreign admissions assistance, and mentorship programs. Built as a full-stack web application, it features a modern React frontend with a clean, professional design and an Express.js backend with PostgreSQL database integration.
 
-## Recent Updates (January 2025)
+## Recent Updates (February 2025)
+- **Career Stage Terminology Standardization**: Replaced all specific job titles (VP, Director, CEO, etc.) with universal career stages (Freshers, Middle Management, Senior Professionals) across the entire website
+- **Testimonial Privacy Enhancement**: Anonymized all testimonials using initials only (R. Sharma, P. Singh, etc.) and removed all real company names to protect privacy
+- **Digital Transformation Focus**: Shifted messaging from "AI world" to "digital transformation" to be more inclusive and less intimidating
+- **Authentic Professional Images**: Generated and integrated 6 new Indian professional headshots for testimonials to improve relatability
+
+## Previous Updates (January 2025)
 - **Contact Information Update**: Updated all phone numbers to +91 9147424608 and email addresses to leadcrestconsulting6@gmail.com throughout the site (footer, contact form, privacy policy)
 - **Experience Standardization**: Standardized all experience mentions to "24+ years" across the entire website for consistency
 - **Professional Credentials Added**: Added two new certifications - "Globally Certified Senior HR Professional (SHRM-SCP)" and "Certified NLP Practitioner" to the About section

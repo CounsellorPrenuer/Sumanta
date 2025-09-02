@@ -73,20 +73,20 @@ export default function AIFutureSection() {
                  color: 'hsl(220, 91%, 25%)'
                }}>
             <div className="w-2 h-2 rounded-full mr-3 animate-pulse" style={{backgroundColor: 'hsl(220, 91%, 50%)'}}></div>
-            AI Impact Reality
+            Digital Transformation Impact
           </div>
 
           <h2 className="text-5xl lg:text-7xl font-bold mb-8 leading-[1.1] tracking-tight fade-in-up-elegant stagger-delay-2" style={{color: 'hsl(220, 91%, 20%)'}}>
-            The AI Shift Isn't Coming.
+            The Digital Transformation Isn't Coming.
             <span className="block fade-in-up-elegant stagger-delay-3" style={{color: 'hsl(267, 47%, 25%)'}}>It's Here.</span>
           </h2>
 
           <div className="max-w-3xl mx-auto space-y-6 text-xl text-gray-700 leading-relaxed">
             <p className="font-semibold text-2xl fade-in-up-elegant stagger-delay-4" style={{color: 'hsl(220, 91%, 25%)'}}>
-              40% of roles are being redefined.
+              40% of roles are being redefined across all career stages.
             </p>
             <p className="text-lg fade-in-up-elegant stagger-delay-5">
-              Generic experience ≠ career security. <span className="font-semibold">Titles won't protect you, adaptability will.</span>
+              Whether you're a <span className="font-semibold">Fresher, Middle Management, or Senior Professional</span> - adaptability is your new superpower.
             </p>
           </div>
         </div>

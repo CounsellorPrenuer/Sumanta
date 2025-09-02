@@ -79,17 +79,17 @@ export default function WhyCCCEdu() {
     },
     {
       icon: Heart,
-      title: "Personalized Executive Coaching",
-      description: "Direct access to Sumanta Chaudhuri himself - not junior counselors. Get personalized strategies based on your unique professional challenges.",
-      features: ["1:1 with founder", "Customized career strategies", "Executive-level guidance"],
+      title: "Personalized Professional Coaching",
+      description: "Direct access to Sumanta Chaudhuri himself - not junior counselors. Get personalized strategies tailored to your career stage and unique challenges.",
+      features: ["1:1 with founder", "Career stage-specific strategies", "Professional growth guidance"],
       gradient: "from-red-500 to-rose-600",
       delay: "200ms"
     },
     {
       icon: Shield,
-      title: "AI-Ready Career Future-Proofing",
-      description: "Stay ahead of AI disruption with strategies that focus on uniquely human skills and leadership capabilities that machines can't replace.",
-      features: ["AI-resistant skill development", "Future leadership focus", "Technology adaptation strategies"],
+      title: "Digital-Ready Career Future-Proofing",
+      description: "Stay ahead of digital disruption with strategies for Freshers, Middle Management, and Senior Professionals that focus on adaptability and leadership.",
+      features: ["Digital transformation readiness", "Career stage-specific guidance", "Technology adaptation strategies"],
       gradient: "from-green-500 to-teal-600",
       delay: "400ms"
     }
