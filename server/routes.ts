@@ -76,13 +76,32 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // Submit contact form
   app.post("/api/contact", async (req, res) => {
     try {
-      const validatedData = insertContactSubmissionSchema.parse(req.body);
+      // Transform the incoming data to match the schema
+      const { name, email, phone, whoIsThisFor } = req.body;
+      
+      // Split name into first and last name
+      const nameParts = name ? name.trim().split(' ') : ['', ''];
+      const firstName = nameParts[0] || '';
+      const lastName = nameParts.slice(1).join(' ') || nameParts[0] || '';
+      
+      const transformedData = {
+        firstName,
+        lastName,
+        email: email || '',
+        phone: phone || '',
+        serviceInterest: whoIsThisFor || 'General Inquiry',
+        message: `Name: ${name}\nFor: ${whoIsThisFor}\nPhone: ${phone}\nEmail: ${email}`
+      };
+      
+      const validatedData = insertContactSubmissionSchema.parse(transformedData);
       const submission = await storage.createContactSubmission(validatedData);
       res.json(submission);
     } catch (error: any) {
       if (error instanceof z.ZodError) {
+        console.error("Validation errors:", error.errors);
         return res.status(400).json({ message: "Invalid input data", errors: error.errors });
       }
+      console.error("Contact form error:", error);
       res.status(500).json({ message: "Error submitting contact form: " + error.message });
     }
   });
