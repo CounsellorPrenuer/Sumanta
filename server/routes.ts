@@ -9,6 +9,7 @@ import {
 import { z } from "zod";
 import Razorpay from "razorpay";
 import crypto from "crypto";
+import { sendContactNotificationEmail } from "./emailService";
 
 // Initialize Razorpay with your live API keys
 const razorpay = new Razorpay({
@@ -95,6 +96,15 @@ export async function registerRoutes(app: Express): Promise<Server> {
       
       const validatedData = insertContactSubmissionSchema.parse(transformedData);
       const submission = await storage.createContactSubmission(validatedData);
+      
+      // Send email notification
+      await sendContactNotificationEmail({
+        name,
+        email,
+        phone, 
+        whoIsThisFor
+      });
+      
       res.json(submission);
     } catch (error: any) {
       if (error instanceof z.ZodError) {
