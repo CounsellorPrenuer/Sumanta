@@ -9,7 +9,7 @@ import {
 import { z } from "zod";
 import Razorpay from "razorpay";
 import crypto from "crypto";
-import { sendContactNotificationEmail } from "./emailService";
+import { sendContactNotificationEmail, sendBookingConfirmationEmail } from "./emailService";
 
 // Initialize Razorpay with your live API keys
 const razorpay = new Razorpay({
@@ -267,6 +267,19 @@ export async function registerRoutes(app: Express): Promise<Server> {
         const relatedBooking = bookings.find(b => b.razorpayOrderId === razorpay_order_id);
         if (relatedBooking) {
           await storage.updateBookingStatus(relatedBooking.id, 'completed');
+          
+          // Send confirmation email for successful payment
+          const emailData = {
+            fullName: relatedBooking.fullName,
+            email: `${relatedBooking.mobile}@leadcrest-booking.com`,
+            mobile: relatedBooking.mobile,
+            packageName: relatedBooking.packageName,
+            bookingType: 'investment' as const,
+            amount: relatedBooking.amount || undefined,
+            currentStage: relatedBooking.currentStage
+          };
+          
+          await sendBookingConfirmationEmail(emailData);
         }
         
         res.json({ success: true, message: "Payment verified and processed successfully" });
@@ -295,6 +308,19 @@ export async function registerRoutes(app: Express): Promise<Server> {
         // Update booking with Razorpay order ID (in real app, update the booking)
         booking.razorpayOrderId = mockRazorpayOrderId;
       }
+      
+      // Send confirmation email to the user
+      const emailData = {
+        fullName: booking.fullName,
+        email: req.body.email || `${booking.mobile}@leadcrest-booking.com`, // Use email if provided, otherwise create from mobile
+        mobile: booking.mobile,
+        packageName: booking.packageName,
+        bookingType: booking.bookingType as 'discovery_call' | 'investment',
+        amount: booking.amount || undefined,
+        currentStage: booking.currentStage
+      };
+      
+      await sendBookingConfirmationEmail(emailData);
       
       res.json({ booking, bookingType: bookingData.bookingType });
     } catch (error: any) {
