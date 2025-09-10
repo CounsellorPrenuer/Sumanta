@@ -315,7 +315,7 @@ export default function HowItWorks() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button 
                 onClick={() => {
-                  window.location.href = 'mailto:sumantaunstoppable@gmail.com?subject=Career Coaching Consultation Request&body=Hello Sumanta,%0D%0A%0D%0AI am interested in scheduling a consultation to discuss my career goals and how your coaching can help me. Please let me know your availability.%0D%0A%0D%0AThank you.';
+                  window.location.href = 'mailto:leadcrestconsulting6@gmail.com?subject=Career Coaching Consultation Request&body=Hello Sumanta,%0D%0A%0D%0AI am interested in scheduling a consultation to discuss my career goals and how your coaching can help me. Please let me know your availability.%0D%0A%0D%0AThank you.';
                 }}
                 className="bg-white text-blue-600 font-semibold px-8 py-3 rounded-xl hover:bg-blue-50 transition-colors"
                 data-testid="button-schedule-consultation"
@@ -324,12 +324,12 @@ export default function HowItWorks() {
               </button>
               <button 
                 onClick={() => {
-                  window.open('https://wa.me/919828096408?text=Hello%20Sumanta,%20I%20am%20interested%20in%20your%20career%20coaching%20services.%20Could%20we%20schedule%20a%20consultation?', '_blank');
+                  window.open('https://wa.me/919147424608?text=Hello%20Sumanta,%20I%20am%20interested%20in%20your%20career%20coaching%20services.%20Could%20we%20schedule%20a%20consultation?', '_blank');
                 }}
                 className="border-2 border-white text-white font-semibold px-8 py-3 rounded-xl hover:bg-white hover:text-blue-600 transition-colors"
                 data-testid="button-whatsapp-contact"
               >
-                WhatsApp: +91 9828096408
+                WhatsApp: +91 9147424608
               </button>
             </div>
           </div>

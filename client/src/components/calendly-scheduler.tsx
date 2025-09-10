@@ -138,17 +138,17 @@ export default function CalendlyScheduler({
         </p>
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
           <a
-            href={`mailto:sumantaunstoppable@gmail.com?subject=Discovery Call Request&body=Name: ${userName}%0AEmail: ${userEmail}%0APhone: ${userPhone}%0A%0AI would like to schedule a discovery call.`}
+            href={`mailto:leadcrestconsulting6@gmail.com?subject=Discovery Call Request&body=Name: ${userName}%0AEmail: ${userEmail}%0APhone: ${userPhone}%0A%0AI would like to schedule a discovery call.`}
             className="text-blue-600 hover:text-blue-700 font-medium text-sm"
           >
-            Email us directly
+            Email us directly at leadcrestconsulting6@gmail.com
           </a>
           <span className="text-gray-400 hidden sm:inline">|</span>
           <a
-            href="tel:+919828096408"
+            href="tel:+919147424608"
             className="text-blue-600 hover:text-blue-700 font-medium text-sm"
           >
-            Call +91 9828096408
+            Call +91 9147424608
           </a>
         </div>
       </div>
