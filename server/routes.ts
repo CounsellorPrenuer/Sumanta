@@ -487,6 +487,34 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Test email endpoint
+  app.post('/api/test-email', async (req, res) => {
+    try {
+      const { email } = req.body;
+      const testEmail = email || 'leadcrestconsulting6@gmail.com';
+      
+      // Try to send a test notification
+      await sendContactNotification({
+        name: "Email Test",
+        email: testEmail,
+        phone: "+919999999999",
+        whoIsThisFor: "Testing Email System"
+      });
+      
+      res.json({ 
+        success: true, 
+        message: `Test email sent to ${testEmail} and admin. Check your inbox!` 
+      });
+    } catch (error: any) {
+      console.error('Test email error:', error);
+      res.status(500).json({ 
+        success: false, 
+        error: error.message,
+        details: 'Check server logs for details'
+      });
+    }
+  });
+  
   // Send bulk SMS endpoint
   app.post('/api/send-bulk-sms', async (req, res) => {
     try {

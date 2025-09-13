@@ -7,7 +7,8 @@ import sgMail from '@sendgrid/mail';
 
 // Configuration
 const SENDGRID_API_KEY = process.env.SENDGRID_API_KEY;
-const ENABLE_SENDGRID = process.env.ENABLE_SENDGRID === 'true';
+// Enable SendGrid if API key is present
+const ENABLE_SENDGRID = !!SENDGRID_API_KEY;
 const ADMIN_EMAIL = 'leadcrestconsulting6@gmail.com';
 const FROM_EMAIL = 'leadcrestconsulting6@gmail.com';
 
