@@ -9,7 +9,12 @@ import {
 import { z } from "zod";
 import Razorpay from "razorpay";
 import crypto from "crypto";
-import { sendContactNotificationEmail, sendBookingConfirmationEmail } from "./emailService";
+import { 
+  sendContactNotificationEmail, 
+  sendBookingConfirmationEmail,
+  sendResourceDownloadEmail,
+  sendPaymentConfirmationEmail
+} from "./emailService";
 import { 
   sendContactNotificationSMS, 
   sendBookingConfirmationSMS, 
@@ -277,6 +282,20 @@ export async function registerRoutes(app: Express): Promise<Server> {
         // Payment is verified - update status in database
         await storage.updatePaymentStatus(razorpay_order_id, 'completed');
         
+        // Get the payment details to send confirmation
+        const payments = await storage.getAllPayments();
+        const payment = payments.find(p => p.stripePaymentIntentId === razorpay_order_id);
+        
+        if (payment) {
+          // Send payment confirmation email to customer and admin
+          await sendPaymentConfirmationEmail(
+            payment.customerEmail,
+            payment.customerName,
+            payment.packageId, // This should be package name, we'll need to fetch it
+            payment.amount
+          );
+        }
+        
         // Also update any related booking to completed
         const bookings = await storage.getAllBookings();
         const relatedBooking = bookings.find(b => b.razorpayOrderId === razorpay_order_id);
@@ -469,6 +488,16 @@ export async function registerRoutes(app: Express): Promise<Server> {
   app.post('/api/resource-downloads', async (req, res) => {
     try {
       const download = await storage.createResourceDownload(req.body);
+      
+      // Send email notifications for resource download
+      await sendResourceDownloadEmail({
+        fullName: req.body.fullName,
+        email: req.body.email,
+        mobile: req.body.mobile,
+        resourceTitle: req.body.resourceTitle,
+        currentStage: req.body.currentStage
+      });
+      
       res.status(201).json(download);
     } catch (error) {
       console.error('Error creating resource download:', error);
