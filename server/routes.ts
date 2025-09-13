@@ -10,6 +10,13 @@ import { z } from "zod";
 import Razorpay from "razorpay";
 import crypto from "crypto";
 import { sendContactNotificationEmail, sendBookingConfirmationEmail } from "./emailService";
+import { 
+  sendContactNotificationSMS, 
+  sendBookingConfirmationSMS, 
+  sendPaymentStatusSMS,
+  sendCustomSMS,
+  sendBulkSMS
+} from "./smsService";
 
 // Initialize Razorpay with your live API keys
 const razorpay = new Razorpay({
@@ -102,6 +109,14 @@ export async function registerRoutes(app: Express): Promise<Server> {
         name,
         email,
         phone, 
+        whoIsThisFor
+      });
+      
+      // Send SMS notification to admin
+      await sendContactNotificationSMS({
+        name,
+        email,
+        phone,
         whoIsThisFor
       });
       
@@ -280,6 +295,14 @@ export async function registerRoutes(app: Express): Promise<Server> {
           };
           
           await sendBookingConfirmationEmail(emailData);
+          
+          // Send payment success SMS
+          await sendPaymentStatusSMS({
+            customerName: relatedBooking.fullName,
+            packageName: relatedBooking.packageName,
+            amount: relatedBooking.amount || 0,
+            status: 'completed'
+          });
         }
         
         res.json({ success: true, message: "Payment verified and processed successfully" });
@@ -321,6 +344,16 @@ export async function registerRoutes(app: Express): Promise<Server> {
       };
       
       await sendBookingConfirmationEmail(emailData);
+      
+      // Send SMS notifications
+      await sendBookingConfirmationSMS({
+        fullName: booking.fullName,
+        mobile: booking.mobile,
+        packageName: booking.packageName,
+        bookingType: booking.bookingType as 'discovery_call' | 'investment',
+        amount: booking.amount || undefined,
+        currentStage: booking.currentStage
+      });
       
       res.json({ booking, bookingType: bookingData.bookingType });
     } catch (error: any) {
@@ -386,6 +419,49 @@ export async function registerRoutes(app: Express): Promise<Server> {
     } catch (error: any) {
       console.error('Error fetching resource downloads:', error);
       res.status(500).json({ error: 'Failed to fetch resource downloads' });
+    }
+  });
+
+  // Send custom SMS endpoint
+  app.post('/api/send-sms', async (req, res) => {
+    try {
+      const { to, message } = req.body;
+      
+      if (!to || !message) {
+        return res.status(400).json({ error: 'Phone number and message are required' });
+      }
+      
+      const success = await sendCustomSMS(to, message);
+      
+      if (success) {
+        res.json({ success: true, message: 'SMS sent successfully' });
+      } else {
+        res.status(500).json({ success: false, message: 'Failed to send SMS. Check Twilio configuration.' });
+      }
+    } catch (error: any) {
+      console.error('Error in SMS endpoint:', error);
+      res.status(500).json({ error: error.message });
+    }
+  });
+
+  // Send bulk SMS endpoint
+  app.post('/api/send-bulk-sms', async (req, res) => {
+    try {
+      const { numbers, message } = req.body;
+      
+      if (!numbers || !Array.isArray(numbers) || numbers.length === 0) {
+        return res.status(400).json({ error: 'Phone numbers array is required' });
+      }
+      
+      if (!message) {
+        return res.status(400).json({ error: 'Message is required' });
+      }
+      
+      const result = await sendBulkSMS(numbers, message);
+      res.json(result);
+    } catch (error: any) {
+      console.error('Error in bulk SMS endpoint:', error);
+      res.status(500).json({ error: error.message });
     }
   });
 
