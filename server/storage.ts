@@ -12,7 +12,9 @@ import {
   type Payment,
   type InsertPayment,
   type Booking,
-  type InsertBooking
+  type InsertBooking,
+  type Notification,
+  type InsertNotification
 } from "@shared/schema";
 import { randomUUID } from "crypto";
 
@@ -45,6 +47,13 @@ export interface IStorage {
   getAllBookings(): Promise<Booking[]>;
   getBooking(id: string): Promise<Booking | undefined>;
   updateBookingStatus(id: string, status: string): Promise<Booking | undefined>;
+  
+  // Notifications
+  createNotification(notification: InsertNotification): Promise<Notification>;
+  getAllNotifications(): Promise<Notification[]>;
+  getNotificationsByRecipient(recipient: string): Promise<Notification[]>;
+  markNotificationAsRead(id: string): Promise<Notification | undefined>;
+  getUnreadNotificationCount(recipient: string): Promise<number>;
 }
 
 export class MemStorage implements IStorage {
@@ -56,6 +65,7 @@ export class MemStorage implements IStorage {
   private resourceDownloads: Map<string, any>;
   private payments: Map<string, Payment>;
   private bookings: Map<string, Booking>;
+  private notifications: Map<string, Notification>;
 
   constructor() {
     this.users = new Map();
@@ -66,6 +76,7 @@ export class MemStorage implements IStorage {
     this.payments = new Map();
     this.bookings = new Map();
     this.resourceDownloads = new Map();
+    this.notifications = new Map();
     
     this.initializeData();
   }
@@ -488,21 +499,49 @@ export class MemStorage implements IStorage {
     return download;
   }
 
-  // Resource download methods
-  async createResourceDownload(insertDownload: any): Promise<any> {
-    const id = randomUUID();
-    const download = { 
-      ...insertDownload, 
-      id, 
-      downloadedAt: new Date(),
-      createdAt: new Date() 
-    };
-    this.resourceDownloads.set(id, download);
-    return download;
-  }
-
   async getAllResourceDownloads(): Promise<any[]> {
     return Array.from(this.resourceDownloads.values());
+  }
+  
+  // Notification methods
+  async createNotification(notification: InsertNotification): Promise<Notification> {
+    const id = randomUUID();
+    const newNotification: Notification = {
+      ...notification,
+      id,
+      isRead: notification.isRead ?? false,
+      metadata: notification.metadata || null,
+      createdAt: new Date()
+    };
+    this.notifications.set(id, newNotification);
+    return newNotification;
+  }
+
+  async getAllNotifications(): Promise<Notification[]> {
+    return Array.from(this.notifications.values())
+      .sort((a, b) => new Date(b.createdAt!).getTime() - new Date(a.createdAt!).getTime());
+  }
+
+  async getNotificationsByRecipient(recipient: string): Promise<Notification[]> {
+    return Array.from(this.notifications.values())
+      .filter(n => n.recipient === recipient)
+      .sort((a, b) => new Date(b.createdAt!).getTime() - new Date(a.createdAt!).getTime());
+  }
+
+  async markNotificationAsRead(id: string): Promise<Notification | undefined> {
+    const notification = this.notifications.get(id);
+    if (notification) {
+      notification.isRead = true;
+      this.notifications.set(id, notification);
+      return notification;
+    }
+    return undefined;
+  }
+
+  async getUnreadNotificationCount(recipient: string): Promise<number> {
+    return Array.from(this.notifications.values())
+      .filter(n => n.recipient === recipient && !n.isRead)
+      .length;
   }
 }
 
