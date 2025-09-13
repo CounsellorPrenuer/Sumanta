@@ -6,7 +6,9 @@ import sgMail from '@sendgrid/mail';
 // Initialize SendGrid with API key if available
 const SENDGRID_API_KEY = process.env.SENDGRID_API_KEY;
 const ADMIN_EMAIL = 'leadcrestconsulting6@gmail.com';
-const FROM_EMAIL = 'noreply@leadcrestconsulting.com'; // You can change this to your verified sender email
+// IMPORTANT: Change this to your verified sender email in SendGrid
+// This must be an email you've verified in SendGrid -> Settings -> Sender Authentication
+const FROM_EMAIL = 'leadcrestconsulting6@gmail.com'; // Using admin email as sender (must be verified in SendGrid)
 
 if (SENDGRID_API_KEY) {
   sgMail.setApiKey(SENDGRID_API_KEY);
@@ -58,8 +60,18 @@ async function sendEmail(to: string | string[], subject: string, text: string, h
     await sgMail.send(msg);
     console.log(`✅ Email sent successfully to ${Array.isArray(to) ? to.join(', ') : to}`);
     return true;
-  } catch (error) {
+  } catch (error: any) {
     console.error('❌ Error sending email:', error);
+    if (error.response) {
+      console.error('SendGrid Error Details:', error.response.body);
+      if (error.code === 403) {
+        console.error('\n⚠️  IMPORTANT: SendGrid 403 Error - This usually means:');
+        console.error('1. You need to verify your sender email address in SendGrid');
+        console.error('2. Go to SendGrid Dashboard -> Settings -> Sender Authentication');
+        console.error(`3. Add and verify the email: ${FROM_EMAIL}`);
+        console.error('4. Or use Single Sender Verification for quick testing\n');
+      }
+    }
     return false;
   }
 }
