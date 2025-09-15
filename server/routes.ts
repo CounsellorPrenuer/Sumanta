@@ -484,6 +484,43 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Test email endpoint to verify email functionality
+  app.post('/api/test-email', async (req, res) => {
+    try {
+      console.log('🧪 Testing email functionality...');
+      
+      const testData = {
+        name: 'Test User',
+        email: 'leadcrestconsulting6@gmail.com', // Sending test to admin email
+        phone: '+91 9876543210',
+        whoIsThisFor: 'Testing'
+      };
+
+      const emailSent = await sendContactNotificationEmail(testData);
+      
+      if (emailSent) {
+        res.json({ 
+          success: true, 
+          message: 'Test email sent successfully!',
+          details: 'Check both admin email and logs for confirmation'
+        });
+      } else {
+        res.status(500).json({ 
+          success: false, 
+          message: 'Failed to send test email',
+          details: 'Check server logs for error details'
+        });
+      }
+    } catch (error: any) {
+      console.error('Test email error:', error);
+      res.status(500).json({ 
+        success: false, 
+        message: 'Error testing email functionality',
+        error: error.message 
+      });
+    }
+  });
+
   // Create resource download
   app.post('/api/resource-downloads', async (req, res) => {
     try {

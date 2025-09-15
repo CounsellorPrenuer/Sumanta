@@ -6,10 +6,13 @@ import sgMail from '@sendgrid/mail';
 // Initialize SendGrid with API key if available
 const SENDGRID_API_KEY = process.env.SENDGRID_API_KEY;
 const ADMIN_EMAIL = 'leadcrestconsulting6@gmail.com';
-const FROM_EMAIL = 'noreply@leadcrestconsulting.com'; // You can change this to your verified sender email
+const FROM_EMAIL = 'leadcrestconsulting6@gmail.com'; // Using verified admin email as sender
 
 if (SENDGRID_API_KEY) {
   sgMail.setApiKey(SENDGRID_API_KEY);
+  console.log('✅ SendGrid initialized successfully');
+} else {
+  console.log('⚠️  SendGrid API key not found');
 }
 
 interface ContactEmailData {
@@ -39,10 +42,12 @@ interface ResourceDownloadData {
 
 // Helper function to send emails
 async function sendEmail(to: string | string[], subject: string, text: string, html: string): Promise<boolean> {
+  console.log(`🔄 Attempting to send email to: ${Array.isArray(to) ? to.join(', ') : to}`);
+  console.log(`📧 Subject: ${subject}`);
+  
   if (!SENDGRID_API_KEY) {
-    console.log('⚠️  SendGrid not configured. Email would have been sent to:', to);
-    console.log('Subject:', subject);
-    console.log('Content:', text);
+    console.log('❌ SendGrid not configured. Missing SENDGRID_API_KEY');
+    console.log('📝 Email content preview:', text.substring(0, 100) + '...');
     return false;
   }
 
@@ -55,11 +60,15 @@ async function sendEmail(to: string | string[], subject: string, text: string, h
       html: html
     };
     
-    await sgMail.send(msg);
-    console.log(`✅ Email sent successfully to ${Array.isArray(to) ? to.join(', ') : to}`);
+    console.log(`📤 Sending email from: ${FROM_EMAIL}`);
+    const response = await sgMail.send(msg);
+    console.log(`✅ Email sent successfully! Response status:`, response[0]?.statusCode);
     return true;
-  } catch (error) {
-    console.error('❌ Error sending email:', error);
+  } catch (error: any) {
+    console.error('❌ SendGrid Error Details:');
+    console.error('- Error message:', error.message);
+    console.error('- Error code:', error.code);
+    console.error('- Error response:', error.response?.body);
     return false;
   }
 }
