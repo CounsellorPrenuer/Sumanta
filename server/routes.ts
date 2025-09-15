@@ -9,14 +9,12 @@ import {
 import { z } from "zod";
 import Razorpay from "razorpay";
 import crypto from "crypto";
-// Using notification service for all email/notification needs
 import { 
-  sendContactNotification, 
-  sendBookingNotification,
-  sendResourceDownloadNotification,
-  sendPaymentNotification,
-  getNotificationStats
-} from "./notificationService";
+  sendContactNotificationEmail, 
+  sendBookingConfirmationEmail,
+  sendResourceDownloadEmail,
+  sendPaymentConfirmationEmail
+} from "./emailService";
 import { 
   sendContactNotificationSMS, 
   sendBookingConfirmationSMS, 
@@ -111,15 +109,15 @@ export async function registerRoutes(app: Express): Promise<Server> {
       const validatedData = insertContactSubmissionSchema.parse(transformedData);
       const submission = await storage.createContactSubmission(validatedData);
       
-      // Send notifications (email/local inbox)
-      await sendContactNotification({
+      // Send email notification
+      await sendContactNotificationEmail({
         name,
         email,
         phone, 
         whoIsThisFor
       });
       
-      // Send SMS notification to admin (if configured)
+      // Send SMS notification to admin
       await sendContactNotificationSMS({
         name,
         email,
@@ -289,17 +287,13 @@ export async function registerRoutes(app: Express): Promise<Server> {
         const payment = payments.find(p => p.stripePaymentIntentId === razorpay_order_id);
         
         if (payment) {
-          // Get package name for the notification
-          const pkg = await storage.getPackage(payment.packageId);
-          const packageName = pkg?.name || payment.packageId;
-          
-          // Send payment notification to customer and admin
-          await sendPaymentNotification({
-            customerEmail: payment.customerEmail,
-            customerName: payment.customerName,
-            packageName: packageName,
-            amount: payment.amount
-          });
+          // Send payment confirmation email to customer and admin
+          await sendPaymentConfirmationEmail(
+            payment.customerEmail,
+            payment.customerName,
+            payment.packageId, // This should be package name, we'll need to fetch it
+            payment.amount
+          );
         }
         
         // Also update any related booking to completed
@@ -319,16 +313,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
             currentStage: relatedBooking.currentStage
           };
           
-          // Send booking notification again for payment completion
-          await sendBookingNotification({
-            fullName: relatedBooking.fullName,
-            email: emailData.email,
-            mobile: relatedBooking.mobile,
-            packageName: relatedBooking.packageName,
-            bookingType: 'investment' as const,
-            amount: relatedBooking.amount || undefined,
-            currentStage: relatedBooking.currentStage
-          });
+          await sendBookingConfirmationEmail(emailData);
           
           // Send payment success SMS
           await sendPaymentStatusSMS({
@@ -377,18 +362,9 @@ export async function registerRoutes(app: Express): Promise<Server> {
         currentStage: booking.currentStage
       };
       
-      // Send notifications (email/local inbox)
-      await sendBookingNotification({
-        fullName: booking.fullName,
-        email: emailData.email,
-        mobile: booking.mobile,
-        packageName: booking.packageName,
-        bookingType: booking.bookingType as 'discovery_call' | 'investment',
-        amount: booking.amount || undefined,
-        currentStage: booking.currentStage
-      });
+      await sendBookingConfirmationEmail(emailData);
       
-      // Send SMS notifications (if configured)
+      // Send SMS notifications
       await sendBookingConfirmationSMS({
         fullName: booking.fullName,
         mobile: booking.mobile,
@@ -487,34 +463,6 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  // Test email endpoint
-  app.post('/api/test-email', async (req, res) => {
-    try {
-      const { email } = req.body;
-      const testEmail = email || 'leadcrestconsulting6@gmail.com';
-      
-      // Try to send a test notification
-      await sendContactNotification({
-        name: "Email Test",
-        email: testEmail,
-        phone: "+919999999999",
-        whoIsThisFor: "Testing Email System"
-      });
-      
-      res.json({ 
-        success: true, 
-        message: `Test email sent to ${testEmail} and admin. Check your inbox!` 
-      });
-    } catch (error: any) {
-      console.error('Test email error:', error);
-      res.status(500).json({ 
-        success: false, 
-        error: error.message,
-        details: 'Check server logs for details'
-      });
-    }
-  });
-  
   // Send bulk SMS endpoint
   app.post('/api/send-bulk-sms', async (req, res) => {
     try {
@@ -541,8 +489,8 @@ export async function registerRoutes(app: Express): Promise<Server> {
     try {
       const download = await storage.createResourceDownload(req.body);
       
-      // Send notifications for resource download
-      await sendResourceDownloadNotification({
+      // Send email notifications for resource download
+      await sendResourceDownloadEmail({
         fullName: req.body.fullName,
         email: req.body.email,
         mobile: req.body.mobile,
@@ -565,54 +513,6 @@ export async function registerRoutes(app: Express): Promise<Server> {
     } catch (error) {
       console.error('Error fetching resource downloads:', error);
       res.status(500).json({ error: 'Internal server error' });
-    }
-  });
-  
-  // Notification endpoints
-  app.get('/api/notifications', async (req, res) => {
-    try {
-      const { recipient } = req.query;
-      const notifications = recipient 
-        ? await storage.getNotificationsByRecipient(recipient as string)
-        : await storage.getAllNotifications();
-      res.json(notifications);
-    } catch (error: any) {
-      console.error('Error fetching notifications:', error);
-      res.status(500).json({ error: 'Failed to fetch notifications' });
-    }
-  });
-  
-  app.get('/api/notifications/admin', async (req, res) => {
-    try {
-      const notifications = await storage.getNotificationsByRecipient('leadcrestconsulting6@gmail.com');
-      res.json(notifications);
-    } catch (error: any) {
-      console.error('Error fetching admin notifications:', error);
-      res.status(500).json({ error: 'Failed to fetch notifications' });
-    }
-  });
-  
-  app.get('/api/notifications/stats', async (req, res) => {
-    try {
-      const stats = await getNotificationStats();
-      res.json(stats);
-    } catch (error: any) {
-      console.error('Error fetching notification stats:', error);
-      res.status(500).json({ error: 'Failed to fetch stats' });
-    }
-  });
-  
-  app.patch('/api/notifications/:id/read', async (req, res) => {
-    try {
-      const { id } = req.params;
-      const notification = await storage.markNotificationAsRead(id);
-      if (!notification) {
-        return res.status(404).json({ error: 'Notification not found' });
-      }
-      res.json(notification);
-    } catch (error: any) {
-      console.error('Error marking notification as read:', error);
-      res.status(500).json({ error: 'Failed to update notification' });
     }
   });
 

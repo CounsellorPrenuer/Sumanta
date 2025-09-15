@@ -73,18 +73,6 @@ export const resourceDownloads = pgTable("resource_downloads", {
   createdAt: timestamp("created_at").defaultNow(),
 });
 
-export const notifications = pgTable("notifications", {
-  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
-  type: text("type").notNull(), // 'contact', 'booking', 'payment', 'resource_download'
-  recipient: text("recipient").notNull(), // 'admin' or user email
-  subject: text("subject").notNull(),
-  textContent: text("text_content").notNull(),
-  htmlContent: text("html_content").notNull(),
-  metadata: text("metadata"), // JSON string with additional data
-  isRead: boolean("is_read").default(false),
-  createdAt: timestamp("created_at").defaultNow(),
-});
-
 export const bookings = pgTable("bookings", {
   id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
   fullName: text("full_name").notNull(),
@@ -145,11 +133,6 @@ export const insertBookingSchema = createInsertSchema(bookings).omit({
   updatedAt: true,
 });
 
-export const insertNotificationSchema = createInsertSchema(notifications).omit({
-  id: true,
-  createdAt: true,
-});
-
 // Types
 export type User = typeof users.$inferSelect;
 export type Package = typeof packages.$inferSelect;
@@ -168,5 +151,3 @@ export type InsertPayment = z.infer<typeof insertPaymentSchema>;
 export type ResourceDownload = typeof resourceDownloads.$inferSelect;
 export type InsertResourceDownload = z.infer<typeof insertResourceDownloadSchema>;
 export type InsertBooking = z.infer<typeof insertBookingSchema>;
-export type Notification = typeof notifications.$inferSelect;
-export type InsertNotification = z.infer<typeof insertNotificationSchema>;
