@@ -17,6 +17,10 @@ import {
   sendCustomSMS,
   sendBulkSMS
 } from "./smsService";
+import { 
+  sendResourceDownloadEmail,
+  sendPaymentConfirmationEmail 
+} from "./emailService";
 
 // Initialize Razorpay with your live API keys
 const razorpay = new Razorpay({
@@ -219,43 +223,6 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  // Razorpay payment route for packages
-  app.post("/api/create-razorpay-order", async (req, res) => {
-    try {
-      const { amount, packageId, customerName, customerEmail, packageName } = req.body;
-      
-      if (!amount || !packageId || !customerName || !customerEmail) {
-        return res.status(400).json({ message: "Missing required payment data" });
-      }
-
-      // Store payment record
-      const paymentData = {
-        packageId,
-        customerEmail,
-        customerName, 
-        amount,
-        stripePaymentIntentId: `razorpay_${Date.now()}`, // Temporary ID for now
-        status: 'pending'
-      };
-
-      const payment = await storage.createPayment(paymentData);
-
-      // For now, return order details - Razorpay integration will be added later
-      res.json({ 
-        orderId: payment.id,
-        amount: amount * 100, // Convert to paise
-        currency: 'INR',
-        name: packageName,
-        description: `Payment for ${packageName} by ${customerName}`,
-        prefill: {
-          name: customerName,
-          email: customerEmail
-        }
-      });
-    } catch (error: any) {
-      res.status(500).json({ message: "Error creating payment order: " + error.message });
-    }
-  });
 
   // Payment verification endpoint - Real Razorpay webhook verification
   app.post("/api/verify-payment", async (req, res) => {
@@ -277,16 +244,24 @@ export async function registerRoutes(app: Express): Promise<Server> {
         // Payment is verified - update status in database
         await storage.updatePaymentStatus(razorpay_order_id, 'completed');
         
+        // Get the payment record to access real customer email
+        const payments = await storage.getAllPayments();
+        const paymentRecord = payments.find(p => p.stripePaymentIntentId === razorpay_order_id);
+        
         // Also update any related booking to completed
         const bookings = await storage.getAllBookings();
         const relatedBooking = bookings.find(b => b.razorpayOrderId === razorpay_order_id);
+        
         if (relatedBooking) {
           await storage.updateBookingStatus(relatedBooking.id, 'completed');
           
-          // Send confirmation email for successful payment
+          // Send confirmation email for successful payment (using actual customer email if available)
+          const actualCustomerEmail = paymentRecord?.customerEmail || null;
           const emailData = {
             fullName: relatedBooking.fullName,
-            email: `${relatedBooking.mobile}@leadcrest-booking.com`,
+            email: actualCustomerEmail && actualCustomerEmail.includes('@') 
+              ? actualCustomerEmail 
+              : `${relatedBooking.mobile}@leadcrest-booking.com`,
             mobile: relatedBooking.mobile,
             packageName: relatedBooking.packageName,
             bookingType: 'investment' as const,
@@ -296,6 +271,16 @@ export async function registerRoutes(app: Express): Promise<Server> {
           
           await sendBookingConfirmationEmail(emailData);
           
+          // Send payment confirmation email to customer (if we have a real email)
+          if (actualCustomerEmail && actualCustomerEmail.includes('@')) {
+            await sendPaymentConfirmationEmail(
+              actualCustomerEmail,
+              relatedBooking.fullName,
+              relatedBooking.packageName,
+              relatedBooking.amount || 0
+            );
+          }
+          
           // Send payment success SMS
           await sendPaymentStatusSMS({
             customerName: relatedBooking.fullName,
@@ -303,6 +288,18 @@ export async function registerRoutes(app: Express): Promise<Server> {
             amount: relatedBooking.amount || 0,
             status: 'completed'
           });
+        }
+        
+        // Send admin payment confirmation email regardless of booking status
+        if (paymentRecord) {
+          // Get package name from booking or use packageId as fallback
+          const packageName = relatedBooking?.packageName || `Package ID: ${paymentRecord.packageId}`;
+          await sendPaymentConfirmationEmail(
+            'leadcrestconsulting6@gmail.com',
+            paymentRecord.customerName,
+            packageName,
+            paymentRecord.amount
+          );
         }
         
         res.json({ success: true, message: "Payment verified and processed successfully" });
@@ -469,6 +466,16 @@ export async function registerRoutes(app: Express): Promise<Server> {
   app.post('/api/resource-downloads', async (req, res) => {
     try {
       const download = await storage.createResourceDownload(req.body);
+      
+      // Send email notification to both user and admin
+      await sendResourceDownloadEmail({
+        fullName: download.fullName,
+        email: download.email,
+        mobile: download.mobile,
+        resourceTitle: download.resourceTitle,
+        currentStage: download.currentStage
+      });
+      
       res.status(201).json(download);
     } catch (error) {
       console.error('Error creating resource download:', error);

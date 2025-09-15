@@ -40,9 +40,10 @@ interface ResourceDownloadData {
 // Helper function to send emails
 async function sendEmail(to: string | string[], subject: string, text: string, html: string): Promise<boolean> {
   if (!SENDGRID_API_KEY) {
-    console.log('⚠️  SendGrid not configured. Email would have been sent to:', to);
+    const recipients = Array.isArray(to) ? to.length : 1;
+    console.log(`⚠️  SendGrid not configured. Email would have been sent to ${recipients} recipient(s)`);
     console.log('Subject:', subject);
-    console.log('Content:', text);
+    console.log('✉️  Email notification skipped due to missing configuration');
     return false;
   }
 
@@ -145,16 +146,20 @@ The Leadcrest Consulting Team
     </div>
   `;
   
-  // Log for debugging
-  console.log('\n========================================');
-  console.log('📧 NEW CONTACT FORM SUBMISSION');
-  console.log('========================================');
-  console.log(`Name: ${data.name}`);
-  console.log(`Email: ${data.email}`);
-  console.log(`Phone: ${data.phone}`);
-  console.log(`Career Stage: ${data.whoIsThisFor}`);
-  console.log(`Time: ${time}`);
-  console.log('========================================\n');
+  // Log for debugging (without PII when SendGrid not configured)
+  if (SENDGRID_API_KEY) {
+    console.log('\n========================================');
+    console.log('📧 NEW CONTACT FORM SUBMISSION');
+    console.log('========================================');
+    console.log(`Name: ${data.name}`);
+    console.log(`Email: ${data.email}`);
+    console.log(`Phone: ${data.phone}`);
+    console.log(`Career Stage: ${data.whoIsThisFor}`);
+    console.log(`Time: ${time}`);
+    console.log('========================================\n');
+  } else {
+    console.log('\n📧 Contact form submission received (SendGrid not configured)');
+  }
   
   // Send emails to both admin and user
   const adminEmailSent = await sendEmail(ADMIN_EMAIL, adminSubject, adminText, adminHtml);
@@ -264,21 +269,25 @@ The Leadcrest Consulting Team
     </div>
   `;
   
-  // Log for debugging
-  console.log('\n========================================');
-  console.log('🎯 NEW BOOKING REGISTRATION');
-  console.log('========================================');
-  console.log(`Type: ${bookingTypeDisplay}`);
-  console.log(`Name: ${data.fullName}`);
-  console.log(`Mobile: ${data.mobile}`);
-  console.log(`Email: ${data.email || 'Not provided'}`);
-  console.log(`Career Stage: ${displayStage}`);
-  console.log(`Package: ${data.packageName}`);
-  if (data.amount) {
-    console.log(`Amount: ₹${data.amount.toLocaleString('en-IN')}`);
+  // Log for debugging (without PII when SendGrid not configured)
+  if (SENDGRID_API_KEY) {
+    console.log('\n========================================');
+    console.log('🎯 NEW BOOKING REGISTRATION');
+    console.log('========================================');
+    console.log(`Type: ${bookingTypeDisplay}`);
+    console.log(`Name: ${data.fullName}`);
+    console.log(`Mobile: ${data.mobile}`);
+    console.log(`Email: ${data.email || 'Not provided'}`);
+    console.log(`Career Stage: ${displayStage}`);
+    console.log(`Package: ${data.packageName}`);
+    if (data.amount) {
+      console.log(`Amount: ₹${data.amount.toLocaleString('en-IN')}`);
+    }
+    console.log(`Time: ${time}`);
+    console.log('========================================\n');
+  } else {
+    console.log(`\n🎯 Booking registration received: ${bookingTypeDisplay} (SendGrid not configured)`);
   }
-  console.log(`Time: ${time}`);
-  console.log('========================================\n');
   
   // Send email to admin
   const adminEmailSent = await sendEmail(ADMIN_EMAIL, adminSubject, adminText, adminHtml);
@@ -383,17 +392,21 @@ The Leadcrest Consulting Team
     </div>
   `;
   
-  // Log for debugging
-  console.log('\n========================================');
-  console.log('📥 NEW RESOURCE DOWNLOAD');
-  console.log('========================================');
-  console.log(`Resource: ${data.resourceTitle}`);
-  console.log(`Name: ${data.fullName}`);
-  console.log(`Email: ${data.email}`);
-  console.log(`Mobile: ${data.mobile}`);
-  console.log(`Career Stage: ${displayStage}`);
-  console.log(`Time: ${time}`);
-  console.log('========================================\n');
+  // Log for debugging (without PII when SendGrid not configured)
+  if (SENDGRID_API_KEY) {
+    console.log('\n========================================');
+    console.log('📥 NEW RESOURCE DOWNLOAD');
+    console.log('========================================');
+    console.log(`Resource: ${data.resourceTitle}`);
+    console.log(`Name: ${data.fullName}`);
+    console.log(`Email: ${data.email}`);
+    console.log(`Mobile: ${data.mobile}`);
+    console.log(`Career Stage: ${displayStage}`);
+    console.log(`Time: ${time}`);
+    console.log('========================================\n');
+  } else {
+    console.log(`\n📥 Resource download: ${data.resourceTitle} (SendGrid not configured)`);
+  }
   
   // Send emails to both admin and user
   const adminEmailSent = await sendEmail(ADMIN_EMAIL, adminSubject, adminText, adminHtml);
@@ -493,16 +506,20 @@ The Leadcrest Consulting Team
     </div>
   `;
   
-  // Log for debugging
-  console.log('\n========================================');
-  console.log('💰 PAYMENT CONFIRMATION');
-  console.log('========================================');
-  console.log(`Customer: ${customerName}`);
-  console.log(`Email: ${customerEmail}`);
-  console.log(`Package: ${packageName}`);
-  console.log(`Amount: ₹${amount.toLocaleString('en-IN')}`);
-  console.log(`Time: ${time}`);
-  console.log('========================================\n');
+  // Log for debugging (without PII when SendGrid not configured)
+  if (SENDGRID_API_KEY) {
+    console.log('\n========================================');
+    console.log('💰 PAYMENT CONFIRMATION');
+    console.log('========================================');
+    console.log(`Customer: ${customerName}`);
+    console.log(`Email: ${customerEmail}`);
+    console.log(`Package: ${packageName}`);
+    console.log(`Amount: ₹${amount.toLocaleString('en-IN')}`);
+    console.log(`Time: ${time}`);
+    console.log('========================================\n');
+  } else {
+    console.log(`\n💰 Payment confirmation: ₹${amount.toLocaleString('en-IN')} (SendGrid not configured)`);
+  }
   
   // Send emails to both admin and customer
   const adminEmailSent = await sendEmail(ADMIN_EMAIL, adminSubject, adminText, adminHtml);
