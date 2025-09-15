@@ -190,7 +190,7 @@ export default function PrivacyPolicy() {
               <div className="space-y-2 text-gray-700">
                 <p className="flex items-center gap-2">
                   <Mail className="w-4 h-4 text-blue-600" />
-                  Email: leadcrestconsulting6@gmail.com
+                  Email: leadcrestconsulting@gmail.com
                 </p>
                 <p className="flex items-center gap-2">
                   <Phone className="w-4 h-4 text-blue-600" />

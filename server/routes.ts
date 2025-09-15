@@ -295,7 +295,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
           // Get package name from booking or use packageId as fallback
           const packageName = relatedBooking?.packageName || `Package ID: ${paymentRecord.packageId}`;
           await sendPaymentConfirmationEmail(
-            'leadcrestconsulting6@gmail.com',
+            'leadcrestconsulting@gmail.com',
             paymentRecord.customerName,
             packageName,
             paymentRecord.amount
@@ -491,6 +491,48 @@ export async function registerRoutes(app: Express): Promise<Server> {
     } catch (error) {
       console.error('Error fetching resource downloads:', error);
       res.status(500).json({ error: 'Internal server error' });
+    }
+  });
+
+  // Test email endpoint for debugging SendGrid functionality
+  app.post('/api/test-email', async (req, res) => {
+    try {
+      const { email } = req.body;
+      const testEmail = email || 'leadcrestconsulting@gmail.com';
+      
+      console.log('🧪 Testing email functionality...');
+      
+      // Test the contact notification email function
+      const emailSent = await sendContactNotificationEmail({
+        name: 'Test User',
+        email: testEmail,
+        phone: '+91 9147424608',
+        whoIsThisFor: 'Email Test'
+      });
+      
+      if (emailSent) {
+        console.log('✅ Test email sent successfully!');
+        res.json({ 
+          success: true, 
+          message: 'Test email sent successfully!',
+          testEmail: testEmail,
+          sendgridConfigured: !!process.env.SENDGRID_API_KEY
+        });
+      } else {
+        console.log('❌ Test email failed to send');
+        res.status(500).json({ 
+          success: false, 
+          message: 'Test email failed to send',
+          sendgridConfigured: !!process.env.SENDGRID_API_KEY
+        });
+      }
+    } catch (error: any) {
+      console.error('❌ Email test error:', error);
+      res.status(500).json({ 
+        success: false, 
+        message: 'Email test failed: ' + error.message,
+        sendgridConfigured: !!process.env.SENDGRID_API_KEY 
+      });
     }
   });
 

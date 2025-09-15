@@ -9,7 +9,7 @@ This is a career counseling and education guidance website for Leadcrest Consult
 - **Authentic Professional Images**: Generated and integrated 6 new Indian professional headshots for testimonials to improve relatability
 
 ## Previous Updates (January 2025)
-- **Contact Information Update**: Updated all phone numbers to +91 9147424608 and email addresses to leadcrestconsulting6@gmail.com throughout the site (footer, contact form, privacy policy)
+- **Contact Information Update**: Updated all phone numbers to +91 9147424608 and email addresses to leadcrestconsulting@gmail.com throughout the site (footer, contact form, privacy policy)
 - **Experience Standardization**: Standardized all experience mentions to "24+ years" across the entire website for consistency
 - **Professional Credentials Added**: Added two new certifications - "Globally Certified Senior HR Professional (SHRM-SCP)" and "Certified NLP Practitioner" to the About section
 - **Industry Focus Message**: Added prominent "Why 3725+ professionals chose LCC" messaging highlighting executive-level mentorship for Telecom, Retail, Pharma, FMCG, FMCD, and Technology sectors

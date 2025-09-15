@@ -5,8 +5,8 @@ import sgMail from '@sendgrid/mail';
 
 // Initialize SendGrid with API key if available
 const SENDGRID_API_KEY = process.env.SENDGRID_API_KEY;
-const ADMIN_EMAIL = 'leadcrestconsulting6@gmail.com';
-const FROM_EMAIL = 'noreply@leadcrestconsulting.com'; // You can change this to your verified sender email
+const ADMIN_EMAIL = 'leadcrestconsulting@gmail.com';
+const FROM_EMAIL = 'leadcrestconsulting@gmail.com'; // Using verified Gmail address as sender
 
 if (SENDGRID_API_KEY) {
   sgMail.setApiKey(SENDGRID_API_KEY);
@@ -59,8 +59,11 @@ async function sendEmail(to: string | string[], subject: string, text: string, h
     await sgMail.send(msg);
     console.log(`✅ Email sent successfully to ${Array.isArray(to) ? to.join(', ') : to}`);
     return true;
-  } catch (error) {
+  } catch (error: any) {
     console.error('❌ Error sending email:', error);
+    if (error.response && error.response.body) {
+      console.error('SendGrid error details:', JSON.stringify(error.response.body, null, 2));
+    }
     return false;
   }
 }
