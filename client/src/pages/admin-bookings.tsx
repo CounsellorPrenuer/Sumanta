@@ -1,8 +1,10 @@
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { apiRequest } from '@/lib/queryClient';
-import { Check, X, Clock, Phone, User, Calendar, CreditCard, Eye, Download, Mail, FileText, Users } from 'lucide-react';
+import { Check, X, Clock, Phone, User, Calendar, CreditCard, Eye, Download, Mail, FileText, Users, PenTool, Sparkles, Edit3, Trash2, Plus } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
-import type { Booking, ContactSubmission, Payment } from '@shared/schema';
+import { useState } from 'react';
+import BlogForm from '@/components/blog-form';
+import type { Booking, ContactSubmission, Payment, BlogPost } from '@shared/schema';
 
 const statusColors = {
   pending: 'bg-yellow-100 text-yellow-800',
@@ -32,6 +34,10 @@ const stageLabels = {
 export default function AdminBookings() {
   const { toast } = useToast();
   const queryClient = useQueryClient();
+  const [activeTab, setActiveTab] = useState('overview');
+  const [showBlogForm, setShowBlogForm] = useState(false);
+  const [editingBlog, setEditingBlog] = useState<BlogPost | null>(null);
+  const [isGenerating, setIsGenerating] = useState(false);
 
   const { data: bookings, isLoading: bookingsLoading } = useQuery<Booking[]>({
     queryKey: ['/api/bookings'],
@@ -49,7 +55,11 @@ export default function AdminBookings() {
     queryKey: ['/api/resource-downloads'],
   });
 
-  const isLoading = bookingsLoading || contactsLoading || paymentsLoading || downloadsLoading;
+  const { data: blogs, isLoading: blogsLoading } = useQuery<BlogPost[]>({
+    queryKey: ['/api/blog-posts'],
+  });
+
+  const isLoading = bookingsLoading || contactsLoading || paymentsLoading || downloadsLoading || blogsLoading;
 
   const updateStatusMutation = useMutation({
     mutationFn: ({ id, status }: { id: string; status: string }) =>
@@ -65,6 +75,25 @@ export default function AdminBookings() {
       toast({
         title: "Update Failed",
         description: "Failed to update booking status.",
+        variant: "destructive",
+      });
+    }
+  });
+
+  // Blog mutations - moved here to fix hooks order violation
+  const deleteBlogMutation = useMutation({
+    mutationFn: (id: string) => apiRequest('DELETE', `/api/blog-posts/${id}`),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['/api/blog-posts'] });
+      toast({
+        title: "Blog Deleted",
+        description: "Blog post has been deleted successfully.",
+      });
+    },
+    onError: (error: any) => {
+      toast({
+        title: "Delete Failed",
+        description: error.message || "Failed to delete blog post.",
         variant: "destructive",
       });
     }
@@ -107,11 +136,17 @@ export default function AdminBookings() {
     new Date(b.createdAt!).getTime() - new Date(a.createdAt!).getTime()
   ) || [];
 
+  const sortedBlogs = blogs ? [...blogs].sort((a, b) => 
+    new Date(b.publishedAt!).getTime() - new Date(a.publishedAt!).getTime()
+  ) : [];
+
+
   const stats = {
     totalBookings: sortedBookings.length,
     totalContacts: sortedContacts.length,
     totalPayments: sortedPayments.length,
     totalDownloads: sortedDownloads.length,
+    totalBlogs: sortedBlogs.length,
     pending: sortedBookings.filter(b => b.status === 'pending').length,
     contacted: sortedBookings.filter(b => b.status === 'contacted').length,
     completed: sortedBookings.filter(b => b.status === 'completed').length,
@@ -194,8 +229,8 @@ export default function AdminBookings() {
         {/* Header */}
         <div className="mb-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <div>
-            <h1 className="text-3xl font-bold text-gray-900 mb-2">Customer Data Management</h1>
-            <p className="text-gray-600">Manage all customer data: bookings, contacts, payments, and downloads</p>
+            <h1 className="text-3xl font-bold text-gray-900 mb-2">Admin Dashboard</h1>
+            <p className="text-gray-600">Manage customers, content, and business operations</p>
           </div>
           <button 
             onClick={exportToExcel}
@@ -205,6 +240,40 @@ export default function AdminBookings() {
             <Download className="w-5 h-5" />
             Export to Excel
           </button>
+        </div>
+
+        {/* Navigation Tabs */}
+        <div className="mb-8 border-b border-gray-200">
+          <nav className="flex space-x-8">
+            <button
+              onClick={() => setActiveTab('overview')}
+              className={`py-2 px-1 border-b-2 font-medium text-sm ${
+                activeTab === 'overview'
+                  ? 'border-golden text-golden'
+                  : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+              }`}
+              data-testid="tab-overview"
+            >
+              <div className="flex items-center gap-2">
+                <Users className="w-4 h-4" />
+                Customer Data
+              </div>
+            </button>
+            <button
+              onClick={() => setActiveTab('blogs')}
+              className={`py-2 px-1 border-b-2 font-medium text-sm ${
+                activeTab === 'blogs'
+                  ? 'border-golden text-golden'
+                  : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+              }`}
+              data-testid="tab-blogs"
+            >
+              <div className="flex items-center gap-2">
+                <PenTool className="w-4 h-4" />
+                Blog Management
+              </div>
+            </button>
+          </nav>
         </div>
 
         {/* Stats */}
@@ -238,6 +307,13 @@ export default function AdminBookings() {
             <div className="text-sm text-gray-600">Downloads</div>
           </div>
           <div className="bg-white rounded-lg p-4 shadow">
+            <div className="flex items-center gap-2 mb-2">
+              <PenTool className="w-5 h-5 text-indigo-500" />
+              <div className="text-2xl font-bold text-gray-900">{stats.totalBlogs}</div>
+            </div>
+            <div className="text-sm text-gray-600">Blog Posts</div>
+          </div>
+          <div className="bg-white rounded-lg p-4 shadow">
             <div className="text-2xl font-bold text-yellow-600">{stats.pending}</div>
             <div className="text-sm text-gray-600">Pending</div>
           </div>
@@ -250,12 +326,13 @@ export default function AdminBookings() {
             <div className="text-sm text-gray-600">Completed</div>
           </div>
           <div className="bg-white rounded-lg p-4 shadow">
-            <div className="text-2xl font-bold text-indigo-600">{stats.totalBookings + stats.totalContacts + stats.totalPayments + stats.totalDownloads}</div>
+            <div className="text-2xl font-bold text-indigo-600">{stats.totalBookings + stats.totalContacts + stats.totalPayments + stats.totalDownloads + stats.totalBlogs}</div>
             <div className="text-sm text-gray-600">Total Records</div>
           </div>
         </div>
 
-        {/* Data Sections */}
+        {/* Tab Content */}
+        {activeTab === 'overview' && (
         <div className="space-y-8">
           {/* Bookings Section */}
           <div>
@@ -492,6 +569,153 @@ export default function AdminBookings() {
             )}
           </div>
         </div>
+        )}
+
+        {/* Blog Management Tab */}
+        {activeTab === 'blogs' && (
+        <div className="space-y-6">
+          {/* Blog Stats and Actions */}
+          <div className="bg-white rounded-lg shadow p-6">
+            <div className="flex items-center justify-between mb-4">
+              <div>
+                <h2 className="text-xl font-bold text-gray-900">Blog Management</h2>
+                <p className="text-gray-600">Create, edit, and manage blog posts with AI assistance</p>
+              </div>
+              <button
+                onClick={() => setShowBlogForm(true)}
+                className="flex items-center gap-2 bg-golden hover:bg-golden/90 text-white px-6 py-3 rounded-lg font-semibold transition-colors"
+                data-testid="button-create-blog"
+              >
+                <Plus className="w-5 h-5" />
+                Create New Blog
+              </button>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="bg-gradient-to-r from-purple-50 to-blue-50 rounded-lg p-4 border border-purple-200">
+                <div className="flex items-center gap-2 mb-2">
+                  <Sparkles className="w-5 h-5 text-purple-600" />
+                  <div className="text-lg font-bold text-gray-900">{stats.totalBlogs}</div>
+                </div>
+                <div className="text-sm text-gray-600">Total Blog Posts</div>
+              </div>
+              <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg p-4 border border-green-200">
+                <div className="flex items-center gap-2 mb-2">
+                  <PenTool className="w-5 h-5 text-green-600" />
+                  <div className="text-lg font-bold text-gray-900">AI Powered</div>
+                </div>
+                <div className="text-sm text-gray-600">Content Generation</div>
+              </div>
+              <div className="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-lg p-4 border border-blue-200">
+                <div className="flex items-center gap-2 mb-2">
+                  <Edit3 className="w-5 h-5 text-blue-600" />
+                  <div className="text-lg font-bold text-gray-900">Smart Editing</div>
+                </div>
+                <div className="text-sm text-gray-600">AI Content Improvement</div>
+              </div>
+            </div>
+          </div>
+
+          {/* Blog Posts List */}
+          <div className="bg-white rounded-lg shadow">
+            <div className="p-6 border-b border-gray-200">
+              <h3 className="text-lg font-semibold text-gray-900">Published Blog Posts ({stats.totalBlogs})</h3>
+            </div>
+            
+            {sortedBlogs.length === 0 ? (
+              <div className="p-8 text-center">
+                <PenTool className="w-12 h-12 text-gray-400 mx-auto mb-4" />
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">No Blog Posts Yet</h3>
+                <p className="text-gray-600 mb-4">Create your first blog post using AI generation or manual editing.</p>
+                <button
+                  onClick={() => setShowBlogForm(true)}
+                  className="bg-golden hover:bg-golden/90 text-white px-6 py-2 rounded-lg font-semibold"
+                  data-testid="button-create-first-blog"
+                >
+                  Create Your First Blog
+                </button>
+              </div>
+            ) : (
+              <div className="divide-y divide-gray-200">
+                {sortedBlogs.map((blog) => (
+                  <div key={blog.id} className="p-6 hover:bg-gray-50 transition-colors">
+                    <div className="flex items-start justify-between">
+                      <div className="flex-1">
+                        <div className="flex items-center gap-3 mb-2">
+                          <h4 className="text-lg font-semibold text-gray-900 hover:text-golden transition-colors">
+                            {blog.title}
+                          </h4>
+                          <span className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">
+                            {blog.category}
+                          </span>
+                        </div>
+                        <p className="text-gray-600 text-sm mb-3 line-clamp-2">
+                          {blog.excerpt}
+                        </p>
+                        <div className="flex items-center gap-4 text-xs text-gray-500">
+                          <span>Published: {new Date(blog.publishedAt!).toLocaleDateString('en-IN', {
+                            day: 'numeric',
+                            month: 'short',
+                            year: 'numeric'
+                          })}</span>
+                          <span>•</span>
+                          <span>ID: {blog.id}</span>
+                        </div>
+                      </div>
+                      
+                      <div className="flex items-center gap-2 ml-4">
+                        <button
+                          onClick={() => window.open(`/blog/${blog.id}`, '_blank')}
+                          className="flex items-center gap-1 px-3 py-2 text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
+                          data-testid={`button-view-blog-${blog.id}`}
+                        >
+                          <Eye className="w-4 h-4" />
+                          View
+                        </button>
+                        <button
+                          onClick={() => {
+                            setEditingBlog(blog);
+                            setShowBlogForm(true);
+                          }}
+                          className="flex items-center gap-1 px-3 py-2 text-green-600 hover:bg-green-50 rounded-lg transition-colors"
+                          data-testid={`button-edit-blog-${blog.id}`}
+                        >
+                          <Edit3 className="w-4 h-4" />
+                          Edit
+                        </button>
+                        <button
+                          onClick={() => {
+                            if (confirm('Are you sure you want to delete this blog post? This action cannot be undone.')) {
+                              deleteBlogMutation.mutate(blog.id);
+                            }
+                          }}
+                          disabled={deleteBlogMutation.isPending}
+                          className="flex items-center gap-1 px-3 py-2 text-red-600 hover:bg-red-50 rounded-lg transition-colors disabled:opacity-50"
+                          data-testid={`button-delete-blog-${blog.id}`}
+                        >
+                          <Trash2 className="w-4 h-4" />
+                          Delete
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+        )}
+
+        {/* Blog Form Modal */}
+        {showBlogForm && (
+          <BlogForm
+            blog={editingBlog}
+            onClose={() => {
+              setShowBlogForm(false);
+              setEditingBlog(null);
+            }}
+          />
+        )}
       </div>
     </div>
   );

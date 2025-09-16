@@ -60,7 +60,7 @@ Make sure the content is:
 - Maintains a helpful, expert tone throughout`;
 
     const response = await openai.chat.completions.create({
-      model: "gpt-5", // the newest OpenAI model is "gpt-5" which was released August 7, 2025
+      model: "gpt-4o", // Use a stable, available OpenAI model
       messages: [
         {
           role: "system",
@@ -72,8 +72,7 @@ Make sure the content is:
         }
       ],
       response_format: { type: "json_object" },
-      temperature: 0.7,
-      max_tokens: 4000
+      temperature: 0.7
     });
 
     const result = JSON.parse(response.choices[0].message.content || '{}');
@@ -107,7 +106,7 @@ ${existingContent}
 Please respond with the improved content in HTML format, maintaining the original structure but incorporating the requested improvements.`;
 
     const response = await openai.chat.completions.create({
-      model: "gpt-5", // the newest OpenAI model is "gpt-5" which was released August 7, 2025
+      model: "gpt-4o", // Use a stable, available OpenAI model
       messages: [
         {
           role: "system",
@@ -118,8 +117,7 @@ Please respond with the improved content in HTML format, maintaining the origina
           content: prompt
         }
       ],
-      temperature: 0.3,
-      max_tokens: 3000
+      temperature: 0.3
     });
 
     return response.choices[0].message.content || existingContent;
