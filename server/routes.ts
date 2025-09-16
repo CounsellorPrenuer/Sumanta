@@ -4,7 +4,8 @@ import { storage } from "./storage";
 import { insertBookingSchema } from "@shared/schema";
 import { 
   insertContactSubmissionSchema, 
-  insertPaymentSchema 
+  insertPaymentSchema,
+  insertBlogPostSchema 
 } from "@shared/schema";
 import { z } from "zod";
 import Razorpay from "razorpay";
@@ -21,6 +22,7 @@ import {
   sendResourceDownloadEmail,
   sendPaymentConfirmationEmail 
 } from "./emailService";
+import { generateBlogPost, improveBlogContent, type BlogGenerationRequest } from "./openaiService";
 
 // Initialize Razorpay with your live API keys
 const razorpay = new Razorpay({
@@ -72,6 +74,92 @@ export async function registerRoutes(app: Express): Promise<Server> {
       res.json(blogPost);
     } catch (error: any) {
       res.status(500).json({ message: "Error fetching blog post: " + error.message });
+    }
+  });
+
+  // Create new blog post
+  app.post("/api/blog-posts", async (req, res) => {
+    try {
+      const validatedData = insertBlogPostSchema.parse(req.body);
+      const blogPost = await storage.createBlogPost(validatedData);
+      res.status(201).json(blogPost);
+    } catch (error: any) {
+      if (error.name === 'ZodError') {
+        return res.status(400).json({ message: "Invalid blog post data", errors: error.errors });
+      }
+      res.status(500).json({ message: "Error creating blog post: " + error.message });
+    }
+  });
+
+  // Update blog post
+  app.put("/api/blog-posts/:id", async (req, res) => {
+    try {
+      const validatedData = insertBlogPostSchema.partial().parse(req.body);
+      const blogPost = await storage.updateBlogPost(req.params.id, validatedData);
+      if (!blogPost) {
+        return res.status(404).json({ message: "Blog post not found" });
+      }
+      res.json(blogPost);
+    } catch (error: any) {
+      if (error.name === 'ZodError') {
+        return res.status(400).json({ message: "Invalid blog post data", errors: error.errors });
+      }
+      res.status(500).json({ message: "Error updating blog post: " + error.message });
+    }
+  });
+
+  // Delete blog post
+  app.delete("/api/blog-posts/:id", async (req, res) => {
+    try {
+      const success = await storage.deleteBlogPost(req.params.id);
+      if (!success) {
+        return res.status(404).json({ message: "Blog post not found" });
+      }
+      res.json({ message: "Blog post deleted successfully" });
+    } catch (error: any) {
+      res.status(500).json({ message: "Error deleting blog post: " + error.message });
+    }
+  });
+
+  // AI Generate blog post
+  app.post("/api/generate-blog", async (req, res) => {
+    try {
+      const { topic, keywords, tone, length, category } = req.body;
+      
+      if (!topic || typeof topic !== 'string' || topic.trim().length === 0) {
+        return res.status(400).json({ message: "Topic is required" });
+      }
+
+      const generationRequest: BlogGenerationRequest = {
+        topic: topic.trim(),
+        keywords: keywords || [],
+        tone: tone || 'professional',
+        length: length || 'medium',
+        category: category || 'Career Development'
+      };
+
+      const generatedContent = await generateBlogPost(generationRequest);
+      res.json(generatedContent);
+    } catch (error: any) {
+      console.error('Blog generation error:', error);
+      res.status(500).json({ message: "Error generating blog post: " + error.message });
+    }
+  });
+
+  // AI Improve blog content
+  app.post("/api/improve-blog", async (req, res) => {
+    try {
+      const { content, improvements } = req.body;
+      
+      if (!content || !improvements) {
+        return res.status(400).json({ message: "Content and improvements are required" });
+      }
+
+      const improvedContent = await improveBlogContent(content, improvements);
+      res.json({ content: improvedContent });
+    } catch (error: any) {
+      console.error('Blog improvement error:', error);
+      res.status(500).json({ message: "Error improving blog content: " + error.message });
     }
   });
 
