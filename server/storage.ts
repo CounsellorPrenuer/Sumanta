@@ -29,6 +29,9 @@ export interface IStorage {
   // Blog posts
   getAllBlogPosts(): Promise<BlogPost[]>;
   getBlogPost(id: string): Promise<BlogPost | undefined>;
+  createBlogPost(blogPost: InsertBlogPost): Promise<BlogPost>;
+  updateBlogPost(id: string, updates: Partial<InsertBlogPost>): Promise<BlogPost | undefined>;
+  deleteBlogPost(id: string): Promise<boolean>;
   
   // Resources
   getAllResources(): Promise<Resource[]>;
@@ -390,6 +393,31 @@ export class MemStorage implements IStorage {
     return this.blogPosts.get(id);
   }
 
+  async createBlogPost(blogPost: InsertBlogPost): Promise<BlogPost> {
+    const id = randomUUID();
+    const newBlogPost: BlogPost = {
+      ...blogPost,
+      id,
+      publishedAt: new Date()
+    };
+    this.blogPosts.set(id, newBlogPost);
+    return newBlogPost;
+  }
+
+  async updateBlogPost(id: string, updates: Partial<InsertBlogPost>): Promise<BlogPost | undefined> {
+    const existingPost = this.blogPosts.get(id);
+    if (existingPost) {
+      const updatedPost = { ...existingPost, ...updates };
+      this.blogPosts.set(id, updatedPost);
+      return updatedPost;
+    }
+    return undefined;
+  }
+
+  async deleteBlogPost(id: string): Promise<boolean> {
+    return this.blogPosts.delete(id);
+  }
+
   // Resource methods
   async getAllResources(): Promise<Resource[]> {
     return Array.from(this.resources.values());
@@ -473,19 +501,6 @@ export class MemStorage implements IStorage {
   // Get all payments
   async getAllPayments(): Promise<Payment[]> {
     return Array.from(this.payments.values());
-  }
-
-  // Resource download methods
-  async createResourceDownload(insertDownload: any): Promise<any> {
-    const id = randomUUID();
-    const download = { 
-      ...insertDownload, 
-      id, 
-      downloadedAt: new Date(),
-      createdAt: new Date() 
-    };
-    this.resourceDownloads.set(id, download);
-    return download;
   }
 
   // Resource download methods
