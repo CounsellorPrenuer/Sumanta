@@ -63,7 +63,7 @@ export function BookingPopup({ isOpen, onClose, package: pkg, selectedStage }: B
         amount: pkg.price,
         packageId: pkg.id,
         customerName: fullName,
-        customerEmail: `${mobile}@ccc-booking.com`,
+        customerEmail: `${mobile}@leadcrest-booking.com`,
         packageName: pkg.name
       });
       
