@@ -11,6 +11,11 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       colors: {
+        golden: {
+          DEFAULT: "#D4AF37",
+          light: "#E6C756",
+          dark: "#B8941F",
+        },
         background: "var(--background)",
         foreground: "var(--foreground)",
         card: {
