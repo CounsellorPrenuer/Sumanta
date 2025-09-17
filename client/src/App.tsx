@@ -16,6 +16,7 @@ import ThankYou from "@/pages/thank-you";
 import AdminBookings from "@/pages/admin-bookings";
 import PrivacyPolicy from "@/pages/privacy-policy";
 import TermsOfService from "@/pages/terms-of-service";
+import ButtonDemo from "@/pages/button-demo";
 import CookieConsent from "@/components/cookie-consent";
 
 function Router() {
@@ -33,6 +34,7 @@ function Router() {
       <Route path="/checkout/:packageId" component={Checkout} />
       <Route path="/privacy-policy" component={PrivacyPolicy} />
       <Route path="/terms-of-service" component={TermsOfService} />
+      <Route path="/button-demo" component={ButtonDemo} />
       <Route>
         <Redirect to="/" />
       </Route>
