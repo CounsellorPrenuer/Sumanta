@@ -6,7 +6,6 @@ import RoadmapSection from "@/components/roadmap-section";
 import PremiumAbout from "@/components/premium-about";
 import VisualDifferentiators from "@/components/visual-differentiators";
 import PremiumPackages from "@/components/premium-packages";
-import PremiumTestimonials from "@/components/premium-testimonials";
 import TrustLegal from "@/components/trust-legal";
 import PremiumContact from "@/components/premium-contact";
 import MentoriaSection from "@/components/mentoria-section";
@@ -24,7 +23,6 @@ export default function Home() {
       <RoadmapSection />
       <PremiumAbout />
       <PremiumPackages />
-      <PremiumTestimonials />
       <TrustLegal />
       <PremiumContact />
       <MentoriaSection />
