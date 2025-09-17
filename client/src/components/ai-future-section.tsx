@@ -57,18 +57,19 @@ export default function AIFutureSection() {
     <section id="ai-impact-section" className="py-16 lg:py-20 bg-gradient-to-br from-slate-50 via-white to-blue-50 relative overflow-hidden">
       {/* Elegant Background */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 left-20 w-96 h-96 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-full filter blur-3xl opacity-30"></div>
-        <div className="absolute bottom-20 right-20 w-80 h-80 bg-gradient-to-br from-purple-100 to-blue-100 rounded-full filter blur-3xl opacity-40"></div>
-        <div className="absolute top-1/2 left-1/3 w-64 h-64 bg-gradient-to-br from-indigo-100 to-slate-100 rounded-full filter blur-3xl opacity-20"></div>
+        {/* Performance optimized: removed expensive blur-3xl effects */}
+        <div className="absolute top-20 left-20 w-96 h-96 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-full opacity-15"></div>
+        <div className="absolute bottom-20 right-20 w-80 h-80 bg-gradient-to-br from-purple-100 to-blue-100 rounded-full opacity-20"></div>
+        <div className="absolute top-1/2 left-1/3 w-64 h-64 bg-gradient-to-br from-indigo-100 to-slate-100 rounded-full opacity-10"></div>
       </div>
 
       <div className="container-custom relative z-10">
         {/* Enhanced Headline with Animations */}
         <div className="text-center max-w-6xl mx-auto mb-24">
-          <div className="inline-flex items-center px-8 py-4 rounded-full border-2 text-sm font-medium mb-12 shadow-lg fade-in-up-elegant" 
+          <div className="inline-flex items-center px-8 py-4 rounded-full border-2 text-sm font-medium mb-12 shadow-lg fade-in-up-elegant backdrop-blur-xl" 
                style={{
-                 background: 'rgba(255, 255, 255, 0.8)',
-                 backdropFilter: 'blur(20px)',
+                 background: 'rgba(255, 255, 255, 0.9)',
+                 /* Performance optimized: using class-based blur instead of inline */
                  borderColor: 'hsl(220, 91%, 70%)',
                  color: 'hsl(220, 91%, 25%)'
                }}>

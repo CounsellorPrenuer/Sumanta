@@ -101,8 +101,9 @@ export default function VisualDifferentiators() {
     <section className="py-20 lg:py-32 relative bg-gradient-to-br from-gray-50 via-white to-blue-50 overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 opacity-30">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-r from-blue-300/20 to-purple-300/20 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-r from-purple-300/20 to-pink-300/20 rounded-full blur-3xl animate-float-delayed"></div>
+        {/* Performance optimized: removed expensive blur-3xl effects */}
+        <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-r from-blue-300/10 to-purple-300/10 rounded-full opacity-50"></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-r from-purple-300/10 to-pink-300/10 rounded-full opacity-40"></div>
       </div>
 
       <div className="container-custom relative z-10">

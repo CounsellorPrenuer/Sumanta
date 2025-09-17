@@ -38,9 +38,10 @@ export default function RoadmapSection() {
     <section className="py-20 lg:py-32 bg-gradient-to-br from-white via-slate-50/50 to-purple-50/30 relative overflow-hidden">
       {/* Enhanced Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 left-10 w-96 h-96 bg-gradient-to-br from-purple-100/40 to-blue-100/30 rounded-full filter blur-3xl opacity-60 animate-pulse"></div>
-        <div className="absolute bottom-20 right-10 w-80 h-80 bg-gradient-to-br from-indigo-100/50 to-cyan-100/40 rounded-full filter blur-3xl opacity-50 animate-pulse" style={{animationDelay: '2s'}}></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-br from-violet-100/30 to-pink-100/20 rounded-full filter blur-3xl opacity-40 animate-pulse" style={{animationDelay: '4s'}}></div>
+        {/* Performance optimized: removed expensive blur-3xl and animate-pulse effects */}
+        <div className="absolute top-20 left-10 w-96 h-96 bg-gradient-to-br from-purple-100/20 to-blue-100/15 rounded-full opacity-30"></div>
+        <div className="absolute bottom-20 right-10 w-80 h-80 bg-gradient-to-br from-indigo-100/25 to-cyan-100/20 rounded-full opacity-25"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-br from-violet-100/15 to-pink-100/10 rounded-full opacity-20"></div>
         
         {/* Elegant Floating Elements */}
         <div className="absolute top-40 right-1/4 w-4 h-4 bg-gradient-to-r from-purple-400 to-blue-500 rounded-full opacity-20 animate-bounce" style={{animationDelay: '1s'}}></div>

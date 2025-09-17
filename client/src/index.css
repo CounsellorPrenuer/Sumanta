@@ -77,7 +77,8 @@
 }
 
 .backdrop-blur-xl {
-  backdrop-filter: blur(24px);
+  backdrop-filter: blur(8px);
+  /* Reduced from 24px to 8px for better performance */
 }
 
 /* Custom scrollbar for modal */
@@ -148,11 +149,9 @@
   }
 
   .premium-card {
-    @apply bg-white/90 backdrop-blur-xl border border-gray-200/50 shadow-2xl rounded-3xl;
-    box-shadow: 
-      0 25px 50px -12px rgb(0 0 0 / 0.08), 
-      0 8px 16px -8px rgb(0 0 0 / 0.04),
-      0 0 0 1px rgb(255 255 255 / 0.9);
+    @apply bg-white/95 border border-gray-200/50 shadow-lg rounded-3xl;
+    /* Removed backdrop-blur for performance, simplified shadows */
+    box-shadow: 0 10px 25px -5px rgb(0 0 0 / 0.1), 0 4px 6px -2px rgb(0 0 0 / 0.05);
   }
   
   .hero-gradient {
@@ -618,11 +617,10 @@
 }
 
 .premium-card:hover {
-  box-shadow: 
-    0 20px 60px rgba(31, 38, 135, 0.15),
-    0 8px 24px rgba(31, 38, 135, 0.1),
-    0 0 0 1px rgba(255, 255, 255, 0.1);
-  transform: translateY(-8px) scale(1.01);
+  /* Simplified hover effects for better performance */
+  box-shadow: 0 15px 35px rgba(31, 38, 135, 0.1), 0 5px 15px rgba(31, 38, 135, 0.08);
+  transform: translateY(-4px);
+  /* Removed scale for performance */
 }
 
 /* Magnetic hover effects */
@@ -632,8 +630,9 @@
 }
 
 .magnetic-card:hover {
-  transform: translateZ(0) scale(1.05);
-  filter: brightness(1.05);
+  /* Simplified for performance */
+  transform: translateY(-2px);
+  filter: brightness(1.02);
 }
 
 /* Luxury text effects */
