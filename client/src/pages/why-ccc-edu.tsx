@@ -95,35 +95,6 @@ export default function WhyCCCEdu() {
     }
   ];
 
-  const transformationStories = [
-    {
-      name: "Rajesh Mehta",
-      before: "Mid-Level Manager",
-      after: "VP at Fortune 500 Company",
-      story: "Achieved 85% salary increase and C-suite trajectory within 18 months through strategic positioning and leadership development.",
-      increase: "85% Salary Increase",
-      timeline: "18 months",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face"
-    },
-    {
-      name: "Anita Sharma", 
-      before: "Technical Lead",
-      after: "Chief Technology Officer",
-      story: "Transitioned from hands-on tech role to executive leadership, mastering AI strategy and team leadership for CTO position.",
-      increase: "70% Salary Increase",
-      timeline: "24 months",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b2b5?w=400&h=400&fit=crop&crop=face"
-    },
-    {
-      name: "Vikram Singh",
-      before: "Operations Manager",
-      after: "Regional Director",
-      story: "Developed executive presence and strategic thinking, leading to promotion to regional leadership with international responsibilities.",
-      increase: "75% Salary Increase",
-      timeline: "20 months",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face"
-    }
-  ];
 
   const whyNotOthers = [
     {
@@ -310,57 +281,6 @@ export default function WhyCCCEdu() {
         </div>
       </section>
 
-      {/* Professional Transformation Stories */}
-      <section className="py-24 bg-gradient-to-br from-gray-50 to-blue-50">
-        <div className="container-custom">
-          <div className="text-center mb-20">
-            <h2 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-8">
-              Real Professional
-              <span className="text-gradient-blue block">Transformations</span>
-            </h2>
-            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              See how working professionals achieved significant salary increases and career advancement through our executive coaching approach.
-            </p>
-          </div>
-
-          <div className="grid lg:grid-cols-3 gap-12">
-            {transformationStories.map((story, index) => (
-              <div key={index} className="premium-card p-8 hover:shadow-3xl transition-all duration-500 hover:-translate-y-4 group">
-                <div className="flex items-center mb-6">
-                  <img 
-                    src={story.image} 
-                    alt={story.name}
-                    className="w-16 h-16 rounded-full object-cover mr-4"
-                  />
-                  <div>
-                    <h3 className="text-xl font-bold text-gray-900">{story.name}</h3>
-                    <div className="flex items-center text-sm text-gray-600">
-                      <span>{story.before}</span>
-                      <ArrowRight className="w-4 h-4 mx-2" />
-                      <span>{story.after}</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-2 gap-4 mb-6">
-                  <div className="bg-green-50 p-4 rounded-xl text-center">
-                    <div className="text-2xl font-bold text-green-600">{story.increase}</div>
-                    <div className="text-sm text-green-700">Salary Growth</div>
-                  </div>
-                  <div className="bg-blue-50 p-4 rounded-xl text-center">
-                    <div className="text-2xl font-bold text-blue-600">{story.timeline}</div>
-                    <div className="text-sm text-blue-700">Timeline</div>
-                  </div>
-                </div>
-
-                <blockquote className="text-gray-700 italic leading-relaxed">
-                  "{story.story}"
-                </blockquote>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Why Not Others Comparison */}
       <section className="py-24 bg-white">

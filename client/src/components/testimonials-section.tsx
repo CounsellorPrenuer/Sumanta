@@ -1,6 +1,9 @@
 import { Star, Quote } from "lucide-react";
 
 export default function TestimonialsSection() {
+  // Component disabled - all testimonials removed per user request
+  return null;
+
   const testimonials = [
     {
       name: "Priya Sharma",

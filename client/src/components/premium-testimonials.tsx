@@ -7,6 +7,9 @@ import vikashImage from "@assets/generated_images/Indian_male_consultant_headsho
 import ananyaImage from "@assets/generated_images/Indian_female_HR_executive_82c37ef9.png";
 
 export default function PremiumTestimonials() {
+  // Component disabled - all testimonials removed per user request
+  return null;
+
   const testimonials = [
     {
       name: "R. Sharma",
