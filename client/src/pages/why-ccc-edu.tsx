@@ -1,9 +1,12 @@
 import PremiumNavigation from "@/components/premium-navigation";
 import Footer from "@/components/footer";
 import WhatsAppFloat from "@/components/whatsapp-float";
+import BookCallModal from "@/components/book-call-modal";
+import ResourceDownloadModal from "@/components/resource-download-modal";
 import { Award, Users, Globe, CheckCircle, Star, TrendingUp, Brain, Heart, Target, Zap, Shield, Rocket, ArrowRight, Play, Quote, Trophy, Lightbulb, Clock, MessageSquare, Building2, Briefcase, ChevronRight } from "lucide-react";
 import sumantaImage from "@assets/Image_Sumanta Chaudhuri_LCC_1754306082124.jpeg";
 import { useState, useEffect } from "react";
+import { useLocation } from "wouter";
 
 export default function WhyCCCEdu() {
   const [visibleSection, setVisibleSection] = useState<string>("");
@@ -13,6 +16,9 @@ export default function WhyCCCEdu() {
     years: 0,
     success: 0
   });
+  const [isBookCallModalOpen, setIsBookCallModalOpen] = useState(false);
+  const [isResourceModalOpen, setIsResourceModalOpen] = useState(false);
+  const [, navigate] = useLocation();
 
   useEffect(() => {
     // Animate counters
@@ -354,7 +360,11 @@ export default function WhyCCCEdu() {
           </div>
 
           <div className="text-center mt-16">
-            <button className="bg-white text-blue-600 px-8 py-4 rounded-2xl font-bold text-lg hover:bg-blue-50 transition-all duration-300 hover:scale-105 shadow-xl">
+            <button 
+              onClick={() => navigate('/corporate-parenting-wellbeing')}
+              data-testid="button-explore-corporate"
+              className="bg-white text-blue-600 px-8 py-4 rounded-2xl font-bold text-lg hover:bg-blue-50 transition-all duration-300 hover:scale-105 shadow-xl"
+            >
               Explore Corporate Services
             </button>
           </div>
@@ -407,10 +417,18 @@ export default function WhyCCCEdu() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
-            <button className="bg-white text-blue-600 px-8 py-4 rounded-2xl font-bold text-lg hover:bg-blue-50 transition-all duration-300 hover:scale-105 shadow-xl">
+            <button 
+              onClick={() => setIsBookCallModalOpen(true)}
+              data-testid="button-book-consultation"
+              className="bg-white text-blue-600 px-8 py-4 rounded-2xl font-bold text-lg hover:bg-blue-50 transition-all duration-300 hover:scale-105 shadow-xl"
+            >
               Book Strategic Career Consultation
             </button>
-            <button className="border-2 border-white text-white px-8 py-4 rounded-2xl font-bold text-lg hover:bg-white hover:text-blue-600 transition-all duration-300">
+            <button 
+              onClick={() => setIsResourceModalOpen(true)}
+              data-testid="button-download-guide"
+              className="border-2 border-white text-white px-8 py-4 rounded-2xl font-bold text-lg hover:bg-white hover:text-blue-600 transition-all duration-300"
+            >
               Download Executive Guide
             </button>
           </div>
@@ -434,6 +452,23 @@ export default function WhyCCCEdu() {
 
       <Footer />
       <WhatsAppFloat />
+      
+      <BookCallModal 
+        isOpen={isBookCallModalOpen} 
+        onClose={() => setIsBookCallModalOpen(false)} 
+      />
+      
+      <ResourceDownloadModal 
+        isOpen={isResourceModalOpen} 
+        onClose={() => setIsResourceModalOpen(false)} 
+        resource={{
+          id: "executive-guide",
+          title: "Executive Career Acceleration Guide",
+          description: "Fortune 500 proven strategies for executive career advancement and leadership development",
+          type: "PDF Guide",
+          downloadUrl: "/api/download/executive-guide"
+        }}
+      />
     </div>
   );
 }
