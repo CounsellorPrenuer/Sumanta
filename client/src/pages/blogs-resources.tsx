@@ -264,7 +264,10 @@ export default function BlogsResources() {
           setIsDownloadModalOpen(false);
           setSelectedResource(null);
         }}
-        resource={selectedResource}
+        resource={selectedResource && selectedResource.downloadUrl ? {
+          ...selectedResource,
+          downloadUrl: selectedResource.downloadUrl
+        } : null}
       />
     </div>
   );

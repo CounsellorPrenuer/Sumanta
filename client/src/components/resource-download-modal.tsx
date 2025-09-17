@@ -58,11 +58,7 @@ export default function ResourceDownloadModal({ isOpen, onClose, resource }: Res
         resourceTitle: resource!.title,
       };
       
-      return apiRequest('/api/resource-downloads', {
-        method: 'POST',
-        body: JSON.stringify(downloadData),
-        headers: { 'Content-Type': 'application/json' },
-      });
+      return apiRequest('POST', '/api/resource-downloads', downloadData);
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['/api/resource-downloads'] });
