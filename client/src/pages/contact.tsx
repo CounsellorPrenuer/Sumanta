@@ -1,5 +1,6 @@
 import PremiumNavigation from "@/components/premium-navigation";
 import PremiumContact from "@/components/premium-contact";
+import FAQSection from "@/components/faq-section";
 import Footer from "@/components/footer";
 
 export default function Contact() {
@@ -23,6 +24,7 @@ export default function Contact() {
       </section>
 
       <PremiumContact />
+      <FAQSection />
       <Footer />
     </div>
   );
