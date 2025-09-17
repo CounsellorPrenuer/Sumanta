@@ -169,12 +169,13 @@ export default function VisualDifferentiators() {
             {/* Left: Visual Infographic */}
             <div className={`p-12 bg-gradient-to-br ${activeDiff.color} relative overflow-hidden`}>
               {/* Decorative Elements */}
-              <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
-              <div className="absolute bottom-0 left-0 w-48 h-48 bg-black/10 rounded-full blur-2xl"></div>
+              {/* Performance optimized: removed expensive blur effects */}
+              <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full opacity-50"></div>
+              <div className="absolute bottom-0 left-0 w-48 h-48 bg-black/5 rounded-full opacity-40"></div>
               
               <div className="relative z-10">
                 {/* Main Icon */}
-                <div className="w-24 h-24 bg-white/20 backdrop-blur-xl rounded-2xl flex items-center justify-center mb-8 animate-float">
+                <div className="w-24 h-24 bg-white/30 rounded-2xl flex items-center justify-center mb-8">
                   <activeDiff.visual.icon className="w-12 h-12 text-white" />
                 </div>
 
@@ -183,7 +184,7 @@ export default function VisualDifferentiators() {
                   {activeDiff.visual.stats.map((stat, index) => (
                     <div 
                       key={index}
-                      className="bg-white/20 backdrop-blur-xl rounded-xl p-4 text-center animate-fade-in"
+                      className="bg-white/30 rounded-xl p-4 text-center"
                       style={{ animationDelay: `${index * 0.1}s` }}
                     >
                       <div className="text-2xl font-bold text-white">{stat.split(' ')[0]}</div>
@@ -197,7 +198,7 @@ export default function VisualDifferentiators() {
                   {activeDiff.visual.features.map((feature, index) => (
                     <div 
                       key={index}
-                      className="flex items-center gap-3 bg-white/10 backdrop-blur-xl rounded-lg p-3 animate-slide-in-left"
+                      className="flex items-center gap-3 bg-white/20 rounded-lg p-3"
                       style={{ animationDelay: `${index * 0.1}s` }}
                     >
                       <ChevronRight className="w-5 h-5 text-white/90" />
