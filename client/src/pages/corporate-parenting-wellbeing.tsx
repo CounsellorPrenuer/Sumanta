@@ -1,11 +1,15 @@
 import PremiumNavigation from "@/components/premium-navigation";
 import Footer from "@/components/footer";
 import WhatsAppFloat from "@/components/whatsapp-float";
+import BookCallModal from "@/components/book-call-modal";
+import ResourceDownloadModal from "@/components/resource-download-modal";
 import { Users, Heart, TrendingUp, Shield, Brain, Target, CheckCircle, ArrowRight, Star, BarChart3, UserCheck, Award } from "lucide-react";
 import { useState } from "react";
 
 export default function CorporateParentingWellbeing() {
   const [visibleSection, setVisibleSection] = useState<string>("");
+  const [isConsultationModalOpen, setIsConsultationModalOpen] = useState(false);
+  const [isBrochureModalOpen, setIsBrochureModalOpen] = useState(false);
 
   const whyMattersStats = [
     {
@@ -448,10 +452,18 @@ export default function CorporateParentingWellbeing() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <button className="bg-white text-blue-600 px-8 py-4 rounded-2xl font-bold text-lg hover:bg-blue-50 transition-all duration-300 hover:scale-105 shadow-xl">
+            <button 
+              onClick={() => setIsConsultationModalOpen(true)}
+              data-testid="button-schedule-consultation"
+              className="bg-white text-blue-600 px-8 py-4 rounded-2xl font-bold text-lg hover:bg-blue-50 transition-all duration-300 hover:scale-105 shadow-xl"
+            >
               Schedule Corporate Consultation
             </button>
-            <button className="border-2 border-white text-white px-8 py-4 rounded-2xl font-bold text-lg hover:bg-white hover:text-blue-600 transition-all duration-300">
+            <button 
+              onClick={() => setIsBrochureModalOpen(true)}
+              data-testid="button-download-brochure"
+              className="border-2 border-white text-white px-8 py-4 rounded-2xl font-bold text-lg hover:bg-white hover:text-blue-600 transition-all duration-300"
+            >
               Download Our Corporate Brochure
             </button>
           </div>
@@ -475,6 +487,25 @@ export default function CorporateParentingWellbeing() {
 
       <Footer />
       <WhatsAppFloat />
+      
+      {/* Corporate Consultation Booking Modal */}
+      <BookCallModal 
+        isOpen={isConsultationModalOpen} 
+        onClose={() => setIsConsultationModalOpen(false)} 
+      />
+      
+      {/* Corporate Brochure Download Modal */}
+      <ResourceDownloadModal 
+        isOpen={isBrochureModalOpen} 
+        onClose={() => setIsBrochureModalOpen(false)} 
+        resource={{
+          id: "corporate-brochure",
+          title: "Corporate Parenting Wellbeing Program Brochure",
+          description: "Comprehensive overview of our employee wellbeing solutions, ROI metrics, and implementation guide for HR leaders",
+          type: "PDF Brochure",
+          downloadUrl: "/api/download/corporate-brochure"
+        }}
+      />
     </div>
   );
 }
