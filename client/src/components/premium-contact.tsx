@@ -71,7 +71,7 @@ export default function PremiumContact() {
     {
       icon: Mail,
       title: "Email Us",
-      details: "leadcrestconsulting@gmail.com",
+      details: "leadcrestconsulting6@gmail.com",
       subtext: "We reply within 24 hours",
       color: "from-blue-500 to-cyan-600"
     },

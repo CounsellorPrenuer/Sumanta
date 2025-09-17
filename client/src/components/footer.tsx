@@ -46,7 +46,7 @@ export default function Footer() {
                 <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{backgroundColor: 'hsl(var(--violet))'}}>
                   <Mail className="h-4 w-4 text-white" />
                 </div>
-                <span>leadcrestconsulting@gmail.com</span>
+                <span>leadcrestconsulting6@gmail.com</span>
               </div>
               <div className="flex items-center gap-3 text-gray-300 hover:text-yellow-400 transition-colors cursor-pointer">
                 <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{backgroundColor: 'hsl(var(--gold))'}}>

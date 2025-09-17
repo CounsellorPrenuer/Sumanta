@@ -5,8 +5,8 @@ import sgMail from '@sendgrid/mail';
 
 // Initialize SendGrid with API key if available
 const SENDGRID_API_KEY = process.env.SENDGRID_API_KEY;
-const ADMIN_EMAIL = 'leadcrestconsulting@gmail.com';
-const FROM_EMAIL = 'leadcrestconsulting@gmail.com'; // Using verified Gmail address as sender
+const ADMIN_EMAIL = 'leadcrestconsulting6@gmail.com';
+const FROM_EMAIL = 'leadcrestconsulting6@gmail.com'; // Using verified Gmail address as sender
 
 if (SENDGRID_API_KEY) {
   sgMail.setApiKey(SENDGRID_API_KEY);

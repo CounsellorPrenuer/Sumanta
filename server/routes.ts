@@ -383,7 +383,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
           // Get package name from booking or use packageId as fallback
           const packageName = relatedBooking?.packageName || `Package ID: ${paymentRecord.packageId}`;
           await sendPaymentConfirmationEmail(
-            'leadcrestconsulting@gmail.com',
+            'leadcrestconsulting6@gmail.com',
             paymentRecord.customerName,
             packageName,
             paymentRecord.amount
@@ -586,7 +586,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   app.post('/api/test-email', async (req, res) => {
     try {
       const { email } = req.body;
-      const testEmail = email || 'leadcrestconsulting@gmail.com';
+      const testEmail = email || 'leadcrestconsulting6@gmail.com';
       
       console.log('🧪 Testing email functionality...');
       
