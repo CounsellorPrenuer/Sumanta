@@ -23,7 +23,6 @@ export default function PremiumNavigation() {
     { name: "Corporate Parenting Wellbeing", href: "/corporate-parenting-wellbeing" },
     { name: "Blogs/Resources", href: "/blogs-resources" },
     { name: "How it Works", href: "/how-it-works" },
-    { name: "Button Demo", href: "/button-demo" },
     { name: "Contact Us", href: "/contact" },
   ];
 
