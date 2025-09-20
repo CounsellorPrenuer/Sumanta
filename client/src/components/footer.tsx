@@ -1,5 +1,5 @@
 import { Mail, Phone, MapPin, Heart } from "lucide-react";
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import logoImage from "@assets/Logo_Sumanta Chaudhuri_LCC_1754301451067.png";
 
 export default function Footer() {
@@ -10,9 +10,31 @@ export default function Footer() {
     }
   };
 
+  const [location, navigate] = useLocation();
+  
   const navigateToHomeSection = (sectionId: string) => {
-    // Navigate to home page with section hash
-    window.location.href = `/#${sectionId}`;
+    // Navigate to home page first, then scroll to section
+    navigate('/');
+    // Small delay to ensure page loads before scrolling
+    setTimeout(() => {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100);
+  };
+  
+  const navigateToHomeSectionFromCurrentPage = (sectionId: string) => {
+    if (location === '/') {
+      // Already on home page, just scroll
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      // Navigate to home page with section
+      navigateToHomeSection(sectionId);
+    }
   };
 
   return (
@@ -68,7 +90,7 @@ export default function Footer() {
             <ul className="space-y-3">
               <li>
                 <button 
-                  onClick={() => navigateToHomeSection('services')} 
+                  onClick={() => navigateToHomeSectionFromCurrentPage('services')} 
                   className="text-gray-300 hover:text-blue-400 transition-colors text-left"
                   data-testid="link-career-counselling"
                 >
@@ -77,7 +99,7 @@ export default function Footer() {
               </li>
               <li>
                 <button 
-                  onClick={() => navigateToHomeSection('services')} 
+                  onClick={() => navigateToHomeSectionFromCurrentPage('services')} 
                   className="text-gray-300 hover:text-blue-400 transition-colors text-left"
                   data-testid="link-psychometric-assessment"
                 >
@@ -87,7 +109,7 @@ export default function Footer() {
 
               <li>
                 <button 
-                  onClick={() => navigateToHomeSection('services')} 
+                  onClick={() => navigateToHomeSectionFromCurrentPage('services')} 
                   className="text-gray-300 hover:text-blue-400 transition-colors text-left"
                   data-testid="link-cv-building"
                 >
@@ -96,7 +118,7 @@ export default function Footer() {
               </li>
               <li>
                 <button 
-                  onClick={() => navigateToHomeSection('services')} 
+                  onClick={() => navigateToHomeSectionFromCurrentPage('services')} 
                   className="text-gray-300 hover:text-blue-400 transition-colors text-left"
                   data-testid="link-mentorship-platform"
                 >
@@ -104,12 +126,13 @@ export default function Footer() {
                 </button>
               </li>
               <li>
-                <a 
+                <Link 
                   href="/corporate-parenting-wellbeing"
-                  className="text-gray-300 hover:text-blue-400 transition-colors text-left"
+                  className="text-gray-300 hover:text-blue-400 transition-colors text-left block"
+                  data-testid="link-corporate-parenting"
                 >
                   Corporate Parenting Wellbeing
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -128,7 +151,7 @@ export default function Footer() {
               </li>
               <li>
                 <button 
-                  onClick={() => navigateToHomeSection('packages')} 
+                  onClick={() => navigateToHomeSectionFromCurrentPage('packages')} 
                   className="text-gray-300 hover:text-blue-400 transition-colors text-left"
                   data-testid="link-packages"
                 >
@@ -136,20 +159,22 @@ export default function Footer() {
                 </button>
               </li>
               <li>
-                <a 
+                <Link 
                   href="/privacy-policy" 
                   className="text-gray-300 hover:text-blue-400 transition-colors text-left block"
+                  data-testid="link-privacy-policy"
                 >
                   Privacy Policy
-                </a>
+                </Link>
               </li>
               <li>
-                <a 
+                <Link 
                   href="/terms-of-service" 
                   className="text-gray-300 hover:text-blue-400 transition-colors text-left block"
+                  data-testid="link-terms-of-service"
                 >
                   Terms of Service
-                </a>
+                </Link>
               </li>
               <li>
                 <Link 
@@ -162,19 +187,21 @@ export default function Footer() {
               </li>
               <li>
                 <button 
-                  onClick={() => scrollToSection('#testimonials')} 
+                  onClick={() => navigateToHomeSectionFromCurrentPage('testimonials')} 
                   className="text-gray-300 hover:text-blue-400 transition-colors text-left"
+                  data-testid="link-success-stories"
                 >
                   Success Stories
                 </button>
               </li>
               <li>
-                <a 
+                <Link 
                   href="/corporate-parenting-wellbeing"
-                  className="text-gray-300 hover:text-blue-400 transition-colors text-left"
+                  className="text-gray-300 hover:text-blue-400 transition-colors text-left block"
+                  data-testid="link-corporate-services"
                 >
                   Corporate Services
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
