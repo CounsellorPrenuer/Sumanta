@@ -323,7 +323,7 @@ export default function HowItWorks() {
               </button>
               <button 
                 onClick={() => {
-                  window.open('https://wa.me/919828096408?text=Hello%20Sumanta,%20I%20am%20interested%20in%20your%20career%20coaching%20services.%20Could%20we%20schedule%20a%20consultation?', '_blank');
+                  window.location.href = 'https://wa.me/919147424608?text=Hello%20Sumanta,%20I%20am%20interested%20in%20your%20career%20coaching%20services.%20Could%20we%20schedule%20a%20consultation?';
                 }}
                 className="border-2 border-white text-white font-semibold px-8 py-3 rounded-xl hover:bg-white hover:text-blue-600 transition-colors"
                 data-testid="button-whatsapp-contact"

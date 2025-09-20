@@ -6,7 +6,8 @@ export default function WhatsAppFloat() {
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
 
   const handleWhatsAppClick = () => {
-    window.open(whatsappUrl, '_blank');
+    // Use window.location.href to avoid opening blank tabs
+    window.location.href = whatsappUrl;
   };
 
   return (

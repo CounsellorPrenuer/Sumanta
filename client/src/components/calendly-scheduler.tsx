@@ -39,6 +39,9 @@ export default function CalendlyScheduler({
         textColor: '#ffffff',
         branding: false
       });
+    } else {
+      // Fallback: redirect to Calendly page if popup fails
+      window.location.href = `${url}?name=${encodeURIComponent(userName)}&email=${encodeURIComponent(userEmail)}`;
     }
   };
 

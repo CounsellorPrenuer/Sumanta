@@ -45,7 +45,9 @@ export default function GoogleCalendarScheduler({
   };
 
   const openGoogleCalendar = () => {
-    window.open(generateGoogleCalendarLink(), '_blank');
+    const link = generateGoogleCalendarLink();
+    // Open in same tab to avoid blank tab issues
+    window.location.href = link;
   };
 
   return (
