@@ -1,4 +1,5 @@
 import { Mail, Phone, MapPin, Heart } from "lucide-react";
+import { Link } from "wouter";
 import logoImage from "@assets/Logo_Sumanta Chaudhuri_LCC_1754301451067.png";
 
 export default function Footer() {
@@ -7,6 +8,11 @@ export default function Footer() {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
+  };
+
+  const navigateToHomeSection = (sectionId: string) => {
+    // Navigate to home page with section hash
+    window.location.href = `/#${sectionId}`;
   };
 
   return (
@@ -62,16 +68,18 @@ export default function Footer() {
             <ul className="space-y-3">
               <li>
                 <button 
-                  onClick={() => scrollToSection('#services')} 
+                  onClick={() => navigateToHomeSection('services')} 
                   className="text-gray-300 hover:text-blue-400 transition-colors text-left"
+                  data-testid="link-career-counselling"
                 >
                   Career Counselling
                 </button>
               </li>
               <li>
                 <button 
-                  onClick={() => scrollToSection('#services')} 
+                  onClick={() => navigateToHomeSection('services')} 
                   className="text-gray-300 hover:text-blue-400 transition-colors text-left"
+                  data-testid="link-psychometric-assessment"
                 >
                   Psychometric Assessment
                 </button>
@@ -79,16 +87,18 @@ export default function Footer() {
 
               <li>
                 <button 
-                  onClick={() => scrollToSection('#services')} 
+                  onClick={() => navigateToHomeSection('services')} 
                   className="text-gray-300 hover:text-blue-400 transition-colors text-left"
+                  data-testid="link-cv-building"
                 >
                   CV Building
                 </button>
               </li>
               <li>
                 <button 
-                  onClick={() => scrollToSection('#services')} 
+                  onClick={() => navigateToHomeSection('services')} 
                   className="text-gray-300 hover:text-blue-400 transition-colors text-left"
+                  data-testid="link-mentorship-platform"
                 >
                   Mentorship Platform
                 </button>
@@ -108,17 +118,19 @@ export default function Footer() {
             <h4 className="text-lg font-semibold text-white mb-6">Quick Links</h4>
             <ul className="space-y-3">
               <li>
-                <button 
-                  onClick={() => scrollToSection('#about')} 
-                  className="text-gray-300 hover:text-blue-400 transition-colors text-left"
+                <Link 
+                  href="/why-ccc-edu"
+                  className="text-gray-300 hover:text-blue-400 transition-colors text-left block"
+                  data-testid="link-about-us"
                 >
                   About Us
-                </button>
+                </Link>
               </li>
               <li>
                 <button 
-                  onClick={() => scrollToSection('#packages')} 
+                  onClick={() => navigateToHomeSection('packages')} 
                   className="text-gray-300 hover:text-blue-400 transition-colors text-left"
+                  data-testid="link-packages"
                 >
                   Packages
                 </button>
@@ -140,12 +152,13 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <button 
-                  onClick={() => scrollToSection('#contact')} 
-                  className="text-gray-300 hover:text-blue-400 transition-colors text-left"
+                <Link 
+                  href="/contact"
+                  className="text-gray-300 hover:text-blue-400 transition-colors text-left block"
+                  data-testid="link-contact"
                 >
                   Contact
-                </button>
+                </Link>
               </li>
               <li>
                 <button 
