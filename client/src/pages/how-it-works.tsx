@@ -21,7 +21,7 @@ export default function HowItWorks() {
         "Get an overview of our coaching approach",
         "Understand how we can support your journey"
       ],
-      duration: "45-60 minutes",
+      duration: "10-15 minutes",
       color: "from-blue-500 to-cyan-600"
     },
     {
@@ -63,7 +63,6 @@ export default function HowItWorks() {
         "Lifetime access to Knowledge Gateway",
         "Live and recorded webinars by industry experts",
         "CV reviews and interview preparation",
-        "Career helpline access for ongoing support",
         "Guidance until you achieve your career goals"
       ],
       duration: "Ongoing",
@@ -105,7 +104,7 @@ export default function HowItWorks() {
     {
       name: "Ascend Plus", 
       price: "₹10,599",
-      features: ["Psychometric assessment to measure your interests, personality and abilities", "3 career coaching sessions", "Lifetime access to Knowledge Gateway", "Live webinars by industry experts", "Customized reports after each session", "CV reviews and Interview Prep", "Career helpline access"],
+      features: ["Psychometric assessment to measure your interests, personality and abilities", "3 career coaching sessions", "Lifetime access to Knowledge Gateway", "CV reviews and Interview Prep"],
       popular: true,
       audience: "College Graduates & Working Professionals"
     }
