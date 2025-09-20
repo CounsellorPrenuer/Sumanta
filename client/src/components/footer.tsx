@@ -15,13 +15,13 @@ export default function Footer() {
   const navigateToHomeSection = (sectionId: string) => {
     // Navigate to home page first, then scroll to section
     navigate('/');
-    // Small delay to ensure page loads before scrolling
+    // Wait for page to load before scrolling
     setTimeout(() => {
       const element = document.getElementById(sectionId);
       if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
-    }, 100);
+    }, 300);
   };
   
   const navigateToHomeSectionFromCurrentPage = (sectionId: string) => {
@@ -29,7 +29,7 @@ export default function Footer() {
       // Already on home page, just scroll
       const element = document.getElementById(sectionId);
       if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     } else {
       // Navigate to home page with section
@@ -90,7 +90,7 @@ export default function Footer() {
             <ul className="space-y-3">
               <li>
                 <button 
-                  onClick={() => navigateToHomeSectionFromCurrentPage('services')} 
+                  onClick={() => navigateToHomeSectionFromCurrentPage('packages')} 
                   className="text-gray-300 hover:text-blue-400 transition-colors text-left"
                   data-testid="link-career-counselling"
                 >
@@ -99,7 +99,7 @@ export default function Footer() {
               </li>
               <li>
                 <button 
-                  onClick={() => navigateToHomeSectionFromCurrentPage('services')} 
+                  onClick={() => navigateToHomeSectionFromCurrentPage('packages')} 
                   className="text-gray-300 hover:text-blue-400 transition-colors text-left"
                   data-testid="link-psychometric-assessment"
                 >
@@ -109,7 +109,7 @@ export default function Footer() {
 
               <li>
                 <button 
-                  onClick={() => navigateToHomeSectionFromCurrentPage('services')} 
+                  onClick={() => navigateToHomeSectionFromCurrentPage('packages')} 
                   className="text-gray-300 hover:text-blue-400 transition-colors text-left"
                   data-testid="link-cv-building"
                 >
@@ -118,7 +118,7 @@ export default function Footer() {
               </li>
               <li>
                 <button 
-                  onClick={() => navigateToHomeSectionFromCurrentPage('services')} 
+                  onClick={() => navigateToHomeSectionFromCurrentPage('packages')} 
                   className="text-gray-300 hover:text-blue-400 transition-colors text-left"
                   data-testid="link-mentorship-platform"
                 >
