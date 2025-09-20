@@ -7,28 +7,6 @@ export default function VisualDifferentiators() {
   const differentiators = [
     {
       id: 0,
-      title: "AI-Proof Career Paths",
-      icon: Shield,
-      color: "from-blue-500 to-cyan-500",
-      description: "Navigate the AI revolution with confidence",
-      visual: {
-        icon: Cpu,
-        stats: ["87% Future-Ready", "5 AI Tools Mastery", "3x Career Security"],
-        features: [
-          "AI-augmented skill assessment",
-          "Future job market analysis",
-          "Tech-human hybrid roles guidance",
-          "Continuous learning roadmap"
-        ]
-      },
-      benefits: [
-        { icon: Zap, text: "Stay relevant in automated world" },
-        { icon: TrendingUp, text: "Identify emerging opportunities" },
-        { icon: Shield, text: "Build irreplaceable human skills" }
-      ]
-    },
-    {
-      id: 1,
       title: "Fortune 500 Insights",
       icon: Briefcase,
       color: "from-purple-500 to-pink-500",
@@ -50,7 +28,7 @@ export default function VisualDifferentiators() {
       ]
     },
     {
-      id: 2,
+      id: 1,
       title: "Data-Driven Approach",
       icon: LineChart,
       color: "from-green-500 to-emerald-500",
@@ -72,7 +50,7 @@ export default function VisualDifferentiators() {
       ]
     },
     {
-      id: 3,
+      id: 2,
       title: "Holistic Life Integration",
       icon: Users,
       color: "from-orange-500 to-red-500",
@@ -241,12 +219,21 @@ export default function VisualDifferentiators() {
 
               {/* CTA */}
               <div className="mt-10">
-                <button className={`
-                  w-full py-4 px-8 rounded-xl font-semibold text-white
-                  bg-gradient-to-r ${activeDiff.color}
-                  hover:shadow-xl transform hover:scale-105 transition-all duration-300
-                  flex items-center justify-center gap-3 group
-                `}>
+                <button 
+                  onClick={() => {
+                    const element = document.getElementById('packages');
+                    if (element) {
+                      element.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }}
+                  className={`
+                    w-full py-4 px-8 rounded-xl font-semibold text-white
+                    bg-gradient-to-r ${activeDiff.color}
+                    hover:shadow-xl transform hover:scale-105 transition-all duration-300
+                    flex items-center justify-center gap-3 group
+                  `}
+                  data-testid={`button-learn-more-${activeDiff.title.toLowerCase().replace(/\s+/g, '-')}`}
+                >
                   <span>Learn More About {activeDiff.title}</span>
                   <ChevronRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
                 </button>

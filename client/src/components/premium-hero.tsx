@@ -162,8 +162,8 @@ export default function PremiumHero() {
                       <Award className="w-7 h-7" style={{color: 'hsl(267, 47%, 50%)'}} aria-label="Award icon" />
                     </div>
                     <div>
-                      <div className="font-bold text-gray-900 text-lg">AI-Proof</div>
-                      <div className="text-sm font-medium" style={{color: 'hsl(267, 47%, 60%)'}}>Career Paths</div>
+                      <div className="font-bold text-gray-900 text-lg">Expert</div>
+                      <div className="text-sm font-medium" style={{color: 'hsl(267, 47%, 60%)'}}>Guidance</div>
                     </div>
                   </div>
                 </div>
