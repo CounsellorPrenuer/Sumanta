@@ -186,13 +186,13 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <button 
-                  onClick={() => navigateToHomeSectionFromCurrentPage('testimonials')} 
-                  className="text-gray-300 hover:text-blue-400 transition-colors text-left"
+                <Link 
+                  href="/how-it-works"
+                  className="text-gray-300 hover:text-blue-400 transition-colors text-left block"
                   data-testid="link-success-stories"
                 >
                   Success Stories
-                </button>
+                </Link>
               </li>
               <li>
                 <Link 
