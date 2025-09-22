@@ -1,17 +1,12 @@
 import { ArrowRight, Play, CheckCircle, Users, Award, TrendingUp, Phone } from "lucide-react";
 import { useState } from "react";
+import { useLocation } from "wouter";
 import heroImage from "@assets/u1461628488_A_confident_mid-career_Indian_professional_male_o_5df951ce-73bd-414a-b228-c9ccf52f9fa6_2_1754302685222.png";
 import BookCallModal from "./book-call-modal";
 
 export default function PremiumHero() {
   const [isCallModalOpen, setIsCallModalOpen] = useState(false);
-  
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+  const [location, navigate] = useLocation();
 
   const stats = [
     { icon: Users, value: "3725+", label: "Professionals Guided" },
@@ -77,7 +72,7 @@ export default function PremiumHero() {
             {/* Premium Magnetic CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-6 mb-16 slide-in-up" style={{animationDelay: '1.2s'}}>
               <button 
-                onClick={() => scrollToSection('packages')}
+                onClick={() => navigate('/?section=packages')}
                 className="group relative px-10 py-5 rounded-2xl font-semibold text-white overflow-hidden button-magnetic"
                 style={{background: 'linear-gradient(135deg, hsl(220, 91%, 50%), hsl(267, 47%, 50%)), linear-gradient(135deg, hsl(220, 91%, 45%), hsl(267, 47%, 45%))'}}
               >
