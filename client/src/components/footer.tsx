@@ -5,10 +5,17 @@ import logoImage from "@assets/Logo_Sumanta Chaudhuri_LCC_1754301451067.png";
 export default function Footer() {
   const [location, navigate] = useLocation();
 
-  const handleServiceNavigation = (serviceName: string) => {
-    console.log(`Footer: Navigating to packages for ${serviceName}`);
-    console.log(`Current location: ${location}`);
-    navigate('/?section=packages');
+  const handleServiceNavigation = () => {
+    if (location === '/') {
+      // Already on home page, just scroll to packages
+      const element = document.getElementById('packages');
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    } else {
+      // Navigate to home page with hash
+      window.location.href = '/#packages';
+    }
   };
 
   return (
@@ -64,7 +71,7 @@ export default function Footer() {
             <ul className="space-y-3">
               <li>
                 <button 
-                  onClick={() => handleServiceNavigation('Career Counselling')} 
+                  onClick={handleServiceNavigation} 
                   className="text-gray-300 hover:text-blue-400 transition-colors text-left"
                   data-testid="link-career-counselling"
                 >
@@ -73,7 +80,7 @@ export default function Footer() {
               </li>
               <li>
                 <button 
-                  onClick={() => handleServiceNavigation('Psychometric Assessment')} 
+                  onClick={handleServiceNavigation} 
                   className="text-gray-300 hover:text-blue-400 transition-colors text-left"
                   data-testid="link-psychometric-assessment"
                 >
@@ -83,7 +90,7 @@ export default function Footer() {
 
               <li>
                 <button 
-                  onClick={() => handleServiceNavigation('CV Building')} 
+                  onClick={handleServiceNavigation} 
                   className="text-gray-300 hover:text-blue-400 transition-colors text-left"
                   data-testid="link-cv-building"
                 >
@@ -92,7 +99,7 @@ export default function Footer() {
               </li>
               <li>
                 <button 
-                  onClick={() => handleServiceNavigation('Mentorship Platform')} 
+                  onClick={handleServiceNavigation} 
                   className="text-gray-300 hover:text-blue-400 transition-colors text-left"
                   data-testid="link-mentorship-platform"
                 >
@@ -125,7 +132,7 @@ export default function Footer() {
               </li>
               <li>
                 <button 
-                  onClick={() => handleServiceNavigation('Packages')} 
+                  onClick={handleServiceNavigation} 
                   className="text-gray-300 hover:text-blue-400 transition-colors text-left"
                   data-testid="link-packages"
                 >

@@ -22,10 +22,6 @@ export default function Home() {
     const url = new URL(window.location.href);
     const targetSection = url.searchParams.get('section') || (window.location.hash || '').slice(1);
     
-    console.log('Home: URL changed, checking for target section:', targetSection);
-    console.log('Home: Current location:', location);
-    console.log('Home: Full URL:', window.location.href);
-    
     if (!targetSection) return;
     
     let attempts = 0;
@@ -33,18 +29,14 @@ export default function Home() {
     
     const attemptScroll = () => {
       const element = document.getElementById(targetSection);
-      console.log(`Home: Attempt ${attempts + 1}, looking for element with ID '${targetSection}':`, element);
       
       if (element) {
-        console.log(`Home: Found element! Scrolling to ${targetSection}`);
         element.scrollIntoView({ behavior: 'smooth', block: 'start' });
         return;
       }
       
       if (attempts++ < maxAttempts) {
         requestAnimationFrame(attemptScroll);
-      } else {
-        console.log(`Home: Failed to find element with ID '${targetSection}' after ${maxAttempts} attempts`);
       }
     };
     
