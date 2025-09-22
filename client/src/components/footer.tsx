@@ -3,39 +3,7 @@ import { Link, useLocation } from "wouter";
 import logoImage from "@assets/Logo_Sumanta Chaudhuri_LCC_1754301451067.png";
 
 export default function Footer() {
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId.replace('#', ''));
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   const [location, navigate] = useLocation();
-  
-  const navigateToHomeSection = (sectionId: string) => {
-    // Navigate to home page first, then scroll to section
-    navigate('/');
-    // Wait for page to load before scrolling
-    setTimeout(() => {
-      const element = document.getElementById(sectionId);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    }, 300);
-  };
-  
-  const navigateToHomeSectionFromCurrentPage = (sectionId: string) => {
-    if (location === '/') {
-      // Already on home page, just scroll
-      const element = document.getElementById(sectionId);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    } else {
-      // Navigate to home page with section
-      navigateToHomeSection(sectionId);
-    }
-  };
 
   return (
     <footer className="py-20 bg-gray-900 text-white relative overflow-hidden">
@@ -90,7 +58,7 @@ export default function Footer() {
             <ul className="space-y-3">
               <li>
                 <button 
-                  onClick={() => navigateToHomeSectionFromCurrentPage('packages')} 
+                  onClick={() => navigate('/?section=packages')} 
                   className="text-gray-300 hover:text-blue-400 transition-colors text-left"
                   data-testid="link-career-counselling"
                 >
@@ -99,7 +67,7 @@ export default function Footer() {
               </li>
               <li>
                 <button 
-                  onClick={() => navigateToHomeSectionFromCurrentPage('packages')} 
+                  onClick={() => navigate('/?section=packages')} 
                   className="text-gray-300 hover:text-blue-400 transition-colors text-left"
                   data-testid="link-psychometric-assessment"
                 >
@@ -109,7 +77,7 @@ export default function Footer() {
 
               <li>
                 <button 
-                  onClick={() => navigateToHomeSectionFromCurrentPage('packages')} 
+                  onClick={() => navigate('/?section=packages')} 
                   className="text-gray-300 hover:text-blue-400 transition-colors text-left"
                   data-testid="link-cv-building"
                 >
@@ -118,7 +86,7 @@ export default function Footer() {
               </li>
               <li>
                 <button 
-                  onClick={() => navigateToHomeSectionFromCurrentPage('packages')} 
+                  onClick={() => navigate('/?section=packages')} 
                   className="text-gray-300 hover:text-blue-400 transition-colors text-left"
                   data-testid="link-mentorship-platform"
                 >
@@ -151,7 +119,7 @@ export default function Footer() {
               </li>
               <li>
                 <button 
-                  onClick={() => navigateToHomeSectionFromCurrentPage('packages')} 
+                  onClick={() => navigate('/?section=packages')} 
                   className="text-gray-300 hover:text-blue-400 transition-colors text-left"
                   data-testid="link-packages"
                 >
