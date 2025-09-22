@@ -1,13 +1,9 @@
 import { Award, Users, Globe, BookOpen, ArrowRight, Play, GraduationCap, Brain, HandHeart, Lightbulb, Medal, BrainCircuit } from "lucide-react";
+import { useLocation } from "wouter";
 import sumantaImage from "@assets/Image_Sumanta Chaudhuri_LCC_1754306082124.jpeg";
 
 export default function PremiumAbout() {
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+  const [location, navigate] = useLocation();
 
   const achievements = [
     {
@@ -149,14 +145,14 @@ export default function PremiumAbout() {
 
             <div className="flex flex-col sm:flex-row gap-4">
               <button 
-                onClick={() => scrollToSection('packages')}
+                onClick={() => navigate('/?section=packages')}
                 className="btn-primary group inline-flex items-center justify-center"
               >
                 Find My Career Path
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
               <button 
-                onClick={() => scrollToSection('contact')}
+                onClick={() => navigate('/?section=contact')}
                 className="btn-secondary group inline-flex items-center justify-center"
               >
                 <Play className="mr-2 w-5 h-5" />
