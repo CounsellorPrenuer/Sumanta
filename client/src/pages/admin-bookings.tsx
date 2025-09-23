@@ -244,7 +244,7 @@ export default function AdminBookings() {
 
         {/* Navigation Tabs */}
         <div className="mb-8 border-b border-gray-200">
-          <nav className="flex space-x-8">
+          <nav className="flex flex-wrap gap-2 md:gap-8">
             <button
               onClick={() => setActiveTab('overview')}
               className={`py-2 px-1 border-b-2 font-medium text-sm ${
@@ -277,56 +277,68 @@ export default function AdminBookings() {
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4 mb-8">
-          <div className="bg-white rounded-lg p-4 shadow">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4 mb-8">
+          <div className="bg-white rounded-lg p-4 shadow hover:shadow-md transition-shadow">
             <div className="flex items-center gap-2 mb-2">
               <User className="w-5 h-5 text-blue-500" />
               <div className="text-2xl font-bold text-gray-900">{stats.totalBookings}</div>
             </div>
             <div className="text-sm text-gray-600">Bookings</div>
           </div>
-          <div className="bg-white rounded-lg p-4 shadow">
+          <div className="bg-white rounded-lg p-4 shadow hover:shadow-md transition-shadow">
             <div className="flex items-center gap-2 mb-2">
               <Mail className="w-5 h-5 text-green-500" />
               <div className="text-2xl font-bold text-gray-900">{stats.totalContacts}</div>
             </div>
             <div className="text-sm text-gray-600">Contacts</div>
           </div>
-          <div className="bg-white rounded-lg p-4 shadow">
+          <div className="bg-white rounded-lg p-4 shadow hover:shadow-md transition-shadow">
             <div className="flex items-center gap-2 mb-2">
               <CreditCard className="w-5 h-5 text-purple-500" />
               <div className="text-2xl font-bold text-gray-900">{stats.totalPayments}</div>
             </div>
             <div className="text-sm text-gray-600">Payments</div>
           </div>
-          <div className="bg-white rounded-lg p-4 shadow">
+          <div className="bg-white rounded-lg p-4 shadow hover:shadow-md transition-shadow">
             <div className="flex items-center gap-2 mb-2">
               <FileText className="w-5 h-5 text-orange-500" />
               <div className="text-2xl font-bold text-gray-900">{stats.totalDownloads}</div>
             </div>
             <div className="text-sm text-gray-600">Downloads</div>
           </div>
-          <div className="bg-white rounded-lg p-4 shadow">
+          <div className="bg-white rounded-lg p-4 shadow hover:shadow-md transition-shadow">
             <div className="flex items-center gap-2 mb-2">
               <PenTool className="w-5 h-5 text-indigo-500" />
               <div className="text-2xl font-bold text-gray-900">{stats.totalBlogs}</div>
             </div>
             <div className="text-sm text-gray-600">Blog Posts</div>
           </div>
-          <div className="bg-white rounded-lg p-4 shadow">
-            <div className="text-2xl font-bold text-yellow-600">{stats.pending}</div>
+          <div className="bg-white rounded-lg p-4 shadow hover:shadow-md transition-shadow">
+            <div className="flex items-center gap-2 mb-2">
+              <Clock className="w-5 h-5 text-yellow-500" />
+              <div className="text-2xl font-bold text-yellow-600">{stats.pending}</div>
+            </div>
             <div className="text-sm text-gray-600">Pending</div>
           </div>
-          <div className="bg-white rounded-lg p-4 shadow">
-            <div className="text-2xl font-bold text-blue-600">{stats.contacted}</div>
+          <div className="bg-white rounded-lg p-4 shadow hover:shadow-md transition-shadow">
+            <div className="flex items-center gap-2 mb-2">
+              <Phone className="w-5 h-5 text-blue-500" />
+              <div className="text-2xl font-bold text-blue-600">{stats.contacted}</div>
+            </div>
             <div className="text-sm text-gray-600">Contacted</div>
           </div>
-          <div className="bg-white rounded-lg p-4 shadow">
-            <div className="text-2xl font-bold text-green-600">{stats.completed}</div>
+          <div className="bg-white rounded-lg p-4 shadow hover:shadow-md transition-shadow">
+            <div className="flex items-center gap-2 mb-2">
+              <Check className="w-5 h-5 text-green-500" />
+              <div className="text-2xl font-bold text-green-600">{stats.completed}</div>
+            </div>
             <div className="text-sm text-gray-600">Completed</div>
           </div>
-          <div className="bg-white rounded-lg p-4 shadow">
-            <div className="text-2xl font-bold text-indigo-600">{stats.totalBookings + stats.totalContacts + stats.totalPayments + stats.totalDownloads + stats.totalBlogs}</div>
+          <div className="bg-white rounded-lg p-4 shadow hover:shadow-md transition-shadow">
+            <div className="flex items-center gap-2 mb-2">
+              <Users className="w-5 h-5 text-indigo-500" />
+              <div className="text-2xl font-bold text-indigo-600">{stats.totalBookings + stats.totalContacts + stats.totalPayments + stats.totalDownloads + stats.totalBlogs}</div>
+            </div>
             <div className="text-sm text-gray-600">Total Records</div>
           </div>
         </div>
