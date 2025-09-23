@@ -62,19 +62,23 @@ export default function AdminBookings() {
   const isLoading = bookingsLoading || contactsLoading || paymentsLoading || downloadsLoading || blogsLoading;
 
   const updateStatusMutation = useMutation({
-    mutationFn: ({ id, status }: { id: string; status: string }) =>
-      apiRequest('PATCH', `/api/bookings/${id}/status`, { status }),
-    onSuccess: () => {
+    mutationFn: ({ id, status }: { id: string; status: string }) => {
+      console.log('Making API request to update status:', { id, status });
+      return apiRequest('PATCH', `/api/bookings/${id}/status`, { status });
+    },
+    onSuccess: (data, variables) => {
+      console.log('Status update successful:', { data, variables });
       queryClient.invalidateQueries({ queryKey: ['/api/bookings'] });
       toast({
-        title: "Status Updated",
-        description: "Booking status has been updated successfully.",
+        title: "✅ Status Updated Successfully!",
+        description: `Booking status changed to ${variables.status}`,
       });
     },
-    onError: () => {
+    onError: (error: any, variables) => {
+      console.error('Status update failed:', { error, variables });
       toast({
-        title: "Update Failed",
-        description: "Failed to update booking status.",
+        title: "❌ Update Failed",
+        description: error?.message || "Failed to update booking status. Please try again.",
         variant: "destructive",
       });
     }
@@ -82,24 +86,37 @@ export default function AdminBookings() {
 
   // Blog mutations - moved here to fix hooks order violation
   const deleteBlogMutation = useMutation({
-    mutationFn: (id: string) => apiRequest('DELETE', `/api/blog-posts/${id}`),
-    onSuccess: () => {
+    mutationFn: (id: string) => {
+      console.log('Making API request to delete blog:', id);
+      return apiRequest('DELETE', `/api/blog-posts/${id}`);
+    },
+    onSuccess: (data, variables) => {
+      console.log('Blog deletion successful:', { data, variables });
       queryClient.invalidateQueries({ queryKey: ['/api/blog-posts'] });
       toast({
-        title: "Blog Deleted",
-        description: "Blog post has been deleted successfully.",
+        title: "✅ Blog Deleted Successfully!",
+        description: "The blog post has been permanently removed.",
       });
     },
-    onError: (error: any) => {
+    onError: (error: any, variables) => {
+      console.error('Blog deletion failed:', { error, variables });
       toast({
-        title: "Delete Failed",
-        description: error.message || "Failed to delete blog post.",
+        title: "❌ Delete Failed",
+        description: error?.message || "Failed to delete blog post. Please try again.",
         variant: "destructive",
       });
     }
   });
 
   const handleStatusChange = (id: string, status: string) => {
+    console.log('Updating booking status:', { id, status });
+    
+    // Show immediate feedback
+    toast({
+      title: "Updating Status...",
+      description: `Changing status to ${status}`,
+    });
+    
     updateStatusMutation.mutate({ id, status });
   };
 
@@ -154,73 +171,107 @@ export default function AdminBookings() {
     investment: sortedBookings.filter(b => b.bookingType === 'investment').length,
   };
 
-  const exportToExcel = () => {
-    // Create CSV content with all data
-    const csvContent = [
-      ['Data Type', 'Name', 'Email/Mobile', 'Date', 'Status', 'Amount', 'Package', 'Notes'].join(','),
-      
-      // Bookings
-      ...sortedBookings.map(booking => [
-        'Booking',
-        booking.fullName || '',
-        booking.mobile || '',
-        new Date(booking.createdAt!).toLocaleDateString(),
-        booking.status || '',
-        booking.amount ? `₹${booking.amount}` : '',
-        booking.packageName || '',
-        booking.notes || ''
-      ].map(field => `"${field}"`).join(',')),
-      
-      // Contact submissions
-      ...sortedContacts.map(contact => [
-        'Contact Form',
-        `${contact.firstName} ${contact.lastName}`.trim(),
-        `${contact.email} / ${contact.phone}`,
-        new Date(contact.createdAt!).toLocaleDateString(),
-        'Submitted',
-        '',
-        contact.serviceInterest || '',
-        contact.message || ''
-      ].map(field => `"${field}"`).join(',')),
-      
-      // Payments
-      ...sortedPayments.map(payment => [
-        'Payment',
-        payment.customerName || '',
-        payment.customerEmail || '',
-        new Date(payment.createdAt!).toLocaleDateString(),
-        payment.status || '',
-        payment.amount ? `₹${payment.amount}` : '',
-        payment.packageId || '',
-        payment.stripePaymentIntentId || ''
-      ].map(field => `"${field}"`).join(',')),
-      
-      // Resource downloads
-      ...sortedDownloads.map(download => [
-        'Resource Download',
-        download.fullName || '',
-        `${download.email} / ${download.mobile}`,
-        new Date(download.createdAt!).toLocaleDateString(),
-        'Downloaded',
-        '',
-        download.resourceTitle || '',
-        download.currentStage || ''
-      ].map(field => `"${field}"`).join(','))
-    ].join('\n');
+  const [isExporting, setIsExporting] = useState(false);
 
-    // Create and download file
-    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
-    const link = document.createElement('a');
-    link.href = URL.createObjectURL(blob);
-    link.download = `leadcrest_data_${new Date().toISOString().split('T')[0]}.csv`;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+  const exportToExcel = async () => {
+    console.log('Export to Excel initiated');
+    setIsExporting(true);
+    
+    try {
+      // Show loading toast
+      toast({
+        title: "Exporting Data...",
+        description: "Preparing your CSV file, please wait.",
+      });
 
-    toast({
-      title: "Data Exported",
-      description: "All data has been exported to CSV file.",
-    });
+      // Add small delay for better UX
+      await new Promise(resolve => setTimeout(resolve, 500));
+
+      // Create CSV content with all data
+      const csvContent = [
+        ['Data Type', 'Name', 'Email/Mobile', 'Date', 'Status', 'Amount', 'Package', 'Notes'].join(','),
+        
+        // Bookings
+        ...sortedBookings.map(booking => [
+          'Booking',
+          booking.fullName || '',
+          booking.mobile || '',
+          new Date(booking.createdAt!).toLocaleDateString(),
+          booking.status || '',
+          booking.amount ? `₹${booking.amount}` : '',
+          booking.packageName || '',
+          booking.notes || ''
+        ].map(field => `"${String(field).replace(/"/g, '""')}"`).join(',')),
+        
+        // Contact submissions
+        ...sortedContacts.map(contact => [
+          'Contact Form',
+          `${contact.firstName} ${contact.lastName}`.trim(),
+          `${contact.email} / ${contact.phone}`,
+          new Date(contact.createdAt!).toLocaleDateString(),
+          'Submitted',
+          '',
+          contact.serviceInterest || '',
+          contact.message || ''
+        ].map(field => `"${String(field).replace(/"/g, '""')}"`).join(',')),
+        
+        // Payments
+        ...sortedPayments.map(payment => [
+          'Payment',
+          payment.customerName || '',
+          payment.customerEmail || '',
+          new Date(payment.createdAt!).toLocaleDateString(),
+          payment.status || '',
+          payment.amount ? `₹${payment.amount}` : '',
+          payment.packageId || '',
+          payment.stripePaymentIntentId || ''
+        ].map(field => `"${String(field).replace(/"/g, '""')}"`).join(',')),
+        
+        // Resource downloads
+        ...sortedDownloads.map(download => [
+          'Resource Download',
+          download.fullName || '',
+          `${download.email} / ${download.mobile}`,
+          new Date(download.createdAt!).toLocaleDateString(),
+          'Downloaded',
+          '',
+          download.resourceTitle || '',
+          download.currentStage || ''
+        ].map(field => `"${String(field).replace(/"/g, '""')}"`).join(','))
+      ].join('\n');
+
+      console.log('CSV content prepared, rows:', csvContent.split('\n').length);
+
+      // Create and download file
+      const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      const fileName = `leadcrest_data_${new Date().toISOString().split('T')[0]}.csv`;
+      link.download = fileName;
+      link.style.display = 'none';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      
+      // Clean up the blob URL
+      URL.revokeObjectURL(link.href);
+
+      console.log('File download initiated:', fileName);
+
+      toast({
+        title: "✅ Export Successful!",
+        description: `Downloaded ${fileName} with ${csvContent.split('\n').length - 1} records.`,
+      });
+    } catch (error) {
+      console.error('Export failed:', error);
+      toast({
+        title: "Export Failed",
+        description: "Failed to export data. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsExporting(false);
+    }
   };
 
   return (
@@ -234,11 +285,21 @@ export default function AdminBookings() {
           </div>
           <button 
             onClick={exportToExcel}
-            className="flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors"
+            disabled={isExporting}
+            className="flex items-center gap-2 bg-green-600 hover:bg-green-700 disabled:bg-green-400 disabled:cursor-not-allowed text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 transform hover:scale-105 active:scale-95 shadow-lg hover:shadow-xl"
             data-testid="button-export-excel"
           >
-            <Download className="w-5 h-5" />
-            Export to Excel
+            {isExporting ? (
+              <>
+                <div className="animate-spin w-5 h-5 border-2 border-white border-t-transparent rounded-full"></div>
+                Exporting...
+              </>
+            ) : (
+              <>
+                <Download className="w-5 h-5" />
+                Export to Excel
+              </>
+            )}
           </button>
         </div>
 
@@ -246,31 +307,47 @@ export default function AdminBookings() {
         <div className="mb-8 border-b border-gray-200">
           <nav className="flex flex-wrap gap-2 md:gap-8">
             <button
-              onClick={() => setActiveTab('overview')}
-              className={`py-2 px-1 border-b-2 font-medium text-sm ${
+              onClick={() => {
+                console.log('Switching to overview tab');
+                setActiveTab('overview');
+                toast({
+                  title: "Tab Switched",
+                  description: "Viewing Customer Data",
+                });
+              }}
+              className={`py-3 px-4 border-b-3 font-semibold text-sm transition-all duration-200 rounded-t-lg ${
                 activeTab === 'overview'
-                  ? 'border-golden text-golden'
-                  : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                  ? 'border-golden text-golden bg-golden/10 shadow-sm'
+                  : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 hover:bg-gray-50'
               }`}
               data-testid="tab-overview"
             >
               <div className="flex items-center gap-2">
-                <Users className="w-4 h-4" />
+                <Users className={`w-5 h-5 ${activeTab === 'overview' ? 'text-golden' : ''}`} />
                 Customer Data
+                {activeTab === 'overview' && <div className="ml-2 w-2 h-2 bg-golden rounded-full animate-pulse"></div>}
               </div>
             </button>
             <button
-              onClick={() => setActiveTab('blogs')}
-              className={`py-2 px-1 border-b-2 font-medium text-sm ${
+              onClick={() => {
+                console.log('Switching to blogs tab');
+                setActiveTab('blogs');
+                toast({
+                  title: "Tab Switched",
+                  description: "Viewing Blog Management",
+                });
+              }}
+              className={`py-3 px-4 border-b-3 font-semibold text-sm transition-all duration-200 rounded-t-lg ${
                 activeTab === 'blogs'
-                  ? 'border-golden text-golden'
-                  : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                  ? 'border-golden text-golden bg-golden/10 shadow-sm'
+                  : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 hover:bg-gray-50'
               }`}
               data-testid="tab-blogs"
             >
               <div className="flex items-center gap-2">
-                <PenTool className="w-4 h-4" />
+                <PenTool className={`w-5 h-5 ${activeTab === 'blogs' ? 'text-golden' : ''}`} />
                 Blog Management
+                {activeTab === 'blogs' && <div className="ml-2 w-2 h-2 bg-golden rounded-full animate-pulse"></div>}
               </div>
             </button>
           </nav>
@@ -422,15 +499,24 @@ export default function AdminBookings() {
                           
                           <select
                             value={booking.status || 'pending'}
-                            onChange={(e) => handleStatusChange(booking.id, e.target.value)}
-                            className="text-sm border border-gray-300 rounded px-2 py-1"
+                            onChange={(e) => {
+                              console.log('Status dropdown changed:', { bookingId: booking.id, newStatus: e.target.value });
+                              handleStatusChange(booking.id, e.target.value);
+                            }}
+                            disabled={updateStatusMutation.isPending}
+                            className="text-sm border border-gray-300 rounded px-3 py-2 bg-white hover:border-gray-400 focus:border-golden focus:ring-2 focus:ring-golden/20 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
                             data-testid={`select-status-${booking.id}`}
                           >
-                            <option value="pending">Pending</option>
-                            <option value="contacted">Contacted</option>
-                            <option value="completed">Completed</option>
-                            <option value="cancelled">Cancelled</option>
+                            <option value="pending">🟡 Pending</option>
+                            <option value="contacted">🔵 Contacted</option>
+                            <option value="completed">🟢 Completed</option>
+                            <option value="cancelled">🔴 Cancelled</option>
                           </select>
+                          {updateStatusMutation.isPending && (
+                            <div className="ml-2 inline-block">
+                              <div className="animate-spin w-4 h-4 border-2 border-golden border-t-transparent rounded-full"></div>
+                            </div>
+                          )}
                         </div>
                       </div>
 
@@ -594,8 +680,15 @@ export default function AdminBookings() {
                 <p className="text-gray-600">Create, edit, and manage blog posts with AI assistance</p>
               </div>
               <button
-                onClick={() => setShowBlogForm(true)}
-                className="flex items-center gap-2 bg-golden hover:bg-golden/90 text-white px-6 py-3 rounded-lg font-semibold transition-colors"
+                onClick={() => {
+                  console.log('Creating new blog post');
+                  setShowBlogForm(true);
+                  toast({
+                    title: "📝 Opening Blog Editor",
+                    description: "Create a new blog post with AI assistance",
+                  });
+                }}
+                className="flex items-center gap-2 bg-golden hover:bg-golden/90 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 transform hover:scale-105 active:scale-95 shadow-lg hover:shadow-xl"
                 data-testid="button-create-blog"
               >
                 <Plus className="w-5 h-5" />
@@ -640,8 +733,15 @@ export default function AdminBookings() {
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">No Blog Posts Yet</h3>
                 <p className="text-gray-600 mb-4">Create your first blog post using AI generation or manual editing.</p>
                 <button
-                  onClick={() => setShowBlogForm(true)}
-                  className="bg-golden hover:bg-golden/90 text-white px-6 py-2 rounded-lg font-semibold"
+                  onClick={() => {
+                    console.log('Creating first blog post');
+                    setShowBlogForm(true);
+                    toast({
+                      title: "🎉 Let's Create Your First Blog!",
+                      description: "Use AI to generate professional content",
+                    });
+                  }}
+                  className="bg-golden hover:bg-golden/90 text-white px-6 py-2 rounded-lg font-semibold transition-all duration-200 transform hover:scale-105 active:scale-95"
                   data-testid="button-create-first-blog"
                 >
                   Create Your First Blog
@@ -677,8 +777,15 @@ export default function AdminBookings() {
                       
                       <div className="flex items-center gap-2 ml-4">
                         <button
-                          onClick={() => window.open(`/blog/${blog.id}`, '_blank')}
-                          className="flex items-center gap-1 px-3 py-2 text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
+                          onClick={() => {
+                            console.log('Viewing blog:', blog.id);
+                            window.open(`/blog/${blog.id}`, '_blank');
+                            toast({
+                              title: "👀 Opening Blog Post",
+                              description: "Blog post opened in new tab",
+                            });
+                          }}
+                          className="flex items-center gap-1 px-3 py-2 text-blue-600 hover:bg-blue-50 rounded-lg transition-all duration-200 transform hover:scale-105"
                           data-testid={`button-view-blog-${blog.id}`}
                         >
                           <Eye className="w-4 h-4" />
@@ -686,10 +793,15 @@ export default function AdminBookings() {
                         </button>
                         <button
                           onClick={() => {
+                            console.log('Editing blog:', blog.id);
                             setEditingBlog(blog);
                             setShowBlogForm(true);
+                            toast({
+                              title: "✏️ Opening Blog Editor",
+                              description: `Editing: ${blog.title}`,
+                            });
                           }}
-                          className="flex items-center gap-1 px-3 py-2 text-green-600 hover:bg-green-50 rounded-lg transition-colors"
+                          className="flex items-center gap-1 px-3 py-2 text-green-600 hover:bg-green-50 rounded-lg transition-all duration-200 transform hover:scale-105"
                           data-testid={`button-edit-blog-${blog.id}`}
                         >
                           <Edit3 className="w-4 h-4" />
@@ -697,16 +809,28 @@ export default function AdminBookings() {
                         </button>
                         <button
                           onClick={() => {
-                            if (confirm('Are you sure you want to delete this blog post? This action cannot be undone.')) {
+                            console.log('Attempting to delete blog:', blog.id);
+                            if (confirm(`Are you sure you want to delete "${blog.title}"? This action cannot be undone.`)) {
+                              console.log('Confirmed blog deletion:', blog.id);
+                              toast({
+                                title: "🗑️ Deleting Blog Post...",
+                                description: "Please wait while we delete the blog post",
+                              });
                               deleteBlogMutation.mutate(blog.id);
+                            } else {
+                              console.log('Blog deletion cancelled');
                             }
                           }}
                           disabled={deleteBlogMutation.isPending}
-                          className="flex items-center gap-1 px-3 py-2 text-red-600 hover:bg-red-50 rounded-lg transition-colors disabled:opacity-50"
+                          className="flex items-center gap-1 px-3 py-2 text-red-600 hover:bg-red-50 rounded-lg transition-all duration-200 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
                           data-testid={`button-delete-blog-${blog.id}`}
                         >
-                          <Trash2 className="w-4 h-4" />
-                          Delete
+                          {deleteBlogMutation.isPending ? (
+                            <div className="animate-spin w-4 h-4 border-2 border-red-600 border-t-transparent rounded-full"></div>
+                          ) : (
+                            <Trash2 className="w-4 h-4" />
+                          )}
+                          {deleteBlogMutation.isPending ? 'Deleting...' : 'Delete'}
                         </button>
                       </div>
                     </div>
