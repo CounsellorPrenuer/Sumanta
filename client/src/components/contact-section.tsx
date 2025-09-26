@@ -88,7 +88,7 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <div className="font-semibold text-white group-hover:text-primary transition-colors">Phone</div>
-                    <div className="text-gray-300">+91 9828096408</div>
+                    <div className="text-gray-300">+91 9147424608</div>
                   </div>
                 </div>
               </div>
@@ -100,7 +100,7 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <div className="font-semibold text-white group-hover:text-primary transition-colors">Email</div>
-                    <div className="text-gray-300">sumantaunstoppable@gmail.com</div>
+                    <div className="text-gray-300">leadcrestconsulting6@gmail.com</div>
                   </div>
                 </div>
               </div>

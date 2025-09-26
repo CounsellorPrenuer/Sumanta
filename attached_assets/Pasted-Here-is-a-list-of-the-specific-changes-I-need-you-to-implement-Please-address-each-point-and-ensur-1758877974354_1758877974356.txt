@@ -1,0 +1,57 @@
+Here is a list of the specific changes I need you to implement. Please address each point, and ensure the entire website is responsive and well-styled.
+
+1. Contact Information and UI Changes:
+
+Phone Number: Change the phone number on the website to redirect to 91 9147424608. Please ensure this is implemented wherever the number appears.
+
+Email Link: Update the "Email Us" button and any other email links to redirect directly to Gmail instead of Outlook.
+
+"Book a Call" Buttons: Simplify the "Book a Call" options. Currently, there are separate buttons for "Strategic Career Consultation" and "Discovery" calls. Please consolidate these into a single "Book a Free Call" button. This single button should be present in the header and on any other pages where a call booking is offered.
+
+Remove Unnecessary Sections:
+
+Remove the "Executive Guide" part.
+
+Remove the "Worried about your career being replaced by AI?" section from the Contact Us page.
+
+Remove the "Legal" part of the website.
+
+2. Styling and Design Improvements:
+
+The current design has a few CSS mistakes and could be improved. Please review the CSS for the entire site and make the following enhancements:
+
+Improve the overall visual appeal. Pay attention to spacing, padding, and alignment.
+
+Ensure the design is fully responsive and looks great on both mobile and desktop devices.
+
+Make sure all interactive elements (buttons, links) have a clean, modern hover state.
+
+Ensure the UI for different packages looks more corporate-related instead of a student registration form. This applies specifically to the registration part when a package is chosen.
+
+The final screenshot shows a backend dashboard. Please make the UI for this dashboard look a bit better, with cleaner cards, improved typography, and better spacing.
+
+3. Backend and Functionality:
+
+Active Backend Connection: A backend has already been provided, but it needs to be connected to the frontend to work actively. Please ensure the frontend and backend are correctly connected so that the website's functionality is live.
+
+Backend Responsiveness: Review the backend code and make it more responsive and accessible. This includes looking at the following buttons/options:
+
+Bookings
+
+Contacts
+
+Payments
+
+Downloads
+
+Blog Posts
+
+Pending
+
+Contacted
+
+Completed
+
+Total Records
+
+Please confirm that all of these changes have been implemented before deployment.

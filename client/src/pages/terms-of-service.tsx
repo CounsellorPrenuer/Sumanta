@@ -248,7 +248,7 @@ export default function TermsOfService() {
               <div className="space-y-2 text-gray-700">
                 <p><strong>Leadcrest Consulting</strong></p>
                 <p>Email: legal@leadcrestconsulting.com</p>
-                <p>Phone: +91-9876543210</p>
+                <p>Phone: +91 9147424608</p>
                 <p>Address: Mumbai, Maharashtra, India</p>
               </div>
             </div>

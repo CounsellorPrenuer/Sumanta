@@ -167,7 +167,7 @@ export default function BlogPostPage() {
                   // Scroll to contact section or open booking modal
                   window.scrollTo({ top: 0, behavior: 'smooth' });
                   setTimeout(() => {
-                    alert('Ready to accelerate your career? Contact Sumanta at sumantaunstoppable@gmail.com or call +91 9828096408 to schedule your executive consultation.');
+                    alert('Ready to accelerate your career? Contact Sumanta at leadcrestconsulting6@gmail.com or call +91 9147424608 to schedule your executive consultation.');
                   }, 500);
                 }}
                 className="bg-white text-blue-600 px-8 py-3 rounded-xl font-bold hover:bg-blue-50 transition-colors"
