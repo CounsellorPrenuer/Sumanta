@@ -288,7 +288,7 @@ export function BookingPopup({ isOpen, onClose, package: pkg, selectedStage }: B
             data-testid="button-book-discovery-call"
           >
             <Calendar className="w-4 h-4" />
-            {isSubmitting ? 'Booking...' : 'Book A Discovery Call'}
+            {isSubmitting ? 'Booking...' : 'Book a Free Call'}
           </button>
           
           <button

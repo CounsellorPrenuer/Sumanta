@@ -422,7 +422,7 @@ export default function WhyCCCEdu() {
               data-testid="button-book-consultation"
               className="bg-white text-blue-600 px-8 py-4 rounded-2xl font-bold text-lg hover:bg-blue-50 transition-all duration-300 hover:scale-105 shadow-xl"
             >
-              Book Strategic Career Consultation
+              Book a Free Call
             </button>
             <button 
               onClick={() => setIsResourceModalOpen(true)}

@@ -156,7 +156,7 @@ export default function PremiumAbout() {
                 className="btn-secondary group inline-flex items-center justify-center"
               >
                 <Play className="mr-2 w-5 h-5" />
-                Book a Free Career Clarity Call
+                Book a Free Call
               </button>
             </div>
           </div>

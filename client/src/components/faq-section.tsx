@@ -52,7 +52,7 @@ const faqData = [
     questions: [
       {
         question: "How do I book a session?",
-        answer: "You can book sessions through our website using the 'Book A Free Call' or 'Book Strategic Career Consultation' buttons. After booking, you'll receive confirmation via email and SMS with Calendly or Google Calendar links for easy scheduling."
+        answer: "You can book sessions through our website using the 'Book a Free Call' button. After booking, you'll receive confirmation via email and SMS with Calendly or Google Calendar links for easy scheduling."
       },
       {
         question: "Can I reschedule my appointment?",

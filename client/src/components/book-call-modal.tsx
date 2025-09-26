@@ -246,7 +246,7 @@ export default function BookCallModal({ isOpen, onClose }: BookCallModalProps) {
                 ) : (
                   <div className="flex items-center gap-4">
                     <Phone className="w-6 h-6" />
-                    <span>Book My Free Discovery Call</span>
+                    <span>Book a Free Call</span>
                     <ArrowRight className="w-6 h-6" />
                   </div>
                 )}
