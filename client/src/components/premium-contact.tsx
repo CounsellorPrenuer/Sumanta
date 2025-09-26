@@ -95,11 +95,9 @@ export default function PremiumContact() {
           </div>
           
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            Worried about your career
-            <span className="text-gradient-blue block">being replaced by AI?</span>
+            Ready to Transform
+            <span className="text-gradient-blue block">Your Career?</span>
           </h2>
-          
-
           
           <p className="text-2xl font-semibold text-gray-900 mt-6">
             Book a free 10-minute call with Leadcrest Consulting's expert team.

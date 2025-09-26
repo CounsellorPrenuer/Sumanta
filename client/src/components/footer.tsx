@@ -141,24 +141,6 @@ export default function Footer() {
               </li>
               <li>
                 <Link 
-                  href="/privacy-policy" 
-                  className="text-gray-300 hover:text-blue-400 transition-colors text-left block"
-                  data-testid="link-privacy-policy"
-                >
-                  Privacy Policy
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  href="/terms-of-service" 
-                  className="text-gray-300 hover:text-blue-400 transition-colors text-left block"
-                  data-testid="link-terms-of-service"
-                >
-                  Terms of Service
-                </Link>
-              </li>
-              <li>
-                <Link 
                   href="/contact"
                   className="text-gray-300 hover:text-blue-400 transition-colors text-left block"
                   data-testid="link-contact"

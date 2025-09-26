@@ -27,16 +27,6 @@ export default function TrustLegal() {
 
   const legalItems = [
     {
-      title: "Privacy Policy",
-      description: "How we protect and handle your personal information",
-      link: "/privacy-policy",
-    },
-    {
-      title: "Terms of Service",
-      description: "Your rights and our commitments to you",
-      link: "/terms-of-service",
-    },
-    {
       title: "Refund Policy",
       description: "100% satisfaction guarantee within 7 days",
       link: "#",
