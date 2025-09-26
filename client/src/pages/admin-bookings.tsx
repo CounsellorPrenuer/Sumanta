@@ -275,13 +275,13 @@ export default function AdminBookings() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50 py-8">
       <div className="container mx-auto px-4">
         {/* Header */}
-        <div className="mb-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <div className="mb-12 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
           <div>
-            <h1 className="text-3xl font-bold text-gray-900 mb-2">Admin Dashboard</h1>
-            <p className="text-gray-600">Manage customers, content, and business operations</p>
+            <h1 className="text-4xl font-bold text-gray-900 mb-3">Admin Dashboard</h1>
+            <p className="text-lg text-gray-600 font-medium">Comprehensive business analytics and management center</p>
           </div>
           <button 
             onClick={exportToExcel}
@@ -354,69 +354,87 @@ export default function AdminBookings() {
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4 mb-8">
-          <div className="bg-white rounded-lg p-4 shadow hover:shadow-md transition-shadow">
-            <div className="flex items-center gap-2 mb-2">
-              <User className="w-5 h-5 text-blue-500" />
-              <div className="text-2xl font-bold text-gray-900">{stats.totalBookings}</div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6 mb-12">
+          <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100/50">
+            <div className="flex items-center gap-3 mb-3">
+              <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center">
+                <User className="w-6 h-6 text-white" />
+              </div>
+              <div className="text-3xl font-bold text-gray-900">{stats.totalBookings}</div>
             </div>
-            <div className="text-sm text-gray-600">Bookings</div>
+            <div className="text-sm font-semibold text-gray-600 uppercase tracking-wide">Bookings</div>
           </div>
-          <div className="bg-white rounded-lg p-4 shadow hover:shadow-md transition-shadow">
-            <div className="flex items-center gap-2 mb-2">
-              <Mail className="w-5 h-5 text-green-500" />
-              <div className="text-2xl font-bold text-gray-900">{stats.totalContacts}</div>
+          <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100/50">
+            <div className="flex items-center gap-3 mb-3">
+              <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-green-600 rounded-xl flex items-center justify-center">
+                <Mail className="w-6 h-6 text-white" />
+              </div>
+              <div className="text-3xl font-bold text-gray-900">{stats.totalContacts}</div>
             </div>
-            <div className="text-sm text-gray-600">Contacts</div>
+            <div className="text-sm font-semibold text-gray-600 uppercase tracking-wide">Contacts</div>
           </div>
-          <div className="bg-white rounded-lg p-4 shadow hover:shadow-md transition-shadow">
-            <div className="flex items-center gap-2 mb-2">
-              <CreditCard className="w-5 h-5 text-purple-500" />
-              <div className="text-2xl font-bold text-gray-900">{stats.totalPayments}</div>
+          <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100/50">
+            <div className="flex items-center gap-3 mb-3">
+              <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-purple-600 rounded-xl flex items-center justify-center">
+                <CreditCard className="w-6 h-6 text-white" />
+              </div>
+              <div className="text-3xl font-bold text-gray-900">{stats.totalPayments}</div>
             </div>
-            <div className="text-sm text-gray-600">Payments</div>
+            <div className="text-sm font-semibold text-gray-600 uppercase tracking-wide">Payments</div>
           </div>
-          <div className="bg-white rounded-lg p-4 shadow hover:shadow-md transition-shadow">
-            <div className="flex items-center gap-2 mb-2">
-              <FileText className="w-5 h-5 text-orange-500" />
-              <div className="text-2xl font-bold text-gray-900">{stats.totalDownloads}</div>
+          <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100/50">
+            <div className="flex items-center gap-3 mb-3">
+              <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-orange-600 rounded-xl flex items-center justify-center">
+                <FileText className="w-6 h-6 text-white" />
+              </div>
+              <div className="text-3xl font-bold text-gray-900">{stats.totalDownloads}</div>
             </div>
-            <div className="text-sm text-gray-600">Downloads</div>
+            <div className="text-sm font-semibold text-gray-600 uppercase tracking-wide">Downloads</div>
           </div>
-          <div className="bg-white rounded-lg p-4 shadow hover:shadow-md transition-shadow">
-            <div className="flex items-center gap-2 mb-2">
-              <PenTool className="w-5 h-5 text-indigo-500" />
-              <div className="text-2xl font-bold text-gray-900">{stats.totalBlogs}</div>
+          <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100/50">
+            <div className="flex items-center gap-3 mb-3">
+              <div className="w-12 h-12 bg-gradient-to-r from-indigo-500 to-indigo-600 rounded-xl flex items-center justify-center">
+                <PenTool className="w-6 h-6 text-white" />
+              </div>
+              <div className="text-3xl font-bold text-gray-900">{stats.totalBlogs}</div>
             </div>
-            <div className="text-sm text-gray-600">Blog Posts</div>
+            <div className="text-sm font-semibold text-gray-600 uppercase tracking-wide">Blog Posts</div>
           </div>
-          <div className="bg-white rounded-lg p-4 shadow hover:shadow-md transition-shadow">
-            <div className="flex items-center gap-2 mb-2">
-              <Clock className="w-5 h-5 text-yellow-500" />
-              <div className="text-2xl font-bold text-yellow-600">{stats.pending}</div>
+          <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100/50">
+            <div className="flex items-center gap-3 mb-3">
+              <div className="w-12 h-12 bg-gradient-to-r from-yellow-500 to-yellow-600 rounded-xl flex items-center justify-center">
+                <Clock className="w-6 h-6 text-white" />
+              </div>
+              <div className="text-3xl font-bold text-yellow-700">{stats.pending}</div>
             </div>
-            <div className="text-sm text-gray-600">Pending</div>
+            <div className="text-sm font-semibold text-gray-600 uppercase tracking-wide">Pending</div>
           </div>
-          <div className="bg-white rounded-lg p-4 shadow hover:shadow-md transition-shadow">
-            <div className="flex items-center gap-2 mb-2">
-              <Phone className="w-5 h-5 text-blue-500" />
-              <div className="text-2xl font-bold text-blue-600">{stats.contacted}</div>
+          <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100/50">
+            <div className="flex items-center gap-3 mb-3">
+              <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center">
+                <Phone className="w-6 h-6 text-white" />
+              </div>
+              <div className="text-3xl font-bold text-blue-700">{stats.contacted}</div>
             </div>
-            <div className="text-sm text-gray-600">Contacted</div>
+            <div className="text-sm font-semibold text-gray-600 uppercase tracking-wide">Contacted</div>
           </div>
-          <div className="bg-white rounded-lg p-4 shadow hover:shadow-md transition-shadow">
-            <div className="flex items-center gap-2 mb-2">
-              <Check className="w-5 h-5 text-green-500" />
-              <div className="text-2xl font-bold text-green-600">{stats.completed}</div>
+          <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100/50">
+            <div className="flex items-center gap-3 mb-3">
+              <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-green-600 rounded-xl flex items-center justify-center">
+                <Check className="w-6 h-6 text-white" />
+              </div>
+              <div className="text-3xl font-bold text-green-700">{stats.completed}</div>
             </div>
-            <div className="text-sm text-gray-600">Completed</div>
+            <div className="text-sm font-semibold text-gray-600 uppercase tracking-wide">Completed</div>
           </div>
-          <div className="bg-white rounded-lg p-4 shadow hover:shadow-md transition-shadow">
-            <div className="flex items-center gap-2 mb-2">
-              <Users className="w-5 h-5 text-indigo-500" />
-              <div className="text-2xl font-bold text-indigo-600">{stats.totalBookings + stats.totalContacts + stats.totalPayments + stats.totalDownloads + stats.totalBlogs}</div>
+          <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100/50">
+            <div className="flex items-center gap-3 mb-3">
+              <div className="w-12 h-12 bg-gradient-to-r from-slate-600 to-slate-700 rounded-xl flex items-center justify-center">
+                <Users className="w-6 h-6 text-white" />
+              </div>
+              <div className="text-3xl font-bold text-slate-700">{stats.totalBookings + stats.totalContacts + stats.totalPayments + stats.totalDownloads + stats.totalBlogs}</div>
             </div>
-            <div className="text-sm text-gray-600">Total Records</div>
+            <div className="text-sm font-semibold text-gray-600 uppercase tracking-wide">Total Records</div>
           </div>
         </div>
 

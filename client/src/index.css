@@ -187,7 +187,7 @@
   
   .btn-primary {
     background: linear-gradient(135deg, hsl(var(--cobalt)), hsl(var(--violet)));
-    @apply text-white font-semibold px-8 py-4 rounded-2xl transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105;
+    @apply text-white font-semibold px-6 py-3 lg:px-8 lg:py-4 rounded-2xl transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105;
   }
   
   .btn-primary:hover {
@@ -195,22 +195,22 @@
   }
   
   .btn-secondary {
-    @apply bg-white hover:bg-gray-50 font-semibold px-8 py-4 rounded-2xl border transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105;
+    @apply bg-white hover:bg-gray-50 font-semibold px-6 py-3 lg:px-8 lg:py-4 rounded-2xl border transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105;
     color: hsl(var(--cobalt));
     border-color: hsl(var(--cobalt-light));
   }
   
   .btn-accent {
     background: linear-gradient(135deg, hsl(var(--gold)), hsl(45, 93%, 65%));
-    @apply text-gray-900 font-semibold px-8 py-4 rounded-2xl transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105;
+    @apply text-gray-900 font-semibold px-6 py-3 lg:px-8 lg:py-4 rounded-2xl transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105;
   }
   
   .section-spacing {
-    @apply py-24 lg:py-32;
+    @apply py-16 lg:py-24 xl:py-32;
   }
   
   .container-custom {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
   }
   
   .fade-in-up {

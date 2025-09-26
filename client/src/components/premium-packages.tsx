@@ -29,23 +29,23 @@ export default function PremiumPackages() {
     {
       id: 'freshers',
       name: 'Freshers',
-      description: 'Entry-level career guidance & job readiness',
+      description: 'Strategic career foundation & professional readiness',
       icon: GraduationCap,
-      gradient: 'from-green-500 to-emerald-500'
+      gradient: 'from-slate-600 to-slate-700'
     },
     {
       id: 'middle',
       name: 'Middle Management',
-      description: 'Career advancement & leadership skills',
+      description: 'Leadership development & strategic advancement',
       icon: Briefcase,
-      gradient: 'from-blue-500 to-cyan-500'
+      gradient: 'from-blue-700 to-blue-800'
     },
     {
       id: 'senior',
       name: 'Senior Professionals',
-      description: 'Executive coaching & strategic pivots',
+      description: 'Executive transformation & C-suite positioning',
       icon: Crown,
-      gradient: 'from-purple-500 to-indigo-500'
+      gradient: 'from-indigo-700 to-indigo-800'
     }
   ];
 
@@ -111,18 +111,18 @@ export default function PremiumPackages() {
       <div className="container-custom">
         {/* Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-purple-50 border border-purple-200 text-purple-700 text-sm font-medium mb-6">
+          <div className="inline-flex items-center px-6 py-3 rounded-full bg-slate-100 border border-slate-300 text-slate-700 text-sm font-semibold mb-6">
             <Crown className="w-4 h-4 mr-2" />
-            Choose Your Success Path
+            Professional Development Solutions
           </div>
           
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            Choose Your Career
-            <span className="text-gradient-blue block">Clarity Journey</span>
+            Executive Career
+            <span className="text-gradient-blue block">Transformation Programs</span>
           </h2>
           
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-12">
-            From college graduation to professional pivots, we've built a future-ready package for every career stage.
+            Comprehensive career advancement solutions designed for today's dynamic business environment. Proven strategies for sustainable professional growth and leadership development.
           </p>
         </div>
 
