@@ -217,7 +217,7 @@ export default function PremiumPackages() {
                     </div>
                     
                     <div className={`text-4xl font-bold text-gradient-blue mb-2`}>
-                      ₹{pkg.price.toLocaleString()}
+                      ₹{pkg.price.toLocaleString()}<span className="text-xl">*</span>
                     </div>
                     
                     <h3 className="text-2xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
@@ -225,6 +225,10 @@ export default function PremiumPackages() {
                     </h3>
                     
                     <p className="text-gray-600 font-medium">{pkg.targetAudience}</p>
+                    
+                    <p className="text-xs text-gray-500 mt-3 italic">
+                      *Prices and Duration will be finalized and decided post the Initial Free Consultation.
+                    </p>
                   </div>
                   
                   {/* Features List */}

@@ -29,6 +29,9 @@ const stageIcons = {
 export function BookingPopup({ isOpen, onClose, package: pkg, selectedStage }: BookingPopupProps) {
   const [fullName, setFullName] = useState('');
   const [mobile, setMobile] = useState('');
+  const [designation, setDesignation] = useState('');
+  const [company, setCompany] = useState('');
+  const [industry, setIndustry] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
@@ -160,10 +163,10 @@ export function BookingPopup({ isOpen, onClose, package: pkg, selectedStage }: B
   };
 
   const handleBookingSubmit = (bookingType: 'discovery_call' | 'investment') => {
-    if (!fullName.trim() || !mobile.trim()) {
+    if (!fullName.trim() || !mobile.trim() || !designation.trim() || !company.trim() || !industry.trim()) {
       toast({
         title: "Missing Information",
-        description: "Please fill in all required fields.",
+        description: "Please fill in all required fields including Designation, Company, and Industry.",
         variant: "destructive",
       });
       return;
@@ -183,7 +186,7 @@ export function BookingPopup({ isOpen, onClose, package: pkg, selectedStage }: B
     const bookingData = {
       fullName: fullName.trim(),
       mobile: mobile.trim(),
-      currentStage: selectedStage,
+      currentStage: `${designation} at ${company} (${industry})`,
       packageId: pkg.id,
       packageName: pkg.name,
       bookingType,
@@ -270,12 +273,44 @@ export function BookingPopup({ isOpen, onClose, package: pkg, selectedStage }: B
 
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              <GraduationCap className="w-4 h-4 inline mr-2" />
-              Current Stage
+              Designation *
             </label>
-            <div className="px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg text-gray-700">
-              {stageLabels[selectedStage as keyof typeof stageLabels]}
-            </div>
+            <input
+              type="text"
+              value={designation}
+              onChange={(e) => setDesignation(e.target.value)}
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-colors"
+              placeholder="e.g., Senior Manager, VP Sales, etc."
+              data-testid="input-designation"
+            />
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Company *
+            </label>
+            <input
+              type="text"
+              value={company}
+              onChange={(e) => setCompany(e.target.value)}
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-colors"
+              placeholder="Your current company name"
+              data-testid="input-company"
+            />
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Industry *
+            </label>
+            <input
+              type="text"
+              value={industry}
+              onChange={(e) => setIndustry(e.target.value)}
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-colors"
+              placeholder="e.g., Telecom, Retail, Technology, etc."
+              data-testid="input-industry"
+            />
           </div>
         </div>
 
