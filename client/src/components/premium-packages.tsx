@@ -57,6 +57,11 @@ export default function PremiumPackages() {
     return packages.filter(pkg => {
       const audience = pkg.targetAudience.toLowerCase();
       
+      // Show packages for "all professionals" in all categories
+      if (audience.includes('all professionals')) {
+        return true;
+      }
+      
       switch (selectedAgeGroup) {
         case 'freshers':
           return audience.includes('college graduates') || audience.includes('freshers');
