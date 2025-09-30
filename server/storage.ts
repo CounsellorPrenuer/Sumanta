@@ -199,6 +199,21 @@ export class MemStorage implements IStorage {
           "Career helpline access"
         ],
         isPopular: false
+      },
+      {
+        id: "executive-coaching",
+        name: "Executive Coaching / Health & Wellness Coaching",
+        price: 0,
+        targetAudience: "For All Professionals",
+        description: "Personalized coaching for executive development and holistic wellbeing",
+        features: [
+          "Personalized 1:1 Coaching Sessions",
+          "Goal Clarity & Roadmap Creation",
+          "Work–Life Integration & Resilience Building",
+          "Progress Tracking & Accountability Support",
+          "Exclusive Resources & Continuous Support"
+        ],
+        isPopular: false
       }
     ];
 
