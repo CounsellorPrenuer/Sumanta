@@ -89,11 +89,6 @@ export default function PremiumContact() {
       <div className="container-custom">
         {/* Header */}
         <div className="text-center mb-20">
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-orange-50 border border-orange-200 text-orange-700 text-sm font-medium mb-6">
-            <Send className="w-4 h-4 mr-2" />
-            Get In Touch
-          </div>
-          
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
             Ready to Transform
             <span className="text-gradient-blue block">Your Career?</span>

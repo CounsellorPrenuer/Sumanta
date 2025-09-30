@@ -23,7 +23,7 @@ export default function PremiumHero() {
 
   return (
     <>
-    <section className="relative min-h-screen flex items-center pt-24 overflow-hidden bg-gradient-to-br from-white via-blue-50/30 to-violet-50/40">
+    <section className="relative min-h-screen flex items-center pt-32 overflow-hidden bg-gradient-to-br from-white via-blue-50/30 to-violet-50/40">
       {/* Modern Light Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-r from-blue-50/20 via-transparent to-yellow-50/20"></div>
       

@@ -1,0 +1,48 @@
+I. Header & Navigation Fixes
+Fix Header Overlap (Image 3): Resolve the CSS/layout bug immediately. Ensure the header/navigation is fixed in position or has adequate margin/padding so that it does not overlap with the main page content below it. The navigation structure (logo, links, CTA) must be horizontally aligned and clearly spaced.
+
+Remove Secondary CTA (Image 1): Remove the redundant "Get In Touch" button (which is often styled as a light orange callout) from the page body. Keep "Book a Free Call" in the navigation as the primary CTA.
+
+II. Content & Aesthetics Refinements
+Improve Red/Green Text Aesthetics (Image 3 - Previous Request): In sections that compare generic coaching/tools with "Our Solution" (currently using red for challenges and green for solutions):
+
+Action: Change the color scheme for these sections. Use a dark neutral color (e.g., #333333 or text-gray-800) for the negative points (challenges/limitations). Use the site's primary blue/teal color for the solution checkmarks and text to maintain brand consistency and professionalism.
+
+Delete Package Reference (Image 5 - Previous Request): Locate the pricing or FAQ section text and completely remove any reference to the old "₹550 for discovery calls" package.
+
+III. Form & Package Logic Updates
+Update Corporate Form Logic (Image 4 - Previous Request): In the lead/booking form for consultations, the "Current Background" field must be updated for a corporate audience.
+
+Action: Replace the student-focused options (Class 8-9, Class 10-12, College Graduate, etc.) with professional-focused dropdown fields or input fields:
+
+Designation
+
+Company
+
+Industry
+
+This ensures the form captures relevant data for corporate/professional consultation requests.
+
+Add New Coaching Package (Image 2): Add a new pricing/service card to the packages section, positioned alongside the "Ascend Plus" package.
+
+Package Title: Executive Coaching / Health and Wellness Coaching
+
+Content:
+
+Personalized 1:1 Coaching Sessions
+
+Goal Clarity & Roadmap Creation
+
+Work–Life Integration & Resilience Building
+
+Progress Tracking & Accountability Support
+
+Exclusive Resources & Continuous Support
+
+Implement Pricing Disclaimer: For all service/package cards (Ascend, Ascend Plus, and the new Executive Coaching package):
+
+Add an asterisk (*) next to the displayed Price and Duration fields (if duration is listed).
+
+Include the following small disclaimer text clearly visible beneath the pricing section:
+
+*Prices and Duration will be finalized and decided post the Initial Free Consultation.
