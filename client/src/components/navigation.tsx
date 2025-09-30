@@ -17,22 +17,22 @@ export default function Navigation() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl border-b" style={{background: 'linear-gradient(135deg, hsla(var(--cobalt), 0.9), hsla(var(--violet), 0.9))', borderBottomColor: 'hsla(var(--gold), 0.3)'}}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-24">
-          <div className="flex items-center gap-4">
+        <div className="flex justify-between items-center h-28 gap-4">
+          <div className="flex items-center gap-3 flex-shrink-0 min-w-0">
             <img 
               src={logoImage} 
               alt="Leadcrest Consulting Logo - Executive Career Coaching" 
-              className="h-20 w-20 object-contain"
+              className="h-20 w-20 object-contain flex-shrink-0"
             />
-            <div className="text-left">
-              <div className="text-xl font-bold text-white">Leadcrest Consulting</div>
-              <p className="text-xs text-gray-300 hidden sm:block">From Confusion to Clarity. From Interest to Impact.</p>
+            <div className="text-left min-w-0">
+              <div className="text-xl font-bold text-white whitespace-nowrap">Leadcrest Consulting</div>
+              <p className="text-xs text-gray-300 hidden sm:block truncate">From Confusion to Clarity. From Interest to Impact.</p>
             </div>
           </div>
           
           {/* Desktop Navigation */}
-          <div className="hidden lg:block">
-            <div className="flex items-center space-x-4">
+          <div className="hidden lg:block flex-shrink-0">
+            <div className="flex items-center space-x-3 xl:space-x-4">
               <button 
                 onClick={() => scrollToSection('home')} 
                 className="text-white hover:text-primary px-3 py-2 rounded-xl font-medium transition-all hover:bg-white/10"
@@ -71,9 +71,9 @@ export default function Navigation() {
               </button>
               <Button 
                 onClick={() => scrollToSection('contact')} 
-                className="gradient-primary text-black font-semibold px-6 py-2 rounded-xl hover-glow border-0"
+                className="gradient-primary text-black font-semibold px-6 lg:px-8 py-2 rounded-xl hover-glow border-0 whitespace-nowrap"
               >
-                Get Started
+                Book a Free Call
               </Button>
             </div>
           </div>
@@ -136,7 +136,7 @@ export default function Navigation() {
               onClick={() => scrollToSection('contact')} 
               className="w-full mt-4 gradient-primary text-black font-semibold rounded-xl border-0"
             >
-              Get Started
+              Book a Free Call
             </Button>
           </div>
         </div>

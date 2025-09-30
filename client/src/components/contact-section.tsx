@@ -62,11 +62,6 @@ export default function ContactSection() {
     <section id="contact" className="py-32 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20 fade-in">
-          <div className="inline-flex items-center gap-2 glass-primary px-4 py-2 rounded-full text-sm font-medium text-primary mb-6">
-            <Mail className="h-4 w-4" />
-            Get In Touch
-          </div>
-          
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6" role="heading" aria-level={2}>
             Start Your{" "}
             <span className="text-gradient-primary">Journey Today</span>

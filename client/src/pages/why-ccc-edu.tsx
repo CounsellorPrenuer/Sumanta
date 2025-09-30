@@ -304,16 +304,16 @@ export default function WhyCCCEdu() {
             {whyNotOthers.map((comparison, index) => (
               <div key={index} className="premium-card p-8 hover:shadow-xl transition-all duration-300 group">
                 <div className="flex items-start">
-                  <div className="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mr-6 flex-shrink-0">
-                    <comparison.icon className="w-6 h-6 text-red-600" />
+                  <div className="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center mr-6 flex-shrink-0">
+                    <comparison.icon className="w-6 h-6 text-gray-600" />
                   </div>
                   <div className="flex-1">
                     <h3 className="text-xl font-bold text-gray-900 mb-2">{comparison.competitor}</h3>
-                    <p className="text-red-600 mb-4 flex items-center">
-                      <span className="w-2 h-2 bg-red-500 rounded-full mr-3"></span>
+                    <p className="text-gray-600 mb-4 flex items-center">
+                      <span className="w-2 h-2 bg-gray-400 rounded-full mr-3"></span>
                       {comparison.problem}
                     </p>
-                    <p className="text-green-600 font-semibold flex items-center">
+                    <p className="text-blue-600 font-semibold flex items-center">
                       <CheckCircle className="w-5 h-5 mr-3" />
                       Our Solution: {comparison.ourSolution}
                     </p>

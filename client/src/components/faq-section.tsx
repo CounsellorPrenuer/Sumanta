@@ -12,7 +12,7 @@ const faqData = [
       },
       {
         question: "How much do your services cost?",
-        answer: "Our packages start from ₹550 for discovery calls. Our main packages include Ascend (₹6,499) and Ascend Plus (₹10,599) with different features and session counts. We also offer premium executive coaching packages. All packages include ongoing support and lifetime access to resources."
+        answer: "Our main packages include Ascend (₹6,499) and Ascend Plus (₹10,599) with different features and session counts. We also offer premium Executive Coaching and Health & Wellness Coaching packages. Prices and duration are finalized post initial free consultation. All packages include ongoing support and lifetime access to resources."
       },
       {
         question: "What's included in the free consultation?",

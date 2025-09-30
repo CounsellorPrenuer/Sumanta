@@ -1,0 +1,46 @@
+I. Header & Navigation Fixes
+Fix Header Overlap (CSS/Layout Bug): Locate the header/navigation bar section. Identify and fix the CSS or layout issue that is causing the header elements (logo, navigation links, and call-to-action buttons) to overlap or be compressed on the live site (referencing the issue shown in Image 1). Ensure proper spacing, padding, and vertical alignment for a clean, professional look on all screen sizes.
+
+Remove Secondary CTA (Image 2): Remove the redundant floating or secondary "Get In Touch" button that appears in the body of the page. The primary "Book a Free Call" button in the main navigation should remain the sole call-to-action for consultation booking.,  Content & Aesthetics Refinements
+Improve Red/Green Text Aesthetics (Image 3): In sections that compare generic coaching/tools with "Our Solution" (currently using red for challenges and green for solutions):
+
+Goal: Change the colors to a palette that complements the website's professional blue/cream scheme.
+
+Action: Replace the harsh red/green colors. Use a muted, harmonious color (e.g., dark gray or a soft warning color like muted orange) for negative/challenge dot points and a strong, professional blue or teal (matching the site's primary color) for the "Our Solution" checkmark/text. Update the checkmark and 'x' icons' styling to match these new colors.
+
+Delete Package Reference (Image 5): Locate the pricing or FAQ section text and completely remove any reference to the old "₹550 for discovery calls" package.Form & Package Logic Updates
+Update Corporate Form Logic (Image 4): In the lead/booking form for consultations, the "Current Background" field must be updated for a corporate audience.
+
+Action: Replace the student-focused options (Class 8-9, Class 10-12, College Graduate, etc.) with professional-focused dropdown fields or input fields:
+
+Designation
+
+Company
+
+Industry
+
+This ensures the form captures relevant data for corporate/professional consultation requests.
+
+Add New Coaching  Package (Image 6): Add a new pricing/service card to the packages section, positioned alongside the "Ascend Plus" package.
+
+Package Title: Executive Coaching / Health and Wellness Coaching
+
+Content:
+
+Personalized 1:1 Coaching Sessions
+
+Goal Clarity & Roadmap Creation
+
+Work–Life Integration & Resilience Building
+
+Progress Tracking & Accountability Support
+
+Exclusive Resources & Continuous Support
+
+Implement Pricing Disclaimer: For all service/package cards (Ascend, Ascend Plus, and the new Executive Coaching package):
+
+Add an asterisk (*) next to the displayed Price and Duration fields (if duration is listed).
+
+Include the following small disclaimer text clearly visible beneath the pricing section:
+
+*Prices and Duration will be finalized and decided post the Initial Free Consultation.
