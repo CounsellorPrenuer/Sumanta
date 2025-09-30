@@ -247,8 +247,8 @@ export default function BlogsResources() {
         onClose={() => setIsCallModalOpen(false)}
         package={{
           id: "discover",
-          name: "Discover",
-          price: 550,
+          name: "Free Career Consultation",
+          price: 0,
           description: "Free consultation to understand your needs",
           features: ["Free consultation", "Career assessment"],
           targetAudience: "All professionals",
