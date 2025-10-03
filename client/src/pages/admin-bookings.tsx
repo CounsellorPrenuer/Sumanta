@@ -39,6 +39,8 @@ export default function AdminBookings() {
   const [editingBlog, setEditingBlog] = useState<BlogPost | null>(null);
   const [isGenerating, setIsGenerating] = useState(false);
   const [isExporting, setIsExporting] = useState(false);
+  const [isEditingId, setIsEditingId] = useState<string | null>(null);
+  const [editForm, setEditForm] = useState<Partial<Booking>>({});
 
   const { data: bookings, isLoading: bookingsLoading } = useQuery<Booking[]>({
     queryKey: ['/api/bookings'],
@@ -80,6 +82,31 @@ export default function AdminBookings() {
       toast({
         title: "❌ Update Failed",
         description: error?.message || "Failed to update booking status. Please try again.",
+        variant: "destructive",
+      });
+    }
+  });
+
+  const updateBookingMutation = useMutation({
+    mutationFn: ({ id, updates }: { id: string; updates: Partial<Booking> }) => {
+      console.log('Making API request to update booking:', { id, updates });
+      return apiRequest('PATCH', `/api/bookings/${id}`, updates);
+    },
+    onSuccess: (data, variables) => {
+      console.log('Booking update successful:', { data, variables });
+      queryClient.invalidateQueries({ queryKey: ['/api/bookings'] });
+      setIsEditingId(null);
+      setEditForm({});
+      toast({
+        title: "✅ Booking Updated Successfully!",
+        description: "Customer data has been updated.",
+      });
+    },
+    onError: (error: any, variables) => {
+      console.error('Booking update failed:', { error, variables });
+      toast({
+        title: "❌ Update Failed",
+        description: error?.message || "Failed to update booking. Please try again.",
         variant: "destructive",
       });
     }
@@ -453,53 +480,139 @@ export default function AdminBookings() {
               <div className="space-y-4">
                 {sortedBookings.map((booking) => {
                   const StatusIcon = statusIcons[booking.status as keyof typeof statusIcons];
+                  const isEditing = isEditingId === booking.id;
+                  const currentData = isEditing ? { ...booking, ...editForm } : booking;
                   
                   return (
                     <div key={booking.id} className="bg-white rounded-lg shadow p-6">
-                      <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
-                        {/* Main Info */}
-                        <div className="flex-1">
-                          <div className="flex items-center gap-3 mb-2">
-                            <div className="flex items-center gap-2">
-                              <User className="w-4 h-4 text-gray-500" />
-                              <span className="font-semibold text-gray-900">{booking.fullName}</span>
-                            </div>
-                            <div className="flex items-center gap-2">
-                              <Phone className="w-4 h-4 text-gray-500" />
-                              <span className="text-gray-700">{booking.mobile}</span>
-                            </div>
+                      {/* Header with Edit/Save buttons */}
+                      <div className="flex justify-between items-center mb-4">
+                        <h3 className="font-semibold text-gray-900">Booking Details</h3>
+                        <div className="flex gap-2">
+                          {isEditing ? (
+                            <>
+                              <button
+                                onClick={() => {
+                                  updateBookingMutation.mutate({ id: booking.id, updates: editForm });
+                                }}
+                                disabled={updateBookingMutation.isPending}
+                                className="flex items-center gap-1 px-3 py-1 bg-green-600 hover:bg-green-700 text-white rounded text-sm font-medium transition-colors disabled:opacity-50"
+                                data-testid={`button-save-${booking.id}`}
+                              >
+                                <Check className="w-4 h-4" />
+                                Save
+                              </button>
+                              <button
+                                onClick={() => {
+                                  setIsEditingId(null);
+                                  setEditForm({});
+                                }}
+                                disabled={updateBookingMutation.isPending}
+                                className="flex items-center gap-1 px-3 py-1 bg-gray-500 hover:bg-gray-600 text-white rounded text-sm font-medium transition-colors disabled:opacity-50"
+                                data-testid={`button-cancel-${booking.id}`}
+                              >
+                                <X className="w-4 h-4" />
+                                Cancel
+                              </button>
+                            </>
+                          ) : (
+                            <button
+                              onClick={() => {
+                                setIsEditingId(booking.id);
+                                setEditForm({});
+                              }}
+                              className="flex items-center gap-1 px-3 py-1 bg-blue-600 hover:bg-blue-700 text-white rounded text-sm font-medium transition-colors"
+                              data-testid={`button-edit-${booking.id}`}
+                            >
+                              <Edit3 className="w-4 h-4" />
+                              Edit
+                            </button>
+                          )}
+                        </div>
+                      </div>
+
+                      <div className="space-y-4">
+                        {/* Name and Mobile */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                          <div>
+                            <label className="text-xs font-semibold text-gray-600 mb-1 block">Full Name</label>
+                            {isEditing ? (
+                              <input
+                                type="text"
+                                value={currentData.fullName || ''}
+                                onChange={(e) => setEditForm({ ...editForm, fullName: e.target.value })}
+                                className="w-full px-3 py-2 border border-gray-300 rounded focus:border-golden focus:ring-2 focus:ring-golden/20"
+                                data-testid={`input-fullname-${booking.id}`}
+                              />
+                            ) : (
+                              <div className="flex items-center gap-2">
+                                <User className="w-4 h-4 text-gray-500" />
+                                <span className="font-semibold text-gray-900">{booking.fullName}</span>
+                              </div>
+                            )}
                           </div>
-                          
-                          <div className="flex items-center gap-4 text-sm text-gray-600 mb-3">
-                            <span className="bg-gray-100 px-2 py-1 rounded">
-                              {stageLabels[booking.currentStage as keyof typeof stageLabels]}
-                            </span>
-                            <span className="font-medium">{booking.packageName}</span>
+                          <div>
+                            <label className="text-xs font-semibold text-gray-600 mb-1 block">Mobile</label>
+                            {isEditing ? (
+                              <input
+                                type="tel"
+                                value={currentData.mobile || ''}
+                                onChange={(e) => setEditForm({ ...editForm, mobile: e.target.value })}
+                                className="w-full px-3 py-2 border border-gray-300 rounded focus:border-golden focus:ring-2 focus:ring-golden/20"
+                                data-testid={`input-mobile-${booking.id}`}
+                              />
+                            ) : (
+                              <div className="flex items-center gap-2">
+                                <Phone className="w-4 h-4 text-gray-500" />
+                                <span className="text-gray-700">{booking.mobile}</span>
+                              </div>
+                            )}
+                          </div>
+                        </div>
+
+                        {/* Stage and Package */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                          <div>
+                            <label className="text-xs font-semibold text-gray-600 mb-1 block">Career Stage</label>
+                            {isEditing ? (
+                              <input
+                                type="text"
+                                value={currentData.currentStage || ''}
+                                onChange={(e) => setEditForm({ ...editForm, currentStage: e.target.value })}
+                                className="w-full px-3 py-2 border border-gray-300 rounded focus:border-golden focus:ring-2 focus:ring-golden/20"
+                                data-testid={`input-stage-${booking.id}`}
+                              />
+                            ) : (
+                              <span className="bg-gray-100 px-2 py-1 rounded text-sm">
+                                {stageLabels[booking.currentStage as keyof typeof stageLabels]}
+                              </span>
+                            )}
+                          </div>
+                          <div>
+                            <label className="text-xs font-semibold text-gray-600 mb-1 block">Package</label>
+                            <span className="font-medium text-gray-900">{booking.packageName}</span>
+                          </div>
+                        </div>
+
+                        {/* Amount and Type */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                          <div>
+                            <label className="text-xs font-semibold text-gray-600 mb-1 block">Amount</label>
                             {booking.amount && (
                               <span className="font-semibold text-amber-600">₹{booking.amount.toLocaleString()}</span>
                             )}
                           </div>
-                          
-                          <div className="flex items-center gap-4 text-xs text-gray-500">
-                            <div className="flex items-center gap-1">
-                              <Calendar className="w-3 h-3" />
-                              {new Date(booking.createdAt!).toLocaleDateString('en-IN', {
-                                day: 'numeric',
-                                month: 'short',
-                                year: 'numeric',
-                                hour: '2-digit',
-                                minute: '2-digit'
-                              })}
-                            </div>
+                          <div>
+                            <label className="text-xs font-semibold text-gray-600 mb-1 block">Booking Type</label>
                             <div className="flex items-center gap-1">
                               {booking.bookingType === 'investment' ? (
                                 <>
-                                  <CreditCard className="w-3 h-3" />
+                                  <CreditCard className="w-4 h-4" />
                                   <span>Investment</span>
                                 </>
                               ) : (
                                 <>
-                                  <Phone className="w-3 h-3" />
+                                  <Phone className="w-4 h-4" />
                                   <span>Discovery Call</span>
                                 </>
                               )}
@@ -507,41 +620,54 @@ export default function AdminBookings() {
                           </div>
                         </div>
 
-                        {/* Status & Actions */}
-                        <div className="flex items-center gap-3">
-                          <div className={`flex items-center gap-2 px-3 py-1 rounded-full text-sm font-medium ${statusColors[booking.status as keyof typeof statusColors]}`}>
-                            <StatusIcon className="w-3 h-3" />
-                            <span className="capitalize">{booking.status}</span>
-                          </div>
-                          
-                          <select
-                            value={booking.status || 'pending'}
-                            onChange={(e) => {
-                              console.log('Status dropdown changed:', { bookingId: booking.id, newStatus: e.target.value });
-                              handleStatusChange(booking.id, e.target.value);
-                            }}
-                            disabled={updateStatusMutation.isPending}
-                            className="text-sm border border-gray-300 rounded px-3 py-2 bg-white hover:border-gray-400 focus:border-golden focus:ring-2 focus:ring-golden/20 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
-                            data-testid={`select-status-${booking.id}`}
-                          >
-                            <option value="pending">🟡 Pending</option>
-                            <option value="contacted">🔵 Contacted</option>
-                            <option value="completed">🟢 Completed</option>
-                            <option value="cancelled">🔴 Cancelled</option>
-                          </select>
-                          {updateStatusMutation.isPending && (
-                            <div className="ml-2 inline-block">
-                              <div className="animate-spin w-4 h-4 border-2 border-golden border-t-transparent rounded-full"></div>
+                        {/* Status and Date */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                          <div>
+                            <label className="text-xs font-semibold text-gray-600 mb-1 block">Status</label>
+                            <div className="flex items-center gap-3">
+                              <div className={`flex items-center gap-2 px-3 py-1 rounded-full text-sm font-medium ${statusColors[booking.status as keyof typeof statusColors]}`}>
+                                <StatusIcon className="w-3 h-3" />
+                                <span className="capitalize">{booking.status}</span>
+                              </div>
+                              <select
+                                value={booking.status || 'pending'}
+                                onChange={(e) => handleStatusChange(booking.id, e.target.value)}
+                                disabled={updateStatusMutation.isPending || isEditing}
+                                className="text-sm border border-gray-300 rounded px-3 py-2 bg-white hover:border-gray-400 focus:border-golden focus:ring-2 focus:ring-golden/20 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                                data-testid={`select-status-${booking.id}`}
+                              >
+                                <option value="pending">🟡 Pending</option>
+                                <option value="contacted">🔵 Contacted</option>
+                                <option value="completed">🟢 Completed</option>
+                                <option value="cancelled">🔴 Cancelled</option>
+                              </select>
                             </div>
-                          )}
+                          </div>
+                          <div>
+                            <label className="text-xs font-semibold text-gray-600 mb-1 block">Created Date</label>
+                            <div className="flex items-center gap-1">
+                              <Calendar className="w-4 h-4" />
+                              <span className="text-sm text-gray-500">
+                                {new Date(booking.createdAt!).toLocaleDateString('en-IN', {
+                                  day: 'numeric',
+                                  month: 'short',
+                                  year: 'numeric',
+                                  hour: '2-digit',
+                                  minute: '2-digit'
+                                })}
+                              </span>
+                            </div>
+                          </div>
                         </div>
-                      </div>
 
-                      {booking.notes && (
-                        <div className="mt-4 p-3 bg-gray-50 rounded text-sm">
-                          <strong>Notes:</strong> {booking.notes}
-                        </div>
-                      )}
+                        {/* Notes */}
+                        {booking.notes && (
+                          <div>
+                            <label className="text-xs font-semibold text-gray-600 mb-1 block">Notes</label>
+                            <div className="p-3 bg-gray-50 rounded text-sm">{booking.notes}</div>
+                          </div>
+                        )}
+                      </div>
                     </div>
                   );
                 })}

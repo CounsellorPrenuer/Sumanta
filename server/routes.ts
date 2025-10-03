@@ -474,6 +474,26 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  app.patch('/api/bookings/:id', async (req, res) => {
+    try {
+      const { id } = req.params;
+      const updates = insertBookingSchema.partial().parse(req.body);
+      const booking = await storage.updateBooking(id, updates);
+      
+      if (!booking) {
+        return res.status(404).json({ error: 'Booking not found' });
+      }
+      
+      res.json(booking);
+    } catch (error: any) {
+      if (error.name === 'ZodError') {
+        return res.status(400).json({ message: "Invalid booking data", errors: error.errors });
+      }
+      console.error('Error updating booking:', error);
+      res.status(500).json({ error: 'Failed to update booking' });
+    }
+  });
+
   // Contact submissions route
   app.get('/api/contact', async (req, res) => {
     try {
