@@ -38,6 +38,7 @@ export default function AdminBookings() {
   const [showBlogForm, setShowBlogForm] = useState(false);
   const [editingBlog, setEditingBlog] = useState<BlogPost | null>(null);
   const [isGenerating, setIsGenerating] = useState(false);
+  const [isExporting, setIsExporting] = useState(false);
 
   const { data: bookings, isLoading: bookingsLoading } = useQuery<Booking[]>({
     queryKey: ['/api/bookings'],
@@ -170,8 +171,6 @@ export default function AdminBookings() {
     discoveryCall: sortedBookings.filter(b => b.bookingType === 'discovery_call').length,
     investment: sortedBookings.filter(b => b.bookingType === 'investment').length,
   };
-
-  const [isExporting, setIsExporting] = useState(false);
 
   const exportToExcel = async () => {
     console.log('Export to Excel initiated');
