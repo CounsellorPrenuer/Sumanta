@@ -1,0 +1,95 @@
+import React, { useState, useEffect, useCallback } from 'react';
+// Assuming you have other imports for types, API calls, and UI components
+
+// The component name must be capitalized.
+const AdminBookings = () => {
+
+  // =================================================================
+  // ✅ FIX: All Hooks MUST be called unconditionally at the top level.
+  // This line (which was previously around line 174) is now safe 
+  // and will be called on every render.
+  const [isExporting, setIsExporting] = useState(false);
+  // =================================================================
+
+  // Example of other necessary state declarations (unconditionally at the top)
+  const [bookings, setBookings] = useState<any[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  // You can now use conditional logic, early returns, or effects below,
+  // but *all* hooks must be called first.
+  useEffect(() => {
+    // Placeholder for your data fetching logic
+    const fetchData = async () => {
+      setIsLoading(true);
+      // await api.fetchBookings(); 
+      // setBookings(fetchedData);
+      setIsLoading(false);
+    };
+    fetchData();
+  }, []);
+
+  // Line 176 from your image, now correctly defined after the hook
+  const exportToExcel = useCallback(async () => {
+    // Logic for exporting to Excel, using the state variable
+    if (bookings.length === 0) {
+      console.warn("No data to export.");
+      return;
+    }
+    setIsExporting(true);
+    try {
+      // Placeholder for actual export API call or data manipulation
+      console.log('Starting export of bookings...');
+      await new Promise(resolve => setTimeout(resolve, 1500)); // Simulate delay
+      console.log('Export complete.');
+    } catch (error) {
+      console.error('Export failed:', error);
+    } finally {
+      setIsExporting(false);
+    }
+  }, [bookings]); // Dependency array includes 'bookings'
+
+  if (isLoading) {
+    return (
+      <div className="p-8 text-center text-xl font-semibold">Loading booking data...</div>
+    );
+  }
+
+  return (
+    <div className="p-4 sm:p-8 bg-gray-100 min-h-screen">
+      <h1 className="text-3xl font-bold mb-6 text-gray-800">Admin Bookings Dashboard</h1>
+      
+      {/* Export Button UI */}
+      <div className="flex justify-end mb-4">
+        <button
+          onClick={exportToExcel}
+          disabled={isExporting || bookings.length === 0}
+          className="px-4 py-2 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700 disabled:bg-gray-400 transition duration-150 flex items-center"
+        >
+          {isExporting ? (
+            <>
+              <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+              </svg>
+              Exporting...
+            </>
+          ) : (
+            'Export to Excel'
+          )}
+        </button>
+      </div>
+
+      {/* Placeholder for your Bookings Table/List */}
+      <div className="bg-white p-6 rounded-xl shadow-lg">
+        {bookings.length > 0 ? (
+          <p className="text-gray-600">Displaying {bookings.length} total bookings.</p>
+        ) : (
+          <p className="text-gray-600">No bookings found.</p>
+        )}
+      </div>
+
+    </div>
+  );
+};
+
+export default AdminBookings;
