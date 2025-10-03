@@ -199,21 +199,9 @@ export default function PremiumPackages() {
             return (
               <div 
                 key={pkg.id} 
-                className={`premium-card hover:shadow-3xl transition-all duration-300 hover:-translate-y-2 group relative overflow-hidden fade-in-up ${
-                  pkg.isPopular ? 'ring-2 ring-blue-500 ring-opacity-50' : ''
-                }`}
+                className="premium-card hover:shadow-3xl transition-all duration-300 hover:-translate-y-2 group relative overflow-hidden fade-in-up"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                {/* Popular Badge */}
-                {pkg.isPopular && (
-                  <div className="absolute top-0 right-0">
-                    <div className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-4 py-2 rounded-bl-2xl rounded-tr-3xl text-sm font-semibold flex items-center">
-                      <Star className="w-4 h-4 mr-1" />
-                      Most Popular
-                    </div>
-                  </div>
-                )}
-                
                 <div className="p-8">
                   {/* Package Icon & Header */}
                   <div className="text-center mb-8">
