@@ -131,7 +131,7 @@ export default function CorporateParentingWellbeing() {
       <PremiumNavigation />
       
       {/* Top Banner for CHROs/HR Heads */}
-      <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-4">
+      <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-4 mt-24">
         <div className="container-custom">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
