@@ -108,7 +108,8 @@ export default function HowItWorks() {
       price: "₹10,599",
       features: ["Psychometric assessment to measure your interests, personality and abilities", "3 career coaching sessions", "Lifetime access to Knowledge Gateway", "CV reviews and Interview Prep"],
       popular: true,
-      audience: "College Graduates & Working Professionals"
+      audience: "College Graduates & Working Professionals",
+      paymentButtonId: "pl_RwE3WEILWB9WeJ"
     }
   ];
 
