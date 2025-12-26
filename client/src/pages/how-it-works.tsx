@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { RazorpayButton } from "@/components/razorpay-button";
 import PremiumNavigation from "@/components/premium-navigation";
 import Footer from "@/components/footer";
 import WhatsAppFloat from "@/components/whatsapp-float";
@@ -16,7 +17,7 @@ export default function HowItWorks() {
       description: "Schedule a personalized consultation to discuss your career goals, challenges, and aspirations with Sumanta.",
       details: [
         "Share your current professional situation",
-        "Discuss your career goals and aspirations", 
+        "Discuss your career goals and aspirations",
         "Identify key challenges and growth areas",
         "Get an overview of our coaching approach",
         "Understand how we can support your journey"
@@ -25,7 +26,7 @@ export default function HowItWorks() {
       color: "from-blue-500 to-cyan-600"
     },
     {
-      number: "02", 
+      number: "02",
       icon: Target,
       title: "Psychometric Assessment",
       description: "Complete comprehensive assessments to understand your interests, personality, and professional capabilities.",
@@ -41,7 +42,7 @@ export default function HowItWorks() {
     },
     {
       number: "03",
-      icon: TrendingUp, 
+      icon: TrendingUp,
       title: "Career Coaching Sessions",
       description: "Work directly with Sumanta through structured coaching sessions tailored to your professional goals.",
       details: [
@@ -83,7 +84,7 @@ export default function HowItWorks() {
     },
     {
       icon: Clock,
-      title: "Personalized Approach", 
+      title: "Personalized Approach",
       description: "Tailored coaching methodology that respects your time while providing comprehensive career guidance."
     },
     {
@@ -99,10 +100,11 @@ export default function HowItWorks() {
       price: "₹6,499",
       features: ["Psychometric assessment to measure your interests, personality and abilities", "1 career coaching session", "Lifetime access to Knowledge Gateway", "Pre-recorded webinars by industry experts"],
       popular: false,
-      audience: "College Graduates & Working Professionals"
+      audience: "College Graduates & Working Professionals",
+      paymentButtonId: "pl_RwE1evNHrHWJDW"
     },
     {
-      name: "Ascend Plus", 
+      name: "Ascend Plus",
       price: "₹10,599",
       features: ["Psychometric assessment to measure your interests, personality and abilities", "3 career coaching sessions", "Lifetime access to Knowledge Gateway", "CV reviews and Interview Prep"],
       popular: true,
@@ -113,7 +115,7 @@ export default function HowItWorks() {
   return (
     <div className="min-h-screen">
       <PremiumNavigation />
-      
+
       {/* Hero Section */}
       <section className="pt-32 pb-20 bg-gradient-to-br from-green-50 via-blue-50 to-purple-50">
         <div className="container-custom">
@@ -143,10 +145,10 @@ export default function HowItWorks() {
                       <step.icon className="w-8 h-8 text-white" />
                     </div>
                   </div>
-                  
+
                   <h3 className="text-3xl font-bold text-gray-900 mb-4">{step.title}</h3>
                   <p className="text-xl text-gray-600 mb-6 leading-relaxed">{step.description}</p>
-                  
+
                   <ul className="space-y-3 mb-6">
                     {step.details.map((detail, idx) => (
                       <li key={idx} className="flex items-start">
@@ -155,7 +157,7 @@ export default function HowItWorks() {
                       </li>
                     ))}
                   </ul>
-                  
+
                   <div className="inline-flex items-center px-4 py-2 bg-blue-50 text-blue-700 rounded-full text-sm font-medium">
                     <Clock className="w-4 h-4 mr-2" />
                     Duration: {step.duration}
@@ -170,7 +172,7 @@ export default function HowItWorks() {
                     </div>
                     <h4 className="text-xl font-bold text-gray-900 mb-3">{step.title}</h4>
                     <p className="text-gray-600 text-sm">{step.description}</p>
-                    
+
                     {index < steps.length - 1 && (
                       <div className="mt-8">
                         <ArrowRight className="w-8 h-8 text-gray-300 mx-auto" />
@@ -228,10 +230,10 @@ export default function HowItWorks() {
                     </div>
                   </div>
                 )}
-                
+
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">{pkg.name}</h3>
                 <div className="text-4xl font-bold text-blue-600 mb-6">{pkg.price}</div>
-                
+
                 <ul className="space-y-3 mb-8">
                   {pkg.features.map((feature, idx) => (
                     <li key={idx} className="flex items-center">
@@ -240,14 +242,20 @@ export default function HowItWorks() {
                     </li>
                   ))}
                 </ul>
-                
-                <button 
-                  onClick={() => setIsCallModalOpen(true)}
-                  className={`w-full font-semibold py-4 px-6 rounded-2xl transition-all duration-200 ${pkg.popular ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:shadow-xl hover:scale-105' : 'bg-gray-900 hover:bg-gray-800 text-white hover:shadow-xl hover:scale-105'}`}
-                  data-testid={`button-get-started-${pkg.name.toLowerCase()}`}
-                >
-                  Get Started
-                </button>
+
+                {pkg.paymentButtonId ? (
+                  <div className="mt-4">
+                    <RazorpayButton paymentButtonId={pkg.paymentButtonId} />
+                  </div>
+                ) : (
+                  <button
+                    onClick={() => setIsCallModalOpen(true)}
+                    className={`w-full font-semibold py-4 px-6 rounded-2xl transition-all duration-200 ${pkg.popular ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:shadow-xl hover:scale-105' : 'bg-gray-900 hover:bg-gray-800 text-white hover:shadow-xl hover:scale-105'}`}
+                    data-testid={`button-get-started-${pkg.name.toLowerCase()}`}
+                  >
+                    Get Started
+                  </button>
+                )}
               </div>
             ))}
           </div>
@@ -261,7 +269,7 @@ export default function HowItWorks() {
           <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
             Take the first step towards discovering your ideal career path. Book your free consultation today.
           </p>
-          <button 
+          <button
             onClick={() => setIsCallModalOpen(true)}
             className="bg-white text-blue-600 font-semibold px-8 py-4 rounded-2xl hover:bg-gray-50 transition-colors text-lg"
             data-testid="button-book-consultation-cta"
@@ -310,9 +318,9 @@ export default function HowItWorks() {
             <p className="text-blue-100 mb-8 max-w-2xl mx-auto text-lg">
               Join 3,725+ successful professionals who have found career clarity with Sumanta's proven coaching approach.
             </p>
-            
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button 
+              <button
                 onClick={() => {
                   window.location.href = 'mailto:leadcrestconsulting6@gmail.com?subject=Career Coaching Consultation Request&body=Hello Sumanta,%0D%0A%0D%0AI am interested in scheduling a consultation to discuss my career goals and how your coaching can help me. Please let me know your availability.%0D%0A%0D%0AThank you.';
                 }}
@@ -321,7 +329,7 @@ export default function HowItWorks() {
               >
                 Schedule Consultation
               </button>
-              <button 
+              <button
                 onClick={() => {
                   window.location.href = 'https://wa.me/919147424608?text=Hello%20Sumanta,%20I%20am%20interested%20in%20your%20career%20coaching%20services.%20Could%20we%20schedule%20a%20consultation?';
                 }}
@@ -337,9 +345,9 @@ export default function HowItWorks() {
 
       <Footer />
       <WhatsAppFloat />
-      
+
       {/* Booking Modal */}
-      <BookingPopup 
+      <BookingPopup
         isOpen={isCallModalOpen}
         onClose={() => setIsCallModalOpen(false)}
         package={{
