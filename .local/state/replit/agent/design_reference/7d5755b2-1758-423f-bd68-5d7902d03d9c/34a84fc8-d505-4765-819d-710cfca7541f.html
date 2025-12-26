@@ -1,0 +1,907 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manpreet Kaur - Career Counselor & Education Consultant | CCC Education Foundation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'golden': '#B8860B',
+                        'golden-light': '#F59E0B',
+                        'navy': '#1E3A8A',
+                        'navy-light': '#3B82F6'
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        };
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="font-inter bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBmaWxsPSIjQjg4NjBCIiByeD0iOCIvPgo8dGV4dCB4PSIyMCIgeT0iMjYiIGZvbnQtZmFtaWx5PSJJbnRlciIgZm9udC1zaXplPSIxOCIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkNDQzwvdGV4dD4KPHN2Zz4=" alt="CCC Education Foundation" class="h-10 w-10">
+                    <span class="ml-3 text-xl font-bold text-gray-900">CCC Education Foundation</span>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="text-gray-900 hover:text-golden px-3 py-2 font-medium">Home</a>
+                        <a href="#about" class="text-gray-600 hover:text-golden px-3 py-2 font-medium">About</a>
+                        <a href="#services" class="text-gray-600 hover:text-golden px-3 py-2 font-medium">Services</a>
+                        <a href="#packages" class="text-gray-600 hover:text-golden px-3 py-2 font-medium">Packages</a>
+                        <a href="#blog" class="text-gray-600 hover:text-golden px-3 py-2 font-medium">Blog</a>
+                        <a href="#resources" class="text-gray-600 hover:text-golden px-3 py-2 font-medium">Resources</a>
+                        <a href="#contact" class="bg-golden text-white px-4 py-2 rounded-lg hover:bg-golden-light transition-colors">Contact</a>
+                    </div>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button class="text-gray-600 hover:text-gray-900" onclick="toggleMobileMenu()">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div id="mobileMenu" class="hidden md:hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t">
+                <a href="#home" class="block px-3 py-2 text-gray-900 font-medium">Home</a>
+                <a href="#about" class="block px-3 py-2 text-gray-600 hover:text-golden">About</a>
+                <a href="#services" class="block px-3 py-2 text-gray-600 hover:text-golden">Services</a>
+                <a href="#packages" class="block px-3 py-2 text-gray-600 hover:text-golden">Packages</a>
+                <a href="#blog" class="block px-3 py-2 text-gray-600 hover:text-golden">Blog</a>
+                <a href="#resources" class="block px-3 py-2 text-gray-600 hover:text-golden">Resources</a>
+                <a href="#contact" class="block px-3 py-2 bg-golden text-white rounded-lg mx-3">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="bg-gradient-to-br from-navy to-navy-light text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+                        Shape Your Career with Expert 
+                        <span class="text-golden-light">Guidance</span>
+                    </h1>
+                    <p class="text-xl mb-8 text-blue-100 leading-relaxed">
+                        With over 23 years of experience, I help students and professionals discover their true potential and navigate successful career paths through personalized counseling and mentorship.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#packages" class="bg-golden hover:bg-golden-light text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors inline-flex items-center justify-center">
+                            Explore Packages
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                        <a href="#about" class="border-2 border-white text-white hover:bg-white hover:text-navy px-8 py-4 rounded-lg font-semibold text-lg transition-colors inline-flex items-center justify-center">
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+                <div class="relative">
+                    <!-- Professional headshot placeholder - would use Manpreet's actual photo -->
+                    <!-- Professional portrait of Manpreet Kaur in business attire against a clean background -->
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=600" alt="Manpreet Kaur - Career Counselor" class="rounded-2xl shadow-2xl w-full max-w-md mx-auto">
+                    <div class="absolute -bottom-6 -right-6 bg-golden rounded-xl p-4 shadow-xl">
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-white">23+</div>
+                            <div class="text-sm text-white">Years Experience</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="bg-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="text-3xl md:text-4xl font-bold text-navy mb-2">5000+</div>
+                    <div class="text-gray-600">Students Guided</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl md:text-4xl font-bold text-navy mb-2">23+</div>
+                    <div class="text-gray-600">Years Experience</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl md:text-4xl font-bold text-navy mb-2">98%</div>
+                    <div class="text-gray-600">Success Rate</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl md:text-4xl font-bold text-navy mb-2">15+</div>
+                    <div class="text-gray-600">Certifications</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <!-- Career counseling session in a modern office setting -->
+                    <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" alt="Career counseling session" class="rounded-2xl shadow-lg">
+                </div>
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                        Meet Manpreet Kaur
+                    </h2>
+                    <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                        Manpreet Kaur brings over two decades of experience in career counseling, admissions, and education guidance. As a dedicated advocate for accessible global education, she has helped thousands of students navigate the complex world of higher education and career planning.
+                    </p>
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-golden mr-3"></i>
+                            <span class="text-gray-700">Founder & Director - CCC Education Foundation (NGO)</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-golden mr-3"></i>
+                            <span class="text-gray-700">Certified Career Counsellor (IAAP, APCDA, GCDA)</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-golden mr-3"></i>
+                            <span class="text-gray-700">Education & Career Coach - 23+ Years</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-golden mr-3"></i>
+                            <span class="text-gray-700">Mentoria Certified Counsellor</span>
+                        </div>
+                    </div>
+                    <a href="#contact" class="bg-navy hover:bg-navy-light text-white px-6 py-3 rounded-lg font-semibold inline-flex items-center transition-colors">
+                        Schedule Consultation
+                        <i class="fas fa-calendar ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                    Comprehensive Career Services
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    From psychometric assessments to career planning, I offer a complete suite of services to guide your educational and professional journey.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gray-50 rounded-xl p-8 hover:shadow-lg transition-shadow">
+                    <div class="w-12 h-12 bg-golden rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-brain text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Psychometric Assessments</h3>
+                    <p class="text-gray-600">Scientific assessments to understand your personality, interests, and aptitudes for informed career decisions.</p>
+                </div>
+
+                <div class="bg-gray-50 rounded-xl p-8 hover:shadow-lg transition-shadow">
+                    <div class="w-12 h-12 bg-golden rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-comments text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Career Counselling</h3>
+                    <p class="text-gray-600">Personalized one-on-one sessions to explore career options and create actionable plans for your future.</p>
+                </div>
+
+                <div class="bg-gray-50 rounded-xl p-8 hover:shadow-lg transition-shadow">
+                    <div class="w-12 h-12 bg-golden rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-users text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Mentorship Platform</h3>
+                    <p class="text-gray-600">Life-long access to expert mentorship and knowledge gateway for continuous career growth.</p>
+                </div>
+
+                <div class="bg-gray-50 rounded-xl p-8 hover:shadow-lg transition-shadow">
+                    <div class="w-12 h-12 bg-golden rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-video text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Career Webinars</h3>
+                    <p class="text-gray-600">Regular webinars covering industry trends, career opportunities, and professional development.</p>
+                </div>
+
+                <div class="bg-gray-50 rounded-xl p-8 hover:shadow-lg transition-shadow">
+                    <div class="w-12 h-12 bg-golden rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-globe text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Foreign Admissions</h3>
+                    <p class="text-gray-600">Complete assistance with international university applications and admission processes.</p>
+                </div>
+
+                <div class="bg-gray-50 rounded-xl p-8 hover:shadow-lg transition-shadow">
+                    <div class="w-12 h-12 bg-golden rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-file-alt text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">CV Building & Career Readiness</h3>
+                    <p class="text-gray-600">Professional resume building and career readiness programs for working professionals.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packages Section -->
+    <section id="packages" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                    Choose Your Perfect Package
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Tailored packages designed for different stages of your educational and professional journey.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Discover Package -->
+                <div class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow border border-gray-100">
+                    <div class="text-center mb-6">
+                        <div class="text-golden text-4xl font-bold mb-2">₹5,500</div>
+                        <h3 class="text-2xl font-semibold text-gray-900 mb-2">Discover</h3>
+                        <p class="text-gray-600">For Class 8-9 Students</p>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span class="text-gray-700">Psychometric Assessment</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span class="text-gray-700">Career Exploration Session</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span class="text-gray-700">Stream Selection Guidance</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span class="text-gray-700">Parent Counseling Session</span>
+                        </li>
+                    </ul>
+                    <button class="w-full bg-golden hover:bg-golden-light text-white py-3 rounded-lg font-semibold transition-colors" onclick="purchasePackage('discover')">
+                        Choose Plan
+                    </button>
+                </div>
+
+                <!-- Discover Plus Package -->
+                <div class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow border-2 border-golden relative">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-golden text-white px-4 py-1 rounded-full text-sm font-semibold">
+                        Popular
+                    </div>
+                    <div class="text-center mb-6">
+                        <div class="text-golden text-4xl font-bold mb-2">₹15,000</div>
+                        <h3 class="text-2xl font-semibold text-gray-900 mb-2">Discover Plus</h3>
+                        <p class="text-gray-600">For Class 8-9 Students</p>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span class="text-gray-700">Everything in Discover</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span class="text-gray-700">3 Follow-up Sessions</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span class="text-gray-700">Study Skills Training</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span class="text-gray-700">Mentorship Platform Access</span>
+                        </li>
+                    </ul>
+                    <button class="w-full bg-golden hover:bg-golden-light text-white py-3 rounded-lg font-semibold transition-colors" onclick="purchasePackage('discover-plus')">
+                        Choose Plan
+                    </button>
+                </div>
+
+                <!-- Achieve Package -->
+                <div class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow border border-gray-100">
+                    <div class="text-center mb-6">
+                        <div class="text-golden text-4xl font-bold mb-2">₹5,999</div>
+                        <h3 class="text-2xl font-semibold text-gray-900 mb-2">Achieve</h3>
+                        <p class="text-gray-600">For Class 10-12 Students</p>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span class="text-gray-700">Comprehensive Assessment</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span class="text-gray-700">College Selection Guidance</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span class="text-gray-700">Entrance Exam Strategy</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span class="text-gray-700">Career Planning Session</span>
+                        </li>
+                    </ul>
+                    <button class="w-full bg-golden hover:bg-golden-light text-white py-3 rounded-lg font-semibold transition-colors" onclick="purchasePackage('achieve')">
+                        Choose Plan
+                    </button>
+                </div>
+
+                <!-- Achieve Plus Package -->
+                <div class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow border border-gray-100">
+                    <div class="text-center mb-6">
+                        <div class="text-golden text-4xl font-bold mb-2">₹10,599</div>
+                        <h3 class="text-2xl font-semibold text-gray-900 mb-2">Achieve Plus</h3>
+                        <p class="text-gray-600">For Class 10-12 Students</p>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span class="text-gray-700">Everything in Achieve</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span class="text-gray-700">Scholarship Guidance</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span class="text-gray-700">Application Support</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span class="text-gray-700">6-Month Support</span>
+                        </li>
+                    </ul>
+                    <button class="w-full bg-golden hover:bg-golden-light text-white py-3 rounded-lg font-semibold transition-colors" onclick="purchasePackage('achieve-plus')">
+                        Choose Plan
+                    </button>
+                </div>
+
+                <!-- Ascend Package -->
+                <div class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow border border-gray-100">
+                    <div class="text-center mb-6">
+                        <div class="text-golden text-4xl font-bold mb-2">₹6,499</div>
+                        <h3 class="text-2xl font-semibold text-gray-900 mb-2">Ascend</h3>
+                        <p class="text-gray-600">For Graduates & Professionals</p>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span class="text-gray-700">Professional Assessment</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span class="text-gray-700">CV Building Workshop</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span class="text-gray-700">Interview Preparation</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span class="text-gray-700">Career Transition Guidance</span>
+                        </li>
+                    </ul>
+                    <button class="w-full bg-golden hover:bg-golden-light text-white py-3 rounded-lg font-semibold transition-colors" onclick="purchasePackage('ascend')">
+                        Choose Plan
+                    </button>
+                </div>
+
+                <!-- Ascend Plus Package -->
+                <div class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow border border-gray-100">
+                    <div class="text-center mb-6">
+                        <div class="text-golden text-4xl font-bold mb-2">₹10,599</div>
+                        <h3 class="text-2xl font-semibold text-gray-900 mb-2">Ascend Plus</h3>
+                        <p class="text-gray-600">For Graduates & Professionals</p>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span class="text-gray-700">Everything in Ascend</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span class="text-gray-700">Personal Branding Strategy</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span class="text-gray-700">Network Building Guide</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span class="text-gray-700">1-Year Mentorship</span>
+                        </li>
+                    </ul>
+                    <button class="w-full bg-golden hover:bg-golden-light text-white py-3 rounded-lg font-semibold transition-colors" onclick="purchasePackage('ascend-plus')">
+                        Choose Plan
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                    What Our Clients Say
+                </h2>
+                <p class="text-xl text-gray-600">Real stories from students and professionals whose careers we've transformed.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gray-50 rounded-xl p-8">
+                    <div class="flex items-center mb-6">
+                        <!-- Happy student smiling in academic setting -->
+                        <img src="https://pixabay.com/get/gc10558468fcf0a5de24f5a6ea0dd7ecb2737093b69a15a3b768c0c9e44ee6b09060dd6e6786add461d79b95367a377c2f2fc44a59931733b11bfab96650ede18_1280.jpg" alt="Student testimonial" class="w-12 h-12 rounded-full object-cover mr-4">
+                        <div>
+                            <div class="font-semibold text-gray-900">Priya Sharma</div>
+                            <div class="text-sm text-gray-600">Class 12 Student</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic mb-4">
+                        "Manpreet ma'am helped me understand my strengths and choose the right engineering stream. Her guidance was invaluable for my JEE preparation strategy."
+                    </p>
+                    <div class="flex text-golden">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 rounded-xl p-8">
+                    <div class="flex items-center mb-6">
+                        <!-- Professional in business attire smiling -->
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&h=100" alt="Professional testimonial" class="w-12 h-12 rounded-full object-cover mr-4">
+                        <div>
+                            <div class="font-semibold text-gray-900">Rajesh Kumar</div>
+                            <div class="text-sm text-gray-600">Software Engineer</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic mb-4">
+                        "The career transition guidance helped me switch from IT to product management. The CV building and interview prep were excellent."
+                    </p>
+                    <div class="flex text-golden">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 rounded-xl p-8">
+                    <div class="flex items-center mb-6">
+                        <!-- Young female student with books -->
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&h=100" alt="Student success story" class="w-12 h-12 rounded-full object-cover mr-4">
+                        <div>
+                            <div class="font-semibold text-gray-900">Ananya Patel</div>
+                            <div class="text-sm text-gray-600">Class 10 Student</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic mb-4">
+                        "Thanks to the psychometric assessment, I discovered my passion for design. Now I'm confidently pursuing my creative career path."
+                    </p>
+                    <div class="flex text-golden">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                    Latest Insights
+                </h2>
+                <p class="text-xl text-gray-600">Stay updated with career trends, education insights, and guidance tips.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <article class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                    <!-- Students studying together in a modern library -->
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=300" alt="Students collaborating" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="text-sm text-golden font-semibold mb-2">EDUCATION PLANNING</div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3">How to Choose the Right Stream After Class 10</h3>
+                        <p class="text-gray-600 mb-4">A comprehensive guide to help students make informed decisions about their academic future...</p>
+                        <a href="#" class="text-navy hover:text-navy-light font-semibold inline-flex items-center">
+                            Read More
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                    <!-- Professional mentoring session in modern office -->
+                    <img src="https://images.unsplash.com/photo-1553028826-f4804a6dba3b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=300" alt="Professional mentoring" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="text-sm text-golden font-semibold mb-2">CAREER GUIDANCE</div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3">Top 10 Emerging Careers in 2025</h3>
+                        <p class="text-gray-600 mb-4">Explore the most promising career opportunities that are shaping the future job market...</p>
+                        <a href="#" class="text-navy hover:text-navy-light font-semibold inline-flex items-center">
+                            Read More
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                    <!-- International students on university campus -->
+                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=300" alt="International education" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="text-sm text-golden font-semibold mb-2">INTERNATIONAL EDUCATION</div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3">Study Abroad: A Complete Guide for Indian Students</h3>
+                        <p class="text-gray-600 mb-4">Everything you need to know about pursuing higher education abroad, from applications to scholarships...</p>
+                        <a href="#" class="text-navy hover:text-navy-light font-semibold inline-flex items-center">
+                            Read More
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </article>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="#" class="bg-navy hover:bg-navy-light text-white px-8 py-3 rounded-lg font-semibold inline-flex items-center transition-colors">
+                    View All Articles
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section id="resources" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                    Free Resources
+                </h2>
+                <p class="text-xl text-gray-600">Download our comprehensive guides and tools to kickstart your career journey.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-gray-50 rounded-xl p-6 text-center hover:shadow-lg transition-shadow">
+                    <div class="w-16 h-16 bg-golden rounded-lg flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-file-pdf text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Career Assessment Guide</h3>
+                    <p class="text-gray-600 text-sm mb-4">Self-assessment questionnaire to discover your career interests.</p>
+                    <button class="text-navy hover:text-navy-light font-semibold">Download PDF</button>
+                </div>
+
+                <div class="bg-gray-50 rounded-xl p-6 text-center hover:shadow-lg transition-shadow">
+                    <div class="w-16 h-16 bg-golden rounded-lg flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-graduation-cap text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">College Comparison Tool</h3>
+                    <p class="text-gray-600 text-sm mb-4">Compare colleges based on courses, fees, and placement records.</p>
+                    <button class="text-navy hover:text-navy-light font-semibold">Access Tool</button>
+                </div>
+
+                <div class="bg-gray-50 rounded-xl p-6 text-center hover:shadow-lg transition-shadow">
+                    <div class="w-16 h-16 bg-golden rounded-lg flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-chart-line text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Salary Trends Report</h3>
+                    <p class="text-gray-600 text-sm mb-4">Latest salary trends across different industries and roles.</p>
+                    <button class="text-navy hover:text-navy-light font-semibold">Download Report</button>
+                </div>
+
+                <div class="bg-gray-50 rounded-xl p-6 text-center hover:shadow-lg transition-shadow">
+                    <div class="w-16 h-16 bg-golden rounded-lg flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-lightbulb text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Interview Tips Checklist</h3>
+                    <p class="text-gray-600 text-sm mb-4">Essential tips and checklist for job interview success.</p>
+                    <button class="text-navy hover:text-navy-light font-semibold">Get Checklist</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mentoria Partnership Section -->
+    <section class="py-20 bg-navy text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    Powered by Mentoria Partnership
+                </h2>
+                <p class="text-xl text-blue-200 max-w-3xl mx-auto">
+                    All our clients get exclusive access to Mentoria's comprehensive platform and services, enhancing their career guidance experience.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-golden rounded-lg flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-users text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Expert Mentorship</h3>
+                    <p class="text-blue-200">Connect with industry experts and professionals for guidance.</p>
+                </div>
+
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-golden rounded-lg flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-book text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Knowledge Gateway</h3>
+                    <p class="text-blue-200">Access comprehensive career resources and learning materials.</p>
+                </div>
+
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-golden rounded-lg flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-video text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Live Webinars</h3>
+                    <p class="text-blue-200">Regular webinars on career trends and professional development.</p>
+                </div>
+
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-golden rounded-lg flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-infinity text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Lifetime Access</h3>
+                    <p class="text-blue-200">Continuous support throughout your career journey.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                    Start Your Journey Today
+                </h2>
+                <p class="text-xl text-gray-600">Ready to transform your career? Get in touch for a personalized consultation.</p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-6">Get in Touch</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-golden rounded-lg flex items-center justify-center mr-4">
+                                <i class="fas fa-phone text-white"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-gray-900">Phone</div>
+                                <div class="text-gray-600">+91 98765 43210</div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-golden rounded-lg flex items-center justify-center mr-4">
+                                <i class="fas fa-envelope text-white"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-gray-900">Email</div>
+                                <div class="text-gray-600">manpreet@ccceducation.org</div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-golden rounded-lg flex items-center justify-center mr-4">
+                                <i class="fas fa-map-marker-alt text-white"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-gray-900">Office</div>
+                                <div class="text-gray-600">Delhi, India</div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-golden rounded-lg flex items-center justify-center mr-4">
+                                <i class="fas fa-clock text-white"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-gray-900">Hours</div>
+                                <div class="text-gray-600">Mon-Sat: 9:00 AM - 6:00 PM</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-lg p-8">
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-6">Schedule a Consultation</h3>
+                    <form class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">First Name</label>
+                                <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-golden focus:border-transparent" placeholder="Your first name">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Last Name</label>
+                                <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-golden focus:border-transparent" placeholder="Your last name">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                            <input type="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-golden focus:border-transparent" placeholder="your.email@example.com">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Phone</label>
+                            <input type="tel" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-golden focus:border-transparent" placeholder="+91 98765 43210">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Service Interest</label>
+                            <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-golden focus:border-transparent">
+                                <option>Select a service</option>
+                                <option>Career Counselling</option>
+                                <option>Psychometric Assessment</option>
+                                <option>Foreign Admissions</option>
+                                <option>CV Building</option>
+                                <option>Complete Package</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                            <textarea rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-golden focus:border-transparent" placeholder="Tell us about your career goals and how we can help..."></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-golden hover:bg-golden-light text-white py-3 rounded-lg font-semibold transition-colors">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-6">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBmaWxsPSIjQjg4NjBCIiByeD0iOCIvPgo8dGV4dCB4PSIyMCIgeT0iMjYiIGZvbnQtZmFtaWx5PSJJbnRlciIgZm9udC1zaXplPSIxOCIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkNDQzwvdGV4dD4KPHN2Zz4=" alt="CCC Education Foundation" class="h-8 w-8">
+                        <span class="ml-3 text-lg font-bold">CCC Education Foundation</span>
+                    </div>
+                    <p class="text-gray-400 mb-6">Empowering students and professionals to achieve their career goals through expert guidance and personalized mentorship.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-golden transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-golden transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-golden transition-colors">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-golden transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#about" class="text-gray-400 hover:text-golden transition-colors">About Manpreet</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-golden transition-colors">Services</a></li>
+                        <li><a href="#packages" class="text-gray-400 hover:text-golden transition-colors">Packages</a></li>
+                        <li><a href="#blog" class="text-gray-400 hover:text-golden transition-colors">Blog</a></li>
+                        <li><a href="#resources" class="text-gray-400 hover:text-golden transition-colors">Resources</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">Services</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-golden transition-colors">Career Counselling</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-golden transition-colors">Psychometric Tests</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-golden transition-colors">Foreign Admissions</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-golden transition-colors">CV Building</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-golden transition-colors">Interview Prep</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">Contact Info</h3>
+                    <ul class="space-y-3">
+                        <li class="text-gray-400">
+                            <i class="fas fa-phone mr-2"></i>
+                            +91 98765 43210
+                        </li>
+                        <li class="text-gray-400">
+                            <i class="fas fa-envelope mr-2"></i>
+                            manpreet@ccceducation.org
+                        </li>
+                        <li class="text-gray-400">
+                            <i class="fas fa-map-marker-alt mr-2"></i>
+                            Delhi, India
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+                <p class="text-gray-400">
+                    © 2025 CCC Education Foundation. All rights reserved. | 
+                    <span class="text-golden">Powered by Mentoria Partnership</span>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        (function() {
+            // Mobile menu toggle
+            window.toggleMobileMenu = function() {
+                const menu = document.getElementById('mobileMenu');
+                menu.classList.toggle('hidden');
+            };
+
+            // Package purchase handler
+            window.purchasePackage = function(packageType) {
+                // TODO: Implement payment gateway integration
+                alert(`Redirecting to payment for ${packageType} package. This would integrate with a payment gateway like Razorpay or Stripe.`);
+            };
+
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Form submission handler
+            document.querySelector('form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                // TODO: Implement form submission logic
+                alert('Thank you for your message! We will get back to you soon.');
+            });
+
+            // Add scroll effect to navigation
+            window.addEventListener('scroll', function() {
+                const nav = document.querySelector('nav');
+                if (window.scrollY > 100) {
+                    nav.classList.add('shadow-xl');
+                } else {
+                    nav.classList.remove('shadow-xl');
+                }
+            });
+        })();
+    </script>
+</body>
+</html>
